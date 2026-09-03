@@ -1,0 +1,12 @@
+city_name,city_latitude,city_longitude,station_id,station_name,distance_m
+London,51.5074,-0.1278,03779,London Weather Centre,1288.2
+Manchester,53.4808,-2.2426,03334,Manchester Airport,14792.3
+Birmingham,52.4862,-1.8904,03534,Birmingham / Airport,11377.8
+Leeds,53.7995,-1.549,03347,Leeds Weather Centre,86.0
+Glasgow,55.8642,-4.2518,03140,Glasgow Airport,11328.2
+Edinburgh,55.9533,-3.1883,03160,Edinburgh Airport,10073.7
+Cardiff,51.4816,-3.179,03715,Cardiff-Wales Airport,14926.5
+Belfast,54.5973,-5.9301,03924,Belfast / Harbour,3029.5
+Bristol,51.4545,-2.5879,03726,Bristol Weather Centre,1594.7
+Newcastle,54.9783,-1.6177,03246,Newcastle Weather Centre,1258.9
+Lerwick,60.155,-1.1456,03005,Lerwick,3190.2

@@ -1,12 +1,12 @@
 city_name,latitude,longitude,elevation_m,timezone,region,notes
-london,51.5074,-0.1278,25,Europe/London,South East,Mild winters, warm summers
-manchester,53.4808,-2.2426,40,Europe/London,North West,Cooler, wetter
-birmingham,52.4862,-1.8904,140,Europe/London,West Midlands,Continental influence
-leeds,53.7995,-1.5490,50,Europe/London,Yorkshire,Cooler northern climate
-glasgow,55.8642,-4.2518,20,Europe/London,Scotland,Maritime, cooler
-edinburgh,55.9533,-3.1883,45,Europe/London,Scotland,Cooler, windier
-cardiff,51.4816,-3.1790,10,Europe/London,Wales,Maritime, mild
-belfast,54.5973,-5.9301,10,Europe/London,Northern Ireland,Maritime, cool
-bristol,51.4545,-2.5879,20,Europe/London,South West,Mild, wet
-newcastle,54.9783,-1.6177,30,Europe/London,North East,Coolest, most northerly mainland
-lerwick,60.1550,-1.1456,80,Europe/London,Northern Highlands/Islands,Shetland Islands - far north, maritime, cool and windy
+London,51.5074,-0.1278,25,Europe/London,South East,"Mild winters, warm summers"
+Manchester,53.4808,-2.2426,40,Europe/London,North West,"Cooler, wetter"
+Birmingham,52.4862,-1.8904,140,Europe/London,West Midlands,Continental influence
+Leeds,53.7995,-1.549,50,Europe/London,Yorkshire,Cooler northern climate
+Glasgow,55.8642,-4.2518,20,Europe/London,Scotland,"Maritime, cooler"
+Edinburgh,55.9533,-3.1883,45,Europe/London,Scotland,"Cooler, windier"
+Cardiff,51.4816,-3.179,10,Europe/London,Wales,"Maritime, mild"
+Belfast,54.5973,-5.9301,10,Europe/London,Northern Ireland,"Maritime, cool"
+Bristol,51.4545,-2.5879,20,Europe/London,South West,"Mild, wet"
+Newcastle,54.9783,-1.6177,30,Europe/London,North East,"Coolest, most northerly mainland"
+Lerwick,60.155,-1.1456,80,Europe/London,Northern Highlands/Islands,"Shetland Islands - far north, maritime, cool and windy"
