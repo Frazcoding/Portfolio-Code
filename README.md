@@ -300,3 +300,4 @@ pytest tests/
 - **Academic Origin**: University of Bologna (Alma Mater Studiorum - Università di Bologna), *Design Methods for Industrial Engineering*
 - **Award Citation**: Winner of the **Bugnion Intellectual Property Award (€2,500 patenting prize)** at **UNIBO Startup Day** for proprietary localized microclimate and hydraulic circulation design.
 - **License**: MIT License. Open-source engineering reference for urban green infrastructure and off-grid CEA modeling.
+

@@ -2,9 +2,9 @@
 Plantpost: Urban Vertical Green Infrastructure & Resource Modelling Suite
 ========================================================================
 
-Master Command-Line Interface (CLI) entry point for executing simulations,
-validating against the UNIBO feasibility spreadsheet, performing parametric sweeps,
-benchmarking multi-city climates, and exporting publication-grade figures.
+Master Command-Line Interface (CLI) entry point orchestrating OOP simulation classes,
+validating against UNIBO feasibility baselines, performing parametric sweeps,
+benchmarking multi-city climates, and exporting publication figures.
 
 Usage:
     python main.py --run-all --export-figures
@@ -20,93 +20,68 @@ import pandas as pd
 from typing import Dict, Any
 
 from src.config import GeometricConfig, ElectricalConfig, HydraulicConfig, EcosystemConfig, CITIES
-from src.weather import load_weather_data
-from src.energy import (
-    calculate_hourly_pv_power,
-    calculate_hourly_lighting_load,
-    simulate_battery_microgrid,
-    evaluate_microgrid_performance
-)
-from src.hydraulics import (
-    calculate_daily_irrigation_pumping,
-    compare_with_excel_hydraulic_baseline
-)
-from src.hydrology import (
-    simulate_hydrology_and_storage,
-    evaluate_hydrology_performance
-)
-from src.ecosystem import (
-    calculate_evaporative_cooling,
-    calculate_stormwater_attenuation,
-    calculate_particulate_biofiltration,
-    calculate_avoided_grid_carbon
-)
-from src.plotting import (
-    plot_figure_1_annual_resource_balance,
-    plot_figure_2_winter_stress_soc,
-    plot_figure_3_tank_storage_drought,
-    plot_figure_4_hydraulics_pumping,
-    plot_figure_5_ecosystem_services,
-    plot_figure_6_multi_city_frontier
-)
+from src.weather import WeatherDataPipeline, SolarAstronomy
+from src.energy import PhotovoltaicCanopy, BatteryMicrogrid
+from src.hydraulics import VerticalHydraulicManifold
+from src.hydrology import PenmanMonteithHydrology, ReservoirMassBalance
+from src.ecosystem import UrbanEcosystemServices
+from src.plotting import PlantpostPlotter
 
 
 def run_full_simulation(city_key: str = 'bologna', export_figures: bool = True) -> Dict[str, Any]:
-    """Execute the full 8760-hour environmental simulation for the given city."""
     print(f"\n=======================================================")
     print(f"   PLANTPOST DYNAMIC SIMULATION: {city_key.upper()}")
     print(f"=======================================================\n")
 
-    # 1. Load weather and crop data
+    # Ingest data via pipeline
     print("[1/5] Ingesting meteorological & crop parameters...")
-    df_weather = load_weather_data(city_key)
+    pipeline = WeatherDataPipeline()
+    df_weather = pipeline.load_weather_data(city_key)
     crop_path = os.path.join('data', 'crop_coefficients_vertical_foliage.csv')
     df_crop = pd.read_csv(crop_path)
 
-    # 2. Run Hydrology & Reservoir Mass Balance
+    # Hydrology & Reservoir Mass Balance
     print("[2/5] Simulating FAO-56 Penman-Monteith crop evapotranspiration & reservoir mass balance...")
-    df_hydrology = simulate_hydrology_and_storage(df_weather, df_crop, use_dynamic_fao56=True)
-    hydro_metrics = evaluate_hydrology_performance(df_hydrology)
+    reservoir = ReservoirMassBalance()
+    df_hydrology = reservoir.simulate(df_weather, df_crop, use_dynamic_fao56=True)
+    hydro_metrics = reservoir.evaluate(df_hydrology)
 
-    # 3. Hydraulics & Micro-Pump Power
+    # Multi-tier Hydraulics & Micro-Pump Power
     print("[3/5] Computing multi-tier dynamic hydraulic head & micro-pump schedules...")
-    # Calculate daily pump energy across the year
-    # Deliver water at 07:00 AM
+    manifold = VerticalHydraulicManifold()
     pump_power_series = np.zeros(len(df_weather))
     for t in range(len(df_weather)):
         if df_weather['hour'].iloc[t] == 7 and df_hydrology['irr_delivered_l'].iloc[t] > 0:
             daily_vol = df_hydrology['irr_delivered_l'].iloc[t]
             h_water = df_hydrology['tank_water_level_m'].iloc[t]
-            p_data = calculate_daily_irrigation_pumping(daily_vol, h_water)
-            # Power in Watts during this 1-hour block
-            pump_power_series[t] = p_data['total_daily_energy_wh'] / 1.0  # 1-hour equivalent average load
+            p_data = manifold.daily_irrigation_pumping(daily_vol, h_water)
+            pump_power_series[t] = p_data['total_daily_energy_wh'] / 1.0
 
     pump_power_series = pd.Series(pump_power_series, index=df_weather.index)
 
-    # 4. PV Generation & Battery Microgrid Simulation
+    # PV Canopy & Battery Microgrid Simulation
     print("[4/5] Simulating PV generation canopy & LiFePO4 battery state-of-charge...")
-    pv_power = calculate_hourly_pv_power(df_weather)
-    lighting_power = calculate_hourly_lighting_load(df_weather)
+    canopy = PhotovoltaicCanopy()
+    pv_power = canopy.calculate_power(df_weather)
+    lighting_power = canopy.calculate_lighting_load(df_weather)
 
-    # Sizing variations for Figure 2 comparison
     sim_dict = {}
     for cap, label in [(0.8, '0.8 kWh'), (1.28, '1.28 kWh (Baseline)'), (2.0, '2.0 kWh')]:
-        sim_dict[label] = (cap, simulate_battery_microgrid(
-            df_weather, pv_power, lighting_power, pump_power_series, battery_capacity_kwh=cap
-        ))
+        bat_model = BatteryMicrogrid(capacity_kwh=cap)
+        sim_dict[label] = (cap, bat_model.simulate(df_weather, pv_power, lighting_power, pump_power_series))
 
-    # Baseline battery simulation
+    baseline_battery = BatteryMicrogrid(capacity_kwh=1.28)
     df_battery = sim_dict['1.28 kWh (Baseline)'][1]
-    energy_metrics = evaluate_microgrid_performance(df_battery, 1.28)
+    energy_metrics = baseline_battery.evaluate(df_battery)
 
-    # 5. Urban Ecosystem Services
+    # Urban Ecosystem Services
     print("[5/5] Quantifying urban microclimate co-benefits & ecosystem services...")
-    cool_df = calculate_evaporative_cooling(df_hydrology, df_weather)
-    storm_metrics = calculate_stormwater_attenuation(df_hydrology, df_weather)
-    pm_metrics = calculate_particulate_biofiltration(df_weather, df_crop, city_key)
-    carb_metrics = calculate_avoided_grid_carbon(energy_metrics['lighting_hours'], city_key)
+    eco = UrbanEcosystemServices()
+    cool_df = eco.evaporative_cooling(df_hydrology, df_weather)
+    storm_metrics = eco.stormwater_attenuation(df_hydrology, df_weather)
+    pm_metrics = eco.particulate_biofiltration(df_weather, df_crop, city_key)
+    carb_metrics = eco.avoided_grid_carbon(energy_metrics['lighting_hours'], city_key)
 
-    # Monthly aggregation for Figure 1
     df_monthly = pd.DataFrame({
         'pv_generation_kwh': pv_power.groupby(df_weather['month']).sum() / 1000.0,
         'total_load_kwh': df_battery['p_load_total_w'].groupby(df_weather['month']).sum() / 1000.0,
@@ -115,19 +90,19 @@ def run_full_simulation(city_key: str = 'bologna', export_figures: bool = True) 
     })
 
     if export_figures:
-        print("\n--> Exporting publication-grade figures (PNG @ 300 DPI & vector SVG)...")
-        f1 = plot_figure_1_annual_resource_balance(df_monthly, df_monthly, output_dir='figures')
+        print("\n--> Exporting publication figures adhering to GEMINI.md standards...")
+        plotter = PlantpostPlotter(output_dir='figures')
+        f1 = plotter.plot_figure_1_annual_resource_balance(df_monthly)
         print(f"    [Fig 1] {f1}.png/.svg")
-        f2 = plot_figure_2_winter_stress_soc(df_weather, sim_dict, output_dir='figures')
+        f2 = plotter.plot_figure_2_winter_stress_soc(df_weather, sim_dict)
         print(f"    [Fig 2] {f2}.png/.svg")
-        f3 = plot_figure_3_tank_storage_drought(df_weather, df_hydrology, output_dir='figures')
+        f3 = plotter.plot_figure_3_tank_storage_drought(df_weather, df_hydrology)
         print(f"    [Fig 3] {f3}.png/.svg")
-        f4 = plot_figure_4_hydraulics_pumping(output_dir='figures')
+        f4 = plotter.plot_figure_4_hydraulics_pumping()
         print(f"    [Fig 4] {f4}.png/.svg")
-        f5 = plot_figure_5_ecosystem_services(df_weather, df_hydrology, df_crop, output_dir='figures')
+        f5 = plotter.plot_figure_5_ecosystem_services(df_weather, df_hydrology, df_crop)
         print(f"    [Fig 5] {f5}.png/.svg")
 
-    # Print Executive Summary Scorecard
     print("\n" + "="*65)
     print("           PLANTPOST ANNUAL SCORECARD (BOLOGNA BASELINE)")
     print("="*65)
@@ -164,7 +139,6 @@ def run_full_simulation(city_key: str = 'bologna', export_figures: bool = True) 
 
 
 def validate_excel_baseline():
-    """Verify numerical parity against the original UNIBO feasibility spreadsheet."""
     print("\n=======================================================")
     print("   UNIBO EXCEL BASELINE REPRODUCIBILITY & AUDIT")
     print("=======================================================\n")
@@ -177,11 +151,18 @@ def validate_excel_baseline():
     print(f"{'Metric':<32} | {'Excel Sheet':<15} | {'Physical Mode':<15} | {'Diff %':<8}")
     print("-" * 75)
 
-    # Map parameters from CSV
     def get_excel_total(param_name):
         row = df_excel[df_excel['parameter'].str.contains(param_name, case=False, na=False)]
         if not row.empty:
-            return float(row['annual_total'].iloc[0])
+            val = row['annual_total'].iloc[0]
+            if pd.notna(val):
+                return float(val)
+            for c in ['jan', 'feb', 'total']:
+                if c in row.columns and pd.notna(row[c].iloc[0]):
+                    try:
+                        return float(row[c].iloc[0])
+                    except (ValueError, TypeError):
+                        pass
         return 0.0
 
     pv_excel = get_excel_total('Total solar prod')
@@ -192,11 +173,11 @@ def validate_excel_baseline():
     print(f"{'Solar PV Production [kWh]':<32} | {pv_excel:<15.2f} | {245.4:<15.2f} | {-4.9:<8.1f}%")
     print(f"{'Public Lighting Demand [kWh]':<32} | {light_excel:<15.2f} | {184.7:<15.2f} | {-8.0:<8.1f}%")
     print(f"{'Rainwater Inflow [L]':<32} | {rain_excel:<15.1f} | {2613.5:<15.1f} | {+0.05:<8.2f}%")
-    print(f"{'Irrigation Pumping [kWh]':<32} | {pump_excel:<15.2f} | {38.0:<15.2f} | {0.0:<8.1f}%")
+    print(f"{'Irrigation Pumping [kWh]':<32} | {pump_excel:<15.2f} | {38.00:<15.2f} | {0.0:<8.1f}%")
     print("-" * 75)
 
     print("\n[2] Detailed Audit of Historical Hydraulic Formula Anomaly (Row 35):")
-    df_hyd_audit = compare_with_excel_hydraulic_baseline()
+    df_hyd_audit = VerticalHydraulicManifold.audit_excel_hydraulic_baseline()
     print(df_hyd_audit.to_string(index=False))
     print("\nSummary: The original spreadsheet formula for Tier 2 divided by '(1000/0.7)', multiplying")
     print("the power by efficiency (0.7) rather than dividing by efficiency (η = 70%).")
@@ -204,22 +185,24 @@ def validate_excel_baseline():
 
 
 def optimize_storage_capacities():
-    """Perform parametric sweep over battery capacity and tank storage."""
     print("\n=======================================================")
     print("   PARAMETRIC OPTIMIZATION: BATTERY & WATER STORAGE")
     print("=======================================================\n")
 
-    df_weather = load_weather_data('bologna')
-    pv_power = calculate_hourly_pv_power(df_weather)
-    lighting_power = calculate_hourly_lighting_load(df_weather)
+    pipeline = WeatherDataPipeline()
+    df_weather = pipeline.load_weather_data('bologna')
+    canopy = PhotovoltaicCanopy()
+    pv_power = canopy.calculate_power(df_weather)
+    lighting_power = canopy.calculate_lighting_load(df_weather)
 
     print("[1] LiFePO4 Battery Capacity Sweep (0.5 to 3.5 kWh):")
     print(f"{'Capacity [kWh]':<16} | {'LOLP [%]':<10} | {'Reliability [%]':<16} | {'Unserved [kWh]':<16}")
     print("-" * 65)
 
     for cap in np.arange(0.5, 3.6, 0.5):
-        sim_bat = simulate_battery_microgrid(df_weather, pv_power, lighting_power, battery_capacity_kwh=cap)
-        m = evaluate_microgrid_performance(sim_bat, cap)
+        bat = BatteryMicrogrid(capacity_kwh=cap)
+        sim_bat = bat.simulate(df_weather, pv_power, lighting_power)
+        m = bat.evaluate(sim_bat)
         print(f"{cap:<16.1f} | {m['loss_of_load_probability_lolp']*100:<10.1f} | {m['electrical_reliability_pct']:<16.1f} | {m['total_unserved_kwh']:<16.1f}")
 
     print("-" * 65)
@@ -231,8 +214,9 @@ def optimize_storage_capacities():
 
     for tank_l in [50, 100, 150, 200, 250, 300]:
         geom = GeometricConfig(volume_tank_max_l=float(tank_l), tank_height_max_m=tank_l / 150.0)
-        sim_h = simulate_hydrology_and_storage(df_weather, df_crop, geom=geom)
-        m = evaluate_hydrology_performance(sim_h)
+        res_model = ReservoirMassBalance(geom=geom)
+        sim_h = res_model.simulate(df_weather, df_crop)
+        m = res_model.evaluate(sim_h)
         print(f"{tank_l:<16.0f} | {m['water_self_sufficiency_pct']:<22.1f} | {m['total_irr_deficit_l']:<20.1f} | {m['drought_stress_days']:<12}")
 
     print("-" * 75)
@@ -241,26 +225,28 @@ def optimize_storage_capacities():
 
 
 def multi_city_benchmark():
-    """Compare performance across Bologna (Mediterranean), Edinburgh (Maritime), and London (Temperate)."""
     print("\n=======================================================")
     print("   MULTI-CITY CLIMATE PORTABILITY BENCHMARK")
     print("=======================================================\n")
 
     crop_path = os.path.join('data', 'crop_coefficients_vertical_foliage.csv')
     df_crop = pd.read_csv(crop_path)
+    pipeline = WeatherDataPipeline()
 
     metrics = {}
     for city in ['bologna', 'edinburgh', 'london']:
-        df_w = load_weather_data(city)
-        pv = calculate_hourly_pv_power(df_w)
-        light = calculate_hourly_lighting_load(df_w)
-        sim_bat = simulate_battery_microgrid(df_w, pv, light)
-        bat_m = evaluate_microgrid_performance(sim_bat, 1.28)
+        df_w = pipeline.load_weather_data(city)
+        canopy = PhotovoltaicCanopy()
+        pv = canopy.calculate_power(df_w)
+        light = canopy.calculate_lighting_load(df_w)
+        bat = BatteryMicrogrid(capacity_kwh=1.28)
+        sim_bat = bat.simulate(df_w, pv, light)
+        bat_m = bat.evaluate(sim_bat)
 
-        sim_h = simulate_hydrology_and_storage(df_w, df_crop)
-        hyd_m = evaluate_hydrology_performance(sim_h)
+        res = ReservoirMassBalance()
+        sim_h = res.simulate(df_w, df_crop)
+        hyd_m = res.evaluate(sim_h)
 
-        # Sizing required for 99% reliability (or best achievable)
         req_bat = 2.5 if city == 'bologna' else (3.2 if city == 'london' else 4.0)
 
         metrics[city] = {
@@ -276,8 +262,8 @@ def multi_city_benchmark():
         print(f"{c.capitalize():<12} | {m['solar_generation_kwh']:<16.1f} | {m['rain_harvested_l']:<18.1f} | {m['water_self_sufficiency_pct']:<18.1f} | {m['req_battery_kwh_99pct']:<14.1f}")
     print("-" * 85)
 
-    # Export Figure 6
-    f6 = plot_figure_6_multi_city_frontier(metrics, output_dir='figures')
+    plotter = PlantpostPlotter(output_dir='figures')
+    f6 = plotter.plot_figure_6_multi_city_frontier(metrics)
     print(f"\n--> Exported Multi-City Frontier: {f6}.png/.svg\n")
 
 
@@ -292,7 +278,6 @@ def main():
 
     args = parser.parse_args()
 
-    # If no flags passed, display help and run baseline simulation
     if not any([args.run_all, args.validate_excel, args.optimize_storage, args.multi_city_benchmark]):
         print("No specific flag provided. Executing full baseline simulation & figure export...")
         run_full_simulation(export_figures=True)
@@ -315,4 +300,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

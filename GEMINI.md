@@ -283,7 +283,7 @@ Plantpost-Urban-Infrastructure-Modelling/
 
 ## 6. The Extended 6-Figure Publication Suite
 
-Every generated plot must adhere to master publication standards: clean minimalist aesthetic (`seaborn-v0_8-whitegrid`), explicit physical units enclosed in brackets on all axes (e.g. `Solar Generation [kWh/month]`, `Battery State of Charge [%]`, `Tank Storage [L]`, `Head [m]`), high-contrast palettes, and exported at $300\text{ DPI}$ PNG and vector SVG.
+Every generated plot must adhere to master publication standards: clean minimalist aesthetic (`seaborn-v0_8-whitegrid`), simple captions and axis labels with explicit physical units enclosed in brackets (e.g. `Solar Generation [kWh/month]`, `Battery State of Charge [%]`, `Tank Storage [L]`, `Head [m]`), pure black fonts exclusively (`#000000` / `'black'`), legend positioned below the graph, zero in-plot annotations (strictly legend only), mandatory true visual inspection of exported image files to ensure complete clarity, and exported at $300\text{ DPI}$ PNG and vector SVG.
 
 1. **Figure 1 — Annual Dual-Resource Balance: Energy & Water (`fig1_annual_resource_balance_water_energy`)**:
    - 2-panel linked monthly overview directly validating and extending the Excel model:
@@ -354,4 +354,30 @@ Every generated plot must adhere to master publication standards: clean minimali
     - Credit Fraser as Co-Founder and Head of Environmental Modelling.
     - Accurately cite the **UNIBO $\times$ Bugnion Intellectual Property Prize** (€2,500 patenting services awarded at UNIBO Startup Day).
     - Transparently distinguish between the initial feasibility spreadsheet calculations and the high-fidelity dynamic hourly model.
+
+### 7.4. Strict Code & Visual Standards: OOP, Minimal Comments & `/grill-me`
+All code, hydrology routines, electrical microgrid models, and visual generators in this repository must strictly adhere to the following standards:
+
+1. **Strict Object-Oriented Architecture**:
+   - All modules (`SolarAstronomy`, `BatteryMicrogrid`, `PenmanMonteithHydrology`, `ReservoirMassBalance`, `VerticalHydraulicManifold`, `UrbanEcosystemServices`, `PlantpostPlotter`) must be architected as class- and object-oriented Python modules.
+   - Sprawling procedural scripts or flat function files are strictly forbidden. Encapsulate physical constants, weather inputs, and dynamic states into cohesive domain classes.
+
+2. **Minimal, High-Signal Comments**:
+   - Code must be clear, concise, and self-documenting through expressive variable and method naming.
+   - Zero redundant comments: Never explain obvious code behavior or routine language operations.
+   - Keep comments strictly minimal, reserved only for non-obvious environmental physics formulations (FAO-56 Penman-Monteith, Darcy-Weisbach head loss), or key empirical assumptions.
+
+3. **Clear and Concise Implementation**:
+   - Maintain lean classes and methods with a high signal-to-noise ratio. Eliminate boilerplate, dead code, and speculative abstractions.
+
+4. **Strict Publication-Grade Visual Standards**:
+   - **No In-Plot Annotations (Legend Only)**: Strictly legend only. No floating text annotations, callout arrows, or text labels inside the axes (`ax.annotate`, `ax.text`).
+   - **Legend Below Graph**: The legend must strictly be positioned below the graph (outside the plot area, horizontal orientation/columns) to ensure zero obstruction of data.
+   - **Captions & Axis Labels**: Wording for captions and axis labels must be simple, direct, and concise, with explicit physical units enclosed in brackets on all axes (e.g. `Solar PV Power [W]`, `Battery SoC [%]`, `Tank Storage [L]`, `Head Loss [m]`).
+   - **Pure Black Fonts**: All typography across every figure (titles, axis labels, tick numbers, legend text) must strictly be pure black (`#000000` / `'black'`). No grey, light-toned, or faded text.
+   - **Mandatory True Visual Inspection**: Every generated figure must undergo a true visual inspection (inspecting the rendered image file) to ensure all data points, curves, bar plots, and legends are completely visible, crisp, legible, and unclipped.
+
+5. **Interactive Alignment via `/grill-me`**:
+   - For ANY ambiguities, uncertainties, or design choices regarding how codes, simulations, or graphs should be generated, agents MUST trigger `/grill-me` (or interview the user via structured interactive questions) before making assumptions or writing speculative code.
+
 
