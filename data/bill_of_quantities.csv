@@ -1,0 +1,59 @@
+scenario_id,nrm_element_group,element_name,material_id,quantity,unit,waste_rate,transport_distance_km,service_life_years
+scenario_1,0.0 Demolition,Strip-out of obsolete boiler and chiller,none,0.0,kg,0.0,0.0,60
+scenario_1,1.0 Substructure,Retained existing reinforced concrete foundation,concrete_cemi,0.0,kg,0.0,0.0,60
+scenario_1,2.0 Superstructure,Retained existing concrete frame and ribbed slabs,concrete_cemi,0.0,kg,0.0,0.0,60
+scenario_1,3.0 Facade & Envelope,Retained existing cavity wall and single/double glazing,standard_double_glazing,0.0,m2,0.0,0.0,60
+scenario_1,4.0 Internal Finishes,Retained existing floor and wall finishes,carpet_tiles,0.0,m2,0.0,0.0,60
+scenario_1,5.0 MEP Services,Replacement condensing gas boilers (700 kWth total),mep_chiller_baseline,700.0,kW_th,0.0,50.0,15
+scenario_1,5.0 MEP Services,Standard air-cooled chiller (R410A refrigerant),mep_chiller_baseline,400.0,kW_th,0.0,100.0,15
+scenario_1,5.0 MEP Services,Constant air volume ventilation and hydronic distribution,mep_distribution,7500.0,m2_gia,0.0,50.0,30
+scenario_2,0.0 Demolition,Internal strip-out of obsolete MEP and lightweight partitions,none,7500.0,m2_gia,0.0,25.0,60
+scenario_2,1.0 Substructure,100% retained existing concrete foundations (zero new materials),concrete_cemi,0.0,kg,0.0,0.0,60
+scenario_2,2.0 Superstructure,100% retained reinforced concrete frame and slabs,concrete_cemi,0.0,kg,0.0,0.0,60
+scenario_2,3.0 Facade & Envelope,High-performance triple glazing retrofit,triple_glazing_highperf,1368.0,m2,0.02,150.0,30
+scenario_2,3.0 Facade & Envelope,Thermally broken aluminium curtain wall framing,curtain_wall_aluminium,24624.0,kg,0.03,80.0,30
+scenario_2,3.0 Facade & Envelope,Mineral wool external cavity insulation,mineral_wool,8026.0,kg,0.08,120.0,40
+scenario_2,3.0 Facade & Envelope,Mineral wool roof insulation retrofit,mineral_wool,9000.0,kg,0.08,120.0,40
+scenario_2,3.0 Facade & Envelope,Single-ply EPDM roof membrane,roof_membrane,2700.0,kg,0.05,100.0,25
+scenario_2,4.0 Internal Finishes,Gypsum plasterboard partition refurbishment,plasterboard,60000.0,kg,0.10,50.0,30
+scenario_2,4.0 Internal Finishes,Refurbished raised access flooring tiles,raised_floor,6000.0,m2,0.03,60.0,25
+scenario_2,4.0 Internal Finishes,Recycled tufted carpet tiles,carpet_tiles,6000.0,m2,0.05,80.0,12
+scenario_2,5.0 MEP Services,Central 4-pipe reversible ASHP (R290 Propane),mep_ashp_r290,450.0,kW_th,0.0,100.0,15
+scenario_2,5.0 MEP Services,Variable Air Volume AHU with heat recovery (82% MVHR),mep_mvhr_ahu,25000.0,m3_h,0.0,80.0,20
+scenario_2,5.0 MEP Services,Hydronic pipework & VAV ductwork distribution,mep_distribution,7500.0,m2_gia,0.0,50.0,30
+scenario_2,5.0 MEP Services,High-efficiency rooftop solar PV array,solar_pv_array,120.0,kWp,0.0,150.0,25
+scenario_3,0.0 Demolition,Full deconstruction of existing concrete commercial building,none,7500.0,m2_gia,0.0,25.0,60
+scenario_3,1.0 Substructure,C30/37 CEM I concrete piled foundation and ground beams,concrete_cemi,1620000.0,kg,0.05,30.0,60
+scenario_3,1.0 Substructure,Reinforcing rebar for foundations and ground slab,rebar,67500.0,kg,0.05,60.0,60
+scenario_3,2.0 Superstructure,Structural steel framing S355 (60 kg/m2 GIA),structural_steel,450000.0,kg,0.01,80.0,60
+scenario_3,2.0 Superstructure,Composite galvanized steel floor decking (0.9mm),composite_deck,84000.0,kg,0.02,80.0,60
+scenario_3,2.0 Superstructure,C30/37 CEM I concrete floor slabs (130mm deck slab),concrete_cemi,1872000.0,kg,0.05,30.0,60
+scenario_3,2.0 Superstructure,Floor slab reinforcing steel mesh and rebar,rebar,62400.0,kg,0.05,60.0,60
+scenario_3,3.0 Facade & Envelope,Compliant double glazing curtain walling,standard_double_glazing,1368.0,m2,0.02,120.0,30
+scenario_3,3.0 Facade & Envelope,Aluminium curtain wall framing,curtain_wall_aluminium,24624.0,kg,0.03,80.0,30
+scenario_3,3.0 Facade & Envelope,Mineral wool facade and roof insulation,mineral_wool,17026.0,kg,0.08,120.0,40
+scenario_3,3.0 Facade & Envelope,Single-ply roof waterproofing membrane,roof_membrane,2700.0,kg,0.05,100.0,25
+scenario_3,4.0 Internal Finishes,Standard gypsum plasterboard partitions and drylining,plasterboard,60000.0,kg,0.10,50.0,30
+scenario_3,4.0 Internal Finishes,Standard raised access floor system,raised_floor,6000.0,m2,0.03,60.0,25
+scenario_3,4.0 Internal Finishes,Commercial nylon carpet tiles,carpet_tiles,6000.0,m2,0.05,80.0,12
+scenario_3,5.0 MEP Services,Standard commercial ASHP (R32 refrigerant),mep_ashp_standard,500.0,kW_th,0.0,100.0,15
+scenario_3,5.0 MEP Services,Mechanical ventilation heat recovery AHU (75% MVHR),mep_mvhr_ahu,25000.0,m3_h,0.0,80.0,20
+scenario_3,5.0 MEP Services,MEP distribution ductwork and hydronic piping,mep_distribution,7500.0,m2_gia,0.0,50.0,30
+scenario_3,5.0 MEP Services,Rooftop solar PV array,solar_pv_array,80.0,kWp,0.0,150.0,25
+scenario_4,0.0 Demolition,Selective deconstruction with high recycling material recovery,none,7500.0,m2_gia,0.0,25.0,60
+scenario_4,1.0 Substructure,Low-carbon C30/37 concrete with 70% GGBS replacement,concrete_ggbs70,1620000.0,kg,0.05,35.0,60
+scenario_4,1.0 Substructure,High-recycled scrap rebar for foundations (>95% scrap),rebar,67500.0,kg,0.05,60.0,60
+scenario_4,2.0 Superstructure,Glulam timber structural columns and primary beams,glulam_timber,209000.0,kg,0.02,250.0,60
+scenario_4,2.0 Superstructure,Cross-Laminated Timber (CLT) solid floor slabs (160mm),clt_timber,432000.0,kg,0.015,250.0,60
+scenario_4,2.0 Superstructure,"Connection steel plates, angle brackets and bolts",structural_steel,25000.0,kg,0.01,80.0,60
+scenario_4,3.0 Facade & Envelope,Passivhaus-grade triple glazing with krypton cavities,triple_glazing_highperf,1368.0,m2,0.02,150.0,30
+scenario_4,3.0 Facade & Envelope,Thermally broken aluminium framing (high-recycled billet),curtain_wall_aluminium,24624.0,kg,0.03,80.0,30
+scenario_4,3.0 Facade & Envelope,Wood-fibre bio-insulation (facade and roof batts),wood_fibre_insulation,37142.0,kg,0.05,180.0,40
+scenario_4,3.0 Facade & Envelope,High-performance bio-based / EPDM roof membrane,roof_membrane,2700.0,kg,0.05,100.0,25
+scenario_4,4.0 Internal Finishes,Exposed structural timber ceilings & low-carbon drylining,plasterboard,30000.0,kg,0.10,50.0,30
+scenario_4,4.0 Internal Finishes,Low-carbon raised access flooring system,raised_floor,6000.0,m2,0.03,60.0,25
+scenario_4,4.0 Internal Finishes,Circular cradle-to-cradle carpet tiles,carpet_tiles,6000.0,m2,0.05,80.0,12
+scenario_4,5.0 MEP Services,Ultra-high-efficiency central ASHP (R290 Propane),mep_ashp_r290,400.0,kW_th,0.0,100.0,15
+scenario_4,5.0 MEP Services,Displacement ventilation AHU with run-around coil MVHR,mep_mvhr_ahu,25000.0,m3_h,0.0,80.0,20
+scenario_4,5.0 MEP Services,Low-carbon MEP distribution ductwork & hydronics,mep_distribution,7500.0,m2_gia,0.0,50.0,30
+scenario_4,5.0 MEP Services,Integrated rooftop & facade BIPV array,solar_pv_array,160.0,kWp,0.0,150.0,25

@@ -1,0 +1,5 @@
+scenario_id,scenario_name,upfront_capex_per_m2,demolition_cost_per_m2,annual_maintenance_per_m2,mep_replacement_pct,mep_capex_share_pct
+scenario_1,Baseline Counterfactual (Gas Replacement),420.0,0.0,14.50,1.00,0.40
+scenario_2,Deep Retrofit (Fabric First + ASHP R290),1450.0,35.0,18.20,0.80,0.35
+scenario_3,Standard New Build (Steel/Concrete + R32),2450.0,165.0,19.50,0.85,0.30
+scenario_4,Exemplar Low-Carbon New Build (CLT/GGBS + R290),2850.0,185.0,21.00,0.80,0.28

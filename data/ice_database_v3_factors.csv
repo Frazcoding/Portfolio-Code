@@ -1,0 +1,24 @@
+material_id,material_name,category,cradle_to_gate_ecf,unit,density_kg_per_m3,waste_rate,biogenic_carbon_factor,service_life_years,standard_source
+concrete_cemi,Substructure Concrete (CEM I C30/37),Substructure,0.158,kg,2400.0,0.05,0.0,60,ICE v3.0 Concrete (100% Portland)
+concrete_ggbs70,Substructure Concrete (70% GGBS C30/37),Substructure,0.052,kg,2400.0,0.05,0.0,60,ICE v3.0 Concrete / Eco-EPD
+structural_steel,Superstructure Structural Steel (S355),Superstructure,1.550,kg,7850.0,0.01,0.0,60,ICE v3.0 Steel UK Sections
+rebar,Reinforcing Steel (Rebar >95% Scrap),Superstructure,0.760,kg,7850.0,0.05,0.0,60,ICE v3.0 Bar & Rod
+clt_timber,Cross-Laminated Timber (CLT Slabs),Superstructure,0.280,kg,450.0,0.015,-1.640,60,EPD Stora Enso / ICE v3.0
+glulam_timber,Glulam Timber Beams and Columns,Superstructure,0.390,kg,550.0,0.02,-1.580,60,EPD Hasslacher / ICE v3.0
+composite_deck,Composite Metal Decking (0.9mm Steel),Superstructure,2.100,kg,7850.0,0.02,0.0,60,ICE v3.0 Steel Deck
+standard_double_glazing,Standard Double Glazing (6/16Ar/6 Low-E),Envelope,52.0,m2,2500.0,0.02,0.0,30,ICE v3.0 Glass Flat / Double Glazed
+triple_glazing_highperf,High-Performance Triple Glazing,Envelope,88.0,m2,2500.0,0.02,0.0,30,Verified Saint-Gobain EPD
+curtain_wall_aluminium,Curtain Wall Aluminium Framing (50% Recycled),Envelope,6.800,kg,2700.0,0.03,0.0,30,ICE v3.0 Aluminium Billet
+mineral_wool,Mineral Stone Wool Insulation,Envelope,1.280,kg,30.0,0.08,0.0,40,ICE v3.0 Insulation
+wood_fibre_insulation,Wood-Fibre Bio-Insulation,Envelope,0.310,kg,50.0,0.05,-1.100,40,Steico EPD
+plasterboard,Plasterboard Gypsum Lining (12.5mm),Finishes,0.390,kg,800.0,0.10,0.0,30,ICE v3.0 Plasterboard
+raised_floor,Raised Access Flooring System,Finishes,18.0,m2,1200.0,0.03,0.0,25,Kingspan EPD
+carpet_tiles,Carpet Tiles (Tufted Polyamide/Bitumen),Finishes,8.5,m2,1000.0,0.05,0.0,12,Interface EPD
+ceramic_screed,Floor Screed and Tiles,Finishes,0.180,kg,2100.0,0.05,0.0,30,ICE v3.0 Screed
+roof_membrane,EPDM Single-Ply Roof Membrane,Envelope,2.800,kg,1150.0,0.05,0.0,25,ICE v3.0 Polymers
+mep_chiller_baseline,Baseline Air-Cooled Chiller Unit,MEP,22.0,kW_th,0.0,0.0,0.0,15,CIBSE TM65 Basic
+mep_ashp_standard,Standard ASHP R32 Heat Pump,MEP,18.2,kW_th,0.0,0.0,0.0,15,CIBSE TM65 Mid-Level
+mep_ashp_r290,Commercial ASHP R290 (Propane),MEP,16.5,kW_th,0.0,0.0,0.0,15,CIBSE TM65 Mid-Level
+mep_mvhr_ahu,Mechanical Ventilation Heat Recovery AHU,MEP,12.0,m3_h,0.0,0.0,0.0,20,CIBSE TM65 Guide
+mep_distribution,MEP Pipework Ductwork & Distribution,MEP,28.0,m2_gia,0.0,0.0,0.0,30,CIBSE TM65 Guide
+solar_pv_array,Monocrystalline Rooftop Solar PV,MEP,620.0,kWp,0.0,0.0,0.0,25,CIBSE TM65 / EPD
