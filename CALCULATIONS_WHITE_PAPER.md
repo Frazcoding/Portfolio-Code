@@ -376,3 +376,4 @@ This table maps the theoretical formulas directly to the exact values produced b
 ## 11. Conclusion & Engineering Sign-Off
 
 The programmatic models in this repository strictly adhere to **EN 15978:2011**, **BS ISO 15686-5:2017**, and the **RICS 2nd Edition (2023)**. The calculations prove conclusively that retaining existing commercial building substructure and superstructure delivers an unassailable carbon and economic advantage over demolition and reconstruction across the UK's decarbonising grid horizon.
+
