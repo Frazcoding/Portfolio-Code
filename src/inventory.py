@@ -55,3 +55,4 @@ class BuildingInventory:
             "installed_capacity_kw": installed_capacity_kw,
             "initial_refrigerant_charge_kg": ref_charge_kg,
         }
+

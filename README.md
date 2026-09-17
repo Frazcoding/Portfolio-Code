@@ -155,3 +155,4 @@ jupyter notebook notebooks/whole_life_carbon_exploration.ipynb
 - **University of Bath**: *Inventory of Carbon and Energy (ICE Database v3.0)*.
 - **DESNZ (2024)**: *Green Book Supplementary Guidance: Valuation of energy use and greenhouse gas emissions for appraisal*.
 - **National Grid ESO**: *Future Energy Scenarios (FES) 2024: Leading the Way*.
+

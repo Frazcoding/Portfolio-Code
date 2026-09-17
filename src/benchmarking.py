@@ -86,3 +86,4 @@ class SustainabilityBenchmarkScorer:
         for sc_id, sc_cfg in SCENARIO_CONFIGS.items():
             scores[sc_id] = self.score_scenario(sc_cfg, carbon_results[sc_id])
         return scores
+

@@ -247,3 +247,4 @@ class WholeLifeCarbonEngine:
             if scen_cum[yr_idx] <= base_cum[yr_idx]:
                 return yr_idx + 1
         return None
+

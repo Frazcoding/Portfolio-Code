@@ -48,3 +48,4 @@ class GridDecarbonisationModel:
         if trajectory not in self.TRAJECTORY_MAP:
             raise KeyError(f"Unknown grid trajectory '{trajectory}'.")
         return self.df[self.TRAJECTORY_MAP[trajectory]]
+

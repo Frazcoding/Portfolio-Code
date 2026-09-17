@@ -56,3 +56,4 @@ class EmissionFactorDatabase:
         if clean_name not in self.REFRIGERANT_GWPS:
             raise KeyError(f"Refrigerant '{refrigerant_name}' not recognized in IPCC AR6 table.")
         return self.REFRIGERANT_GWPS[clean_name]
+

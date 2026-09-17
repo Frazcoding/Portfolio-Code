@@ -22,3 +22,4 @@ mep_ashp_r290,Commercial ASHP R290 (Propane),MEP,16.5,kW_th,0.0,0.0,0.0,15,CIBSE
 mep_mvhr_ahu,Mechanical Ventilation Heat Recovery AHU,MEP,12.0,m3_h,0.0,0.0,0.0,20,CIBSE TM65 Guide
 mep_distribution,MEP Pipework Ductwork & Distribution,MEP,28.0,m2_gia,0.0,0.0,0.0,30,CIBSE TM65 Guide
 solar_pv_array,Monocrystalline Rooftop Solar PV,MEP,620.0,kWp,0.0,0.0,0.0,25,CIBSE TM65 / EPD
+
