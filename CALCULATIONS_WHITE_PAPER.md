@@ -436,3 +436,4 @@ Comparison of historical feasibility spreadsheet (`Plantpost reqs.xlsx`) against
 ## 10. Conclusion & Engineering Sign-Off
 
 The dynamic simulation suite encapsulates the exact physics, geometry, and component behaviors of the Plantpost urban vertical green infrastructure post. The model validates the original UNIBO Incubator feasibility assertions while eliminating historical calculation artifacts, providing an auditable, patent-grade foundation for cleantech commercialization and municipal deployment.
+
