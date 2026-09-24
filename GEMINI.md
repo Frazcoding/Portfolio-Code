@@ -82,3 +82,33 @@ BEng-CEA-Heatpump/
    jupyter nbconvert --execute --inplace notebooks/*.ipynb
    ```
 
+---
+
+## 6. Strict Code & Visual Standards: OOP, Minimal Comments & `/grill-me`
+
+All code, scripts, analytical modules, and visual figures in this repository must strictly enforce the following standards:
+
+1. **Strict Object-Oriented Architecture**:
+   - All code must be class- and object-oriented. Thermodynamic cycle solvers, mass flow calculators, and weather ingestion routines must be encapsulated in explicit classes (`class`, dataclasses, modular methods).
+   - Loose procedural scripts, flat function collections, or monolithic calculation files are prohibited.
+
+2. **Minimal, High-Signal Comments**:
+   - Code must be clear, concise, and self-documenting through expressive variable and method naming.
+   - Zero redundant comments: Never write comments that merely rephrase what the code obviously does.
+   - Keep comments strictly minimal, reserved only for governing thermodynamic equations (e.g. mass/energy balances, COP definitions) or critical physical assumptions.
+
+3. **Clear and Concise Implementation**:
+   - Maintain lean, focused classes and methods with a high signal-to-noise ratio. Eliminate boilerplate and speculative abstractions.
+
+4. **Strict Publication-Grade Visual Standards**:
+   - **No In-Plot Annotations (Legend Only)**: Strictly legend only. No floating in-plot text annotations, callout arrows, or text labels inside the axes (`ax.annotate`, `ax.text`). All curve and dataset distinctions must be conveyed exclusively via the legend.
+   - **Legend Placement Below Graph**: The legend must strictly be positioned below the graph (outside the plot canvas, e.g., `loc='upper center'`, `bbox_to_anchor=(0.5, -0.15)` or `(0.5, -0.20)` with horizontal orientation/columns), ensuring zero obstruction of data.
+   - **Captions & Axis Labels**: Wording for captions and axis labels must be simple, direct, and concise, with explicit physical units enclosed in brackets on all axes (e.g. `Thermal Demand [kW]`, `Compressor Power [kW]`, `COP [-]`, `Cost [£]`).
+   - **Pure Black Fonts**: All typography across every figure (titles, axis labels, tick numbers, legend text) must strictly be pure black (`#000000` / `'black'`). No grey, light-toned, or faded text.
+   - **Mandatory True Visual Inspection**: Every generated figure must undergo a true visual inspection (inspecting the rendered image file) to ensure all data points, lines, tick marks, axes, and legends are completely visible, crisp, legible, and unclipped.
+
+5. **Interactive Alignment via `/grill-me`**:
+   - For ANY ambiguities, uncertainties, or design choices regarding how codes, simulation sweeps, or graphs should be generated, agents MUST trigger `/grill-me` (or interview the user via structured interactive questions) before making assumptions or writing speculative code.
+
+
+
