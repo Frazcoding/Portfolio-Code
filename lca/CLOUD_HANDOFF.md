@@ -36,3 +36,10 @@ The yield -15 % stress results and "DSCR year 1 1.23 / years 2+ 2.0" given earli
   cannot be rebuilt. Run it on the desktop.
 - BLOCKED on outside parties: an asset-finance quote and the Atradius premium (BP37d).
 - Not done: the Market/Design/Operations/Financials sections of the Doc and the old S0-S4 workbook still show the unlit case.
+
+## Goal session (2026-10-07, later): viable design end to end
+- Lead is now 8 ha lit cucumber (see HANDOFF top). All new numbers come from cloud physics runs on ERA5 open-data weather and
+  a proxy grid price shape; re-run on the desktop with the API inputs to confirm (commands in HANDOFF).
+- New modules: simcore/era5_open.py, simcore/grid_proxy.py, lca/staffing.py, bplan_viable.py, bplan_plan.py,
+  bplan_report_figures.py, PlanGrowth in bplan_growth.py, PlanWorkbook in bplan_workbook_lead.py; pepper in crop_gh/transp.
+- Path fix: greenhouse.py and sim/annual_sim.py looked for simcore one level above the repo.
