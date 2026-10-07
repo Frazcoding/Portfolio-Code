@@ -1,0 +1,486 @@
+{
+ "modules": {
+  "2.9 ha": {
+   "ha": 2.9,
+   "capex": 11453364.594865898,
+   "kg": 2698092.527416214,
+   "equity": 4343008.164035809,
+   "equity_irr": 0.21860023672590223,
+   "min_price": 1.2369677892624167,
+   "min_dscr_140": 1.5638077914300155
+  },
+  "4.4 ha": {
+   "ha": 4.4,
+   "capex": 15868970.749660367,
+   "kg": 4079502.948978329,
+   "equity": 5985218.860955205,
+   "equity_irr": 0.24743020502816393,
+   "min_price": 1.1936779112584186,
+   "min_dscr_140": 1.7031118311325144
+  },
+  "2.9 ha (same site)": {
+   "ha": 2.9,
+   "capex": 11044464.594865898,
+   "kg": 2698092.527416214,
+   "equity": 3934108.164035809,
+   "equity_irr": 0.23747887152461333,
+   "min_price": 1.2369677892624167,
+   "min_dscr_140": 1.5638077914300155
+  },
+  "4.4 ha (same site)": {
+   "ha": 4.4,
+   "capex": 15460070.749660365,
+   "kg": 4079502.948978329,
+   "equity": 5576318.860955203,
+   "equity_irr": 0.26302597631311786,
+   "min_price": 1.1936779112584186,
+   "min_dscr_140": 1.7031118311325144
+  }
+ },
+ "scenarios": [
+  {
+   "price": 1.3,
+   "yield_mult": 1.0,
+   "self_funded": true,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4343008.164035809,
+     "min_dscr": 1.3771828349530322
+    },
+    {
+     "year": 8,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.3771828349530322
+    },
+    {
+     "year": 12,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.3771828349530322
+    }
+   ],
+   "final_ha": 8.7,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 2.9,
+    "10": 5.8,
+    "15": 8.7
+   },
+   "outside_equity": 4343008.164035809,
+   "equity_irr": 0.1775721827089679,
+   "equity_npv_12": 4566201.388788441,
+   "cash_by_year_10": -1027690.0932474635,
+   "yield_case": "model 93 kg/m2"
+  },
+  {
+   "price": 1.3,
+   "yield_mult": 1.0,
+   "self_funded": false,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4343008.164035809,
+     "min_dscr": 1.3771828349530322
+    },
+    {
+     "year": 3,
+     "module": "4.4 ha (same site)",
+     "ha": 4.4,
+     "equity": 5576318.860955203,
+     "min_dscr": 1.5023156044327775
+    },
+    {
+     "year": 6,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.3771828349530322
+    }
+   ],
+   "final_ha": 10.200000000000001,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 7.300000000000001,
+    "8": 10.2,
+    "10": 10.2,
+    "15": 10.2
+   },
+   "outside_equity": 8229843.187598778,
+   "equity_irr": 0.18865470239875404,
+   "equity_npv_12": 7996753.649677319,
+   "cash_by_year_10": 2371895.565526217,
+   "yield_case": "model 93 kg/m2"
+  },
+  {
+   "price": 1.4,
+   "yield_mult": 1.0,
+   "self_funded": true,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4343008.164035809,
+     "min_dscr": 1.5638077914300155
+    },
+    {
+     "year": 6,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.5638077914300155
+    },
+    {
+     "year": 9,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.5638077914300155
+    }
+   ],
+   "final_ha": 8.7,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 5.8,
+    "10": 8.7,
+    "15": 8.7
+   },
+   "outside_equity": 4343008.164035809,
+   "equity_irr": 0.2241592138060634,
+   "equity_npv_12": 8902753.73185016,
+   "cash_by_year_10": 353818.6013874137,
+   "yield_case": "model 93 kg/m2"
+  },
+  {
+   "price": 1.4,
+   "yield_mult": 1.0,
+   "self_funded": false,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4343008.164035809,
+     "min_dscr": 1.5638077914300155
+    },
+    {
+     "year": 3,
+     "module": "4.4 ha (same site)",
+     "ha": 4.4,
+     "equity": 5576318.860955203,
+     "min_dscr": 1.7031118311325144
+    },
+    {
+     "year": 6,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.5638077914300155
+    }
+   ],
+   "final_ha": 10.200000000000001,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 7.300000000000001,
+    "8": 10.2,
+    "10": 10.2,
+    "15": 10.2
+   },
+   "outside_equity": 7442645.553325803,
+   "equity_irr": 0.23657782367142544,
+   "equity_npv_12": 13125911.547072956,
+   "cash_by_year_10": 7927619.117501002,
+   "yield_case": "model 93 kg/m2"
+  },
+  {
+   "price": 1.48,
+   "yield_mult": 1.0,
+   "self_funded": true,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4343008.164035809,
+     "min_dscr": 1.7433125187677734
+    },
+    {
+     "year": 5,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.7433125187677734
+    },
+    {
+     "year": 8,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.7433125187677734
+    }
+   ],
+   "final_ha": 8.7,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 5.8,
+    "10": 8.7,
+    "15": 8.7
+   },
+   "outside_equity": 4343008.164035809,
+   "equity_irr": 0.2629393209203993,
+   "equity_npv_12": 12532716.074906582,
+   "cash_by_year_10": 5539888.376590655,
+   "yield_case": "model 93 kg/m2"
+  },
+  {
+   "price": 1.48,
+   "yield_mult": 1.0,
+   "self_funded": false,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4343008.164035809,
+     "min_dscr": 1.7433125187677734
+    },
+    {
+     "year": 3,
+     "module": "4.4 ha (same site)",
+     "ha": 4.4,
+     "equity": 5576318.860955203,
+     "min_dscr": 1.8403484962109444
+    },
+    {
+     "year": 6,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3934108.164035809,
+     "min_dscr": 1.7433125187677734
+    }
+   ],
+   "final_ha": 10.200000000000001,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 7.300000000000001,
+    "8": 10.2,
+    "10": 10.2,
+    "15": 10.2
+   },
+   "outside_equity": 6812887.445907422,
+   "equity_irr": 0.2762366271199451,
+   "equity_npv_12": 17192380.498406544,
+   "cash_by_year_10": 12372197.959080834,
+   "yield_case": "model 93 kg/m2"
+  },
+  {
+   "price": 1.3,
+   "yield_mult": 0.85,
+   "self_funded": true,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4334453.271159841,
+     "min_dscr": 0.9616397591417607
+    }
+   ],
+   "final_ha": 2.9,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 2.9,
+    "10": 2.9,
+    "15": 2.9
+   },
+   "outside_equity": 4334453.271159841,
+   "equity_irr": 0.10117863247010328,
+   "equity_npv_12": -965532.2381230757,
+   "cash_by_year_10": -2080792.2295998367,
+   "yield_case": "lender case 79 kg/m2"
+  },
+  {
+   "price": 1.3,
+   "yield_mult": 0.85,
+   "self_funded": false,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4334453.271159841,
+     "min_dscr": 0.9616397591417607
+    }
+   ],
+   "final_ha": 2.9,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 2.9,
+    "10": 2.9,
+    "15": 2.9
+   },
+   "outside_equity": 4334453.271159841,
+   "equity_irr": 0.10117863247010328,
+   "equity_npv_12": -965532.2381230757,
+   "cash_by_year_10": -2080792.2295998367,
+   "yield_case": "lender case 79 kg/m2"
+  },
+  {
+   "price": 1.4,
+   "yield_mult": 0.85,
+   "self_funded": true,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4334453.271159841,
+     "min_dscr": 1.1837469774161866
+    }
+   ],
+   "final_ha": 2.9,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 2.9,
+    "10": 2.9,
+    "15": 2.9
+   },
+   "outside_equity": 4334453.271159841,
+   "equity_irr": 0.13583999603417307,
+   "equity_npv_12": 786609.1109603363,
+   "cash_by_year_10": -122956.27363741823,
+   "yield_case": "lender case 79 kg/m2"
+  },
+  {
+   "price": 1.4,
+   "yield_mult": 0.85,
+   "self_funded": false,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4334453.271159841,
+     "min_dscr": 1.1837469774161866
+    }
+   ],
+   "final_ha": 2.9,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 2.9,
+    "10": 2.9,
+    "15": 2.9
+   },
+   "outside_equity": 4334453.271159841,
+   "equity_irr": 0.13583999603417307,
+   "equity_npv_12": 786609.1109603363,
+   "cash_by_year_10": -122956.27363741823,
+   "yield_case": "lender case 79 kg/m2"
+  },
+  {
+   "price": 1.48,
+   "yield_mult": 0.85,
+   "self_funded": true,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4334453.271159841,
+     "min_dscr": 1.3521700867231128
+    },
+    {
+     "year": 8,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3925553.2711598407,
+     "min_dscr": 1.3521700867231128
+    },
+    {
+     "year": 12,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3925553.2711598407,
+     "min_dscr": 1.3521700867231128
+    }
+   ],
+   "final_ha": 8.7,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 2.9,
+    "8": 2.9,
+    "10": 5.8,
+    "15": 8.7
+   },
+   "outside_equity": 4334453.271159841,
+   "equity_irr": 0.16847113679029435,
+   "equity_npv_12": 3862837.771958052,
+   "cash_by_year_10": -1588831.4903490343,
+   "yield_case": "lender case 79 kg/m2"
+  },
+  {
+   "price": 1.48,
+   "yield_mult": 0.85,
+   "self_funded": false,
+   "steps": [
+    {
+     "year": 0,
+     "module": "2.9 ha",
+     "ha": 2.9,
+     "equity": 4334453.271159841,
+     "min_dscr": 1.3521700867231128
+    },
+    {
+     "year": 3,
+     "module": "4.4 ha (same site)",
+     "ha": 4.4,
+     "equity": 5563400.829611462,
+     "min_dscr": 1.4471341660868386
+    },
+    {
+     "year": 6,
+     "module": "2.9 ha (same site)",
+     "ha": 2.9,
+     "equity": 3925553.2711598407,
+     "min_dscr": 1.3521700867231128
+    }
+   ],
+   "final_ha": 10.200000000000001,
+   "area_operating_by_year": {
+    "3": 2.9,
+    "5": 7.300000000000001,
+    "8": 10.2,
+    "10": 10.2,
+    "15": 10.2
+   },
+   "outside_equity": 8372145.652153753,
+   "equity_irr": 0.1789850268695906,
+   "equity_npv_12": 6905807.939331324,
+   "cash_by_year_10": 1214863.275310694,
+   "yield_case": "lender case 79 kg/m2"
+  }
+ ],
+ "yield_gate": {
+  "1.24": 92.78241889821079,
+  "1.30": 88.00478755622055,
+  "1.35": 84.38381805767388,
+  "1.40": 81.04904359798076,
+  "1.45": 77.96782365274439,
+  "1.48": 76.22903622132685
+ }
+}
