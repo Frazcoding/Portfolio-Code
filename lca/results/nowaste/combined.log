@@ -1,0 +1,16 @@
+Track B best estimate = fast result per route + (LP-sized HP - standby) from the LP. GBP/kg (kg CO2e/kg); imports cuc 1.57 (0.81), tom 1.77 (1.30)
+-- 3.5%
+  cucumber Cameronbridge distille  HP 66% store 14.7 MWh  dHP -0.042 | grid 1.31 (0.80) | own_small 1.30 (0.75) | own_2p5MW 1.11 (0.40) | private_wire 1.14 (0.37)
+  cucumber Girvan + Ailsa Bay dis  HP 58% store 29.8 MWh  dHP -0.064 | grid 1.29 (0.77) | own_small 1.18 (0.51) | own_2p5MW 1.04 (0.32) | private_wire 1.12 (0.31)
+  cucumber North British distille  HP 60% store 22.2 MWh  dHP -0.062 | grid 1.52 (1.06) | own_small 1.47 (0.88) | own_2p5MW 1.20 (0.52) | private_wire 1.28 (0.48)
+  tomato   Girvan + Ailsa Bay dis  HP 46% store 12.4 MWh  dHP -0.117 | grid 1.44 (0.68) | own_small 1.40 (0.59) | own_2p5MW 1.27 (0.38) | private_wire 1.32 (0.36)
+  tomato   Cameronbridge distille  HP 50% store 20.9 MWh  dHP -0.079 | grid 1.52 (0.75) | own_small 1.51 (0.72) | own_2p5MW 1.37 (0.47) | private_wire 1.39 (0.42)
+  tomato   The Creamery, Commerce  HP 45% store  3.9 MWh  dHP -0.117 | grid 1.37 (0.62) | own_small 1.35 (0.58) | own_2p5MW 1.23 (0.36) | private_wire 1.27 (0.36)
+-- 8.0%
+  cucumber Cameronbridge distille  HP 66% store 14.7 MWh  dHP -0.042 | grid 1.53 (0.80) | own_small 1.53 (0.80) | own_2p5MW 1.37 (0.40) | private_wire 1.36 (0.37)
+  cucumber Girvan + Ailsa Bay dis  HP 58% store 29.8 MWh  dHP -0.064 | grid 1.51 (0.77) | own_small 1.46 (0.61) | own_2p5MW 1.30 (0.32) | private_wire 1.33 (0.31)
+  cucumber North British distille  HP 60% store 22.2 MWh  dHP -0.062 | grid 1.75 (1.06)* | own_small 1.74 (1.03)* | own_2p5MW 1.49 (0.52) | private_wire 1.51 (0.48)
+  tomato   Girvan + Ailsa Bay dis  HP 46% store 12.4 MWh  dHP -0.117 | grid 1.70 (0.68) | own_small 1.68 (0.63) | own_2p5MW 1.56 (0.38) | private_wire 1.58 (0.36)
+  tomato   Cameronbridge distille  HP 50% store 20.9 MWh  dHP -0.079 | grid 1.79 (0.75)* | own_small 1.79 (0.75)* | own_2p5MW 1.67 (0.47) | private_wire 1.66 (0.42)
+  tomato   The Creamery, Commerce  HP 45% store  3.9 MWh  dHP -0.117 | grid 1.61 (0.62) | own_small 1.60 (0.58) | own_2p5MW 1.49 (0.36) | private_wire 1.51 (0.36)
+* = above import price. At 8 % the HP saving is scaled x1.3 (capex annuity ratio, approximate).

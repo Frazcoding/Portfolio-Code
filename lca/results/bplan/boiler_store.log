@@ -1,0 +1,124 @@
+C:\Users\frase\AppData\Local\Programs\Python\Python314\Lib\site-packages\pypsa\network\io.py:2082: FutureWarning: pandas infers the `str` dtype for string data since its version 3.0. PyPSA still converts it back to numpy object dtype on import, but will keep it from PyPSA 2.0 on. Set `pypsa.options.api.legacy_string_dtype` explicitly to suppress this warning.
+  new_static = _coerce_string_dtypes(new_static)
+C:\Users\frase\AppData\Local\Programs\Python\Python314\Lib\site-packages\pypsa\network\io.py:2082: FutureWarning: pandas infers the `str` dtype for string data since its version 3.0. PyPSA still converts it back to numpy object dtype on import, but will keep it from PyPSA 2.0 on. Set `pypsa.options.api.legacy_string_dtype` explicitly to suppress this warning.
+  new_static = _coerce_string_dtypes(new_static)
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:142: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra)
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:142: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra)
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+INFO:linopy.io:Writing objective.
+INFO:linopy.io:Writing objective.
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/13 [00:00<?, ?it/s]Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/13 [00:00<?, ?it/s]Writing constraints.:  54%|[38;2;128;191;255m#####3    [0m| 7/13 [00:00<00:00, 57.90it/s]Writing constraints.:  54%|[38;2;128;191;255m#####3    [0m| 7/13 [00:00<00:00, 57.78it/s]Writing constraints.: 100%|[38;2;128;191;255m##########[0m| 13/13 [00:00<00:00, 43.22it/s]Writing constraints.: 100%|[38;2;128;191;255m##########[0m| 13/13 [00:00<00:00, 45.00it/s]
+Writing constraints.: 100%|[38;2;128;191;255m##########[0m| 13/13 [00:00<00:00, 43.13it/s]Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/6 [00:00<?, ?it/s]Writing constraints.: 100%|[38;2;128;191;255m##########[0m| 13/13 [00:00<00:00, 44.94it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/6 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m##########[0m| 6/6 [00:00<00:00, 176.26it/s]
+INFO:linopy.io: Writing time: 0.52s
+Writing continuous variables.: 100%|[38;2;128;191;255m##########[0m| 6/6 [00:00<00:00, 140.35it/s]
+INFO:linopy.io: Writing time: 0.5s
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 9.50e+04
+Solver: highs
+Runtime: 80.29s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:142: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra)
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+INFO:linopy.io:Writing objective.
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/13 [00:00<?, ?it/s]Writing constraints.:  31%|[38;2;128;191;255m###       [0m| 4/13 [00:00<00:00, 34.64it/s]Writing constraints.:  62%|[38;2;128;191;255m######1   [0m| 8/13 [00:00<00:00, 26.24it/s]Writing constraints.:  85%|[38;2;128;191;255m########4 [0m| 11/13 [00:00<00:00, 20.94it/s]Writing constraints.: 100%|[38;2;128;191;255m##########[0m| 13/13 [00:00<00:00, 23.98it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/6 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m##########[0m| 6/6 [00:00<00:00, 90.35it/s]
+INFO:linopy.io: Writing time: 0.68s
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 1.69e+05
+Solver: highs
+Runtime: 93.29s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 9.60e+04
+Solver: highs
+Runtime: 71.81s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:142: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra)
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+INFO:linopy.io:Writing objective.
+Writing constraints.:   0%|[38;2;128;191;255m          [0m| 0/13 [00:00<?, ?it/s]Writing constraints.:  62%|[38;2;128;191;255m######1   [0m| 8/13 [00:00<00:00, 62.88it/s]Writing constraints.: 100%|[38;2;128;191;255m##########[0m| 13/13 [00:00<00:00, 53.83it/s]
+Writing continuous variables.:   0%|[38;2;128;191;255m          [0m| 0/6 [00:00<?, ?it/s]Writing continuous variables.: 100%|[38;2;128;191;255m##########[0m| 6/6 [00:00<00:00, 235.48it/s]
+INFO:linopy.io: Writing time: 0.42s
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 9.63e+04
+Solver: highs
+Runtime: 33.93s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+S1 standby  GBP/kg 1.016 HP 457 kWth boiler 788 kWth store 4182 kWh (design 1246) boiler 99 MWh import 47 MWh peak 1038 kW
+S1 lp       GBP/kg 1.010 HP 482 kWth boiler 277 kWth store 4001 kWh (design 1246) boiler 77 MWh import 53 MWh peak 536 kW
+S2 standby  GBP/kg 0.967 HP 765 kWth boiler 1421 kWth store 13314 kWh (design 2186) boiler 181 MWh import 110 MWh peak 1860 kW
+S2 lp       GBP/kg 0.948 HP 816 kWth boiler 411 kWth store 15375 kWh (design 2186) boiler 123 MWh import 101 MWh peak 867 kW
+S3 standby  GBP/kg 1.059 HP 837 kWth boiler 1350 kWth store 11975 kWh (design 2186) boiler 66 MWh import 125 MWh peak 1827 kW
+S3 lp       GBP/kg 1.040 HP 874 kWth boiler 294 kWth store 12603 kWh (design 2186) boiler 53 MWh import 117 MWh peak 781 kW
+S4 standby  GBP/kg 1.081 HP 509 kWth boiler 737 kWth store 4079 kWh (design 1246) boiler 42 MWh import 64 MWh peak 1013 kW
+S4 lp       GBP/kg 1.044 HP 530 kWth boiler 165 kWth store 3946 kWh (design 1246) boiler 34 MWh import 67 MWh peak 448 kW

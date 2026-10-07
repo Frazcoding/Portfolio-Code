@@ -1,0 +1,8 @@
+central (retailer collects)    price 1.57  capex 9.90 M  opex 1.503 M (0.899/kg)  EBITDA 1.123 M  payback 9.4  NPV8 +1.72 M  IRR 9.8 %  ceiling10 1.636 M
+own haulage to RDC             price 1.57  capex 9.90 M  opex 1.580 M (0.945/kg)  EBITDA 1.046 M  payback 10.4  NPV8 +0.87 M  IRR 8.9 %  ceiling10 1.636 M
+risk: price -10 %              price 1.41  capex 9.90 M  opex 1.503 M (0.899/kg)  EBITDA 0.860 M  payback 12.6  NPV8 -1.19 M  IRR 6.7 %  ceiling10 1.373 M
+risk: yield -10 %              price 1.57  capex 9.90 M  opex 1.486 M (0.987/kg)  EBITDA 0.877 M  payback 12.3  NPV8 -1.00 M  IRR 6.9 %  ceiling10 1.373 M
+risk: capex +10 %              price 1.57  capex 10.89 M  opex 1.514 M (0.905/kg)  EBITDA 1.112 M  payback 10.7  NPV8 +0.55 M  IRR 8.5 %  ceiling10 1.537 M
+risk: PPA GBP 100/MWh          price 1.57  capex 9.90 M  opex 1.537 M (0.919/kg)  EBITDA 1.089 M  payback 9.9  NPV8 +1.34 M  IRR 9.4 %  ceiling10 1.636 M
+UK wholesale (DEFRA) price     price 1.17  capex 9.90 M  opex 1.601 M (0.957/kg)  EBITDA 0.360 M  payback None  NPV8 -6.72 M  IRR -0.7 %  ceiling10 0.971 M
+sale at GBP 1.00/kg            price 1.00  capex 9.90 M  opex 1.503 M (0.899/kg)  EBITDA 0.170 M  payback None  NPV8 -8.83 M  IRR -5.1 %  ceiling10 0.682 M

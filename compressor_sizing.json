@@ -1,0 +1,37 @@
+{
+  "basis": "Annual calibrated air-source CSV; 80 C sink + 5 K condenser pinch; white-paper eta_v map",
+  "rows_checked": 42023,
+  "candidate_rows_exact": 502,
+  "lp_peak": {
+    "hour": 43467,
+    "heat_kw": 254.67752380952382,
+    "evap_C": -12.8,
+    "p_evap_bar": 2.5900071782984244,
+    "p_int_bar": 10.926449224000589,
+    "p_cond_bar": 46.095352030297384,
+    "m_dot_lp_kg_s": 0.161826880728454,
+    "m_dot_hp_kg_s": 0.23685517811187853,
+    "lp_required_m3h": 326.2225578120077,
+    "hp_required_m3h": 151.11335571753744
+  },
+  "hp_peak": {
+    "hour": 43467,
+    "heat_kw": 254.67752380952382,
+    "evap_C": -12.8,
+    "p_evap_bar": 2.5900071782984244,
+    "p_int_bar": 10.926449224000589,
+    "p_cond_bar": 46.095352030297384,
+    "m_dot_lp_kg_s": 0.161826880728454,
+    "m_dot_hp_kg_s": 0.23685517811187853,
+    "lp_required_m3h": 326.2225578120077,
+    "hp_required_m3h": 151.11335571753744
+  },
+  "analogue": "Three 50 bar NH3 reciprocating cores, each nominal 193 m3/h: two LP, one HP",
+  "lp_installed_m3h": 386,
+  "hp_installed_m3h": 193,
+  "analogue_core_dimensions_m": [
+    0.84,
+    0.785,
+    0.685
+  ]
+}

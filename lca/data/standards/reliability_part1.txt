@@ -1,0 +1,1749 @@
+ 
+ 
+ 
+ 
+Background Report 
+Reliability Part 1  
+ 
+to EN 13031-1: 2019  
+Commercial Production Greenhouses  
+ 
+ 
+ 
+ 
+Figure 1 (Photo KTBL): Roof Structure of a Commercial Production Greenhouse 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Authors: 
+Dr.-Ing. I. Pertermann, IB Puthli, Schüttorf  
+Prof. Dr.-Ing. R. Puthli, KIT Karlsruhe                         February 8th, 2022 
+
+ 
+ 
+2 
+Table of content 
+ 
+1. Classification of Greenhouses …………………………………..………..… 3 
+2. Partial Factors for Actions – Uncertainties ……………………………….. 5 
+3. Partial Factors – Variable Actions ………..………………………..…….... 6 
+3.1 Definitions ……………………………………………………………..… 6 
+3.2 Target Value for the Characteristic Level ………………………….……. 7 
+3.3 Review of the Target Values for the Design Level ……………………… 8 
+3.3.1 Reliability Basis …………………………………………………..... 8 
+3.3.2 Annual Target ………………………………………………..…….. 9  
+3.3.3 Lifetime Target ….………………………………..…………….… 11 
+3.3.4 Conclusions for EN 13031-1 ……………………………….…..….13 
+4. Calibration methods for the Partial Factors …………………………….. 14 
+4.1 Basic Principles …………………………………………………..…..… 14 
+4.2 Calibration based on Annual Target, Gumbel Distribution …………..…14 
+4.3 Influence of the type of distribution ………………………………….… 17 
+4.4 Calibration based on Lifetime Targets, Gumbel Distribution ………..… 19 
+4.5 Conclusion and Summery …………………………………………….… 23 
+5. Combination Factors for variable loads …………………….………….... 24 
+5.1 General and time-invariant load combinations ……….…..…………….. 24 
+5.2 Combination of time-variant variable loads ……………………...…….. 26 
+6. Force Importance Factors KFI (Consequence factor kF) ………….…….. 28  
+7. Partial factor and reduction factor for Permanent Actions …………..... 31 
+8. Importance Factor for Accidental Actions, Exceptional Snow and 
+Earthquake ……………………………………………………………..…. 34 
+9. Summary of the Regulations for EN 13031-1 ………………………...…. 34 
+References ………………………………………………………………….…. 35 
+ 
+Pretext 
+In comparison to earlier reliability background reports for the drafting of prEN 13031-1, this report 
+includes literature sources about further developments towards the second generation of the 
+Eurocode. The aim is, to show, which developments may concern the Euronorm EN 13031-1: 
+2019.  
+ 
+ 
+3 
+Classification and 
+Calibration of Consequence Factors KFI 
+for the Consequence Classes of Greenhouses 
+ 
+1. Classification of greenhouses 
+ 
+Greenhouses exist in a variety of different categories, shapes and sizes. They can be used for the 
+sheltering of growing plants for the cultivation in warm climates, where no additional heating and 
+not much other technical equipment are required (low-tech greenhouse). On the other end, high-
+tech greenhouses for the cultivation of plants in colder and darker climates may require additional 
+heating, ventilation, shading, lighting, irrigation, fertilization and other measures to enable crops to 
+grow sufficiently for a commercial use.  
+Parts of this technical equipment may also be used in greenhouses open to the public for the sale 
+and / or display of cultivated plants (retail greenhouses, greenhouses in botanical gardens).  
+Depending on the category, type and use greenhouses can be classified as shown in Table 1.  
+Greenhouse Type 
+(according to  
+cladding tolerance  
+to frame displacement)  
+Greenhouse Category 
+Greenhouse open to public c Commercial Production Greenhouse d 
+Greenhouse Class 
+Design Working Life nd in years 
+50 years 30 years 15 years 10 years 5 years 
+Type A a A50 A30 A15 e - - 
+Type B b  - - B15 B10 f B5 g 
+Consequence Class CC2 CC1 CC0 
+a Cladding system is not tolerant to frame displacement, e.g. glass or stiff plastic sheets with glazing bars of 
+aluminium and gutter, ridge or purlins of aluminium or steel on a steel frame. ULS and SLS checks required. b Cladding system is tolerant to frame displacement, e.g. plastic film. Only ULS check required. c Retail Greenhouses and other greenhouses for sale and / or display of plants with public access, e.g. in botanical 
+gardens or exhibitions, should be designed for a reference period of 50 years, as buildings with comparable use and 
+occupation. Nonetheless the cladding can have a design working life of 30 years.    d In Commercial Production Greenhouses for the professional cultivation of plants the human occupancy is restricted 
+to low levels of authorized personnel. For different types of greenhouses, the design working life is optimized 
+between 15 years and 5 years as follows:   e Commercial Production Greenhouses with a cladding of glass should have a design working life of at least 15 years. f Commercial Production Greenhouses with expensive crops and / or equipment should have a design working life of 
+at least 10 years. Technical areas of greenhouses B10 should be designed for a reference period of at least 15 years.   g A design working life of 5 years may only be used for structures with a limited service life, such as small tunnels, 
+shade halls, fruit canopies etc. 
+Table 1: Greenhouse classification according to EN 13031 
+However, if a greenhouse-type structure is not used primarily for the growth of plants, as for 
+example in the conservatory of a private home, the atrium of a public building or the glasshouse in 
+the zoological garden, it is not a greenhouse. These buildings serve primarily the wellbeing of 
+humans or animals. Plants may or may not be present as well. 
+Crops can also be cultivated in production facilities without transparent cladding using artificial 
+light only. These facilities are also not greenhouses.  
+In the classification there are also no greenhouses for the private use in garden or house (mini-
+greenhouse, hobby-greenhouse), because the building law does normally not cover them. 
+ 
+ 
+4 
+Definition of greenhouses in EN 13031:  
+“Greenhouse: Building structure that optimizes solar radiation transmission used for plants 
+requiring regulated climatic conditions.”  
+“Commercial production greenhouse: Greenhouse for professional production and/or protection 
+of plants and crops, where human occupancy is restricted to low levels of authorized personnel. 
+Other persons shall be accompanied by authorized personal.” 
+The technical equipment of greenhouses can be placed in the greenhouse building (technical area) 
+or in an annex to the building. Such an annex can be treated as part of the greenhouse, if it shares 
+the same restrictions concerning the occupancy and public access. Applications are the heating, 
+water supply e.g. in reservoirs, storages, control room and many other facilities. 
+The categories of greenhouse structures according to EN 13031 in Table 1 belong to different 
+consequence classes according to EN 1990. Retail greenhouses belong to the same consequence 
+class as other single-story retail facilities, at least to CC2. For the many classes of commercial 
+production greenhouses CC1 is not sufficient. CC1 is certainly suitable for high-tech, glass-covered 
+greenhouses A15. However, greenhouses with plastic film B10 and B5 are not covered by the 
+Eurocode and can be designated to a newly defined Consequence Class CC0, see Table 2.   
+Consequence Classes 
+Target for n = 50 years Annual Targets 
+Reliability 
+Index 
+Failure 
+Probability 
+Reliability 
+Index 
+Failure 
+Probability 
+CC Typical Examples bT,50 pf,T,50 bT,1 pf,T,1 
+4 Hazardous facilities; structures for 
+post-disaster function 4,9 (4,892) 5 ∙10-7 5,6 (5,612) 10-8 
+3 Concert hall, high rise building 
+(large number of people) 4,3 (4,417) 5 ∙10-6 5,2 (5,199) 10-7 
+2 Residential, public, offices 3,8 (3,891) 5 ∙10-5 4,7 (4,753) 10-6 
+1 Agricultural structures, small 
+storage buildings (low occupancy)  3,3 (3,291) 5 ∙10-4 4,2 (4,265) 10-5 
+0b Consequences can be neglected 2,6 (2,576) 5 ∙10-3 3,7 (3,719) 10-4 
+0a No Consequences 1,6 (1,645) 5 ∙10-2 3,1 (3,090) 10-3 
+Notes: The failure probability pf refers to the whole design process, not to the action side alone. All values are targets 
+(Index T). For the reliability index bT the standard values according to EN 1990 are given (in blue), as well as the 
+exact values (in brackets) as they would result from the ideal failure probabilities using: bT = -F-1(pf,T) = F-1(1-pf,T). 
+The new values (in green) are chosen according to the ideal pf. It should be noted that the reference values of the 
+reliability index for CC2 and CC3 (bT,50 = 3,8 and 4,3) are a little too small.  
+Table 2: Target values of failure probability and the related reliability index according to EN 1990 
+with extension by two classes according to ISO 2394 
+Plastic film covered greenhouses are situated in closed and protected areas that are not accessible to 
+the public. Use, maintenance and repair are carried out by trained and skilled technical staff and 
+excluded during design relevant events such as storms or snowfall. These criteria do also apply to 
+greenhouses in CC1. However, the pre-stressed plastic film has large plastic reserves and can hold 
+the substructure together. Local loads can be distributed better. Also, the collapse of individual 
+components or even a total collapse of the structural system poses a smaller, negligible danger to 
+persons, because of the smaller weight. The removal or repair/rebuilding of a damaged greenhouse 
+is not that complicated, unlike the removal of broken glass.  
+ 
+ 
+ 
+5 
+The high-tech commercial production greenhouses, covered by EN 13031-1: 2001 now, are 
+assigned to Consequences Class CC1 and a design working life of 15 years (A15 and B15). 
+However, most low-tech greenhouses are plastic film tunnels and polytunnels with a design 
+working live of 5 to 10 years, also shad e houses, fruit cages or movable canopies. They are 
+assigned to a safety level well below Consequences Class CC1 of the Eurocode because of 
+negligible risks or dangers to humans and negligible economic, social or environmental 
+consequences of failure. They are therefore not covered by the three-level-system of the Eurocode 
+according to EN 1990, Annex B, Tables B.1 and B.2, see the grey-blue shaded centre rows in 
+Table 2. It is expected that the current 3-class system in EN 1990 will be extended to the 5 classes 
+shown in Table 2. For earthquake loads according to EN 1998 a 4-class system with a higher 
+importance class IC4 exists already. The post-disaster class IC4 could be expressed in a higher 
+consequence class CC4 for other loads than earthquake. In the drafted new Eurocode for glass a 
+lower consequence class CC0 is introduced, see JRC Guidance for European Structural Design of 
+Glass Components (2014). This has already been outlined for so -called “infill panels” (“not 
+covered by the Eurocode”) in prEN 16612: 2019. The ISO 2396 with its four-level-system could 
+also provide a suitable safety class for such structures for a fifth class below CC1.    
+ 
+2. Partial Factors for actions - Uncertainties 
+ 
+Uncertainties of actions and action effects on the structure are considered by enlarging the 
+representative action value by a partial factor gF. The partial factors gF cover usually also model 
+uncertainties, e.g for the action side with:  
+gF = gSd ∙ gf 
+For the action effects in greenhouses, special load models are not specified. Model uncertainties 
+due to the estimation the ground snow loads, or basic wind loads, should be covered within the 
+characteristic values itself (by calibration). Uncertainties in connection with the calculation of the 
+action effect on the structure (model uncertainties) are covered within the specified coefficients 
+itself, by defining it far on the safe side. This is not a full probabilistic approach yet. However, in 
+case of a probabilistic consideration, the specified action effects on the structure would exhibit a 
+strong bias towards a conservative approach, so that variations can be covered.  
+For roof snow actions for example, this principle can be demonstrated assuming a remaining 
+coefficient of variation of the model uncertainties of Vq,E = 0,26 together with the bias of the 
+characteristic roof snow action effect of µq,E = 0,81 (Croce et al., 2020). These model uncertainties 
+are based on 1300 roof snow load measurements in Norway (Høibø, 1988). They cover the shape 
+coefficient µ for flat and saddle roofs (> 900 cold roofs with rough cladding) including the 
+exposure coefficient Ce. 
+According to Jacinto et al. (2020), assuming a lognormal distribution for the model 
+uncertainties, which are not dominating (aE = -0,28 and b = 3,8 for CC2) in comparison to the 
+variation of the ground snow load, the partial factor for the model uncertainties of roof snow loads 
+would result in: 
+gSd = µq,E / (1 + Vq,E2)0,5 ∙ exp (-aE ∙ b ∙ (ln(1+Vq,E2))0,5) 
+gSd = 0,81 / 1,033247 ∙ e0,2721286 = 0,81 ∙ 1,2705 = 1,029 ≈ 1 
+ 
+ 
+6 
+The thermal coefficient Ct according to ISO 4355, Annex D is based on Norwegian meteorological 
+data records together with the evaluation of a thermodynamic roof snow model with melting 
+conditions at the bottom (Sandvik, 1988). One year later the model has also been evaluated for the 
+snow climate in Sweden (Dalberg et al., 1988). In both evaluations the ratio of calculated values 
+Ct,m remain below 80 % of the Ct values according to ISO 4355, Annex D (Pertermann et al., 
+2012). The Ct-value according to ISO 4355, Annex D is far on the safe side, if the limitations 
+concerning its application according to EN 13031-1 are observed, e.g. temperature range and 
+heating, heat transfer coefficient, maximum ground snow load and the minimum roof snow load 
+after melting as a robustness limit.  
+Furthermore, for roof structures as shown in Figure 1, there are large hidden reserves due to 
+sliding and drifting of roof snow on the very smooth cladding of glass or plastic film, which are 
+covered not at all by the Eurocode (Background Report to EN 13031-1: 2019, Annex C, Part I: 
+Melting and Part II-0: Sliding and Drift). 
+For wind loads, the bias must be even larger because of the larger number of coefficients, such as 
+force coefficient, pressure coefficient (external, internal, local, global), friction coefficient, 
+correlation coefficient, gust size factor, directional factor, seasonal factor, roughness factor, 
+orography factor, terrain factor, ground roughness etc. These coefficients are known to be very 
+conservative and are usually applied with caution or not at all by the designer. There are hidden 
+reserves not covered by the Eurocode due to a very smooth cladding (glass or plastic film) and the 
+flexibility of plastic film.  
+→ With further model uncertainties covered by gSd ≈ 1, the partial factor becomes gF = gf. This can 
+be assumed as far as no other values for gSd are defined in the Eurocode or related NAD*.  
+→ Model uncertainties would depend on the type of action. However, based on the effect on the 
+design, this is a minor problem in comparison to the influence of the calculation methods in 
+connection with the large variations of the climatic loads in Europe. 
+Note: * NAD – National application documents. This can be a National Annex to the Eurocode or 
+any other relevant regulation of the Building Authority. 
+The partial safety factor gF is related to the consequence classes. Design relevant combinations of 
+actions (persistent and transient design situations) are very often dominated by the variable actions 
+(Q), such as wind and snow, not by permanent actions (G) due to dead weight and installations. 
+Greenhouses are lightweight structures, see Figure 1.  
+ 
+3. Partial Factors – Variable Actions 
+3.1 Definition 
+ 
+For greenhouse roof structures two variable actions are of interest, snow and wind loads. For the 
+time-variant part of these variable actions (Q), which are also climatic actions, at a location directly 
+measured or calculated values (e.g. snow heights (SH) or snow water equivalents (SWE)), are used 
+to estimate representative characteristic values of these actions. With the characteristic value Qk 
+and the design value Qd of a climatic action the partial factor gF,Q can be written in a general form: 
+  gF,Q = Qd / Qk      
+ 
+ 
+7 
+If the series of meteorological data (sample) follow a Gumbel distribution, the characteristic 
+value Qk and the design value Qd are determined as follows: 
+Qk = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-Pn)) }) 
+  Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-Pd)) }) 
+          Where:  µ is the mean value of the data series µ = 1/n · S (SHi or SWEi) 
+  s is the standard deviation of the data series s = 1/(n -1) · S ((SHi or SWEi) - µ)2  
+  V  is the coefficient of variation of the sample V = µ/s   
+  Pn is the annual probability of exceedance with the approximation Pn ≈ 1/n 
+  Pd is the target value for the exceedance probability on the design level Pd,1 ≈ 1/Td,1 
+  Td,1 is the target value of the return period for the design level 
+Such a simple calculation requires, that the mean value, the coefficient of variation, the probability 
+of exceedance on the characteristic level and the design level refer to the same reference period.  
+Note: If there is a lognormal distribution of the data series (sample), the characteristic value Qk 
+and the design value Qd are determined as follows: 
+  Qk = µ / (1 + V2)0,5 ∙ exp [ B ∙ { F-1(1-Pn) } ]    
+Qd = µ / (1 + V2)0,5 ∙ exp [ B ∙ { F-1(1-Pd) } ]  
+ Where: exp is the potential function with the basis e with exp [x] = e[x]  
+  B  is the shape parameter for the lognormal distribution B = (ln(1 + V2))0,5 
+  F-1 is the inverse cumulative standard normal distribution (or the quantile value) 
+  with: µ, s, V, Pn, Pd und Td,1 as for the Gumbel distribution 
+For these two probability distributions in EN 13031-1, equations for the adjustment factor fs(n) for 
+the characteristic snow load are given. Therefore, they are shown here. For wind loads, only the 
+adjustment factor fw(n) for the Gumbel distribution is given. For other distributions the expressions 
+would be different. A good introduction into the calibration of partial factors fo r different 
+probability distribution, targets and types of actions is given by Jacinto et al. 2020.  
+3.2 Target value for the characteristic level 
+Target values for variable actions are only given directly on the characteristic level. According to 
+EN 1990, 4.1.2 (7) P Note 2 the characteristic value of climatic actions is based upon the annual 
+probability of Pk,1 ≈ 1/50 = 0,02. This target applies to the consequence class CC2 and normal 
+structures designed for a reference period of n = 50 years.  
+“The characteristic value of climatic actions is based upon the probability of 0,02 of its time-
+varying part being exceeded for a reference period of one year. This is equivalent to a mean 
+return period of 50 years for the time-varying part. However, in some cases the character of the 
+action and/or the selected design situation makes another fractile and/or return period more 
+appropriate.”  
+If the characteristic action value Qk remains constant, accumulated over a design working life of n 
+= 50 years, the probability of exceeding this characteristic action value Pn,50 is rising. Up to which 
+value the exceedance probability is rising, can be calculated quite differently using nothing else, 
+but the advice given in EN 1990: 
+• Simple accumulation (deterministic): Pk,50 = n ∙ Pk,1 = 50 ∙ 0,02 = 1 
+• Cumulative Density Function (CDF) of a Discrete Geometric Distribution (DGD) of n 
+independent Bernoulli trials: Pk,50 = 1 - (1 - Pk,1)n  
+Pk,50 = 1 - (1 - 0,02)n = 1 - (0,98)50 = 1 - 0,36417 = 0,63583 
+ 
+ 
+8 
+For a comparison, the conversion F (bn) = (F (b1))n according to EN 1990 using the Cumulative 
+Density Function (CFD) of the Standard Normal Distribution (SND) delivers:  
+b1 = -F-1(Pk,1) using the characteristic target Pk,1 = 0,02 gives: bk,1 = 2,05375 
+F (bn) = ( F (b1) )50 using F (bk,1) = 0,98 gives: F (bk,50) = 0,9850 = 0,364 (survival) 
+Pk,50 = 1 - F (bk,50) = 1 - 0,364 = 0,63583 (failure) with bk,50 = -0,3473354 < 0 
+Note: Because the probability Pk,50 for n = 50 years is larger than 0,5, the reliability index b of the 
+SND is negative. This can lead to problems within further calculations!  
+In general the relation between failure probability Pn, reference period n and return period TR is 
+calculated using TR = 1/(1 - (1-Pf,n)1/n) ≈ - n / ln(1 - Pn) ≈ n / Pn. In reverse this means:  
+Pn = 1 - exp(-n/TR,k)  for TR,k - return period (Target) TR,k = 50 years  
+   Pk,1 = 1 - exp(-1/50) = 1 - 0,9801987 = 0,0198 ≈ 1/50 = 0,02 
+Pk,50 = 1 - exp(-50/50) = 1 - 0,3678 = 0,63212 << 50/50 = 1 
+In contrast to the accumulation this exponential distribution works well for small values of the 
+design working life. Therefore, it is used in EN 13031-1 for the calculation of the exceedance 
+probability for the characteristic action values. Also, it allows to simplify the equations of the 
+Gumbel and lognormal distributions, see Part 2 of this reliability report. 
+3.3 Review of the Target values for the design level 
+3.3.1 Reliability Basis 
+Target values for the exceedance probability of actions on the design level are NOT given in EN 
+1990 but have to be estimated based on the failure reliability targets for the whole structure 
+according to Table 2. This method is not satisfactory, because the calculation is lengthy and the 
+advice according to EN 1990 can be and has been interpreted quite different by different users. 
+This could be avoided simply by giving target values for the probability of exceedance for actions 
+directly as done for example in ISO 4354: 2009 for wind actions, see Table 3.  
+Importance Level Target Values for the Design and Wind Action 
+IL Type of Structure 
+Reliability 
+Index 
+Probability of 
+Failure 
+Annual Probability 
+of Exceedance  
+bT,n pf,T,n 1 : TR,T,d,1 
+4 Required for post-disaster recovery; 
+hazardous facilities  4,2 (4,265) 10-5 1 : 2000 
+3 Large number of people; high risk 3,7 (3,719) 10-4 1 : 1000 
+2 Normal occupancy 3,1 (3,090) 10-3 1 : 500 
+1 Low hazard to people and property 2,3 (2,326) 10-2 1 : 200 
+0 Hazard can be neglected 1,3 (1,282) 10-1 1 : 100 
+Note: The failure probability pf,T,n = F(-bT,n) refers to the reliability for the design under wind action. It is a lifetime 
+target value, not restricted to n = 50 years. The probability of failure remains constant for different reference periods, 
+as it should be. Instead of an annual target for the design, the annual probability of exceedances for the wind action, 
+expressed in terms of the return period, is given. It applies for each year of the design working life.   
+Table 3: Target values of failure probabilities and reliability index (lifetime) and annual 
+probability of exceedance with return period for wind actions according to ISO 4354: 2009 
+In contrast to such easy and clear targets EN 1990 suggests beside a full probabilistic method 
+(Level III) the estimation based on the target reliability index b, using FORM (Level II: First Order 
+ 
+ 
+9 
+Reliability Method) with standardized sensitivity factors a. This method is based on ISO 2394: 
+1989, Annex E. The problem is that there are two targets. 
+According to EN 1990, Annex C and FORM, the failure probability pf = F(-b) can be calculated 
+with the cumulative density function (CDF) of the standard normal distribution (SND) F. The SND 
+is a symmetric, continuous function with its location (modal value = median value = mean value) at 
+µ = 0 and the scale (standard deviation = square of the variance) at s = 1. Only the small “fractile” 
+area under its tail is used for the estimation of pf. It is also used as an approximation for other 
+distributions with different tails and does not always fit well, especially for larger pf. If the failure 
+probability is pf = F(-bT), for avoiding failure (survival) applies: (1 - pf) = 1 - F(-bT) = F(bT).  
+Introducing a sensitivity factor aE into the expression for (1 - pf) delivers the non-exceedance 
+probability of the action (1 - Pd). The sensitivity factor for the action side aE = -0,7 is a negative 
+value, therefore: (1 - Pd) = F(-aE ∙ bT). The exceedance probability is Pd = F(aE ∙ bT).  
+For a Gumbel distribution with the parameter µ and V the design value Qd can be expressed using 
+the target value for the non-exceedance probability (1 - Pd) or the target reliability index bT directly 
+(FORM):  
+Qd = gF,Q ∙ Qk = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (F(-aE ∙ bT))) }) 
+         Where:  bT  is the target value of the reliability index: bT = -F-1(pf) = F-1(1 - pf) 
+  Pd is the exceedance probability for the design value of the action 
+aE is the sensitivity factor for the action side: aE = -0,7 
+F         is the cumulative distribution function of the standard normal distribution 
+            with the failure probability pf = F(-bT) = 1 - F(bT) 
+For a Lognormal distribution with the parameters µ and V the design value Qd can be expressed 
+using the target value for the non-exceedance probability (1 - Pd) or the target reliability index bT 
+directly (FORM): 
+Qd = gF,Q ∙ Qk = µ / (1 + V2)0,5 ∙ exp [ -aE ∙ bT ∙ ln(1 + V2))0,5 ] 
+Where:  bT  is the target value of the reliability index: bT = -F-1(pf) = F-1(1 - pf) 
+   Pd is the exceedance probability for the design value of the action 
+aE is the sensitivity factor for the action side: aE = -0,7 
+F-1      is the inverse cumulative standard normal distribution (fractile value) 
+At the center of FORM is the sensitivity factor aE = -0,7.  It allows to separate the action and the 
+resistance side. It can be used within a wide range of uncertainties: 0,16 < sE/sR < 7,6. If the 
+uncertainties on the action side are too large (sE/sR > 7,6): aE = -1. The factor itself is on the safe 
+side, because together with the sensitivity factor for the resistance side aR = 0,8, for the design 
+results: (-0,7)2 + 0,82 = 1,13 >, 1, providing some reserve for the design in total. 
+3.3.2 Annual Target 
+Using the given annual target value for the reliability index bT,1 = 4,7 and the sensitivity factor aE 
+= -0,7, the probability of exceedance related to the design level of CC2 is according to FORM:  
+  Pf,T,1,d = F(aE ∙ bT,1) = F(-0,7 ∙ 4,7) =  F(-3,29) = 5,009 ∙10-4 ≈  5 ∙10-4.  
+ 
+ 
+10 
+This is the annual value. The return period would be: TR,d,1 ≈ 1/Pf,T,1,d = 1996 ≈ 2000 years. It 
+refers to importance level IL IV according to ISO 4354: 2009 (Table 3) for wind loads for 
+hazardous facilities and post-disaster functions and is quite large.  
+For a high risk and a large number of people, IL III and TR,d,1 = 1/Pf,T,1,d = 1000 years would be 
+sufficient. It would lead to Pf,T,1,d = 10-3 and bT,1 = -F-1(10-3) / 0,7 = 4,4146. 
+Would the calculation be based on the ideal values of the failure probability of pf,T,1 = 10-6 and the 
+resulting correct reliability index bT,1 = 4,7534… instead on the given, rounded values for the 
+reliability index, the result would differ and lead to TR,d,1 ≈ 1/Pf,T,1,d = 2282 years. 
+  Pf,T,1,d = F(aE ∙ bT,1) = F(-0,7 ∙ 4,7534) =  F(-3,274) = 4,383 ∙10-4. 
+→ The given values for the reliability index in EN 1990 are not precise, the estimation of the return 
+period is only an approximation. The influence on the results remains small (up to +14% for the 
+return period). Despite of that, they can be used, because they are well-established target values 
+known for decades.  
+EN 1990, C.6 (1) Note 2 implies that failure probabilities can be accumulated using: F(bn) = 
+(F(b1))n, an accumulation using the CDF of the SND. This can be expressed as: F(bn) = 1 - pf,n = 
+(1 - pf,1)n with: pf,n = 1 - (1 - pf,1)n. Using this equation, the annual probability of exceedance based 
+on bT,1 = 4,7 can be accumulated, here for n = 50 years: 
+  Pf,T,n,d = 1 - (1 - Pf,T,1,d)n = 1 - (1 - 5,009369 ∙ 10-4)50 = 1 - 0,99949950 = 0,975258  
+Pf,T,n,d = 1 - 0,975258 = 2,47419 ∙ 10-2 ≈  0,025.  
+This value seems large. However, it applies for a time period of n = 50 years. Divided equally over 
+the time period, the annual value for the return period can be approximated as follows:  
+TR,d,1 ≈ 1 / (Pf,T,n,d / 50)  = n / PTf,n,d = 50 / 0,0247419 =  2021 years > 1996 years 
+TR,d,1 = - n / ln (1 - Pf,T,n,d)  = -50 / ln(0,9752581) =  1995,76 years ≈ 1996 years 
+The approximated annual value is larger than at the starting point at Td,1 = 1996 years. However, 
+this is not a safety problem, but a problem with simplified calculations and limitations for the 
+formulae for different probabilities. The more calculation steps, the larger the unintended error. 
+Calculations with reliability values using b resulting from an accumulation may lead to very 
+different results if not used properly. The methods given in EN 1990 are obviously not to be taken 
+arbitrary. Pf = F(-b) as CDF of the SND (standard normal distribution) is continuous with a 
+maximum of Pf = F(0) = 0,5 in the middle. Other distributions are not symmetrical and may have 
+other maxima out of the median and mean value. The accumulation however represents a discrete 
+distribution with a maximum of up to Pf = 1 at the end, not in the middle. The failure probability 
+results from a CDF of a geometric distribution of results of n independent Bernoulli trials. It is a 
+special case of a discrete binominal distribution. By using discrete and continuous functions 
+together, continuity errors are made. The accumulation of probabilities calculated using the CDF of 
+the SND can lead to large total errors. 
+→ The CDF of the SND should not be mixed with other distributions, such as Gumbel or with a 
+discrete accumulation. For larger probabilities, continuity errors cannot be neglected any more. 
+Calculations should rather be based on the probabilities directly, avoiding the reliability index.   
+ 
+ 
+11 
+More important is, that annual targets and lifetime targets aim at different purposes and need to 
+be applied differently. Whereas the annual target serves the protection of human safety 
+requirements, the lifetime target is the result of an economical optimization, see ISO 2394. The 
+annual target applies to every single year during the design working life of a structure. Therefore, 
+the exceedance probability for such a target value rises with the time. But this is not relevant, 
+because the target value applies to single years, not the design working life.  
+The lifetime target remains the same, independent from the design working life of a structure, be it 
+nd = 50 years for usual structures or nd = 15 years for greenhouses Type A15 and B15. The 
+exceedance probability should not change with the design working life of a certain structure. 
+However, broken down to the annual level and assumed to be equally distributed over a certain 
+lifetime, it changes too, as shown in Table 5.  
+Applying the annual target value of bT,n = 4,7 to other reference periods would lead to a different 
+exceedance probability during the design working life, see Table 4.  
+No. 
+Design working 
+life 
+Annual exceedance 
+probability Target 
+Exceedance probability for 
+the design working life 
+Reliability 
+index design 
+n in years Pf,1  Pf,n bn 
+1 50 
+5 ∙ 10-4 
+ 
+2,474 ∙ 10-2 2,8 
+2 30 1,492 ∙ 10-2 3,1 
+3 25 1,245 ∙ 10-2 3,2 
+4 20 9,971 ∙ 10-3 3,3 
+5 15 7,488 ∙ 10-3 3,5 
+6 10 4,998 ∙ 10-3 3,7 
+7 5 2,502 ∙ 10-3 4,0 
+8 1 5,009 ∙ 10-4 4,7 
+Note: The annual Target according to EN 1990 for CC2 is based on b1 = 4,7. Using FORM (aE = -0,7), the 
+exceedance probability is Pf,1 = F(aE ∙ b1). The annual target value applies to each single year. With each year the 
+exceedance probability rises: Pf,n = 1 - (1 - Pf,1)n with n as the number of years. The reliability index for the design 
+with reference to the design working life follows from the inverse cumulative distribution function of the standard 
+normal distribution corrected by the sensitivity factor aE = -0,7: bn = -F-1(Pf,n) / 0,7. 
+Table 4: Exceedance probability for actions and Reliability index for the design 
+ using FORM (aE = -0,7) with the annual target value b1 = 4,7 according to EN 1990 
+Using the annual target value, the exceedance probability rises with increasing time. Calculated this 
+way, the reliability index would reach bn = 3,7 after about n = 10 years and b50 = 2,8 for n = 50 
+years. For normal structures this is not intended. Therefore, the Eurocode defined the lifetime target 
+value with bT,50 = 3,8 for n = 50 years. 
+However, for lower consequence classes, e.g. for commercial production greenhouses, lower 
+targets can be applied, such as bT,n = 3,3 for CC1 and bT,n = 2,6 for CC0, see Table 2.  
+3.3.3 Lifetime Target 
+Using the reliability index bT,n = 3,8 for n = 50 years as a basis, as described above, for the design 
+working life a small and realistic looking probability of exceedance seem to results: 
+ Pf,T,n,d = F(aE ∙ bT,n) = F(-0,7 ∙ 3,8) =  F(-2,66) = 3,907 ∙10-3 ≈  0,0039 
+ 
+ 
+12 
+However, this value refers to a time period of n = 50 years in total. Divided into 50 equal parts and 
+distributed using the accumulation, the annual value for the return period can be calculated as 
+follows: TR,d,1 = 1 / (1 - (1 - Pf,T,n,d)1/n) = 1 / (1 - (0,996093)0,02) =  12 773 years 
+TR,d,1 ≈ -1 / ln((1-Pf,T,n,d)1/n) = -1 / ln((0,996093)0,02) =  12 772,5 years 
+TR,d,1 ≈ n / Pf,T,n,d = 50 / 3,907 ∙10-3 =  12 797,5 years ≈ 12 800 years 
+This does not look realistic anymore, because it is larger than the return periods for accidental or 
+exceptional loads. However, such a large annual probability is only created by dividing the lifetime 
+target equally into 50 single units. This is purely theoretical because the lifetime target applies for 
+the design working life in total. Divided in only one unit, the recurrence interval for the unit 
+(instead of the return period) would be: 
+TR,d,1 = n / Pf,T,n,d = 1 / 0,003907033 =  256 years 
+Applying the lifetime target value of bT,n = 3,8 to other reference periods than tref = 50 years, would 
+lead to the different annual exceedance probabilities and return periods in Table 5.  
+Note, that in Table 5 the term “n” has the character of a number, the number of repetitions of the 
+chosen basic reference period t0 with r = n = tref / t0. Is the time period tref not subdivided, the basic 
+reference period t0 is equal to the time period in total tref and r = 1 applies (case No. 9). This is the 
+case for permanent loads. 
+No 
+Time period 
+in total 
+Basic 
+reference 
+period 
+Number of 
+repetitions of 
+t0 within tref 
+Exceedance 
+probability 
+Target 
+Annual 
+exceedance 
+probability 
+Return period 
+tref in years t0 in years r = n = tref/t0 Pf,n Pf,1 TRd,1 in years 
+1 50 1 50 
+3,907 ∙ 10-3 
+7,829 ∙ 10-5 12773 
+2 30 1 30 1,305 ∙ 10-4 7664 
+3 25 1 25 1,566 ∙ 10-4 6387 
+4 20 1 20 1,957 ∙ 10-4 5109 
+5 15 1 15 2,609 ∙ 10-4 3832 
+6 10 1 10 3,914 ∙ 10-4 2555 
+7 5 1 5 7,826 ∙ 10-4 1278 
+8 1 1 1 3,907 ∙ 10-3 256 
+9 50 50 1 3,907 ∙ 10-3 256 
+Note: The lifetime Target according to EN 1990 for CC2 is based on b50 = 3,8. Using FORM (aE = -0,7), the 
+exceedance probability is Pf,n = F(aE ∙ b50). The lifetime target value is not restricted to n = 50 years.  
+The annual exceedance probability results from: Pf,1 = 1 - (1 - Pf,n)1/n with the return period TR,d,1 = 1/(1 - (1-Pf,1)1/n) ≈ 
+1/ Pf,1. These values can deviate slightly from a calculation using TR,d,1 ≈ n / Pf,n.  
+Table 5: Annual exceedance probability for actions and return period 
+ using FORM (aE = -0,7) with the lifetime target value b50 = 3,8 according to EN 1990 
+However, such large annual probabilities with return periods larger than for the annual target at 
+2000 years (in red) are no target values according to EN 1990. This is not intended. The constant 
+lifetime probability based on bT,n = 3,8 for n = 50 years is the target.  
+How the annual exceedance probabilities are distributed during the lifetime should not be decisive 
+because of the annual target with a return period of TR,d,1 = 1996 ≈ 2000 years (or any other target 
+or exceedance probability for certain actions, countries may define, see ISO 4354: 2009 for wind 
+loads. For snow loads this is even more urgent because of naturally large coefficients of variation.) 
+ 
+ 
+13 
+3.3.4 Conclusion for EN 13031-1 
+For the characteristic level EN 1990, 4.1.2 (7) P, Note 2 provides an annual target value of Pk,1 ≈ 
+1/50 = 0,02 for the climatic actions for structures of CC2 and nd = 50 years.  
+For structures not covered by the Eurocode, the target value of 0,02 can also be adapted. For 
+commercial production greenhouses the adaptation is carried out by using the partial factors, 
+combination factors and consequence factors on the action side and the whole resistance side 
+unchanged and adapting the characteristic values of the time-variant parts of the variable loads 
+instead, see Part 2 of this Reliability Report. This method is based on the suggestions found in EN 
+1990, EN 1991-1-3, EN 1991-1-4, EN 1991-1-5 and EN 1998-1 for snow, wind, temperature and 
+earthquake, see also Handbook 2: Reliability Backgrounds (2005).  
+For the design level, no target values for the actions are given. Instead, EN 1990, Annex C can be 
+used for calibration. FORM is based on given target reliability indexes for n = 1 (bT,1 = 4,7) or for n 
+= 50 years (bT,50 = 3,8). As shown, the underlying target reliabilities should be considered to 
+minimise errors. The analysis of the two targets in Table 4 and Table 5 show that a calibration 
+based on the annual target is justified for commercial production greenhouses in CC1 and CC0 
+according to EN 13031-1, especially for greenhouses Type B15, B10 and B5, which are not 
+covered by the existing system in the Eurocode at all. Therefore, EN 13031-1 has extended the 
+system by the consequence class CC0, as shown in Table 1 and 2. 
+A more differentiated system of annual and lifetime targets is offered by ISO 2394, which shows, 
+that the reference values of 3,8 and 4,7 in EN 1990 are quite large. Both targets could also be 
+differentiated for cases where the relative costs of higher safety measure to achieve a higher target 
+reliability would be inappropriate, e.g. due to a short design working life.  
+Relative costs of 
+safety measures 
+Consequences of failure 
+small some moderate great 
+High 0 1,5 2,3 3,1 
+Moderate 1,3 2,3 3,1 3,8 
+Low 2,3 3,1 3,8 4,3 
+Table 6a: Target values bn for the Reliability index (lifetime) acc. ISO 2394: 1998, Table E.2 
+The updated version ISO 2395: 2015 refers to this version. ISO 2394: 2015 incorporated a new 
+system of annual targets (Van Coil et al., 2017) for three of the 5 classes, see Table 6b.  
+Relative costs of 
+safety measures 
+Consequences of failure 
+minor (Class 2) Moderate (Class 3) Large (Class 4) 
+High 3,1 3,3 3,7 
+Moderate 3,7 4,2 4,4 
+Low 4,2 4,4 4,7 
+Table 6b: Annual target values b1 for the Reliability index (acc. ISO 2394: 2015, Table G.4) 
+Based on both systems ISO 4354: 2009 has defined target reliabilities for the design value of the 
+exceedance probability of actions due to wind , see Table 3. For commercial production 
+greenhouses CC1 the failure consequences are “some” to “small” in Table 6a or “minor” in Table 
+6b, the relative costs of higher safety measures “high”, leading to b1 = 3,1 and bn = 0 to 1,5. 
+ 
+ 
+14 
+4.  Calibration methods for partial factors 
+4.1 Basic requirements 
+It should be emphasized, that the calibration and the resulting partial factors are always a national 
+choice, because the used method depends on the type of action, the climate, the available data 
+record and the evaluation and use in the past (local climate, data record and past experience). 
+The calculation according to EN 1990, Annex C using FORM is based on given target reliability 
+indexes for n = 1 (bT,1 = 4,7) or for n = 50 years (bT,50 = 3,8). Both targets should lead to a 
+comparable safety level if treated correctly, because: F(bT,n) ≈ (F(bT,1))n leading to 0,999928 ≈ 
+0,999935 for CC2 and n = 50 years. However, this conversion should not be used without looking 
+at the calculated probabilities and their return periods or recurrence intervals. Meteorological 
+judgement is required too. 
+For good reasons Gulvanessian (2012) pointed out, that if the characteristic value of a type of 
+action is given for an annual probability, the calibration should be carried out with an annual target 
+value. 
+Note: It needs to be emphasized, that the Eurocode provides a target for the characteristic value of 
+climatic actions, expressed by a certain annual exceedance probability. However, it is 
+representative for the design working life of usual structures (n = 50 years). It does not suggest, that 
+for all measurement data an annual distribution must be considered and transformed to the design 
+working life of 50 years. As the data record is long enough, e.g. 50 years, the basic reference period 
+t0 can be extended to the length of the data record tref as well.  
+In terms of the statistically correct treatment of uncertainties, the general approach according to EN 
+1990 using annual and general distribution for the design working life is possible, but there are 
+more suitable methods to deal with uncertainties depending on the type of action! For snow loads 
+the draft version prEN 1991-1-3: 2020 gives appropriate advice for Europe in Annex A, A.3 
+“Treatment of ground snow load measurements”. 
+4.2 Calibration based on Annual Targets, using a Gumbel distribution 
+The calibration based on the annual target will be called Case A. The key points are:  
+ Case A: b1 = 4,7; aE = -0,7: Pf,T,1,d = 5 ∙10-4 
+This method is presented first, because it is traditional and predates the development of the 
+Eurocode, see e.g. Grusibau-1981, where only one target value was used, the annual target 
+reliability index b = 4,7. Instead of a lifetime target, there was an additional serviceability limit. 
+For the statistical evaluation of certain climatic loads, recurrence intervals were fixed, e.g. TR,d = 
+1000 years for wind and snow loads. On the other hand, the characteristic values based on data 
+records from 30 years (1935-1968) and a non-exceedance probability of 95% (Pf,1 = 1/20 = 0,05). 
+No partial factors were used, but allowable stresses. Especially in high altitudes the snow loads 
+were assumed to be a lot smaller, the known “safety margins” as well. Most of the traditional 
+structures still stand and will continue to do so (hidden safety). 
+According to EN 1990, Annex C, C6 (1), Note 2 for actions with statistically independent maxima 
+in each year, it is allowed to adapt the reliability index for a different reference period using F(bn) 
+= (F(b1))n. This rule applies also for estimating b1 using the inverse relation F(b1) = (F(bn))1/n.  
+ 
+ 
+15 
+The reliability index b50 = 3,8 for the design working life (normally n = 50 years) leads to 1 - pf,1 = 
+F(4,7) ≈ (F(3,8))0,02 = 0,9999986 with a failure probability pf,1 = 1,45 ∙ 10-6 ≈ 10-6.  
+The annual value for the reliability index b1 = 4,7 leads to 1 - pf,1 = F(4,7) = 0,9999987 and the 
+failure probability pf,1 = F(-4,7) = 1,3 ∙ 10-6 ≈ 10-6.  
+For the annual distributions, the annual target b1 leads to a slightly smaller failure probability pf,1 
+and is on the safe side. The sensitivity factor aE = -0,7 might also be conservative. Therefore, the 
+calculation based on the annual target b1 = 4,7 is also representative for the appropriate lifetime 
+target bn = 3,8 (n = 50 years).   
+The condition for calculating with only one probability distribution is, that main uncertainties result 
+from the variations of measurement data of long-term records. The remaining uncertainties (quality 
+of the correlation) are estimated and addressed by calibration. For climatic actions, such as snow 
+loads, this is possible, see Final Report I (1998), chapter 4.2.2 Statistical Model:  
+“Pre-determined by the definition of the characteristic value (…) the analysis must not focus on the 
+probability distribution of the daily values, but on the distribution of the maximum values related to 
+a certain period of time. Unlike other climatic loads (…) snow has a very clear seasonal rhythm. … 
+This sample containing one value per year of observation may be considered as belonging to an 
+underlying extreme value distribution. The best fitting distribution describes the snow load on the 
+ground at the place of observation and allows its characteristic value to be calculated.” 
+A.1  For the annual values of the exceedance probabilities Pk,1 and Pd,1 the partial safety factor 
+gF,Q can be estimated as the ratio of both values Qd and Qk. The index “1” is used to identify 
+the annual targets as a basis.  
+ Pk,1 = 1/50 = 0,02 (Tk,1 = 1/Pk,1 = 50 years):    
+Qk = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-0,02)) }) 
+    Qk = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 - 3,9019387 }) 
+    Qk = µ (1 + V ∙ (0,7796968 ∙ 3,3247187  
+Qk = µ (1 + V ∙ 2,5922725) 
+Pd,1 = Pf,T,1,d = 5,0094 ∙10-4 = F(-0,7 ∙ 4,7) (Td,1 = 1/Pd,1 = 1996 years):  
+Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-0,00050094)) }) 
+    Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 - 7,5987737 }) 
+    Qd = µ (1 + V ∙ (0,7796968 ∙ 7,021558)  
+Qd = µ (1 + V ∙ 5,4746911) 
+ gF,Q = Qd,1 / Qk,1 = (1 + 5,4747 ∙ V) / (1 + 2,5923 ∙ V) 
+A.2  Using a chosen annual target directly, e.g. Td,1 = 2000 years, with Pf,T,1,d = 1/Td,1 = 5 ∙ 10-4 a 
+different, but very similar expression results:   
+gF,Q = Qd,1 / Qk,1 = (1 + 5,47614 ∙ V) / (1 + 2,5923 ∙ V).  
+A.3  For the traditional annual target value * of Td,1 = 1000 years, as suggested for wind loads 
+according to ISO 4354: 2009, Annex J (Kasperski & Geurts, 2005) and also proposed for 
+snow loads (Kasperski, 2012) with Pf,T,1,d = 1/T = 10-3 another expression results:  
+Pd,1 = Pf,T,1,d = 1 ∙10-3 (Td,1 = 1/Pd,1 = 1000 years):  
+Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-0,001)) }) 
+    Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 – 6,9072551 }) 
+ 
+ 
+16 
+    Qd = µ (1 + V ∙ (0,7796968 ∙ 6,3300395)  
+Qd = µ (1 + V ∙ 4,9355115) 
+gF,Q = Qd,1 / Qk,1 = (1 + 4,9355 ∙ V) / (1 + 2,5923 ∙ V).  
+Note: * Such an assumption was also at the basis of calibrations for the first generation of the 
+Eurocode EN 1991-1-3. In the Background Report for snow loads (Final Report I (1998)), chapter 
+4.3.6 “Treatment of exceptional ground snow loads” the design level is revealed as: “For a return 
+period of 1000 years, the fractile value is 0,999 and retaining V = 0,6, results in k = 1,55 ≈ 1,6. 
+{For V = 0,5, k = 1,51 ≈ 1,5}” These approximations are in good agreement with Case A.3. 
+The relation in Case A.3 shows that the standard value of gE,Q = 1,5 for snow loads is based on a 
+Gumbel distribution and the mean value of all coefficients of variation known from older German 
+snow load standards being V = 0,45 (DIN 1055-5: 1975). The coefficient of variation V = 0,6 
+based on the evaluation of the SWE on only 331 locations in Germany with small sample sizes has 
+never been the basis of characteristic now loads in Germany, as claimed in the Final report (1999). 
+German snow loads are based on more than 1821 locations with snow heights (SH) and SWE for 
+the reliability-based conversion, because the data record of SH is much larger, the records are 
+longer and more reliable. Most coefficients of variation are smaller too.   
+In contrast, the English-speaking countries base the partial factor of gE,Q = 1,5 on the product of a 
+model uncertainty of gSd = 1,1 and a time-variant part gf = 1,35 (Gulvanessian, 2012). The value of 
+gf = 1,35 would be too small if the calculations would have been based on bT,1 = 4,7. A different 
+picture arises with the lifetime target of bT,n = 3,8, as will be demonstrated in Case B.4. 
+The partial safety factors gF for both design target values (2000 / 1000 years) is shown in Figure 2.  
+ 
+Figure 2: Influence of the design target and the coefficient of variation on the partial factor for 
+climatic loads following a Gumbel Distribution (characteristic value Pn,1 = 1/50 = 0,02; n = 50 
+years; CC2 according to EN 1990 with different methods of calculation) 
+1,0
+1,1
+1,2
+1,3
+1,4
+1,5
+1,6
+1,7
+1,8
+1,9
+2,0
+00,10,20,30,40,50,60,70,80,911,11,21,31,41,51,61,71,8
+Partial Factor
+Variation Coefficient
+Influence of the variation coefficient on the partial factor
+for variable loads with Gumbel distribution
+Target Probability 10^(-3)
+EN 1990 FORM
+Limit
+ 
+ 
+17 
+It is obvious, that the choice of a realistic target value  for the design level can save a lot of 
+calibration time. Also, the probabilistic method (based on b1 or b50) and the approach towards 
+uncertainties has a large impact. This is a safety related issue and therefore a national choice! 
+4.3 Influence of the type of distribution 
+As stated in ISO 4355: 2013, Annex A, A.3.1 for snow loads the winter climate decides about the 
+treatment of basic data. Cold winter climates in Europe have a persistent snow cover with a well-
+defined annual maximum as an appropriate basis for extreme value statistics. The snow loads can 
+be very large. Moderate and warm snow climates with more than one snow covers per season or 
+less than one per year should use a suitable peak-over threshold method to “stabilise the 
+parameters”, meaning to minimize variations. However, as stated: “Since confined ensembles 
+inevitably contain random information it is extremely difficult to identify the ‘true’ probability 
+distribution and the corresponding ‘true’ parameters. Therefore, it is recommended to use the Type 
+I extreme value distribution for the annual non-exceedance probabilities. “  
+Note: Type I extreme value distribution refers to the Gumbel distribution.  
+The European data record shows that in some locations the data rather follow Lognormal or 
+Weibull distributions. The influence of the chosen probability distribution on the partial factor is 
+also large and demonstrated by Jacinto et al. (2020) for Normal, Lognormal and Frechet 
+Distributions in comparison to the Gumbel Distribution already treated in this report.  
+For the Lognormal distribution as another two-parameter distribution, the influence on the partial 
+factor is shown for the Cases A.1 and A.3.  
+Case A: Calculations based on annual target: b1 = 4,7; aE = -0,7: Pf,T,1,d = 5 ∙10-4 
+A.1  For the annual values of the exceedance probabilities Pn,1 and Pd,1 the partial safety factor 
+gF,Q can be estimated as the ratio of both values Qd and Qk.  
+ Pk,1 = 1/50 = 0,02 (Tk,1 = 1/Pk,1 = 50 years):  
+    Qk = µ / (1 + V2)0,5 ∙ exp [ B ∙ { F-1(1-0,02) } ]   
+    Qk = µ / (1 + V2)0,5 ∙ exp [ B ∙ 2,05375]  
+Pd,1 = Pf,T,1,d = 5,0094 ∙10-4 (Td,1 = 1/Pd,1 = 1996 years):  
+    mit Pd,1 = Pf,T,1,d ≈ 5 ∙10-4: 
+    Qd = µ / (1 + V2)0,5 ∙ exp [ B ∙ F-1( F(-aE ∙ b) ] 
+    Qd = µ / (1 + V2)0,5 ∙ exp [ B ∙ { F-1(1-0,00050094) } ] 
+    Qd = µ ∙ exp [- B2/2] ∙ exp [ B ∙ 3,289998]  
+gF = Qd,1 / Qk,1 = exp [ B ∙ (3,289998 - 2,05375) ] = exp [ 1,23625 ∙ (ln(1 + V2))0.5 ] 
+A.3  For the traditional annual target value of Td,1 = 1000 years, as suggested for wind loads 
+according to ISO 4354: 2009, Annex J (Kasperski & Geurts, 2005) and also proposed for 
+snow loads (Kasperski, 2012) with Pf,T,1,d = 1/T = 10-3 another expression results:  
+Pd,1 = Pf,T,1,d = 1 ∙10-3 (Td,1 = 1/Pd,1 = 1000 years):  
+    Qd = µ / (1 + V2)0,5 ∙ exp [ B ∙ { F-1(1-0,001) } ] 
+    Qd = µ / (1 + V2)0,5 ∙ exp [ B ∙ 3,090232 ]  
+ gF = Qd,1 / Qk,1 = exp [ 1,0365 ∙ (ln(1 + V2))0.5 ] 
+ 
+ 
+18 
+Figure 3 shows the different partial factors for different coefficients of variation for a Gumbel 
+distribution (blue) in comparison to a lognormal distribution (green). 
+The solid lines apply to the target reliability of Pf,1 (s > sd) = 0,001 per year, as they are the basis in 
+many countries in the past (Case A.3). The pointed lines apply for cases with the target reliability 
+of Pf,1 (s > sd) = 0,00050094 per year using b1 = 4,7 and FORM with the sensitivity factor of the 
+action side of aE = -0.7 (Case A.1). 
+Calibration is required if the coefficient of variation exceeds the red limit line for the partial safety 
+coefficient at gF,Q = 1,5 (standard value). When using FORM (Case A.1), the limit for Gumbel 
+distributions is at Vlim = 0,315, for lognormal distributions at Vlim = 0,337. 
+ 
+ 
+Figure 3: Influence of the coefficients of variation, the distribution and the calculation method on 
+the partial factor for climatic influences 
+Should a country have chosen a design target at an annual probability of 1/1000 (Case A.3), the 
+limits are slightly higher and are closer to the existing coefficients of variation in the continental, 
+alpine and moderate climate. For Gumbel distributions, the limit is Vlim = 0,4775 ≈ 0,5, for 
+lognormal distributions at Vlim = 0,40665. Also, for coefficients of variation V > 0,5 the surcharge 
+due to calibration for lognormal distributions is considerably higher.  
+Note: The larger surcharge for lognormal distributions is intuitively not appropriate. Lognormal 
+distributions are often found in long data series and in continental, alpine and moderate climates. 
+Gumbel distributions are often used in Europe for maritime climates with short data series (often 
+1
+1,1
+1,2
+1,3
+1,4
+1,5
+1,6
+1,7
+1,8
+1,9
+2
+2,1
+2,2
+2,3
+2,4
+2,5
+2,6
+2,7
+2,8
+2,9
+0 0,1 0,2 0,3 0,4 0,5 0,6 0,7 0,8 0,9 1
+Partial Safety Factor
+Coefficient of Variation
+Influence of the Probability Distribution on Partial Factors of Time-variant Variable Actions
+Gumbel Distribution -Lognormal Distribution
+depending on the Coefficient of Variation and the Method of Calibration
+Gumbel: ISO 4354 Annual Target Probability 1/1000
+Gumbel: EN 1990 FORM beta 1 / Annual Target Probability 1/2000
+Lognormal: ISO 4354 Annual Target Probability 1/1000
+Lognormal: EN 1990 FORM Beta 1 / Annual Target Probability 1/2000
+Standard Value EN 1990
+ 
+ 
+19 
+only for a few SWE). The loads according to DIN 1055-5:1975 were also based on 30-year values 
+with Gumbel distributions and V = 0,45. Meanwhile, the measurement series of many DWD sites 
+exceed the 100-year limit. Lognormal distributions replace the older Gumbel and Weibull 
+distributions. The stability of these long data series is much better. However, suddenly larger 
+surcharges occur during calibration.  In addition, the variability increases, because the climate has 
+not remained constant. This is a problem that can only be solved with fresh ideas in cooperation of 
+reliability experts and meteorologists. Unfortunately, this does not happen in Europe. 
+4.4 Calibration based on Lifetime Targets, using a Gumbel distribution 
+The calibration based on the lifetime target will be called Case B. The key points are:  
+ Case B: b50 = 3,8; aE = -0,7: Pf,T,50,d = 3,9 ∙10-3 
+As already mentioned, whether the calibration of partial factors for variable loads is carried out 
+with annual or lifetime targets, is also based on national traditions and experience. Also, the 
+availability of meteorological data, especially the length of the records, has an impact.   
+In countries with moderate and cold winter climate the meteorological data record for snow 
+provides directly measured (or calculated) maximum values for many years. These maximum 
+values are uncertain itself. Therefore, long data records are used, not under 30 years, if possible, 
+more than 100 years. The number of data can be enlarged by looking at single snowfall events. In 
+case of a limited sample size, correction factors the can be introduced (Kasperski, 2012, 2016). 
+The calibration method is a national responsibility. The meteorological institutions of many 
+countries have developed elaborate methods to fit climatic data to probability distributions 
+(Sadovsky, 2015). The methods differ depending on the climate.   
+However, in all these cases, one probability distribution with the annual maxima is used. If this 
+function is fitted to the observation data and the correlation between distribution and data is 
+excellent, no further transformation or adaptation to another reference period is required because 
+the length of the data record, the observation time, is larger or equal to the reference period of n = 
+50 years for the design of the structure. In this case the fitting technics for data, the choice of 
+distribution and the calibration are of vital importance (Final Report I, 1998). From the chosen 
+distribution fitting the measurement data best, the characteristic value for tn = 50 years or any other 
+return period tn can be estimated directly. This allows the direct calculation of the partial safety 
+factor gQ,CC2 and any other coefficient (KFi; y0,1,2; fs(n); fw(n)), avoiding errors. Therefore, it is 
+important to define the return period for the design level target as discussed already. 
+However, in other cases, for mild winter climates with only a few snowfalls in a decade, the 
+uncertainty of the annual maximum values and a limited data record seem to have been addressed 
+in ways it is done for wind or imposed loads or for the resistance side, described in great detail in 
+the fib 80 Bulletin for the updating of existing concrete structures (2016).  
+In this method (Case B) two different probability distributions are considered, first the Gumbel 
+distribution of annual measurement values (t0 = 1 year) with the mean value of µ1, the standard 
+deviation s1 and the coefficient of variation V1 of the measurement data.  In a second step the so 
+called “annual distribution” is transformed to the reference period of tn = tref = 50 years, with the 
+mean value µ50, the standard deviation s50 and the coefficient of variation V50. For the calculation 
+within a reference period of 50 years, the modal value (µ1 - s1 ∙ (√6)/p) ∙ 0,5772) of the annual 
+ 
+ 
+20 
+distribution is shifted by (s1 ∙ (√6)/p) ∙ ln 50) = (s1 ∙ 0,78 ln 50) = 3,05018 ∙ s1. This point 
+corresponds to the 2%-fractile value of the annual distribution, because [- s1 ∙ (√6)/p) ∙ ln(-ln(1-
+1/50)) ] = s1 ∙ (√6)/p) ∙ ln 50. By this transformation the mean value µ1 is shifted to the new mean 
+value µ50: 
+µ50 = µ1 + s1 ∙ (√6)/p ∙ ln 50 = µ1 (1 + V1 ∙ (√6)/p ∙ ln 50) = µ1 (1 + 3,05019 ∙ V1) 
+This value is larger than the characteristic value of the annual distribution with Qk,1 = µ1 (1 + 
+2,5922725 ∙ V1). For larger coefficients of variation as usual in the milder climate of Europe, this is 
+a large increase of the mean value. Unlike the characteristic value, the design value will also 
+increase and the partial factor because of that. The standard deviation of both distributions remains 
+the same: s1 = s50. Therefore, the coefficient of variation must be adapted as follows. This 
+adaptation is vital because the coefficient of variation becomes much smaller. 
+ V50 = p / (p / V1 + (√6) ∙ ln 50) = V1 / (1 + V1 ∙ (√6)/p ∙ ln 50)) ) = V1 / (1 + 3,05019 ∙ V1) 
+B.1  For the exceedance probabilities with reference to 50 years Pk,50 and Pd,50 the partial safety 
+factor gF,Q can be estimated as the ratio of both values Qd,50 and Qk,50. For this calculation 
+the characteristic value is transformed too, because during 50 years the probability of 
+exceedance of the annual target Pk,1 = 0,02 rises to the value Pk,50 = 1- (1 - 0,02)50 = 0,63583 
+> 0,5. This means, the characteristic value can be acceded one time in the reference period 
+of 50 years. The number of recurrences is rk,50 = 1. The return period per annum remains Tk,1 
+= 50 years.  
+ Pk,50 = 1- (1 - 0,02)50 = 0,63583 (rk,50 = 1; Tk,1 = 50 years):    
+Qk,50 = µ50 (1 - V50 ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-0,6358303)) }) 
+   Qk,50 = µ50 (1 - V50 ∙ (√6)/p ∙{ 0,577215665 + 0,0100843 }) 
+   Qk,50 = µ50 (1 - V50 ∙ (0,7796968 ∙ 0,5872999) 
+Qk,50 = µ50 (1 - V50 ∙ 0,4579159) 
+Because the exceedance probability Pk,50 is larger than 50%, in the shifted distribution the 
+characteristic value Qk,50 is smaller than the mean value µ50.  
+The design target value Pd,50 = F(-0,7 ∙ 3,8) with reference to 50 years has 256 recurrences. 
+This means the return period per annum is Td,1 = 12 800 years. 
+Pd,50 = Pf,T,50,d = 3,907 ∙ 10-3  (rd,50 = 1/Pd,50 = 256; Td,1 = n/Pd,50 = 12 800 years):  
+Qd,50 = µ50 (1 - V50 ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-0,003907)) }) 
+   Qd,50 = µ50 (1 - V50 ∙ (√6)/p ∙{ 0,577215665 - 5,5430288 }) 
+   Qd,50 = µ50 (1 + V50 ∙ (0,7796968 ∙ 4,9658132) 
+Qd,50 = µ50 (1 + V50 ∙ 3,8718286) 
+ gF,Q = Qd,50 / Qk,50 = (1 + 3,8718 ∙ V50) / (1 - 0,4579 ∙ V50) 
+After the conversion of V50 back into the format of the Variation coefficient of the annual 
+distribution V, the partial safety factor for the design working life of tref = 50 years can be 
+calculated.  
+gF,Q = Qd,50 / Qk,50 = (1 + V ∙ (3,8718 + (√6)/p ∙ ln 50)) / (1 + V ∙ (-0,4579 + (√6)/p ∙ ln 50)) 
+gF,Q = Qd,50 / Qk,50 = (1 + 6,9220 ∙ V) / (1 + 2,5923 ∙ V) 
+The equation shows that the level of the characteristic value remains the same as for the annual 
+calculation in Case A, only the exceedance probability has changed. Despite of a more complicated 
+calculation the characteristic values Qk,50 and Qk,1 are also equal. Because of the assumption of s1 = 
+ 
+ 
+21 
+s50, the mean value and the probability of exceedance increase by the same ratio the coefficient of 
+variation decreases. This can be shown in detail: 
+Qk,50 = µ50 (1 - V50 ∙ (√6)/p ∙{0,577 + ln(-ln (1- Pk,50))}) 
+Qk,50 = µ50 (1 - V50 ∙ (√6)/p ∙{ 0,577 + ln(-ln (1- (1- (1-0,02)50) )) }) 
+Qk,50 = µ1 (1 + V1 ∙ (√6)/p ∙ ln 50) ∙ (1 - V50 ∙ (√6)/p ∙{ 0,577 + ln(-ln (1-0,02)50) }) 
+with: V50 = V1 / (1 + V1 ∙ (√6)/p ∙ ln 50)  
+Qk,50 = µ1 (1 + V1 ∙ (√6)/p ∙ ln 50 - V1 ∙ (√6)/p ∙{0,577 + ln(-ln (1-0,02)50) }) 
+Qk,50 = µ1 (1 + V1 ∙ (√6)/p ∙{ln 50 - 0,577 - ln(-ln (1-0,02)50)}) 
+Qk,50 = µ1 (1 - V1 ∙ (√6)/p ∙{0,577 + ln (-ln (1-0,02)50) - ln 50}) 
+Because for the probability term ln (-ln (1-0,02)50) - ln 50 = ln (-ln (1-0,02)) = - 3,9019 applies, the 
+characteristic values Qk,50 = Qk,1 are also equal. This means, that the calculation can be simplified. 
+B.2  Because of the identical values for Qk,50 and Qk,1 the same partial factor can be derived, 
+when the characteristic value Qk from the annual distribution is used and the design value 
+Qd,50 from the shifted distribution, a method used on snow loads in the fib 80 Bulletin 
+(2016) for the updating of existing concrete structures.  
+Using Qk = Qk,1 = µ (1 + V ∙ 2,5922725) instead of Qk,50 leads to the result as in Case B.1:  
+gF,Q = Qd,50 / Qk,1 = (1 + 6,922 ∙ V) / (1 + 2,5923 ∙ V) 
+In this equation the difference to the calculation with the annual target can be clearly recognised. 
+The introduction of the term (V1 ∙ (√6)/p) ∙ ln 50) into the numerator Qd,50, but not into the 
+denominator Qk,1 does not only increase the design value and the partial factor, but it also creates a 
+strong dependence on the ratio of different reference periods tref / t0. The transformation from 1 
+year to 50 years has an especially large impact. From this expression an adjustment factor for the 
+influence of the remaining design working life on the partial factor could be calculated. This is not 
+done here, because of the different approach for greenhouses, see Part 2 of this reliability report. 
+gF,Q = Qd,50 / Qk,1 = (1 + V ∙ (3,8718 + (√6)/p ∙ ln tref/t0)) / (1 + 2,5923 ∙ V)) 
+Note: If t0 = 1 year and tref = 50 years is introduced into the last equation, the partial factor 
+for CC2 and n = 50 years can be calculated, as given in Case B.1. 
+B.3  With the equations of the infinite Gumbel distribution, it is not possible to calculate Qk,50 
+introducing the deterministic value of the probability of exceedance Pk,50 = 50 ∙ 0,02 = 1. 
+However, if it is assumed, that the probability is 100%, the instead of the characteristic 
+value the mean value Qk,50,determ. = µ50 = µ1 + s1 ∙ (√6)/p ∙ ln 50 can be used. In this case, 
+the partial factor would be estimated slightly different: 
+gF,Q = Qd,50 / Qk,50,determ. = (1 + 6,9220 ∙ V) / (1 + 3,05019 ∙ V) 
+Such a simple deterministic approach leads to a much smaller partial factor (black points) as in the 
+fib 80 bulletin, as can be seen in in Figure 4.  
+B.4  In early Background Reports to the first generation of the Eurocode (e.g. Implementation of 
+the Eurocode: Handbooks 1, 2 and 3), the calibration of partial factors was carried out using 
+the target for the characteristic value Qk (Pf,k,1 = 0,02) as for any other target value together 
+with a design value Qd for the lifetime target b50 = 3,8. This is based on the fact, that the 
+ 
+ 
+22 
+lifetime target value applies to any design working life and remains constant, see Table 5. 
+With the assumption of t0 = tref and ln (tref/t0) = ln (1) = 0, the lowest partial factors are 
+calculated. For the annual values of the exceedance probabilities Pk,1 and Pd,n the partial 
+safety factor gF,Q can be estimated as the ratio of both values Qd and Qk.  
+ Pk,1 = 1/50 = 0,02 (Tk,1 = 1/Pk,1 = 50 years):    
+Qk = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-0,02)) }) 
+    Qk = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 - 3,9019387 }) 
+    Qk = µ (1 + V ∙ (0,7796968 ∙ 3,3247187  
+Qk = µ (1 + V ∙ 2,5922725) 
+Pd,n = Pf,T,n,d = 3,907 ∙10-3 = F(-0,7 ∙ 3,8) (Td,n,1 = 1/Pd,n = 256 years):  
+Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (1-0,003907)) }) 
+    Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 - 5,5430288 }) 
+    Qd = µ (1 + V ∙ (0,7796968 ∙ 4,9658132)  
+Qd = µ (1 + V ∙ 3,8718286) 
+gF,Q = Qd,n / Qk,1 = (1 + 3,8718 ∙ V) / (1 + 2,5923 ∙ V) 
+Using the method in Case B.4, the coefficient of variation V can be very large without increase 
+above the level of the standard value of gQ,CC2 = 1,5, see Figure 4. No calibration of the 
+characteristic value is required. This is also the reason for safety factors g = 1,3 to 1,4 for snow or 
+wind loads in some very old standards of the last century. Even the partial factor of gf = 1,35 
+according to Gulvanessian (2012) could be based on such a calibration method. It is not true, that 
+these factors were just “made up”.  
+ 
+Figure 4: Influence of the coefficient of variation on the partial factor for time-variant climatic 
+loads following a Gumbel Distribution (characteristic value Pn,1 = 1/50 = 0,02; n = 50 years; CC2 
+according to EN 1990 with different methods of calculation) 
+1,0
+1,1
+1,2
+1,3
+1,4
+1,5
+1,6
+1,7
+1,8
+1,9
+2,0
+2,1
+2,2
+2,3
+2,4
+2,5
+0 0,10,20,30,40,50,60,70,80,9 1 1,11,21,31,41,51,61,71,81,9 2
+Partial Factor
+Variation Coefficient
+Influence of the variation coefficient on the partial factor for different evaluation methods 
+for time-variant, variable loads with Gumbel distribution
+Standard Value EN 1990
+A.3: ISO 2394 Annual Target Probability 1/1000
+A.2: EN 1990 Annual Target Probability 1/2000
+A.1: EN 1990 FORM beta 1; Qd,1/Qk,1
+B.1: EN 1990 FORM beta 50; Qd,50/Qk,50
+B.2: EN 1990 FORM beta 50; Qd,50/Qk,1
+B.3: EN 1990 FORM beta 50; Qd,50/Qk,50,determ.
+B.4: EN 1990 FORM beta 50; Qd,n/Qk,1
+ 
+ 
+23 
+4.5 Conclusions and Summary  
+By transforming (upscaling) the so called “annual distribution” and “disqualifying” the 
+characteristic value Qk for n = 50 years to Qk,1 for t0 = 1 year (Case B.1, B.2 and B.3), as it can be 
+done for wind loads or imposed loads with small sample sizes or with different reference periods, 
+very large and impractical partial factors result from the calculation when applied to climatic loads 
+based on a solid and long-term data record of annual maxima with large coefficients of variation 
+due to the climate. These variations are natural and no uncertainties of unknown origin in a 
+probabilistic sense. Despite of this they are treated equally. 
+Partial factors calculated like this refer to an annual return period of 12 800 years, far above the 
+level of accidental or exceptional loads. Also, return periods like this are without meaning for 
+climatic variations.  
+This method uses similar expressions as EN 1990: 2001, Table C.4 for the combination of two 
+independent variable actions with different reference periods, see chapter 5 of this report. The 
+Formulae include the term (√6)/p ∙ ln N1. There the number N1 represents the ratio T/T1 of the 
+reference period and the larger of the return periods of two time-variant actions. The term ln N1 
+becomes zero for T = T1. However, for T = 50 years and T1 = 1 year, the term 0,7797 ∙ ln 50 = 
+3,0502 would reduce the design value of the accompanying action.  
+However, when calculating partial factors there are not two actions to be combined, there is only 
+one action and its characteristic value. It seems the climatic variation is used for both distributions. 
+Therefore, it has such a large impact. In the traditional method there are two types of variations to 
+be addressed, first the natural variation of the climatic data, second the variation between the ideal 
+probability distribution (e.g. Gumbel) and the fitted data. The second variation, based on the 
+correlation, is much smaller than the first. The second can be improved by a better simulation, the 
+first can’t. A calibration using a defined confidence interval based on a normal distribution would 
+be a more economical way to address remaining uncertainties of the characteristic value based on 
+the climatic variations. For snow loads this strategy will be outlined in more detail in prEN 1991-
+1-3: 2020, A.3. (1) to (10) than it is in the existing standard.  
+The calculation using the transformed annual distribution is not considering the quality of the 
+correlation at all. It assumes, that the countries and their meteorological institutions have not 
+addressed uncertainties already in their estimation of characteristic values for climatic loads. There 
+are many ways to do that. Should they have done it, they are punished with partial factors 
+considering these uncertainties a second time. This method might be tolerable in countries with 
+warmer winter climates with small and unreliable data records or no snow at all leading to very 
+small characteristic snow loads or for heavy concrete structures in need of an update for a 
+remaining working life, where climatic loads are not dominating the design and therefore of not 
+much interest, but it is not suited for the code-based design of new structures. Partial factors larger 
+than 1,5 are not acceptable for the already very large snow loads in the  Alpine or other 
+mountainous regions or in Scandinavia. 
+Summary 
+The differences between the calibrations based on the annual and the lifetime targets are due to the 
+vague inconsistency of these very often misinterpreted targets. A further influence is the character 
+ 
+ 
+24 
+of the input data (measurement records) and how the terms “reference period”, annual maxima” 
+and “annual distribution” are interpreted, and their uncertainties are treated.  
+Generally, more complicated calculations for n = 50 years with too many adaptations, mixing 
+formulae from the Standard Normal Distribution (SND), Gumbel Distribution (GD) and Discrete 
+Binomial Accumulation with different maxima introduce more errors. Also, the probabilities are 
+much larger, especially for the characteristic value. Deterministic probabilities create problems. 
+Only for the small tail of each of these three distributions possible errors are small enough to be 
+neglected. Therefore, calculations based on annual targets are less complicated and more reliable! 
+For the design of commercial production greenhouses according to EN 13031-1 with a reduced 
+design working life in no need of updating, a different approach has been chosen. As far as 
+possible, the constant reference values for partial factors, combination factors (also x) and KFi-
+factors according to EN 1990 can be used. Therefore, EN 13031-1 needs no correction should the 
+second generation of the Eurocode or the National Annex of a country introduce larger partial 
+factors. Also, the KFi-factors for CC1 and CC0 as a ratio between two design values, calculated in 
+the same way, are not influenced much by changes of the partial factors.   
+For the time-variant parts of the variable loads, instead of adapting partial factors, special 
+adjustment factors for the characteristic loads are specified in EN 13031-1, see Part 2 of this 
+reliability report. The type of distribution and the variation coefficient can be chosen nationally. As 
+in the Eurocode, the estimation of characteristic actions due to wind, snow and temperature is a 
+national choice, the selection of suitable partial factors for the actions as well. 
+5. Combination factors 
+5.1 General and time-invariant loads combinations 
+For the combination of actions, the Eurocode parts and their background documents contain as 
+many different approaches as for the partial factors.  
+In the absence of alternative target values, the combination coefficients are determined in 
+accordance with EN 1990, Annex C (FORM), see also Final Report (1999). The basis for this is the 
+target value of the reliability index b50 = 3,8 for CC2 and n = 50 years, see Table 2. With the 
+sensitivity coefficient for the action side of aE = -0,7, the design value of the variable action as a 
+dominating action in the combination is calculated with the probability of exceeding Pf = F(aE ∙ b) 
+= F(-0,7 ∙ b50) = 3,907 ∙ 10-3. On the other hand, if the action is only accompanying, a lower level 
+applies, for which a factor of a = 0,4 is used for the reliability index. The corresponding 
+probability of exceeding the variable influence as an accompanying action is then Pf,0 = F(0,4 ∙ aE 
+∙ b50) = F(-0,28 ∙ b50) = 1,4366 ∙ 10-1. This equation applies for the time-invariant case (Case A), 
+where at least one of the loads is constant in time, e.g. permanent loads, installations, plant loads in 
+combination with another load. Both actions have the same reference period tref = n = 50 years. The 
+non-exceedance probabilities of the actions are: 
+Case A: Dominating action:   1 - Pf = F(-aE ∙ b) = F(0,7 ∙ b50) = 0,99609297 
+Accompanying action:  1 - Pf,0 = F(-0,4 ∙ aE ∙ b) = F(0,28 ∙ b50) = 0,85633565  
+For the combination of two time-variant variable loads, e.g. wind and snow, the difference in the 
+fluctuation of the actions can be included, leading to different equations and combination 
+coefficients depending on the actions to be combined, see chapter 5.2. 
+ 
+ 
+25 
+The combination coefficient y0 is the ratio of accompanying and dominating influences in the 
+design values and is derived as follows for the distributions of interest here. It is assumed, the two 
+combined actions are completely independent, and the same reference period applies (tref = 50 
+years; r = 1). 
+y0 = Qd,0 / Qd     with: Qd = f (1 - Pf) and Qd,0 = f (1 - Pf,0) 
+Case A:  Gumbel distribution: For CC2, FORM with b50 = 3,8, aE = -0,7 and a = 0,4: 
+   Qd = µ (1 - V ∙ (√6)/p ∙{ 0,5772156649 + ln(-ln (F(-(-0,7) ∙ 3,8))) }) 
+   Qd,0 = µ (1 - V ∙ (√6)/p ∙{ 0,5772156649 + ln(-ln (F(-(-0,7) ∙ 0,4 ∙ 3,8))) }) 
+   y0 = Qd,0 / Qd = (1 + 1,0031 ∙ V) / (1 + 3,87182 ∙ V) 
+Lognormal distribution: For CC2, FORM with b50 = 3,8, aE = -0,7 and a = 0,4: 
+   Qd = µ / (1 + V2)0,5 ∙ exp [ (ln(1 + V2))0,5 ∙ F-1( F(-(-0,7) ∙ 3,8) ) ] 
+   Qd,0 = µ / (1 + V2)0,5 ∙ exp [ (ln(1 + V2))0,5 ∙ F-1( F(-(-0,7) ∙ 0,4 ∙ 3,8) ) ] 
+   y0 = Qd,0 / Qd = exp [ -1,596 ∙ (ln(1 + V2))0,5 ] 
+ 
+Figure 5: Influence of the coefficients of variation on the combined coefficient of time-invariant 
+variable loads and time-variant variable loads with r = 1 
+From these relationships it becomes apparent that the combination coefficient is also a function of 
+the coefficient of variation and the statistical distribution, as the partial factor but with the opposite 
+tendencies. The combination factors decrease for higher coefficients of variation, and they decrease 
+more for lognormal than for Gumbel distributions. The influences are shown in Figure 5. 
+ 
+ 
+0,1
+0,2
+0,3
+0,4
+0,5
+0,6
+0,7
+0,8
+0,9
+1
+0 0,1 0,2 0,3 0,4 0,5 0,6 0,7 0,8 0,9 1
+Combination Coefficient
+Coefficient of Variation
+Influence of the Coefficient of Variation on Combination Coefficients for Variable Actions
+using Gumbel or Lognormal Distribution
+Gumbel Distribution
+Lognormal Distribution
+ 
+ 
+26 
+5.2 Combination of time-variant variable loads 
+If two independent time-variant actions are to be combined, it is most unlikely that both actions 
+reach their design value at the same time. Therefore, the combination coefficients should be 
+smaller than in the time-invariant case according to chapter 5.1. 
+The combination of two time-variant actions was described by rectangular pulse models with 
+changes in the amplitude occurring at equal intervals first by Ferry Borges, J. & Castanheta, M. 
+(1971). Therefore, it is called FBC-Model with Rackwitz-Fiessler algorithm for a solution. As an 
+approximation, Turkstra, C.J. (1970) proposed the combination rules with dominating (maximum 
+action) and accompanying actions.  
+The combination is complex because with the transformation into another return period, every 
+parameter changes, also the target reliability index itself (bc) and therefore the dominating action. 
+With aE = -0,7, bref = 3,8 as the target reliability index and r as the number of intervals in the 
+reference period tref = 50 years for the slowest fluctuating load or the load with the largest return 
+period t0 (r = tref / t0 > 1) the non-exceedance probabilities follow (Vrowenvelder, 2002): 
+Case B.1: Combination of time-variant variable actions according to FBC and Turkstra  
+Dominating action:    1 - Pf = (F(F-1(F(-aE ∙ bref)1/r)))r = (F(bc))r 
+Accompanying action: 1 - Pf,0 = (F(0,4 ∙ F-1(F(-aE ∙ bref)1/r)))r = (F(0,4 ∙ bc))r 
+where: bc = F-1(F(-aE ∙ bref)1/r) = F-1((1-Pf )1/r) ≈ -F-1(Pf /r) 
+with Pf = 3,907 ∙ 10-3 (bref = 3,8) and aE = -0,7 
+Since the last decade such calculations are no problem anymore. Before 1990, by the time the 
+Eurocode has been developed, it seems that different possibilities to simplify have been used and 
+partly calibrated, which found their way into the Eurocode. They are more or less “accurate”. Also, 
+some printing mistakes may persist. 
+For snow loads, the number of independent load repetitions r per year (instead of the number of 
+intervals during the reference period of 50 years) has been introduced for this purpose (Final 
+Report, 1999), maybe because of the basic return period of 1 year. It is a simplified method. The 
+target reliability index is not adapted, and the dominating action not changed.  
+For r > 1 the non-exceedance probabilities for the accompanying actions would get smaller. With 
+the assumption, that the target value b50 remains unchanged, and r remains small, the probabilities 
+are approximated according to Turkstra`s rule. 
+Case B.2: Combination coefficients according to Final Report Snow 1999   
+Dominating action:   1 - Pf = F(-aE ∙ b) = F(0,7 ∙ b50)  
+Accompanying action:  1 - Pf,0 = (F(-0,4 ∙ aE ∙ b))r = (F(0,28 ∙ b50))r  
+However, the number of independent load repetitions r per year seems to remain difficult to pin 
+down. For snow loads it is most likely the number of independent snow covers on the ground with 
+the potential to develop the annual maximum snow load on a structure. Not every small snowfall 
+event has this potential. Therefore, the countries have reported very different r, ranging from 0,8 to 
+6. For the estimation of combination factors the lowest possible r is of interest giving the highest 
+y0. The lowest possible r in any snow climate is r = 1. In this case, Case A applies. 
+Of course, the number r (per year) can be understood as a probabilistic parameter and estimated 
+based on the meteorological data of the locations. Values r < 1 are possible. Some countries with 
+ 
+ 
+27 
+Mediterranean or maritime climate seem to have done it to be able to define lower combination 
+factors than suggested in the Eurocode. 
+In the Final Report 1999, Annex 2 the influence of the number of repetitions and the coefficient of 
+variation on y0 is shown for Gumbel, Lognormal and Weibull distributions for different r (1 < r < 
+10). For r > 1, the combination factor y0 decreases, e.g. for Gumbel distribution, V = 0,3 from y0 = 
+0,6 (r = 1, see also Figure 4) to y0 = 0,2 to 0,3 (r = 10), depending on the exact method of 
+calibration. As far as no different assumptions are made, r = 1 applies.  
+However, both methods Case B.1 and Case B.2 can only be found in the special Background 
+reports for the reliability (Case 1) or for snow (Case 2). For the Eurocode itself, some more 
+simplifications have been developed and calibrated.  
+In EN 1990, Annex C, Table C.4 formulae for the direct calculation of combination coefficients y0 
+are given, the general expression for the probability function, the approximation for large N1 and 
+further approximations for the Normal and the Gumbel distribution. 
+Case B.3: Combination coefficient y0 in EN 1990, Annex C, Table C.4 
+General: With aE = -0,7 according to FORM, the factor a = 0,4 for the accompanying 
+action, b as the target reliability index, bc as the adapted reliability index and N1 as the 
+number of intervals in the reference period T (N1 = T / T1 > 1) the non-exceedance 
+probabilities are: 
+Dominating action:   1 - Pf = F(0,7 ∙ b)N1  
+Accompanying action:  1 - Pf,0 = F(0,4 ∙ bc)N1 
+where: bc = -F-1(F(-0,7 ∙ b) / N1) = -F-1(Pf /N1) 
+with Pf = 3,907 ∙ 10-3  
+Approximation for large N1: 
+Dominating action:   1 - Pf = F(0,7 ∙ b)  
+Accompanying action:  1 - Pf,0 = exp (-N1 ∙ F(-0,4 ∙ bc)) 
+where: bc = -F-1(F(-0,7 ∙ b) / N1) = -F-1(Pf /N1) 
+with Pf = 3,907 ∙ 10-3  
+Further Approximations for certain distributions: (no adaptation of b required) 
+Gumbel distribution: For CC2, FORM with b50 = 3,8, aE = -0,7 and a = 0,4: 
+   Qd = µ (1 - 0,78 V ∙ {0,58 + ln(-ln (F(0,7 ∙ b))) }) 
+   Qd,0 = µ (1 - 0,78 V ∙ {0,58 + ln(-ln (F(0,28 ∙ b))) + ln N1) }) 
+   y0 = Qd,0 / Qd = (1 + V ∙ (1,0031 - 0,78 ∙ ln N1)) / (1 + 3,87182 ∙ V) 
+The number N1 is the ratio between reference period T and the greater of the basic return periods 
+for the two independent, time-variant actions with T1 > T2 (< T). The number N1 = T/T1 is 
+approximated to the nearest integer (N1 > 0). In the Eurocode, the differences of these formulae, the 
+definition and application and T and T1 are not sufficiently explained, so that misconceptions 
+occurred. The largest of them is, to use these methods for all combinations, also when case A can 
+be applied, because the greater of the basic return periods T1 is 50 years and N1 = 1.  
+Case B.4:  Corrections: For a better agreement with the exact solution, a calibration factor of 
+0,7 has been introduced recently. Also, in the general expression, the target 
+reliability value b for the dominant action is also adapted to bc: 
+ 
+ 
+28 
+Dominating action:   1 - Pf = F(0,7 ∙ bc)N1  
+Accompanying action:  1 - Pf,0 = F(0,4 ∙ bc)N1 
+where: bc = -F-1(F(-0,7 ∙ b) / N1) = -F-1(Pf /N1) 
+with Pf = 3,907 ∙ 10-3  
+Gumbel distribution: For CC2, FORM with b = b50 = 3,8, aE = -0,7 and a = 0,4: 
+   Qd = µ (1 - 0,78 V ∙ {0,58 + ln(-ln (F(0,7 ∙ b))) }) 
+   Qd,0 = µ (1 - 0,78 V ∙ {0,58 + ln(-ln (F(0,28 ∙ b)) + 0,7 ln N1) }) 
+   y0 = Qd,0 / Qd = (1 + V ∙ (1,0031 - 0,5458 ∙ ln N1)) / (1 + 3,87182 ∙ V) 
+Conclusion: The combination coefficient in EN 1990, Annex A, Table A1.1 of y0 = 0,5 (or 0,7) 
+for snow loads (according to Case B.2) and of y0 = 0,6 for wind loads according to similar 
+considerations are obviously based on very rough assumptions about the independence of load 
+repetitions and the coefficients of variation of these effects. In their National Annexes some 
+countries may have chosen other values, based on representative coefficients of variation V and 
+repetitions r per year, see Part 2 of this report.  
+In the reality the combination coefficients of climatic influences are as different as the climate. The 
+standard values according to EN 1990, Annex A, Table A1.1 apply to the Scandinavian, Alpine and 
+mixed climate. In the maritime and Mediterranean climate for snow with Vsnow > 1, y0 = 0,4 
+applies more to Gumbel distribution and y0 = 0,25 to Lognormal distribution. The number of load 
+repetitions r > 1 may lead to even lower combination coefficients. A more precise determination is 
+always possible within the framework of a single project.  
+However, it should be borne in mind that no climatic correlation between maximum snow load 
+and associated wind load or maximal wind load and associated snow load has yet been considered 
+in this calculation. Rather, the combination coefficient y0 is based on the statistical independence 
+of the combined effects – pure statistics. These basic assumptions rarely apply to climatic 
+influences. More “Meteorology” and less “Reliability” would be better.  
+Statistical evaluations of climate data required to calculate the missing climatic correlation, as they 
+were suggested in Czwikla & Kasperski (2016 b), are unfortunately not in sight in Europe. 
+For commercial production greenhouses with transparent cladding (e.g. 4 mm glass) and controlled 
+heating, a thermal coefficient Ct << 1 may be applied. In practice, on greenhouse roofs in Europe 
+under controlled heating conditions, the snow remains not longer than a few hours. Under heavy 
+snowfall in snowy regions of the Alpine countries the roof snow is removed during the snowfall 
+and in the day after. Three days without light would be deadly for most greenhouse cultures. The 
+reduced roof snow load under controlled heating conditions on greenhouse roofs is therefore a rare 
+effect during heavier snowfall events. The heaviest snowfall events are often combined with air 
+temperatures around 0°C and lower wind speeds. Therefore, in the design of heated production 
+greenhouses (Ct << 1) for the combination of design snow loads with design wind loads it is 
+recommended to apply y0 ≈ 0.  
+This is different in other parts of Europe and therefore a national choice! 
+6. Force Importance Factor KFi (prEN 1999: 20020: Consequence Factor kF) 
+The following calculation of KFI-factors for greenhouse structures with the help of FORM is based 
+on the target probabilities for CC2 and n = 50 years with b1 = 4,7 leading to a probability of 
+ 
+ 
+29 
+exceedance for the design value of the variable action of Pf,T,1,d = 5 ∙ 10-4 per year with a return 
+period of 2000 years. A calculation based on b50 = 3,8 leading to a probability of exceedance of 
+Pf,T,50,d = 3,907 ∙ 10-3 per 50 years with a recurrence interval of 265 years leads to comparable KFI-
+values.   
+Despite of large variations, variable partial factors would not be practical for design. Therefore, for 
+all variable actions the partial factors are oriented at a fixed reference value for consequence class 
+CC2 and structures with a design working life of 50 years. For n = 50 years and CC2 the standard 
+partial factor for variable actions is: gF,Q,CC2 = 1,5.  
+For the standard value of 1,5 the variations are limited to the variation coefficient, which would 
+lead to gF,Q,CC2 = 1,5. For the Gumbel distribution, CC2 with bT,1 = 4,7 (Pf,T,1,d = 5,009 ∙ 10-4 per 
+year with a return period of ~2000 years), this limit is Vlim = 0,315.  
+For the Gumbel distribution, CC2 with bT,50 = 3,8 (Pf,T,50,d = 3,907 ∙ 10-3 per 50 years with a return 
+period of ~12800 years), this limit is Vlim = 0,165. 
+It must be noted that many countries indicated that their variation coefficients for climatic loads, 
+such as wind, snow and temperature are larger, see also Part 2 of this reliability report. That is why 
+attempts were made to increase and vary the partial factors. Also, model uncertainties and time-
+invariant parts are to be introduced leading to ever larger partial factors. However, it is also 
+possible and to prefer, to leave gF,Q,CC2 = 1,5 unchanged and increase the characteristic values 
+instead, as far as required. Every country can do this in its own responsibility, tradition, urgency, 
+speed. To agree about new partial factors would be a common task. 
+For other consequence classes than CC2 the partial factors can be adapted based on the given 
+reliability index, see Table 2. It is possible to calculate different partial factors for each of the 
+consequence classes. However, EN 1990 uses an adaptation factor KFI to be multiplied to the 
+standard partial factor gF,Q = 1,5. Note: Index “FI” means probably: “force importance”. In prEN 
+1990: 2020 the adaptation factor is called “consequence factor” with the symbol kF. For clarity the 
+use of KFI (= kF) is shown.   
+    gF,Q = KFI,Q ∙  gF,Q,CC2  
+where: KFI,Q  is the force importance factor for the consequence class according to Table 2 
+ gF,Q is the partial factor for variable actions for other consequence classes 
+ gF,CC2 is the partial factor for variable actions for the reference consequence class CC2, see 
+  EN 1990, A1.1.3.1 and any National Application Documents (NAD) with the  
+  relevant partial factors 
+The force importance factor KFI,Q (consequence factor kF) can be calculated from the ratio of the 
+design value Qd for the required consequence class and the design value Qd,CC2 for the reference 
+class CC2. The design working life is kept constant (n = 50 years) and has no influence on KFI,Q.  
+    KFI,Q = Qd / Qd,CC2  
+where:  Qd = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (F(-aE ∙ bT))) }) 
+  Qd,CC2 = µ (1 - V ∙ (√6)/p ∙{ 0,577215665 + ln(-ln (F(-aE ∙ bT,CC2))) }) 
+The design value for the annual target CC2 is based on: bT,1,CC2 = 4,7; FORM: aE = -0,7; Gumbel:  
+Qd,CC2 = µ (1 + V ∙ 5,47469) and Qd,CC2 (Vlim= 0,315) = µ ∙ 2,7256 
+For the lifetime target CC2 the design value is based on: bT,50,CC2 = 3,8; FORM: aE = -0,7; Gumbel:  
+Qd,CC2 = µ (1 + V ∙ 6,92201) and Qd,CC2 (Vlim= 0,165) = µ ∙ 2,1409 
+ 
+ 
+30 
+The influence of the coefficient of variation on the consequence factor kF (or KFI) is shown in 
+Figure 6 for the two consequence classes CC1 and CC0a used for commercial product ion 
+greenhouses. 
+ 
+Figure 6: Influence of the coefficient of variation on the KFI- or kF-factors of greenhouses 
+In Table 7a and 7b the partial factors and force importance factors KFI (consequence factors kF) for 
+all consequence classes according to Table 2 based on the assumptions above are summarized. 
+As can be seen in Figure 6 and Table 7a and 7b, the suggested KFI-values of 1,1 for CC3 and 0,9 
+for CC1 according to EN 1990: 2002, Annex B, B3.3, Table B.3 (prEN 1990: 2020; Annex A, 
+A.1.6 (1) Note 3, Table A.1.9) can be confirmed, especially for calculations based on the annual 
+target as snow and wind loads (Case A in chapter 4).  
+Class Target 
+Index 
+Action 
+Part 1 
+Exceedance 
+Probability2 
+Return 
+Period 3 
+Results 4 Partial 
+Factor  
+F. I. 
+Factor  for Denominator 
+bT,1 aE ∙ bT,1 Pf,T,1,d TR,d x 1 - V ∙ x  gF,Q KFI,Q 
+CC4 5,6 -3,92 4,427 ∙10-5 22586 -7,36647 3,32193 1,828 1,219 
+CC3 5,2 -3,64 1,363 ∙10-4 7336 -6,489595 3,045536 1,676 1,117 
+CC2 4,7 -3,29 5,009 ∙10-4 1996 -5,47469 2,725636 1,5 1 
+CC1 4,2 -2,94 1,641 ∙10-3 609 -4,54904 2,43387 1,339 0,893 
+CC0a  3,7 -2,59 4,799 ∙10-3 208 -3,71118 2,16977 1,194 0,796 
+CC0b 3,1 -2,17 1,500 ∙10-2 66 -2,81838 1,88836 1,039 0,693 
+1 Sensitivity factor for dominating actions according to FORM: aE = -0,7 
+2 Exceedance probability calculated via CDF for SND: Pf,T,1,d = F(aE ∙ bT,1) 3 Return period: TR,d =1/(1 - (1-Pf,n)1/n) 
+4 Gumbel distribution for the action with a coefficient of variation for covering gF,Q = 1,5: V = Vlim = 0,3152 
+Table 7a: Calculation results for partial factors gF,Q and force importance factors KFI,Q based on the 
+annual target bT,1 = 4,7 
+For a calculation based on the lifetime target (Case B in chapter 4), the KFI-values are closer 
+together because of the small coefficient of variation of Vlim = 0,1648 to match the standard partial 
+factor of gF,Q,CC2 = 1,5. This is not realistic for wind and snow. 
+0,70
+0,75
+0,80
+0,85
+0,90
+0,95
+1,00
+0 0,1 0,2 0,3 0,4 0,5 0,6 0,7 0,8 0,9 1 1,1 1,2 1,3 1,4 1,5
+Consequence Factor kF
+Variation Coefficient
+Influence of the Variation Coefficient on the Consequence Factor kF
+for Variable Loads with Gumbel Distribution
+Standard Value CC1
+Standard Value CC0a
+CC1 based on annual target
+CC1 based on lifetime target
+CC0a based on annual target
+CC0a based on lifetime target
+ 
+ 
+31 
+Class Target 
+Index 
+Action 
+Part 1 
+Exceedance 
+Probability2 
+Return 
+Period 3 
+Results 4 Partial 
+Factor  
+F. I. 
+Factor  for Denominator 
+bT,50 aE ∙ bT,50 Pf,T,50,d TR,d x 1 - V ∙ x  gF,Q KFI,Q 
+CC4 4,9 -3,43 3,018 ∙10-4 165653 -8,92007 2,470206 1,731 1,154 
+CC3 4,3 -3,01 1,306 ∙10-3 38253 -7,77729 2,81852 1,599 1,066 
+CC2 3,8 -2,66 3,907 ∙10-3 12773 -6,92201 2,14106 1,5 1 
+CC1 3,3 -2,31 1,044 ∙10-2 4763 -6,15281 2,014106 1,411 0,941 
+CC0a 2,6 -1,82 3,438 ∙10-2 1430 -5,21435 1,85943 1,309 0,869 
+CC0b 1,6 -1,12 1,314 ∙10-1 356 -4,12854 1,68044 1,177 0,785 
+1 Sensitivity factor for dominating actions according to FORM: aE = -0,7 
+2 Exceedance probability calculated via CDF for SND: Pf,T,50,d = F(aE ∙ bT,50) 3 Return Period: TR,d =1/(1 - (1-Pf,n)1/n) 
+3 Gumbel distribution for the action with a coefficient of variation for covering gF,Q = 1,5: V = Vlim = 0,1648 
+Table 7b: Calculation results for partial factors gF,Q and force importance factors KFI,Q based on the 
+lifetime target bT,50 = 3,8 
+It can also be recognised, that the old partial factor in EN 13031-1: 2001 for CC1 of gF,Q = 1,2 was 
+too small. It is better suited for CC0 (gF,Q = 1,5 ∙ 0,8 = 1,2). For CC1 gF,Q = 1,5 ∙ 0,9 = 1,35 will be 
+better. 
+Therefore, the suggestion in EN 13031-1 is: KFI;Q,CC1 = 0,9 > 0,893 and KFI,Q,CC0 = 0,8 > 0,796. 
+7. Partial Factor and Reduction Factor for unfavourable Permanent Actions 
+Permanent actions do normally not dominate a combination of actions on greenhouses. Despite of 
+it, both cases, permanent dominant and permanent non-dominant actions, will be considered. 
+Permanent actions in greenhouses are the self-weight of the structure, cladding and permanently 
+present installations. Self-weights can be estimated very precise. Variation coefficients between V 
+= 0,01 and V = 0,15 have been reported for usual building materials. For steel, aluminium and glass 
+the variation coefficients are rather small: for the weight itself: Vm < 0,01 (< 0,03 for aluminium), 
+for metal sections: Vg < 0,05 and for plates of glass: Vg = 0,05. For the uncertainty of the model, a 
+coefficient of variation of VSd = 0,05 to 0,1 can be assumed. Larger variation coefficients are 
+typical for concrete, bricks and exposed timber. 
+For a greenhouse made of steel, aluminium and glass the uncertainties (worst case) can be 
+summoned to: 
+  Vtotal = (Vm2 + Vg2 + VSd2)1/2 = (0,032 + 0,052 + 0,12)1/2 = 0,116.    
+The self-weight has usually a normal (Gaussian) distribution (ND). 
+Dependent on the coefficient of variation, and whether it can be neglected or must be considered, 
+permanent or quasi-permanent actions can be described generally: 
+Characteristic value:    
+ Variability taken into account:  Gk,sup = µ (1 + 1,64 ∙ V)  95% fractile value 
+      Gk,inf = µ (1 - 1,64 ∙ V)  5% fractile value    
+ Variability can be neglected:   Gk = Gmean = µ    
+ 
+The design value can be estimated using the lifetime target reliability index of bT,50 according to 
+Table 2.  
+ 
+ 
+32 
+ 
+Design value:  Gd = µ (1 - aE ∙ bT,50 ∙ V) 
+ Where:  aE  is the sensitivity coefficient for the action, according to FORM: 
+     for dominant loads:    aE = -0,7 
+     for non-dominant loads:  aE,c = -0,28 
+   bT  is the target value for the reliability index; see Table 2 
+   µ  is the mean value of the permanent load, normal distribution (ND) 
+   V  is the coefficient of variation V = s/µ 
+The partial factor for the permanent action is the ratio of characteristic value and design value gF,G 
+= Gd / Gk. If the variability can be neglected, gF,G can be calculated directly. 
+ For dominant loads:   gF,G = 1 -  aE ∙ bT,50 ∙ V   with:  aE = -0,7 
+ For non-dominant loads:  gF,G,c = 1 -  aE,c ∙ bT,50 ∙ V  with:   aE,c = -0,28 
+In case of the permanent action not dominating the load combination, a combination coefficient x 
+for permanent actions can be used, which represents the ratio of the partial factors:   
+     x = (1 + 0,28 ∙ bT,50 ∙ V) / (1 + 0,7 ∙ bT,50 ∙ V) 
+ 
+As an example, for CC2 using bT,50 = 3,8 and Vtotal = 0,116 the partial factor gF,G and the 
+combination coefficient for a non-dominant permanent load x can be derived as follows: 
+For dominant actions:  gF,G = 1 -  aE ∙ bT,50 ∙ V = 1 + 0,7 ∙ 3,8 ∙ 0,116 =  1,30856 ≈ 1,3 
+For non-dominant actions:  gF,G,c = 1 -  aE,c ∙ bT,50 ∙ V = 1 + 0,28 ∙ 3,8 ∙ 0,116 =  1,1234 ≈ 1,1 
+    x = 1,1234 / 1,3056 = 0,8585 ≈ 0,85 
+Here can be seen, that for many structure the standard partial coefficient for permanent actions 
+according to EN 1990 of gF,G = 1,35 is too large. Such a partial factor could cover a total variation 
+coefficient of up to Vtot = Vlim = 0,131579. Concrete is only used in the foundat ions of 
+greenhouses. However, not all variation coefficients are known for greenhouse claddings and other 
+permanent loads, e.g. installations. If there is no further information available, the standard value 
+for CC2 gF,G = 1,35 should be accepted as a basis. 
+The calculation also confirms that the load combinations according to EN 1990, 6.4.3.2 (3), and 
+Table A1.2 (B), equation 6.10a and 6.10b with the combination coefficient x are a safe option for 
+greenhouses. Because of the small self-weight of the greenhouse structure, except for the 
+foundations, equation 6.10b with the permanent load non-dominant with x < 1will be relevant.  
+For other consequence classes than CC2 the partial factors can be adapted as already shown for 
+variable loads. Partial factors and KFI,G-factors can be calculated directly:  
+For dominant loads:   gF,G = gF,G,CC2 ∙ KFI,G = 1,35 ∙ KFI,G 
+     KFI,G = (1 + 0,7 ∙ bT,50 ∙ V) / (1 + 2,66 ∙ V)    
+ For non-dominant loads:  gF,G,c = gF,G,CC2 ∙ KFI,G ∙ x = 1,35 ∙ KFI,G ∙ x 
+     x = (1 + 0,28 ∙ bT,50 ∙ V) / (1 + 0,7 ∙ bT,50 ∙ V) 
+     KFI,G,c = (1 + 0,7 ∙ bT,50 ∙ V) / (1 + 2,66 ∙ V)   
+    with: Target CC2: bT,50,CC2 = 3,8;  FORM: aE = -0,7; aE,c = -0,28;  
+The assumptions and results are shown in Table 8 and Table 9 for the two variation coefficients V 
+= Vlim = 0,131579 (gF,G,CC2 = 1,35) and V = 0,116 (gF,G,CC2 = 1,3). The KFI,G-values and x-
+coefficients vary, therefore for design purposes a further approximation should be used. 
+ 
+ 
+ 
+33 
+Class Target 
+Index 
+FORM: Action side 1 Non-dominant 2 Dominant 2 
+aE = -0,7  aE,c = -0,28  Partial 
+Factor 
+KFI 
+Factor 
+Comb. 
+Coefficient 
+Partial 
+Factor  
+KFI 
+Factor  
+bT,50 aE ∙ bT,50 aE,c ∙ bT,50 gF,G,c KFI,G x gF,G KFI,G 
+CC4 4,9 -3,43 -1,372 1,159 1,068 0,829 1,398 1,068 
+CC3 4,3 -3,01 -1,204 1,1397 1,031 0,845 1,349 1,031 
+CC2 3,8 -2,66 -1,064 1,123 1 0,8585 1,3086 1 
+CC1 3,3 -2,31 -0,924 1,107 0,969 0,873 1,278 0,969 
+CC0a 2,6 -1,82 -0,728 1,084 0,9255 0,895 1,211 0,9255 
+1 Sensitivity factor for dominating actions according to FORM: dominant aE = -0,7; non-dominant:aE = -0,28 2 
+Normal distribution for the action with a coefficient of variation Vtot = 0,116 leading to gF,G = 1,3086 = 0,9693 ∙1,35. 
+Table 8: Calculation results for partial factors gF,G, force importance factors KFI,G and combination 
+coefficients x for light-weight structures with V = 0,116 
+It can be seen, that the proposed KFI = 0,9 for CC1 and x = 0,85 for non-dominant permanent loads 
+according to EN 1990, B.3.3 are not sufficiently differentiated. It can also be seen, that the partial 
+factor in EN 13031-1: 2001 for CC1 of gF,G = 1,2 was on the safe side for non-dominant permanent 
+loads. For dominant permanent loads gF,Q = 1,3 would have been better. As a simplification for EN 
+13031-1 it was suggested to use the same KFI as for variable loads, following EN 1990, B3.3.  
+Note: In usual load combinations for greenhouses, permanent loads are non-dominant. If this is not 
+the case, the partial factors should be adapted as follows. For the comparison see also Table 8. 
+For non-dominant permanent actions:  
+   CC2:  KFI,G = 1 (x = 0,85) gF,G = 1,35 (∙ 0,85 = 1,1475)  s. Table 5 (EN 1990) 
+   CC1:  KFI,G = 0,9 gF,G = 0,9 ∙ 1,35 = 1,215  > 1,107  
+   CC0a:  KFI,G = 0,8  gF,G = 0,8 ∙ 1,35 = 1,08  ≈ 1,084  
+For dominant permanent actions:  
+   CC2:  KFI,G = 1  gF,G = 1,35     s. Table 5  (EN 1990) 
+   CC1:  KFI,G = 0,95 gF,G = 0,95 ∙ 1,35 = 1,2825  > 1,278  
+   CC0a:  KFI,G = 0,9  gF,G = 0,9 ∙ 1,35 = 1,215  > 1,211  
+ 
+Class Target 
+Index 
+FORM: Action side 1 Non-dominant 2 Dominant 2 
+aE = -0,7 aE,c = -0,28 Partial 
+Factor 
+KFI 
+Factor 
+Comb. 
+Coefficient 
+Partial 
+Factor  
+KFI 
+Factor  
+bT,50 aE ∙ bT,50 aE,c ∙ bT,50 gF,G,c KFI,G x gF,G KFI,G 
+CC4 4,9 -3,43 -1,372 1,1805 1,075 0,813 1,451 1,075 
+CC3 4,3 -3,01 -1,204 1,158 1,034 0,83 1,396 1,034 
+CC2 3,8 -2,66 -1,064 1,14 1 0,844 1,35 1 
+CC1 3,3 -2,31 -0,924 1,1216 0,966 0,86 1,304 0,966 
+CC0a 2,6 -1,82 -0,728 1,096 0,918 0,884 1,239 0,918 
+1 Sensitivity factor for dominating and non-dominating actions according to FORM: 
+  aE = -0,7 for dominant loads; aE = -0,28 for non-dominant loads 
+2 Normal distribution for the action with a coefficient of variation for covering gF,G = 1,35: Vtot = 0,131579 
+Table 9: Calculation results for partial factors gF,G, force importance factors KFI,G and combination 
+coefficients x for Vlim = 0,131579 
+   
+ 
+ 
+ 
+ 
+34 
+8. Importance Factor for Accidental Action, Exceptional Snow and Earthquake  
+Most accidental actions do not occur or can be neglected for commercial production greenhouses in 
+CC1 or CC0, because EN 1991-1-7, 3.4 (2) rules for the treatment of accidental actions: 
+“- CC1: no specific consideration is necessary for accidental actions except to ensure that the 
+robustness and stability rules given in EN 1990 to EN 1999, as applicable, are met;”  
+Despite of this clear statement, in some countries, accidental actions, such as impact loads, 
+exceptional snowfall and earthquake are to be considered for all greenhouses.  
+Therefore, earthquake actions are treated in separate Background Documents: Design of 
+Greenhouses: Part 1 to Part 5, available online. Based on the Poisson distribution according to EN 
+1998-1 for this exceptional action with a rare occurrence, importance factors gI have been derived, 
+which can also be used as importance factors KFI,A for other rare, accidental actions: 
+   CC2:  KFI,A = gI = 1 
+   CC1:  KFI,A = gI = 0,8 
+   CC0a:  KFI,A = gI = 0,6 
+The importance factor gI = 0,8 for CC1 = IC1 is also recommended in EN 1998-1, 4.2.5 (5)P.  
+9. Summary of the Regulations for EN 13031-1  
+Partial factors or KFI-factors in the Eurocode are suggestions, not normative. They can be chosen 
+nationally (NAD or NCI). As a result, in the Euronorm EN 13031-1 these factors can also not be 
+given normative, because their basis, the partial factors for CC2 according to EN 1990, A.1.3 and 
+the underlying reliability according to EN 1990, Annex B and C could have been altered by a NAD 
+or NCI in the National Annex to the Eurocode by a country. 
+Therefore, no partial factors are given any more in EN 13031, only suggestions for the KFI-factors 
+especially for the newly defined consequence class CC0 (refers to CC0a); see Table 10. 
+Persistent, transient and accidental design situations Consequence Class 
+ULS CC2 1 CC1 CC0 
+Target value of probability of failure for n = 50 years pT,50 
+(Target value of reliability index bT,50) 
+5 ∙ 10-5 
+(3,8) 
+5 ∙ 10-4 
+(3,3) 
+5 ∙ 10-3 
+(2,6) 
+Target value of annual failure probability pT,1 
+(Target value of reliability index bT,1) 
+10-6  
+(4,7) 
+10-5 
+(4,2) 
+10-4 
+(3,7) 
+KFI,G 2 and KFI,Q 3 for permanent and variable actions 1 0,9 0,8 
+KFI,A for accidental actions (without earthquake) 1 0,8 0,6 
+1 Basic reference values for n = 50 years, consequence class CC2 according to EN 1990, A1. 
+2 For permanent actions KFI,G includes the combination coefficient x for non-dominant permanent loads. The 
+reference value is gF,G,CC2 = 1,35. For dominant permanent actions take KFI,G,CC1 = 0,95 and KFI,G,CC0 = 0,9. 
+3 For variable actions the reference value is gF,Q,CC2 = 1,5. 
+Table 10: Recommendations for the calculation of partial factors by using KFI-factors for 
+greenhouses according to EN 13031-1 
+A country can follow the recommendations in EN 13031 -1, 5.3 (KFI; gI) or make any other 
+(qualified!) choice. If no choice is made, the recommendations apply. For a qualified choice the 
+target probabilities (annual and for the lifetime n) are also given. This is important, because CC0 
+has not yet been included into EN 1990. Also, targets for the exceedance probabilities of climatic 
+ 
+ 
+35 
+or other variable actions are not given in EN 1990, only two slightly inconsistent reliability indices 
+for the total design. This can lead to misconceptions, as explained in this report. 
+ 
+References 
+ 
+- EN 1990 Eurocode - Basis of structural design. CEN 2002 
+- prEN 1990 draft Eurocode - Basis of structural design. CEN 2020 
+- EN 1991-1-3 Eurocode 1 Actions on structures – Part 1-3: Snow loads. CEN 2003. 
+- prEN 1991-1-3 Eurocode 1 Actions on structures – Part 1-3: Snow loads. CEN 2020. 
+- EN 1991-1-4 Eurocode 1 Actions on structures – Part 1-4: Wind actions. CEN 2004. 
+- EN 1991-1-5 Eurocode 1 Actions on structures – Part 1-5: Temperature actions. Cen 2005. 
+- EN 1991-1-7 Eurocode 1 Actions on structures – Part 1-7: Accidental actions. CEN 2006. 
+- FprEN 16612: 2019: Glass in building – Determination of the lateral load resistance of glass 
+panes by calculation. CEN 2019.  
+- ISO 2394: General principles on reliability for structures. ISO 1998.  
+- ISO 2394: General principles on reliability for structures. ISO 2014. 
+- ISO 4354: Wind actions on structures. ISO 2009. 
+- ISO 4355: Bases for deign of structures - Determination of snow loads on roofs. ISO 2013.   
+- JRC Guidance for European Structural Design of Glass Components. JRC Scientific and Policy 
+Reports, Support for the implementation, harmonization and further development of the 
+Eurocode. JRC 86637, EUR 26439 EN, 2014.  
+- Final Report I (Sanpaolesi, L. et al.: 1998): Commission of the European Communities DGIII-
+D3, Scientific Support Activity in the Field of Structural Stability of Civil Engineering Works: 
+Snow Loads, Pisa, IT, 54 p. 
+- Final Report II (Sanpaolesi, L. et al.: 1999a): Commission of the European Communities 
+DGIII-D3, Scientific Support Activity in the Field of Structural Stability of Civil Engineering 
+Works: Snow Loads, Pisa, IT, 172 p. + Annex 1-13, p. 175-341. 
+- Annex B to the Final Report (Sanpaolesi, L. et al.: 1999b): Commission of the European 
+Communities DGIII-D3, Scientific Support Activity in the Field of Structural Stability of Civil 
+Engineering Works: Snow Loads, Pisa, IT, 41 p. 
+- GRUSIBAU (Grundlagen zur Festlegung von Sicherheitsanforderungen für bauliche Anlagen), 
+1st Edition in English 1981, DIN (Deutsches Institut für Normung): General Principles on the 
+Specification of Safety Requirements for Structures. Beuth Verlag, Berlin 1982, Germany.   
+- Implementation of Eurocodes: Handbook 1: Basis of Structural Design. Guide to Interpretative 
+Documents for Essential Requirements, to EN 1990 and to application and use of Eurocodes, 
+Garston Watford, UK, 2004. 
+- Implementation of Eurocodes: Handbook 2: Reliability Backgrounds. Guide to basis of 
+structural reliability and risk engineering related to Eurocodes supplemented by practical 
+examples, Prague 2005. 
+- Implementation of Eurocodes: Handbook 3: Action Effects for Buildings. Guide to basis of 
+structural reliability and risk engineering related to Eurocodes supplemented by practical 
+examples, Aachen 2005. 
+- Vrouwenvelder, T. (2000): Probabilistic model code, Part 1 - Basis of design, Joint Committee 
+on Structural Safety, JCSS-Publications 2000 (available online). 
+ 
+ 
+36 
+- Vrouwenvelder, T. (2001): Probabilistic model code, Part 2 - Load models, Joint Committee on 
+Structural Safety, JCSS-Publications 2001 (available online). 
+- Gulvanessian, H., Calgaro, J., Holicky, M. (2012): Designers` Guide to Eurocode: Basis of 
+structural design EN 1990. Second Edition, ICE publication, Thomas Telford, London, UK.  
+- fib Bulletin 80, CEB-FIP (2016): Partial factor methods for existing concrete structures. 
+Recommendation Task Group 3.1. 
+- Background Snow EN 13031 Part I: Melting. In: www.greenhousecodes.com. 
+- Background Snow EN 13031 Part II: Sliding and Drift. In: www.greenhousecodes.com. 
+- Background Reliability EN 13031 Part 2: Adjustment factors for the reference period related of 
+the design working life. In: www.greenhousecodes.com.  
+- Croce, P., Formichi, P., Landi, F. (2020): Reliability of roof structures subjected to snow loads. 
+In: Proceedings of the 30th European Safety and Reliability Conference and the 15 th 
+Probabilistic Safety and Management Conference. Edited by Baraldi, P., Di Maio, F., Zio, E.; 
+Published by Research Publishing Singapore, ISBN: 978-981-14-8593-0, doi: 10.385/978-981-
+14-8593-0, pp. 4765-4770. 
+- Croce, P., Formichi, P., Landi, F. (2021): Probabilistic Assessment of Roof Snow Load and the 
+Calibration of Shape Coefficients in the Eurocodes. In: Applied Sciences 2021, 11, 2984, 
+https://doi.org/10.3390/app110782984, 16 pp. 
+- Czwikla, B., Kasperski, M. (2016 a): Specification of oft the design value of the ground snow 
+load considering measurements of the snow height – Part 1: Single stations. In: 8th International 
+Conference on Snow Engineering, Nantes, France, pp. 93-100. 
+- Czwikla, B., Kasperski, M. (2016 b): Specification of oft the design value of the ground snow 
+load considering measurements of the snow height – Part 2: Regional approach. In: In: 8th 
+International Conference on Snow Engineering, Nantes, France, pp. 152-159. 
+- Dahlberg, M., Hansson, L., Lindt, T. (1988): Snölast pa Glastak. Examensarbede, Lund 
+Institute of Technology, Department of Civil Engineering, Sweden. 
+- Diamantidis, D., Holicky, M. (2010): Reliability differentiation in the Eurocode. In: Research 
+Gate, Conference paper, SEMC International Conference at Cape Town, South Africa. 
+- Ferry Borges, J. & Castanheta, M. (FBC 1971): Structural Safety, Laboratorio Nacional de 
+Engenharta Civil, Lisboa, Portugal.   
+- Gulvanessian, H., Holicky, M. (2005): Eurocodes: Using reliability analysis to combine action 
+effects. In: Proceedings of the Institution of Civil Engineers: Structures and Buildings 158, 
+August 2005, pp. 243-252. 
+- Høibø, H. (1988): Snow Load on Gable roofs - Results from Snow Load Measurements on 
+Farm Building in Norway. Proceedings of the 1st International Conference on Snow 
+Engineering, Santa Barbara, California, USA, CRREL Special Report No. 89-6, pp. 95-104.  
+- Jacinto, L., Santos, L.O., Neves, L. C. (2020): Calibration of partial safety factors using FORM. 
+In: rpee, Series III, no. 14, novembro de 2020, https://. 
+- Kasperski, M., Geurts, C. (2005): Reliability and code level. In: Wind and Structures, Vol. 8, 
+No. 4, pp. 295-307. 
+- Kasperski, M. (2012): A consistent approach for estimating the design value of the snow load 
+on the ground from confined ensembles. In: ICSE 2012: 7th International Conference on Snow 
+Engineering, June 6-8, Fukui, Japan, pp. 216-230. 
+ 
+ 
+37 
+- Kasperski, M. (2016): Probabilistic concepts in snow engineering – from observations to 
+specifications of consistent design values including climate change. In: In: 8th International 
+Conference on Snow Engineering, Nantes, France, pp. 53-72. 
+- Pertermann, I., Puthli, R., Ummenhofer, T. Vrouwenvelder, T. (2012a): Risikoorientierte 
+Bemessung von Tragstru kturen – Bedeutungsbeiwerte bei der Differenzierung  der 
+Zuverlässigkeit für unterschiedliche Schadens- bzw. Versagensfolgeklassen. In: Stahlbau 81 
+(2012), No. 3, pp. 212-218. 
+- Pertermann, I., Puthli, R., Ummenhofer, T. Vrouwenveld er, T. (2012b): Risikoorientierte 
+Bemessung von Tragstrukturen – Geplante Nutzungsdauer. In: Stahlbau 81 (2012), No. 7, pp. 
+530-538. 
+- Pertermann, I., Puthli, R., Ummenhofer, T. (2012c): Risikoorientierte Bemessung von 
+Tragstrukturen – Kombinationsbeiwerte für ständige Lasten. In: Stahlbau 81 (2012), No. 10, 
+pp. 780-784.  
+- Pertermann, I., Puthli, R., Ummenhofer, T. (2014): Temperatureinfluss auf Dachschneelasten 
+von Gewächshäusern - Abtauen von Schnee über wärmedurchlässigen Dacheindeckungen. In: 
+Stahlbau 83 (2014), No. 12, pp. 860-872.  
+- Sandvik, R. (1988): Calculation of Maximum Snow Load on Roofs with High Thermal 
+Transmittance. Proceedings of the 1st International Conference on Snow Engineering, Cold 
+Regions Research & Engineering Laboratory (CRREL), Report 89-6, pp. 317-324. 
+- Sadovsky, Z. (2006): Climatic load and reliability of light roof industrial buildings. In: Safety 
+and Reliability for Managing Risk – Guedes Soares & Zio (eds), Taylor & Francis Group, 
+London 2006, pp. 1535-1539. 
+- Sadovsky, Z. (2008): Collection and analysis of climatic measurements for the assessment of 
+snow loads on structures. In: R&ATA #2 (Vol. 1), 2008. 
+- Sadovsky, Z., Fasko P., Mikulova, K., Pecho, J. (2012): Exceptional snowfalls and the 
+assessment of accidental loads for structural design. In: Cold Regions Science and Technology 
+72 (2014), pp. 17-22. 
+- Sadovsky,Z. (2015): Response to discussion on “Exceptional snowfalls and the assessment of 
+accidental loads for structural design. From M. Kasperski (Cold Regions Science and 
+Technology 101 (2014)” In: Cold Regions and Technology 110 (2015), pp. 67-69. 
+- Turkstra, C.J. (1970): Theory of Structural Design Decisions. Study No. 2 Ontario, Canada. 
+Solid Mechanics Division, University of Waterloo, Canada. 
+- Van Coile, R., Hopkin, D., Bisby, l., Caspeele, R. (2017): The meaning of Beta: background 
+and applicability of the target r eliability index for normal conditions to structural fire 
+engineering. In: 6th International Workshop on Performance, Protection & Strengthening of 
+Structures under Extreme Loading. Protect2017, Guangzhou, China; In: Procedia Engineering 
+210 (2017) pp. 528-536. 
+- Vrowenvelder, T. (2002): Reliability Based Code Calibration. The use of the JCSS 
+Probabilistic Model Code. Joint Committee of Structural Safety Worksh op on Code 
+Calibration, March 21/22, Zürich, Schweiz. 
+- Vrowenvelder, T. (2008): Treatment of risk and reliability in the Eurocodes. Proceedings of the 
+Institution of Civil Engineers: Structures and Buildings 161, August 2008, pp.209-214. 
+ 
+ 
+38 
+- Vrowenvelder, T. (2012): Target reliabilities as a function of the design working life. In: 
+Proceedings of the International Forum on Engineering Decisions Making (6th IFED Forum), 
+Lake Louis, Canada. 

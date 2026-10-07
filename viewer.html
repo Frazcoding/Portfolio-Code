@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Greenhouse Decarbonisation · Two-Stage Ammonia Heat Pump · Annual Simulation Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="20 × 20 m Venlo glasshouse, tomato crop, R717 open-intercooler heat pump · full-year 2023 at 10-min control">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../viewer_core/viewer.css">
+<script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand"><h1>Greenhouse Decarbonisation · Two-Stage Ammonia Heat Pump</h1><span class="sub">20 × 20 m Venlo glasshouse, tomato crop, R717 open-intercooler heat pump · full-year 2023 at 10-min control</span></div>
+    <nav class="runs" aria-label="Scenario and display options">
+      <div class="pick"><label for="scenario">Scenario</label><select id="scenario"></select></div>
+      <label class="toggle"><input type="checkbox" id="labelsToggle" checked> Tags</label>
+      <label class="toggle"><input type="checkbox" id="spToggle" checked> State points</label>
+      <label class="toggle"><input type="checkbox" id="flowToggle" checked> Flow</label>
+      <label class="toggle" title="Ambient occlusion (turn off on slow machines)"><input type="checkbox" id="aoToggle" checked> AO</label>
+      <span class="navsep"></span>
+      <a href="../index.html" class="btn" title="Return to portfolio hub">Hub ↗</a>
+    </nav>
+  </header>
+  <main>
+    <div class="stage">
+      <div id="three"></div>
+      <div id="tags"></div>
+      <div id="tip"></div>
+      <div id="inspect"></div>
+      <div id="modelStatus" role="status"></div>
+      <div class="view-tools"><button class="btn" id="topView" type="button">Top</button><button class="btn" id="frontView" type="button">Front</button><button class="btn" id="resetView" type="button">Reset</button></div>
+      <div class="legend" id="legend"></div>
+      <div class="hint">drag orbit · scroll zoom · right-drag pan · click equipment for specs</div>
+    </div>
+    <aside>
+      <div class="clockbar">
+        <div><div class="d" id="clockDate">–</div><div class="t" id="clock">–</div></div>
+        <span class="run-tag" id="scenarioBadge">–</span>
+      </div>
+      <div class="tabs" role="tablist">
+        <button data-tab="overview" aria-selected="true">Overview</button>
+        <button data-tab="sp" id="tabSp" aria-selected="false">State points</button>
+        <button data-tab="diag" id="tabDiag" aria-selected="false">Diagrams</button>
+        <button data-tab="vars" aria-selected="false">Variables</button>
+        <button data-tab="kpi" aria-selected="false">Annual KPIs</button>
+      </div>
+      <div class="tabpanes">
+        <section class="pane on" data-tab="overview">
+          <div class="cmds" id="cmds"></div>
+          <h2>Live telemetry at cursor</h2>
+          <table><thead id="sensHead"><tr><th>Channel</th><th>Sim.</th><th>Ref.</th><th>Δ</th></tr></thead><tbody id="sens"></tbody></table>
+          <h2 id="ledgerTitle">Energy flows</h2>
+          <div class="ledger" id="ledger"></div>
+          <p class="note" id="sensorNote"></p>
+          <p class="note" id="provenance"></p>
+        </section>
+        <section class="pane" data-tab="sp" id="spPane"><div id="spTables"></div>
+          <p class="note">Hourly-mean states from full CoolProp equation-of-state solutions. Hover a row to locate the point in 3D.</p></section>
+        <section class="pane" data-tab="diag" id="diagPane"></section>
+        <section class="pane" data-tab="vars">
+          <input class="vsearch" id="vsearch" type="search" placeholder="Search channels… (e.g. enthalpy, pressure, 5_T)">
+          <p class="note" id="varCount" style="margin:0 0 6px"></p>
+          <div class="vfocus" id="vfocus"><b id="vfTitle"></b><div class="stats" id="vfStats"></div><canvas id="monthly"></canvas></div>
+          <div id="vars"></div>
+        </section>
+        <section class="pane" data-tab="kpi"><div id="kpis"></div></section>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <div class="ctrl">
+      <button id="play" type="button">Play</button>
+      <div class="row"><button class="ghost" id="stepBack" type="button" title="Previous sample (←)">◀</button><button class="ghost" id="stepFwd" type="button" title="Next sample (→)">▶</button></div>
+      <label for="speed">Playback
+        <select id="speed"><option value="3600">1 h / s</option><option value="21600">6 h / s</option><option value="86400" selected>1 day / s</option><option value="604800">1 week / s</option><option value="2592000">1 month / s</option></select>
+      </label>
+    </div>
+    <div class="chartwrap">
+      <div class="charttools">
+        <button class="btn" type="button" data-win="24">Day</button><button class="btn" type="button" data-win="168">Week</button><button class="btn" type="button" data-win="744">Month</button><button class="btn on" type="button" data-win="0">Year</button>
+        <span class="sp"></span><span class="info" id="winInfo"></span>
+      </div>
+      <canvas id="chart" aria-label="Timeline: click or drag to seek, scroll to zoom"></canvas>
+      <canvas id="overview" aria-label="Full-period overview: drag to move the window"></canvas>
+    </div>
+  </footer>
+</div>
+<script type="application/json" id="viewer-config">{"title": "Greenhouse Decarbonisation · Two-Stage Ammonia Heat Pump", "scenarios": [{"key": "air", "name": "Chelmsford 2023 · dynamic greenhouse · R717 air-source", "badge": "Air source"}, {"key": "ground", "name": "Chelmsford 2023 · dynamic greenhouse · R717 ground-source (16 boreholes)", "badge": "Ground source"}, {"key": "water", "name": "Chelmsford 2023 · dynamic greenhouse · R717 river-source", "badge": "River source"}, {"key": "thesis", "name": "Thesis calibrated model · 2018 (static load, three sources)", "badge": "Thesis 2018"}], "scene": {"glb": "greenhouse.glb", "meta": "greenhouse_meta.json", "fov": 32, "camera": {"pos": [34.0, 18.0, 30.0], "target": [3.0, 2.5, 0.0]}, "groundRadius": 70, "bindings": [{"type": "rotate", "nodes": ["Vent_*"], "key": "vent", "range": [0, 100], "angles": [0, 32], "axis": "z"}, {"type": "opacity", "nodes": ["Thermal_Screen"], "key": "screen", "range": [0, 100], "min": 0.0, "max": 0.85}, {"type": "color", "nodes": ["Pipe_Rails"], "key": "T_pipe", "range": [-15, 80], "mix": 0.75}, {"type": "visible", "nodes": ["Src_Air_*"], "key": "src_kind", "max": 0.5}, {"type": "visible", "nodes": ["Src_Ground_*"], "key": "src_kind", "min": 0.5, "max": 1.5}, {"type": "visible", "nodes": ["Src_Water_*"], "key": "src_kind", "min": 1.5}, {"type": "spin", "nodes": ["Src_Air_Fan_*"], "key": "on_frac", "scale": 0.25, "axis": "y"}, {"type": "color", "nodes": ["HP_Skid"], "key": "T_dis_hp", "range": [20, 150], "mix": 0.12}, {"type": "color", "nodes": ["Buffer_Band_1"], "key": "buf_T1", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_2"], "key": "buf_T2", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_3"], "key": "buf_T3", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_4"], "key": "buf_T4", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_5"], "key": "buf_T5", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_6"], "key": "buf_T6", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_7"], "key": "buf_T7", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_8"], "key": "buf_T8", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_9"], "key": "buf_T9", "range": [-15, 80], "mix": 1.0}, {"type": "color", "nodes": ["Buffer_Band_10"], "key": "buf_T10", "range": [-15, 80], "mix": 1.0}], "flows": [{"path": "r_lp_dis", "key": "m_lp", "colorKey": "3_T", "range": [-15, 80], "scale": 0.02, "spacing": 0.25, "radius": 0.02}, {"path": "r_hp_suc", "key": "m_hp", "colorKey": "4_T", "range": [-15, 80], "scale": 0.02, "spacing": 0.25, "radius": 0.02}, {"path": "r_hp_dis", "key": "m_hp", "colorKey": "5_T", "range": [-15, 80], "scale": 0.02, "spacing": 0.25, "radius": 0.018}, {"path": "r_liquid", "key": "m_hp", "colorKey": "6_T", "range": [-15, 80], "scale": 0.01, "spacing": 0.25, "radius": 0.014}, {"path": "r_hp_liq", "key": "m_hp", "colorKey": "7_T", "range": [-15, 80], "scale": 0.01, "spacing": 0.25, "radius": 0.014}, {"gateKey": "src_kind", "gateMax": 0.5, "path": "air_suction", "key": "m_lp", "colorKey": "1_T", "range": [-15, 80], "scale": 0.03, "spacing": 0.3, "radius": 0.03}, {"gateKey": "src_kind", "gateMin": 0.5, "gateMax": 1.5, "path": "ground_loop", "key": "on_frac", "colorKey": "T_src", "range": [-15, 80], "scale": 0.02, "spacing": 0.35, "radius": 0.03}, {"gateKey": "src_kind", "gateMin": 1.5, "path": "river_in", "key": "on_frac", "colorKey": "T_src", "range": [-15, 80], "scale": 0.02, "spacing": 0.35, "radius": 0.04}, {"path": "w_charge", "key": "W2_m", "colorKey": "W2_T", "range": [-15, 80], "scale": 0.6, "spacing": 0.3, "radius": 0.03}, {"path": "h_flow", "key": "Q_pipe", "colorKey": "T_sup", "range": [-15, 80], "scale": 0.02, "spacing": 0.35, "radius": 0.03}, {"path": "h_ret", "key": "Q_pipe", "colorKey": "T_pipe", "range": [-15, 80], "scale": 0.02, "spacing": 0.35, "radius": 0.03}], "tags": [{"label": "Greenhouse climate", "anchor": "Climate", "fmt": "{T_in|1} °C · {RH_in|0} % RH · vents {vent|0} %"}, {"label": "Pipe rails", "anchor": "Pipes", "fmt": "{T_pipe|1} °C · {Q_pipe|0} kW"}, {"label": "R717 heat pump", "anchor": "HP", "fmt": "{Q_c|0} kW · COP {cop|2} · {T_dis_hp|0} °C dis."}, {"label": "Buffer 1.5 m³", "anchor": "Buffer", "fmt": "{buf_T1|1} / {buf_T10|1} °C"}, {"label": "Heat source", "anchor": "Source", "fmt": "{T_src|1} °C · ground/river {T_ground|1} °C"}, {"label": "Energy screen", "anchor": "Screen", "fmt": "{screen|0} % closed"}]}}</script>
+<script type="module" src="../viewer_core/viewer.js"></script>
+</body>
+</html>

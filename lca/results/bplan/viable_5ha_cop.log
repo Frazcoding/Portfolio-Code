@@ -1,0 +1,164 @@
+C:\Users\frase\AppData\Local\Programs\Python\Python314\Lib\site-packages\pypsa\network\io.py:2082: FutureWarning: pandas infers the `str` dtype for string data since its version 3.0. PyPSA still converts it back to numpy object dtype on import, but will keep it from PyPSA 2.0 on. Set `pypsa.options.api.legacy_string_dtype` explicitly to suppress this warning.
+  new_static = _coerce_string_dtypes(new_static)
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:146: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra,
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 8.16e+05
+Solver: highs
+Runtime: 60.54s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:146: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra,
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 8.16e+05
+Solver: highs
+Runtime: 117.67s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:146: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra,
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 7.37e+05
+Solver: highs
+Runtime: 51.04s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:146: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra,
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 7.40e+05
+Solver: highs
+Runtime: 67.08s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:146: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra,
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 7.18e+05
+Solver: highs
+Runtime: 194.06s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\finalist_lp.py:146: FutureWarning: The default value of `include_objective_constant` will change from True to False in version 2.0. Set `include_objective_constant` explicitly to suppress this warning. Using False improves LP numerical conditioning by not including the objective constant as a variable.
+  n.optimize(solver_name="highs", solver_options={"output_flag": False}, extra_functionality=extra,
+WARNING:pypsa.consistency:The following buses have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['el', 'heat', 'wind', 'battery'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following links have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['heat_pump', 'boiler', 'wind_to_load', 'charge', 'discharge'], dtype='object', name='name')
+WARNING:pypsa.consistency:The following stores have carriers which are not defined. Run n.sanitize() to add them. Components with undefined carriers:
+Index(['battery', 'heat_store'], dtype='object', name='name')
+INFO:linopy.model: Solve problem using Highs solver
+INFO:linopy.model:Solver options:
+ - output_flag: False
+Running HiGHS 1.15.1 (git hash: 04024d7): Copyright (c) 2026 under MIT licence terms
+Includes third-party software components, see THIRD_PARTY_NOTICES.md for full details
+INFO:linopy.constants: Optimization successful: 
+Status: ok
+Termination condition: optimal
+Solution: 96365 primals, 210246 duals
+Objective: 7.06e+05
+Solver: highs
+Runtime: 191.34s
+MIP gap: inf
+Dual bound: 0.00e+00
+Solver model: available
+Solver message: Optimal
+
+INFO:pypsa.optimization.optimize:The shadow-prices of the constraints Generator-fix-p-lower, Generator-fix-p-upper, Link-fix-p-lower, Link-fix-p-upper, Link-ext-p-lower, Link-ext-p-upper, Store-ext-e-lower, Store-ext-e-upper, Store-energy_balance, standby_capacity were not assigned to the network.
+pipe 2.25 m/m2  hx x1  SCOP 3.46  GBP/kg 0.994  kgCO2e/kg 0.485  HP elec 6594 MWh  HP 3702 kW
+pipe 2.25 m/m2  hx x2  SCOP 3.59  GBP/kg 0.994  kgCO2e/kg 0.479  HP elec 6345 MWh  HP 4285 kW
+pipe 3.40 m/m2  hx x1  SCOP 3.80  GBP/kg 0.980  kgCO2e/kg 0.483  HP elec 6031 MWh  HP 3309 kW
+pipe 3.40 m/m2  hx x2  SCOP 3.96  GBP/kg 0.962  kgCO2e/kg 0.482  HP elec 5794 MWh  HP 3671 kW
+pipe 4.50 m/m2  hx x1  SCOP 4.01  GBP/kg 0.966  kgCO2e/kg 0.487  HP elec 5724 MWh  HP 3386 kW
+pipe 4.50 m/m2  hx x2  SCOP 4.17  GBP/kg 0.961  kgCO2e/kg 0.486  HP elec 5500 MWh  HP 3426 kW

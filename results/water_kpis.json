@@ -1,0 +1,186 @@
+[
+ {
+  "label": "Seasonal COP (unit)",
+  "value": 3.4460811911172993,
+  "unit": "–",
+  "group": "Performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Seasonal system COP (incl. aux)",
+  "value": 2.9100143201585857,
+  "unit": "–",
+  "group": "Performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Heat delivered",
+  "value": 120.88113363978083,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Pipe-rail heat to greenhouse",
+  "value": 120.54708214352507,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Solar gain to air",
+  "value": 226.76416000000003,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Ventilation + infiltration loss",
+  "value": 104.9973415800601,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Electricity",
+  "value": 41.539704049701456,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Peak electrical demand",
+  "value": 37.71631118744265,
+  "unit": "kW",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Cost at Agile prices",
+  "value": 9757.965208976284,
+  "unit": "£",
+  "group": "Cost & carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Cost at £0.23/kWh (thesis)",
+  "value": 9554.131931431335,
+  "unit": "£",
+  "group": "Cost & carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Operational CO₂",
+  "value": 6.752336088283374,
+  "unit": "t",
+  "group": "Cost & carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Gas boiler CO₂ counterfactual",
+  "value": 24.497845915611926,
+  "unit": "t",
+  "group": "Cost & carbon",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Mean greenhouse temperature",
+  "value": 20.402847621522653,
+  "unit": "°C",
+  "group": "Climate",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Hours below 17 °C",
+  "value": 9.0,
+  "unit": "h",
+  "group": "Climate",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Hours above 28 °C",
+  "value": 189.0,
+  "unit": "h",
+  "group": "Climate",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Hours RH > 90 %",
+  "value": 5.0,
+  "unit": "h",
+  "group": "Climate",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Crop transpiration",
+  "value": 158.7337249013403,
+  "unit": "m³",
+  "group": "Climate",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Cover condensation",
+  "value": 28.93698225473985,
+  "unit": "m³",
+  "group": "Climate",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Energy-screen hours",
+  "value": 3953.0,
+  "unit": "h",
+  "group": "Climate",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Run hours",
+  "value": 1554.0,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Starts",
+  "value": 2465.0,
+  "unit": "",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Max HP discharge temperature",
+  "value": 126.46903047027124,
+  "unit": "°C",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Min evaporating temperature",
+  "value": -4.571623805701364,
+  "unit": "°C",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ }
+]

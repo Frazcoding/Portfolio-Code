@@ -25,6 +25,9 @@
 |:---:|:---:|:---:|:---:|:---:|
 | **Peak Annual COP** (Water-Source) | **Peak Electrical Demand** (WSHP) | **6-Yr Electricity Avoided** (vs ASHP) | **6-Yr OPEX Reduction** (£0.23/kWh) | **Grid Peak Sizing Reduction** |
 
+> **COP definition and limits (reviewed 2026-10-07, `lca/THESIS_NUMBERS_REVIEW.md`).** COP here is the mean over hours with heat delivered, not an energy-weighted seasonal figure. The calibrated hourly run condenses at 33-76 °C (mean about 52 °C) with a pipe supply averaging 45 °C; 80 °C is the design condition. Over those hours the cycle reaches 56-59 % of the Carnot COP (air 3.47, ground 3.64, water 3.65 on that basis). The 4.29 headline is therefore not a near-Carnot result and would be about 95 % of Carnot at a true 80 °C condensing temperature, which no real cycle reaches; read it as a thesis-model output under its own definition.
+
+
 ---
 
 ## Stage 1: Boundary Definition & Challenge
@@ -93,7 +96,7 @@ The comparative evaluation reveals pronounced trade-offs across capital intensit
 
 - **ASHP Trade-Off**: Lowest initial installation CAPEX (no ground trenching, drilling, or water extraction permits), but severe seasonal degradation in winter (January COP 3.79) driving compressor peak power to **82.04 kW**.
 - **GSHP Trade-Off**: Sub-surface soil eliminates sub-zero air exposure, lifting mean annual COP to **4.11** and shaving peak compressor demand to **73.18 kW** (-10.8%). However, closed-loop ground arrays require extensive land area and higher upfront civil costs.
-- **WSHP Trade-Off**: Outstanding thermodynamic stability, delivering the highest seasonal efficiency (**4.29 mean COP**) and maintaining an exceptional **4.10 winter heating COP**. Peak compressor demand drops to **62.71 kW** (-23.6% vs ASHP). Constrained solely by geographic proximity to adequate water bodies.
+- **WSHP Trade-Off**: Stable operation, delivering the highest mean COP of the three topologies (**4.29**, active-hour mean, definition above) and a **4.10 winter heating COP**. Peak compressor demand drops to **62.71 kW** (-23.6% vs ASHP). Constrained solely by geographic proximity to adequate water bodies.
 
 <div align="center">
   <img src="figures/compressor_power_distribution.png" alt="Compressor Sizing Distribution" width="70%"/>
@@ -123,7 +126,7 @@ The comparative evaluation reveals pronounced trade-offs across capital intensit
 ### Key Techno-Economic Takeaways:
 1. **£13.6k Direct OPEX Savings**: Over the 6-year period, adopting water-source heat extraction saves **59,000 kWh** of grid electricity, avoiding £13,569 in operating costs.
 2. **Infrastructure Capital De-risking**: Shaving peak electrical load from 82.0 kW to 62.7 kW substantially reduces commercial DNO connection charges and allows installation on smaller electrical substations without costly grid upgrades.
-3. **Natural Refrigerant Future-Proofing**: The R-717 (Ammonia) cycle achieves supply water temperatures of $80.0^\circ\text{C}$ with zero global warming impact, completely bypassing future F-Gas phase-downs.
+3. **Natural Refrigerant Future-Proofing**: The R-717 (Ammonia) cycle is designed for condensing up to $80.0^\circ\text{C}$ (the calibrated annual run averages about $52^\circ\text{C}$) with zero global warming impact, completely bypassing future F-Gas phase-downs.
 
 ---
 
@@ -147,12 +150,12 @@ A hallmark of rigorous engineering is auditing model limitations, identifying ph
 
 | Performance Indicator | Model Version | Air-Source (ASHP) | Ground-Source (GSHP) | Water-Source (WSHP) | Key Engineering Insight |
 |---|---|:---:|:---:|:---:|:---:|
-| **Mean Active COP [-]** | **Thesis v1.0**<br>*Calibrated v2.0* | 4.06<br>**4.35** | 4.11<br>**4.39** | **4.29**<br>**4.52** | Water-source remains thermodynamically superior across all seasons |
+| **Mean Active COP [-]** | **Thesis v1.0**<br>*Calibrated v2.0* | 4.06<br>**4.35** | 4.11<br>**4.39** | **4.29**<br>**4.52** | Water-source stays highest across all seasons |
 | **Peak Electrical Demand [kW]** | **Thesis v1.0**<br>*Calibrated v2.0* | 82.04<br>**74.38** | 73.18<br>**64.90** | **62.71**<br>**58.82** | Peak grid sizing shaved by **20.9% to 23.6%** |
 | **6-Year Total Electricity [MWh]** | **Thesis v1.0**<br>*Calibrated v2.0* | 886.1<br>**878.5** | 877.9<br>**859.8** | **827.1**<br>**825.4** | **53.1 to 59.0 MWh** avoided grid electricity |
 | **6-Year Cumulative OPEX (£0.23/kWh)** | **Thesis v1.0**<br>*Calibrated v2.0* | £203,793<br>£202,055 | £201,922<br>£197,754 | **£190,224**<br>**£189,842** | **£12.2k to £13.6k** operational savings |
 
-> **Audit Conclusion**: The physical refinements in v2.0 confirm the core thesis conclusions with absolute thermodynamic robustness: Water-Source heat pumps deliver superior seasonal efficiency (+4.0% to +5.7% COP lift), reduce electrical grid interconnection sizing by >20%, and generate tens of thousands of pounds in commercial energy savings.
+> **Audit Conclusion**: The physical refinements in v2.0 are consistent with the core thesis ranking (water source best, air source worst): Water-Source heat pumps deliver superior seasonal efficiency (+4.0% to +5.7% COP lift), reduce electrical grid interconnection sizing by >20%, and generate tens of thousands of pounds in commercial energy savings.
 
 ---
 

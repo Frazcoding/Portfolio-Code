@@ -1,0 +1,59 @@
+17 | Wall greenhouses (left: a modern reconstruction) and orangeries built in gardens of European
+18 | Europe 47,000 131,000 178,000
+19 | • cost of production means/resources;
+19 | • cost of manpower;
+19 | • socio-political environment: its stability determines the investment horizon
+19 | million € ha-1 (KWIN, 2017)
+21 | )LJXUHLQGLFDWHWKHUHLVDYHU\EURDGUDQJHRIV\VWHPVWKDW¿WWKLVGHVFULSWLRQWKHUHIRUH
+22 | or when the value of other (scarce) resources (ground, water) offsets the electricity costs
+23 | production costs that may be allowed, which in turn puts a limit on the amount of technology
+24 | climate capital costs cost of
+24 | selling price
+24 | production costs
+178 | climates with low heat demand growers tend to avoid pipe heating because of the cost (Baille,
+181 | This allows the grower to limit connectivity costs which
+185 | Europe (the Netherlands and Belgium) for good reasons
+188 | therefore the major investment cost, and there is also the drawback of uncertainty about actual
+188 | In the Netherlands, for instance, depth exceeds 2 km and the initial investment
+188 | ranges from 4 to 10 million euros for an estimated hot water yield  150 m 3 h-1
+188 | (or a consortium of growers) can stomach the investment (with the help of subsidies) the
+188 | operational costs are low compared to the variable costs of boilers and co-generators, as will
+189 | maximum investment costs for an industrial residual heat supply system are estimated based
+191 | A lower capacity of the boiler is relevant because the costs of the connection
+191 | To decide which method of heating is the most economical, both the capital costs and
+191 | operational costs play a role
+191 | The capital costs can be estimated as
+191 | aÂI C =          € GJ -1   (8
+191 | Where a is the annuity, from the chosen interest rate and the investment lifetime, I the total
+191 | investment cost (€), Hs the heat annually produced by the system (GJ yr-1)
+191 | Capital costs result
+191 | in a cost parameter € MWh -1 or € GJ -1
+191 | Variable costs include the fuel and purchase of
+192 | but has shorter payback period if spark spread is good
+192 | between the price received for electricity produced by a generator and the cost of the fuel
+192 | It is typically calculated using daily spot prices for fuel
+192 | The spark spread is expressed in € MWh -1
+192 | In general, total costs during the life span are lower for CHP than a boiler, but that largely
+192 | Despite the very high investments, costs per MWh are lowest for geothermal heat
+192 | it can be used, the lower the costs per MWh
+192 | The variable cost of geothermal heat ranges from 5-14
+192 | € MWh-1 in the Netherlands (Vermeulen, 2013)
+192 | costs depend on the investment, the energy yield of the geothermal doublet, the life-time of
+192 | these costs range from 20-40 € MWh-1 (Vermeulen and Van Wijmeren, 2013)
+193 | The cost per MWh includes the capital cost and maintenance of the systems,
+193 | Cost per MWh (€)
+196 | Natural ventilation is a cost effective way to cool and dehumidify a greenhouse (Chapter 5)
+197 | This is a relatively small amount and these systems therefore have low running costs
+201 | been marred by higher than expected costs and technical ‘hitches’
+202 | heat pumps have proven to be ideal in places where power is unreliable, unavailable or costly
+208 | costs and enhanced effects of CO 2 enrichment at the reduced ventilation rate
+226 | Electricity from the grid does not require a large investment, however, as in
+226 | most countries the price of electricity has two components: the actual use and the capacity of
+226 | the connection , the high capacity that is required, may raise the cost of electricity
+226 | costs are usually (much) higher than with an internal supply
+226 | In addition to the (remaining) investment, drawbacks are possible heat surplus
+226 | co-generator is the difference between the price received for electricity produced by a (co-)
+226 | generator and the cost of the fuel/natural gas needed to produce that electricity, the spark
+235 | When the price of CO2 is ‘negligible’ the strategy
+237 | (2008) estimated that, in view of the then current prices, the leasing and
+238 | enrichment, improvements in the technology should reduce both investment costs and energy

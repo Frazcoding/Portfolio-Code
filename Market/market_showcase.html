@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scottish CEA & Heat Pump Market Intelligence · 3-in-1 Design Artifact</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* CSS Reset & Variables using OKLCH */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Light Theme (OKLCH) */
+  --bg-app: oklch(0.97 0.01 240);
+  --bg-surface: oklch(1.0 0.0 0);
+  --bg-surface-subtle: oklch(0.95 0.015 240);
+  --bg-surface-elevated: oklch(0.99 0.005 240);
+  --border-subtle: oklch(0.90 0.02 240);
+  --border-strong: oklch(0.78 0.03 240);
+  
+  --ink-primary: oklch(0.18 0.03 260);
+  --ink-secondary: oklch(0.42 0.03 250);
+  --ink-muted: oklch(0.60 0.02 250);
+  --ink-inverted: oklch(0.98 0.01 240);
+
+  /* Accents */
+  --brand-scottish: oklch(0.55 0.18 160);       /* Vibrant Scottish Green/Cyan */
+  --brand-scottish-soft: oklch(0.94 0.05 160);
+  --accent-energy: oklch(0.62 0.19 250);         /* Deep Electric Blue */
+  --accent-energy-soft: oklch(0.93 0.05 250);
+  --accent-heat: oklch(0.62 0.20 40);            /* Thermal Orange */
+  --accent-heat-soft: oklch(0.94 0.06 40);
+  --accent-warn: oklch(0.68 0.18 75);            /* Gold */
+  --accent-alert: oklch(0.58 0.22 25);           /* Red */
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --trans: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="dark"] {
+  --bg-app: oklch(0.14 0.02 260);
+  --bg-surface: oklch(0.18 0.025 260);
+  --bg-surface-subtle: oklch(0.22 0.03 260);
+  --bg-surface-elevated: oklch(0.25 0.035 260);
+  --border-subtle: oklch(0.28 0.03 260);
+  --border-strong: oklch(0.38 0.04 260);
+  
+  --ink-primary: oklch(0.96 0.01 240);
+  --ink-secondary: oklch(0.75 0.02 240);
+  --ink-muted: oklch(0.55 0.02 240);
+  --ink-inverted: oklch(0.15 0.02 260);
+
+  --brand-scottish: oklch(0.68 0.16 160);
+  --brand-scottish-soft: oklch(0.25 0.06 160);
+  --accent-energy: oklch(0.70 0.16 250);
+  --accent-energy-soft: oklch(0.25 0.06 250);
+  --accent-heat: oklch(0.72 0.18 45);
+  --accent-heat-soft: oklch(0.26 0.07 45);
+  --accent-warn: oklch(0.78 0.16 75);
+  --accent-alert: oklch(0.68 0.20 25);
+  
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.6);
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-app);
+  color: var(--ink-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   TOP VARIANT SELECTOR BAR (Design Artifact In-File Multi-Variation Controller)
+   ========================================================================== */
+.artifact-controller {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.controller-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controller-badge {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--brand-scottish-soft);
+  color: var(--brand-scottish);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.controller-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+.variant-tabs {
+  display: flex;
+  background: var(--bg-surface-subtle);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-subtle);
+}
+
+.variant-btn {
+  border: none;
+  background: transparent;
+  color: var(--ink-secondary);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--trans);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.variant-btn:hover {
+  color: var(--ink-primary);
+}
+
+.variant-btn.active {
+  background: var(--bg-surface);
+  color: var(--ink-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--ink-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+
+.theme-toggle-btn:hover {
+  color: var(--ink-primary);
+  border-color: var(--border-strong);
+}
+
+/* View Containers */
+.view-container {
+  display: none;
+  flex: 1;
+}
+.view-container.active {
+  display: block;
+}
+
+/* ==========================================================================
+   VARIANT 1: EXECUTIVE PITCH DECK (Presentation & Strategic Story)
+   ========================================================================== */
+.deck-view {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slide-viewport {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 580px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.slide-content {
+  flex: 1;
+  padding: 50px 60px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: slideFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide-content.active {
+  display: flex;
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand-scottish);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.slide-tag::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand-scottish);
+}
+
+.slide-headline {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ink-primary);
+  margin-top: 12px;
+  max-width: 900px;
+}
+
+.slide-subhead {
+  font-size: 18px;
+  color: var(--ink-secondary);
+  margin-top: 12px;
+  max-width: 850px;
+  line-height: 1.5;
+}
+
+.slide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 30px 0 10px;
+}
+
+.slide-card {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+.slide-card-val {
+  font-size: 32px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--brand-scottish);
+}
+.slide-card-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-top: 4px;
+}
+.slide-card-desc {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+.slide-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 15px;
+  font-size: 11px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+.deck-nav-bar {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.deck-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  color: var(--ink-primary);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--trans);
+}
+.deck-btn:hover:not(:disabled) {
+  background: var(--bg-surface-subtle);
+  transform: translateY(-1px);
+}
+.deck-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.deck-counter {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+}
+
+/* ==========================================================================
+   VARIANT 2: INTERACTIVE INTELLIGENCE DASHBOARD (Operations & Explorer)
+   ========================================================================== */
+.dash-view {
+  max-width: 1380px;
+  margin: 20px auto;
+  padding: 0 20px 60px;
+}
+
+.dash-header {
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.dash-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.dash-subtitle {
+  font-size: 14px;
+  color: var(--ink-secondary);
+  margin-top: 4px;
+}
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.kpi-tile {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+.kpi-tile::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color, var(--brand-scottish));
+}
+.kpi-num {
+  font-size: 28px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
+}
+.kpi-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-secondary);
+  margin-top: 4px;
+}
+.kpi-status {
+  font-size: 11px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+.status-badge {
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.status-pass { background: oklch(0.92 0.08 140); color: oklch(0.35 0.15 140); }
+.status-focus { background: oklch(0.92 0.08 75); color: oklch(0.40 0.15 75); }
+
+/* Interactive Simulator Box */
+.sim-calculator-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 25px;
+  box-shadow: var(--shadow-sm);
+}
+.sim-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 12px;
+}
+.sim-title {
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.slider-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 20px;
+}
+.slider-item label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.slider-item input[type="range"] {
+  width: 100%;
+  accent-color: var(--brand-scottish);
+  cursor: pointer;
+}
+.sim-live-results {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  background: var(--bg-surface-subtle);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+.sim-result-box {
+  text-align: center;
+}
+.sim-result-box .val {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--brand-scottish);
+}
+.sim-result-box .lbl {
+  font-size: 11px;
+  color: var(--ink-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Dual Column Layout */
+.dash-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+@media (max-width: 990px) {
+  .dash-grid-2 { grid-template-columns: 1fr; }
+  .sim-live-results { grid-template-columns: repeat(2, 1fr); }
+  .slide-viewport { aspect-ratio: auto; min-height: 640px; }
+  .slide-grid { grid-template-columns: 1fr; }
+}
+
+.table-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+.table-header {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+table.custom-tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+table.custom-tbl th {
+  text-align: left;
+  padding: 8px 10px;
+  background: var(--bg-surface-subtle);
+  color: var(--ink-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border-strong);
+  font-family: var(--font-mono);
+}
+table.custom-tbl td {
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+table.custom-tbl tr:hover td {
+  background: var(--bg-surface-subtle);
+}
+
+/* ==========================================================================
+   VARIANT 3: EDITORIAL STRATEGIC DOSSIER (Broadsheet / Whitepaper Layout)
+   ========================================================================== */
+.editorial-view {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 20px 80px;
+}
+
+.editorial-kicker {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-scottish);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.editorial-headline {
+  font-family: var(--font-serif);
+  font-size: 46px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink-primary);
+  margin-bottom: 18px;
+}
+
+.editorial-standfirst {
+  font-size: 19px;
+  line-height: 1.5;
+  color: var(--ink-secondary);
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--border-strong);
+  font-weight: 400;
+}
+
+.editorial-byline {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  display: flex;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.editorial-body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-primary);
+}
+
+.editorial-body h2 {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  margin: 40px 0 16px;
+  letter-spacing: -0.01em;
+}
+
+.editorial-body p {
+  margin-bottom: 20px;
+}
+
+.editorial-pullquote {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--brand-scottish);
+  border-left: 3px solid var(--brand-scottish);
+  padding: 10px 0 10px 24px;
+  margin: 35px 0;
+}
+
+.editorial-stat-box {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  margin: 30px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.stat-box-item .val {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--ink-primary);
+}
+.stat-box-item .desc {
+  font-size: 12px;
+  color: var(--ink-secondary);
+  margin-top: 4px;
+}
+
+/* Callout Note */
+.verified-cite-pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  color: var(--ink-muted);
+  padding: 1px 6px;
+  border-radius: 4px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body data-theme="light">
+
+<!-- ========================================================================
+     MULTI-VARIATION PERSISTENT TOP CONTROLLER (Design Artifact Skill)
+     ======================================================================== -->
+<nav class="artifact-controller" aria-label="Design Artifact Variation Switcher">
+  <div class="controller-meta">
+    <span class="controller-badge">Design Artifact · 3 In 1</span>
+    <span class="controller-title">Scottish CEA & Heat Pump Commercial Dossier</span>
+  </div>
+  
+  <div class="variant-tabs" role="tablist">
+    <button class="variant-btn active" role="tab" id="tab-deck" onclick="switchView('deck')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      Executive Slide Deck
+    </button>
+    <button class="variant-btn" role="tab" id="tab-dash" onclick="switchView('dash')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      Market Explorer Dashboard
+    </button>
+    <button class="variant-btn" role="tab" id="tab-editorial" onclick="switchView('editorial')">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      Editorial Dossier
+    </button>
+  </div>
+
+  <button class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark / Light Theme" aria-label="Toggle theme">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  </button>
+</nav>
+
+<!-- ========================================================================
+     VARIANT 1: EXECUTIVE SLIDE DECK (Investor / Supermarket Pitch)
+     ======================================================================== -->
+<main id="view-deck" class="view-container active">
+  <div class="deck-view">
+    <div class="slide-viewport">
+      
+      <!-- Slide 1: Cover -->
+      <article class="slide-content active" id="slide-1">
+        <div>
+          <div class="slide-tag">Strategic Opportunity · Scotland</div>
+          <h1 class="slide-headline">Decarbonised Protected Agriculture via Industrial Heat Pumps</h1>
+          <p class="slide-subhead">How Scotland's surplus renewable power and industrial waste heat unlock low-carbon horticultural self-sufficiency and high-yield commercial infrastructure.</p>
+        </div>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <div class="slide-card-val">-72%</div>
+            <div class="slide-card-label">Carbon Abatement vs Imports</div>
+            <div class="slide-card-desc">0.37 kg CO₂e/kg tomato vs 1.30 kg import CIF landed at Central Belt RDCs.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val">20.6%</div>
+            <div class="slide-card-label">Project IRR (Distillery Symbiosis)</div>
+            <div class="slide-card-desc">4.7-year simple capital payback leveraging pot ale cooling heat exchangers.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val">10-Year</div>
+            <div class="slide-card-label">Supermarket PPA Contracts</div>
+            <div class="slide-card-desc">UK grocers contracting directly with growers to hedge Scope 3 climate exposure.</div>
+          </div>
+        </div>
+        <div class="slide-footer-bar">
+          <span>CEA & Heat Pump Commercialisation Dossier</span>
+          <span>Slide 1 of 5</span>
+        </div>
+      </article>
+
+      <!-- Slide 2: The Grid Paradox & Problem -->
+      <article class="slide-content" id="slide-2">
+        <div>
+          <div class="slide-tag">Market Paradox · The Problem</div>
+          <h1 class="slide-headline">Surplus Scottish Wind Meets 100% Produce Import Dependence</h1>
+          <p class="slide-subhead">Scotland faces a double friction: offshore/onshore wind generation is heavily curtailed during export bottlenecks, yet grocery shelves import 95%+ of winter fresh salads.</p>
+        </div>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <div class="slide-card-val">1 Site</div>
+            <div class="slide-card-label">Commercial Glasshouse in Scotland</div>
+            <div class="slide-card-desc">Only Standhill Farm (Hawick, 1.6 ha) operates commercially. Market is wide open.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val">+94%</div>
+            <div class="slide-card-label">TNUoS Grid Network Hike (2026)</div>
+            <div class="slide-card-desc">Standing network fees penalise unmitigated grid power by >£1M/yr for big growers.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val">40%</div>
+            <div class="slide-card-label">Curtailed Energy in Off-Grid Microgrids</div>
+            <div class="slide-card-desc">Why islanded microgrids fail: grid-tethering + PPA is the necessary financial fix.</div>
+          </div>
+        </div>
+        <div class="slide-footer-bar">
+          <span>Sources: SAC/SRUC Guide (Jan 2026), NESO TNUoS 2026 Tariff Tables</span>
+          <span>Slide 2 of 5</span>
+        </div>
+      </article>
+
+      <!-- Slide 3: The 5 Scottish Commercial Pillars -->
+      <article class="slide-content" id="slide-3">
+        <div>
+          <div class="slide-tag">Go-To-Market · 5 Pillars</div>
+          <h1 class="slide-headline">The Five Pillars of Scottish Commercial Deployment</h1>
+          <p class="slide-subhead">A derisked commercialisation model separating high-yield tech operations from low-cost infrastructure assets.</p>
+        </div>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <div class="slide-card-val" style="font-size: 24px; color: var(--accent-energy);">1. Private Wire PPA</div>
+            <div class="slide-card-label">Behind-the-Meter Power</div>
+            <div class="slide-card-desc">Bypasses DUoS/TNUoS levies, delivering wind power at 8.0–10.5 p/kWh directly.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val" style="font-size: 24px; color: var(--accent-heat);">2. Distillery Symbiosis</div>
+            <div class="slide-card-label">70–80°C Heat + Biogenic CO₂</div>
+            <div class="slide-card-desc">140+ distilleries looking for net zero cooling partners. Free/cheap heat + pure fermentation CO₂.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val" style="font-size: 24px; color: var(--brand-scottish);">3. Producer Co-ops</div>
+            <div class="slide-card-label">Angus & Perthshire POs</div>
+            <div class="slide-card-desc">Partner with Angus Soft Fruits / ESG to bypass supermarket audit friction and packhouses.</div>
+          </div>
+        </div>
+        <div class="slide-footer-bar">
+          <span>Statutory Framework: Good Food Nation Act 2022 · SEPA CAR Licensing</span>
+          <span>Slide 3 of 5</span>
+        </div>
+      </article>
+
+      <!-- Slide 4: Feasibility Numbers Audit -->
+      <article class="slide-content" id="slide-4">
+        <div>
+          <div class="slide-tag">Audited Financials · The Hurdle Numbers</div>
+          <h1 class="slide-headline">The Hurdle Numbers: What It Takes to Win</h1>
+          <p class="slide-subhead">Grounding economics in verified simulation data: unlit Scottish Carse of Gowrie climate vs Dutch Westland.</p>
+        </div>
+        <div class="slide-grid">
+          <div class="slide-card">
+            <div class="slide-card-val">10.7 p</div>
+            <div class="slide-card-label">Breakeven Power Price vs CIF</div>
+            <div class="slide-card-desc">Tomato breaks even vs £1.60 border CIF at 10.7p; cucumber breaks even at 19.6p.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val">39.4 kg</div>
+            <div class="slide-card-label">Required Tomato Yield / m²</div>
+            <div class="slide-card-desc">Current unlit is 35.9 kg/m². The 9.6% gap is closed via distillery CO₂ & diffuse AR glass.</div>
+          </div>
+          <div class="slide-card">
+            <div class="slide-card-val">£74 / MWh</div>
+            <div class="slide-card-label">Levelised Cost of Heat (LCOH)</div>
+            <div class="slide-card-desc">Optimised heat pump skid delivers heat cheaper than biomass (£85) and rural LPG (£110).</div>
+          </div>
+        </div>
+        <div class="slide-footer-bar">
+          <span>Data Sources: UN Comtrade, DEFRA Weekly Series, CoolProp R717 Engine</span>
+          <span>Slide 4 of 5</span>
+        </div>
+      </article>
+
+      <!-- Slide 5: The Financial Return Archetypes -->
+      <article class="slide-content" id="slide-5">
+        <div>
+          <div class="slide-tag">Investment Case · 20-Year Cash Flow</div>
+          <h1 class="slide-headline">1-Hectare Commercial Financial Comparison</h1>
+          <p class="slide-subhead">Moving from islanded offgrid concepts to bankable grid-backed and industrial co-location projects.</p>
+        </div>
+        <div class="slide-grid">
+          <div class="slide-card" style="border-top: 4px solid var(--accent-alert);">
+            <div class="slide-card-val" style="color: var(--accent-alert);">Model A</div>
+            <div class="slide-card-label">Offgrid Dedicated Wind</div>
+            <div class="slide-card-desc">EBITDA: -£41k/yr · 49p/kWh power · <strong>Fails commercial hurdle</strong>.</div>
+          </div>
+          <div class="slide-card" style="border-top: 4px solid var(--accent-energy);">
+            <div class="slide-card-val" style="color: var(--accent-energy);">Model B3</div>
+            <div class="slide-card-label">Air HP + PPA @ £2.10/kg</div>
+            <div class="slide-card-desc">EBITDA: £435k/yr · 12.6% IRR · <strong>Bankable for SNIB / Green Debt</strong>.</div>
+          </div>
+          <div class="slide-card" style="border-top: 4px solid var(--brand-scottish);">
+            <div class="slide-card-val" style="color: var(--brand-scottish);">Model C</div>
+            <div class="slide-card-label">Distillery Waste Heat</div>
+            <div class="slide-card-desc">EBITDA: £499k/yr · 20.6% IRR · 4.7 yr payback · <strong>Top Decile Infrastructure</strong>.</div>
+          </div>
+        </div>
+        <div class="slide-footer-bar">
+          <span>Full Model: audit_financials.py · Discount Rate: 8% Commercial</span>
+          <span>Slide 5 of 5</span>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Slide Navigation Controller -->
+    <div class="deck-nav-bar">
+      <button class="deck-btn" id="btn-prev" onclick="stepSlide(-1)">← Previous</button>
+      <span class="deck-counter" id="deck-counter">1 / 5</span>
+      <button class="deck-btn" id="btn-next" onclick="stepSlide(1)">Next →</button>
+    </div>
+  </div>
+</main>
+
+<!-- ========================================================================
+     VARIANT 2: INTERACTIVE INTELLIGENCE DASHBOARD (Data & Simulator Explorer)
+     ======================================================================== -->
+<section id="view-dash" class="view-container">
+  <div class="dash-view">
+    <header class="dash-header">
+      <div>
+        <h1 class="dash-title">Scottish CEA & Energy Transition Market Explorer</h1>
+        <p class="dash-subtitle">Real-time simulation audit, competitor mapping, and economic breakeven sensitivity engine.</p>
+      </div>
+      <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">
+        Baseline Site: Carse of Gowrie (56.42°N, 3.20°W) · R717 Industrial HP
+      </div>
+    </header>
+
+    <!-- Top KPI Cards -->
+    <div class="kpi-row">
+      <div class="kpi-tile" style="--accent-color: var(--brand-scottish);">
+        <div class="kpi-num">£1.40 / kg</div>
+        <div class="kpi-name">Cucumber Import CIF Floor</div>
+        <div class="kpi-status">
+          <span class="status-badge status-pass">Passes On Grid</span>
+          <span>Scottish Cost: £1.23 @ 10p PPA</span>
+        </div>
+      </div>
+
+      <div class="kpi-tile" style="--accent-color: var(--accent-energy);">
+        <div class="kpi-num">10.7 p/kWh</div>
+        <div class="kpi-name">Tomato Breakeven Power (CIF)</div>
+        <div class="kpi-status">
+          <span class="status-badge status-focus">Target PPA</span>
+          <span>Beats UK Wholesale up to 27.9p</span>
+        </div>
+      </div>
+
+      <div class="kpi-tile" style="--accent-color: var(--accent-heat);">
+        <div class="kpi-num">£2.35M / ha</div>
+        <div class="kpi-name">Distillery Co-location CAPEX</div>
+        <div class="kpi-status">
+          <span class="status-badge status-pass">Saves £780k</span>
+          <span>Avoids large heat pump skid</span>
+        </div>
+      </div>
+
+      <div class="kpi-tile" style="--accent-color: var(--brand-scottish);">
+        <div class="kpi-num">20.6%</div>
+        <div class="kpi-name">Model C Project IRR (20-Yr)</div>
+        <div class="kpi-status">
+          <span class="status-badge status-pass">4.7 Yr Payback</span>
+          <span>£499k/yr EBITDA on 1 ha</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Interactive Sensitivity Calculator -->
+    <div class="sim-calculator-card">
+      <div class="sim-header">
+        <div class="sim-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          Live Sensitivity Engine · 1-Hectare Commercial Glasshouse (Tomato)
+        </div>
+        <span style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted);">Adjust parameters to inspect live financial viability</span>
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-item">
+          <label>
+            <span>Delivered Electricity Tariff</span>
+            <span id="lbl-elec" style="font-family: var(--font-mono); color: var(--brand-scottish);">10.0 p/kWh</span>
+          </label>
+          <input type="range" id="input-elec" min="4" max="35" step="0.5" value="10" oninput="recalcSim()">
+        </div>
+
+        <div class="slider-item">
+          <label>
+            <span>Offtake Sale Price Realised</span>
+            <span id="lbl-price" style="font-family: var(--font-mono); color: var(--brand-scottish);">£2.10 / kg</span>
+          </label>
+          <input type="range" id="input-price" min="1.40" max="3.00" step="0.05" value="2.10" oninput="recalcSim()">
+        </div>
+
+        <div class="slider-item">
+          <label>
+            <span>Seasonal COP (SCOP)</span>
+            <span id="lbl-scop" style="font-family: var(--font-mono); color: var(--brand-scottish);">3.40 SCOP</span>
+          </label>
+          <input type="range" id="input-scop" min="2.5" max="6.0" step="0.1" value="3.4" oninput="recalcSim()">
+        </div>
+      </div>
+
+      <div class="sim-live-results">
+        <div class="sim-result-box">
+          <div class="val" id="res-ebitda">£435k</div>
+          <div class="lbl">Annual EBITDA</div>
+        </div>
+        <div class="sim-result-box">
+          <div class="val" id="res-margin">51.8%</div>
+          <div class="lbl">EBITDA Margin</div>
+        </div>
+        <div class="sim-result-box">
+          <div class="val" id="res-payback">7.2 Yrs</div>
+          <div class="lbl">Simple Payback</div>
+        </div>
+        <div class="sim-result-box">
+          <div class="val" id="res-irr">12.6%</div>
+          <div class="lbl">20-Yr Project IRR</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dual Table Display -->
+    <div class="dash-grid-2">
+      <!-- Competitor & Precedent Table -->
+      <div class="table-card">
+        <div class="table-header">UK & Scottish Incumbent Landscape</div>
+        <table class="custom-tbl">
+          <thead>
+            <tr>
+              <th>Grower / Facility</th>
+              <th>Scale</th>
+              <th>Energy System</th>
+              <th>Strategic Takeaway</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Standhill Farm</strong> (Hawick)</td>
+              <td>1.6 ha</td>
+              <td>Biomass (2 MW) + Biogas CO₂</td>
+              <td>Sole commercial Scottish tomato grower; proof of provenance demand.</td>
+            </tr>
+            <tr>
+              <td><strong>AGR Fenland</strong> (Cambs)</td>
+              <td>21.7 ha</td>
+              <td>33 MW Ammonia (R717) Heat Pumps</td>
+              <td>Direct industrial precedent for this project's NH₃ skid design.</td>
+            </tr>
+            <tr>
+              <td><strong>Low Carbon Farming</strong> (Norfolk)</td>
+              <td>29 ha</td>
+              <td>Anglian Water Sewage Heat Pumps</td>
+              <td>Validates Scottish Water Horizons effluent symbiosis model.</td>
+            </tr>
+            <tr>
+              <td><strong>Thanet Earth</strong> (Kent)</td>
+              <td>51 ha</td>
+              <td>Gas CHP + Top-up LEDs</td>
+              <td>Sainsbury’s 10-year contract establishes long-term offtake bankability.</td>
+            </tr>
+            <tr>
+              <td><strong>Jones Food Company</strong></td>
+              <td>1.5 ha eq.</td>
+              <td>Grid-Powered Vertical Farm</td>
+              <td>Entered administration April 2025; proves power >15p kills indoor leafy greens.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Crop Feasibility Table -->
+      <div class="table-card">
+        <div class="table-header">Crop Feasibility & Breakeven Thresholds (Carse of Gowrie)</div>
+        <table class="custom-tbl">
+          <thead>
+            <tr>
+              <th>Crop</th>
+              <th>Yield ($kg/m^2$)</th>
+              <th>Import CIF</th>
+              <th>BE Power vs CIF</th>
+              <th>Viability Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cucumber</strong></td>
+              <td>48.6</td>
+              <td>£1.40 / kg</td>
+              <td><strong>19.6 p/kWh</strong></td>
+              <td><span class="status-badge status-pass">Immediate Win</span></td>
+            </tr>
+            <tr>
+              <td><strong>Tomato</strong></td>
+              <td>35.9</td>
+              <td>£1.60 / kg</td>
+              <td><strong>10.7 p/kWh</strong></td>
+              <td><span class="status-badge status-pass">Passes on PPA</span></td>
+            </tr>
+            <tr>
+              <td><strong>Aubergine</strong></td>
+              <td>36.6</td>
+              <td>£1.55 / kg</td>
+              <td><strong>6.5 p/kWh</strong></td>
+              <td><span class="status-badge status-focus">Private Wire Win</span></td>
+            </tr>
+            <tr>
+              <td><strong>Tabletop Strawberry</strong></td>
+              <td>12.5 (raised)</td>
+              <td>£4.61 / kg</td>
+              <td><strong>16.8 p/kWh</strong></td>
+              <td><span class="status-badge status-pass">Passes at £6/kg</span></td>
+            </tr>
+            <tr>
+              <td><strong>Sweet Pepper</strong></td>
+              <td>19.8</td>
+              <td>£2.04 / kg</td>
+              <td>Negative vs CIF</td>
+              <td><span class="status-badge status-focus">Needs Wholesale</span></td>
+            </tr>
+            <tr>
+              <td><strong>Avocado / Tree Fruit</strong></td>
+              <td>0.8</td>
+              <td>£2.07 / kg</td>
+              <td>-81.1 p/kWh</td>
+              <td><span class="status-badge" style="background: oklch(0.92 0.08 25); color: oklch(0.40 0.15 25);">Unviable Glass</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================================
+     VARIANT 3: EDITORIAL STRATEGIC DOSSIER (Broadsheet Briefing)
+     ======================================================================== -->
+<article id="view-editorial" class="view-container">
+  <div class="editorial-view">
+    <div class="editorial-kicker">Special Report · Scottish Industrial Symbiosis</div>
+    <h1 class="editorial-headline">From Grid Bottlenecks to Food Security: The Engineering Case for Scottish Glasshouses</h1>
+    <p class="editorial-standfirst">How dynamic thermodynamic modeling and industrial ammonia heat pumps convert Scotland’s constrained wind power and distillery effluent into an unassailable commercial agricultural advantage.</p>
+    
+    <div class="editorial-byline">
+      <span>OCTOBER 2026</span>
+      <span>SECTOR: CEA & THERMAL DECARBONISATION</span>
+      <span>GEOGRAPHY: SCOTLAND</span>
+    </div>
+
+    <div class="editorial-body">
+      <p>Scotland currently presents one of the most paradoxical energy landscapes in Western Europe. On windy winter evenings, onshore and offshore turbines across the Highlands and Aberdeenshire generate in excess of 100% of national gross electrical demand. Yet, constrained by the transmission bottlenecks of the Anglo-Scottish B6 boundary, grid operators pay millions in curtailment fees to feather turbine blades. Meanwhile, fewer than 50 miles away in Central Belt supermarket distribution centres, refrigerated HGVs arrive daily from Southern Spain and Morocco, delivering carbon-intensive salads and vine tomatoes across an extended 500-kilometre road corridor.</p>
+
+      <div class="editorial-pullquote">
+        "Sizing an islanded microgrid to achieve 100% winter autonomy destroys project economics via 40% wind curtailment. Grid-tethering coupled to behind-the-meter PPAs unlocks immediate commercial viability."
+      </div>
+
+      <h2>The Fallacy of Off-Grid Autonomy</h2>
+      <p>Initial feasibility iterations often succumb to the allure of complete off-grid purity: a dedicated glasshouse powered exclusively by an on-site wind turbine, battery bank, and seasonal heat store. However, rigorous hourly simulation against the Carse of Gowrie climate reveals that ensuring 99.5%+ thermal autonomy through winter lulls forces massive over-sizing of wind capacity. The consequence is devastating: 38% to 44% of total generated electricity is curtailed during summer and windy lulls, inflating delivered power costs to an unsustainable 38.4p to 49.0p per kilowatt-hour.</p>
+
+      <div class="editorial-stat-box">
+        <div class="stat-box-item">
+          <div class="val">£127.90</div>
+          <div class="desc">LCOH on Standard 17.3p Grid Electricity (Air Source, £/MWh)</div>
+        </div>
+        <div class="stat-box-item">
+          <div class="val">£74.00</div>
+          <div class="desc">LCOH on 10p Behind-the-Meter Wind PPA (Air Source, £/MWh)</div>
+        </div>
+        <div class="stat-box-item">
+          <div class="val">£9.70</div>
+          <div class="desc">LCOH on Direct Pot Ale Waste Heat (Plate Heat Exchanger, £/MWh)</div>
+        </div>
+      </div>
+
+      <h2>The Industrial Symbiosis Multiplier</h2>
+      <p>The true strategic breakthrough lies in industrial co-location. Scotland is home to over 140 malt and grain distilleries, whose distillation condensers and pot ale cooling loops reject vast quantities of steady, medium-grade heat between 70°C and 80°C. By co-locating a commercial Venlo glasshouse directly adjacent to a distillery, the capital cost of a massive ammonia heat pump skid is bypassed in favour of simple plate heat exchangers and booster pumps.</p>
+
+      <p>Furthermore, distillery washbacks produce near-pure biogenic carbon dioxide during fermentation. Greenhouses require elevated atmospheric CO₂ levels (800 to 1,000 ppm) to maximise crop photosynthetic efficiency. Scrubbing and piping biogenic fermentation gas eliminates both the high cost (£150–£250/tonne) and the carbon guilt of commercial fossil-derived bottled CO₂.</p>
+
+      <h2>The Retail Landscape and 10-Year Offtake</h2>
+      <p>Supermarkets do not purchase engineering concepts; they purchase risk-mitigated supply chains. Facing aggressive Science-Based Targets (SBTi) requiring 50%+ reductions in Scope 3 agricultural supply chain emissions by 2030, retailers such as Marks & Spencer and Sainsbury’s have demonstrated a willingness to sign 10-year indexed cost-plus supply contracts with domestic growers. By partnering with established Scottish agricultural Producer Organisations—such as Angus Soft Fruits or East of Scotland Growers—a new glasshouse project secures instant distribution logistics, packhouse infrastructure, and shelf-space access without the overhead of building a direct-to-retail sales force.</p>
+    </div>
+  </div>
+</article>
+
+<!-- Interactive Logic for Artifact Controller, Slider & Deck Navigation -->
+<script>
+// Switch between the 3 main variations
+function switchView(viewName) {
+  document.querySelectorAll('.view-container').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.variant-btn').forEach(btn => btn.classList.remove('active'));
+
+  document.getElementById('view-' + viewName).classList.add('active');
+  document.getElementById('tab-' + viewName).classList.add('active');
+
+  // Scroll to top of window on switch
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Slide Deck Controller Logic
+let currentSlide = 1;
+const totalSlides = 5;
+
+function showSlide(index) {
+  currentSlide = index;
+  document.querySelectorAll('.slide-content').forEach((s, idx) => {
+    s.classList.toggle('active', idx + 1 === currentSlide);
+  });
+  document.getElementById('deck-counter').textContent = currentSlide + ' / ' + totalSlides;
+  document.getElementById('btn-prev').disabled = (currentSlide === 1);
+  document.getElementById('btn-next').disabled = (currentSlide === totalSlides);
+}
+
+function stepSlide(delta) {
+  const target = currentSlide + delta;
+  if (target >= 1 && target <= totalSlides) {
+    showSlide(target);
+  }
+}
+
+// Keyboard shortcuts for Deck navigation
+document.addEventListener('keydown', (e) => {
+  if (!document.getElementById('view-deck').classList.contains('active')) return;
+  if (e.key === 'ArrowRight' || e.key === ' ') {
+    stepSlide(1);
+  } else if (e.key === 'ArrowLeft') {
+    stepSlide(-1);
+  }
+});
+
+// Interactive Financial Sensitivity Engine
+function recalcSim() {
+  const elecP = parseFloat(document.getElementById('input-elec').value); // p/kWh
+  const saleP = parseFloat(document.getElementById('input-price').value); // £/kg
+  const scop = parseFloat(document.getElementById('input-scop').value);
+
+  document.getElementById('lbl-elec').textContent = elecP.toFixed(1) + ' p/kWh';
+  document.getElementById('lbl-price').textContent = '£' + saleP.toFixed(2) + ' / kg';
+  document.getElementById('lbl-scop').textContent = scop.toFixed(2) + ' SCOP';
+
+  // 1 ha Tomato Baseline:
+  const area = 10000;
+  const yieldKg = 40.0 * area; // 400,000 kg/yr
+  const revenue = yieldKg * saleP; // GBP
+
+  const fixedOpex = 0.86 * yieldKg; // £344k
+  const heatKWh = 169.0 * area; // 1,690,000 kWh_th
+  const elecUsed = (heatKWh / scop) + (11.0 * area); // kWh_e
+  const energyOpex = elecUsed * (elecP / 100);
+
+  const totOpex = fixedOpex + energyOpex;
+  const ebitda = revenue - totOpex;
+  const margin = (ebitda / revenue) * 100;
+
+  const capex = 3130000; // £3.13M turnkey
+  const payback = ebitda > 0 ? (capex / ebitda) : 99.9;
+
+  // Approximate 20-yr IRR:
+  let irr = -10.0;
+  if (ebitda > 0) {
+    for (let r = 0.0; r <= 0.40; r += 0.005) {
+      let npv = -capex;
+      for (let t = 1; t <= 20; t++) {
+        npv += ebitda / Math.pow(1 + r, t);
+      }
+      if (npv <= 0) {
+        irr = r * 100;
+        break;
+      }
+    }
+  }
+
+  // Update DOM
+  document.getElementById('res-ebitda').textContent = '£' + Math.round(ebitda / 1000) + 'k';
+  document.getElementById('res-margin').textContent = margin.toFixed(1) + '%';
+  document.getElementById('res-payback').textContent = payback < 50 ? payback.toFixed(1) + ' Yrs' : '>50 Yrs';
+  document.getElementById('res-irr').textContent = irr > -5 ? irr.toFixed(1) + '%' : 'Negative';
+
+  // Visual cues
+  document.getElementById('res-ebitda').style.color = ebitda > 0 ? 'var(--brand-scottish)' : 'var(--accent-alert)';
+}
+
+// Dark / Light Theme Toggle
+function toggleTheme() {
+  const current = document.body.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.body.setAttribute('data-theme', next);
+}
+
+// Initialise
+showSlide(1);
+recalcSim();
+</script>
+</body>
+</html>

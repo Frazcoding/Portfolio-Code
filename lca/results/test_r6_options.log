@@ -1,0 +1,15 @@
+fast 1.6 s, reference 40 s
+Q_pipe     max monthly relative difference 0.00e+00 ok
+Q_cover    max monthly relative difference 0.00e+00 ok
+Q_vent     max monthly relative difference 0.00e+00 ok
+Q_floor    max monthly relative difference 0.00e+00 ok
+Q_sol      max monthly relative difference 0.00e+00 ok
+LE         max monthly relative difference 0.00e+00 ok
+trans_kg   max monthly relative difference 0.00e+00 ok
+cond_kg    max monthly relative difference 0.00e+00 ok
+T_air_in   max monthly relative difference 0.00e+00 ok
+T_floor    max monthly relative difference 0.00e+00 ok
+RH_in      max monthly relative difference 0.00e+00 ok
+VPD        max monthly relative difference 0.00e+00 ok
+Q_below    max monthly relative difference 0.00e+00 ok
+PASS

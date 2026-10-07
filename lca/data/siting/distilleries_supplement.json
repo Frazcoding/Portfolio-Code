@@ -1,0 +1,30 @@
+[
+ {
+  "name": "Cameronbridge distillery",
+  "lpa": 136000000.0,
+  "lat": 56.1925,
+  "lon": -3.029,
+  "source": "scotchwhisky.net 'Cameron Bridge' / Wikipedia: 136 million LPA (sources 136-150); Windygates, Fife"
+ },
+ {
+  "name": "North British distillery",
+  "lpa": 64000000.0,
+  "lat": 55.940128,
+  "lon": -3.235603,
+  "source": "thenorthbritish.co.uk: c. 64,000,000 litres of alcohol per year; Wikipedia coordinates"
+ },
+ {
+  "name": "Loch Lomond distillery",
+  "lpa": 23000000.0,
+  "lat": 55.99,
+  "lon": -4.583,
+  "source": "Wikipedia: 3,000,000 L malt & 20,000,000 L grain; Alexandria"
+ },
+ {
+  "name": "Ailsa Bay distillery",
+  "lpa": 12000000.0,
+  "lat": 55.2618,
+  "lon": -4.8335,
+  "source": "Wikipedia: 12,000,000 L; on the Girvan site (William Grant & Sons), merged with Girvan"
+ }
+]

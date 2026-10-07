@@ -1,0 +1,36 @@
+== cucumber (51 s): imports at Scottish RDCs GBP 1.57/kg, 0.81 kg CO2e/kg
+Girvan + Ailsa Bay distillerie  1.00 (sweep 1.03)  range 0.92-1.08  seas.imp 1.54  0.263 kg (imp 0.81)  pass True/True | pitched k3 span 21.2 pitch 10 gutter 4.5 brg 0 N-ins True dbl_ar 4.7 ha  wind 0.2 MW batt 0.0 MWh export 632 MWh HP 5.5 MW waste 94%
+Caledonian Paper Mill, Shewalt  1.01 (sweep 1.03)  range 0.95-1.09  seas.imp 1.54  0.294 kg (imp 0.81)  pass True/True | pitched k1 span 16.3 pitch 10 gutter 4.5 brg 0 N-ins False dbl_ar 7.5 ha  wind 0.0 MW batt 0.0 MWh export 0 MWh HP 8.8 MW waste 94%
+Cameronbridge distillery        1.03 (sweep 1.04)  range 0.96-1.11  seas.imp 1.54  0.295 kg (imp 0.81)  pass True/True | pitched k1 span 15.4 pitch 12 gutter 4.5 brg 90 N-ins False dbl_ar 4.6 ha  wind 0.0 MW batt 0.0 MWh export 0 MWh HP 5.6 MW waste 94%
+The Creamery, Commerce Rd, Str  1.05 (sweep 1.08)  range 0.99-1.14  seas.imp 1.54  0.360 kg (imp 0.81)  pass True/True | pitched k3 span 20.5 pitch 10 gutter 4.5 brg 0 N-ins False dbl_ar 2.2 ha  wind 0.2 MW batt 0.1 MWh export 280 MWh HP 2.6 MW waste 37%
+North British distillery        1.07 (sweep 1.09)  range 1.00-1.15  seas.imp 1.54  0.295 kg (imp 0.81)  pass True/True | pitched k1 span 18.2 pitch 18 gutter 5.2 brg 0 N-ins False dbl_ar 1.7 ha  wind 0.0 MW batt 0.0 MWh export 0 MWh HP 2.4 MW waste 94%
+Station Rd, Cowie               1.08 (sweep 1.10)  range 1.01-1.18  seas.imp 1.54  0.299 kg (imp 0.81)  pass True/True | pitched k1 span 18.6 pitch 14 gutter 4.5 brg 90 N-ins False dbl_ar 2.0 ha  wind 0.0 MW batt 0.0 MWh export 0 MWh HP 2.6 MW waste 94%
+== tomato (58 s): imports at Scottish RDCs GBP 1.77/kg, 1.30 kg CO2e/kg
+Girvan + Ailsa Bay distillerie  1.34 (sweep 1.37)  range 1.24-1.45  seas.imp 1.68  0.366 kg (imp 1.29)  pass True/True | pitched k1 span 14.0 pitch 10 gutter 4.5 brg 0 N-ins True dbl_ar 5.1 ha  wind 0.2 MW batt 0.0 MWh export 540 MWh HP 5.3 MW waste 91%
+Caledonian Paper Mill, Shewalt  1.36 (sweep 1.39)  range 1.27-1.47  seas.imp 1.68  0.381 kg (imp 1.29)  pass True/True | pitched k1 span 15.1 pitch 10 gutter 4.5 brg 0 N-ins False dbl_ar 8.5 ha  wind 0.3 MW batt 0.0 MWh export 596 MWh HP 8.6 MW waste 91%
+Cameronbridge distillery        1.38 (sweep 1.41)  range 1.29-1.49  seas.imp 1.68  0.410 kg (imp 1.29)  pass True/True | pitched k3 span 22.6 pitch 16 gutter 4.5 brg 0 N-ins False dbl_ar 5.4 ha  wind 0.0 MW batt 0.0 MWh export 0 MWh HP 5.7 MW waste 92%
+The Creamery, Commerce Rd, Str  1.38 (sweep 1.41)  range 1.30-1.49  seas.imp 1.69  0.470 kg (imp 1.29)  pass True/True | pitched k2 span 16.4 pitch 10 gutter 4.5 brg 0 N-ins False dbl_ar 2.3 ha  wind 0.1 MW batt 0.0 MWh export 127 MWh HP 2.5 MW waste 41%
+North British distillery        1.44 (sweep 1.47)  range 1.35-1.55  seas.imp 1.69  0.409 kg (imp 1.29)  pass True/True | pitched k1 span 26.5 pitch 13 gutter 4.7 brg 90 N-ins False dbl_ar 1.4 ha  wind 0.0 MW batt 0.0 MWh export 0 MWh HP 1.7 MW waste 92%
+EDINBURGH, SEAFIELD WWTW        1.45 (sweep 1.48)  range 1.36-1.56  seas.imp 1.68  0.491 kg (imp 1.29)  pass True/True | pitched k2 span 14.3 pitch 14 gutter 4.5 brg 0 N-ins False dbl_ar 17.1 ha  wind 1.3 MW batt 0.8 MWh export 2060 MWh HP 17.0 MW waste 100%
+== cucumber (60 s): GBP/kg at GBP 10/MWh heat [no wall light]; imports 1.57
+Girvan + Ailsa Bay distillerie  free 0.998 at 4.7 ha |    5 ha 0.994 [1.050] w94%    10 ha 1.007 [1.050] w76%    20 ha 1.015 [1.053] w46%    30 ha 1.029 [1.056] w32%
+Caledonian Paper Mill, Shewalt  free 1.012 at 7.5 ha |    5 ha 1.024 [1.079] w94%    10 ha 1.020 [1.064] w81%    20 ha 1.039 [1.071] w67%    30 ha 1.059 [1.085] w49%
+Cameronbridge distillery        free 1.026 at 4.6 ha |    5 ha 1.022 [1.079] w94%    10 ha 1.050 [1.094] w75%    20 ha 1.094 [1.128] w45%    30 ha 1.109 [1.137] w32%
+== tomato (65 s): GBP/kg at GBP 10/MWh heat [no wall light]; imports 1.77
+Girvan + Ailsa Bay distillerie  free 1.341 at 5.1 ha |    5 ha 1.341 [1.421] w91%    10 ha 1.351 [1.414] w69%    20 ha 1.363 [1.409] w51%    30 ha 1.374 [1.411] w37%
+Caledonian Paper Mill, Shewalt  free 1.358 at 8.5 ha |    5 ha 1.377 [1.449] w92%    10 ha 1.380 [1.436] w73%    20 ha 1.390 [1.421] w66%    30 ha 1.399 [1.433] w55%
+Cameronbridge distillery        free 1.377 at 5.4 ha |    5 ha 1.375 [1.485] w92%    10 ha 1.399 [1.478] w71%    20 ha 1.422 [1.488] w51%    30 ha 1.437 [1.490] w37%
+cucumber Girvan + Ailsa Bay distillerie standby  GBP/kg 1.003 (sweep 0.998) kg 0.267 | HP 5.50 MWth (design 5.50) store 0.8 MWh at GBP 44.96/kWh, wind 0.14 MW, batt 0.00 MWh, export 55 MWh, waste 7.2 GWh, HP heat 1808 MWh
+cucumber Girvan + Ailsa Bay distillerie lp       GBP/kg 0.916 (sweep 0.998) kg 0.265 | HP 2.53 MWth (design 5.50) store 13.0 MWh at GBP 16.15/kWh, wind 0.15 MW, batt 0.00 MWh, export 46 MWh, waste 7.0 GWh, HP heat 2027 MWh
+cucumber Caledonian Paper Mill, Shewalt standby  GBP/kg 1.005 (sweep 1.012) kg 0.275 | HP 8.76 MWth (design 8.76) store 0.0 MWh at GBP 44.96/kWh, wind 0.20 MW, batt 0.00 MWh, export 45 MWh, waste 12.9 GWh, HP heat 2112 MWh
+cucumber Caledonian Paper Mill, Shewalt lp       GBP/kg 0.936 (sweep 1.012) kg 0.272 | HP 3.76 MWth (design 8.76) store 60.8 MWh at GBP 7.78/kWh, wind 0.20 MW, batt 0.00 MWh, export 10 MWh, waste 12.8 GWh, HP heat 2234 MWh
+cucumber Cameronbridge distillery       standby  GBP/kg 1.023 (sweep 1.026) kg 0.283 | HP 5.62 MWth (design 5.62) store 0.0 MWh at GBP 44.96/kWh, wind 0.07 MW, batt 0.00 MWh, export 3 MWh, waste 9.6 GWh, HP heat 787 MWh
+cucumber Cameronbridge distillery       lp       GBP/kg 0.933 (sweep 1.026) kg 0.279 | HP 2.48 MWth (design 5.62) store 46.0 MWh at GBP 8.86/kWh, wind 0.07 MW, batt 0.00 MWh, export 0 MWh, waste 9.6 GWh, HP heat 777 MWh
+tomato   Girvan + Ailsa Bay distillerie standby  GBP/kg 1.345 (sweep 1.341) kg 0.369 | HP 5.29 MWth (design 5.29) store 0.2 MWh at GBP 44.96/kWh, wind 0.15 MW, batt 0.01 MWh, export 92 MWh, waste 4.2 GWh, HP heat 1780 MWh
+tomato   Girvan + Ailsa Bay distillerie lp       GBP/kg 1.223 (sweep 1.341) kg 0.366 | HP 1.91 MWth (design 5.29) store 13.2 MWh at GBP 16.74/kWh, wind 0.16 MW, batt 0.00 MWh, export 62 MWh, waste 3.8 GWh, HP heat 2163 MWh
+tomato   Caledonian Paper Mill, Shewalt standby  GBP/kg 1.360 (sweep 1.358) kg 0.383 | HP 8.57 MWth (design 8.57) store 3.2 MWh at GBP 25.43/kWh, wind 0.22 MW, batt 0.00 MWh, export 47 MWh, waste 7.8 GWh, HP heat 2353 MWh
+tomato   Caledonian Paper Mill, Shewalt lp       GBP/kg 1.257 (sweep 1.358) kg 0.381 | HP 3.57 MWth (design 8.57) store 19.4 MWh at GBP 13.15/kWh, wind 0.24 MW, batt 0.00 MWh, export 33 MWh, waste 7.6 GWh, HP heat 2561 MWh
+tomato   Cameronbridge distillery       standby  GBP/kg 1.373 (sweep 1.377) kg 0.395 | HP 5.72 MWth (design 5.72) store 0.2 MWh at GBP 44.96/kWh, wind 0.09 MW, batt 0.00 MWh, export 6 MWh, waste 6.8 GWh, HP heat 816 MWh
+tomato   Cameronbridge distillery       lp       GBP/kg 1.263 (sweep 1.377) kg 0.389 | HP 2.30 MWth (design 5.72) store 47.0 MWh at GBP 8.70/kWh, wind 0.10 MW, batt 0.00 MWh, export 0 MWh, waste 6.7 GWh, HP heat 893 MWh
+LP done: 2987 s
+CHAIN_DONE

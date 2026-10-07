@@ -1,0 +1,85 @@
+
+2.9 ha ppfd 0 turbines 1: Y 57.7 kg/m2, winter 6%, CO2e 0.41 (1.03 dose counted), HP 1898 kW, store 358 MWh, cap 500.0, parity 1.530
+  undercut 3%: price 1.484  capex 9.90 M  opex 0.726/kg  LCOP8 1.302  NPV8 +3.37 M  IRR 11.4 %  payback 8.2
+     all equity (8 % benchmark)                           debt  0.00 M equity  9.90 M  minDSCR inf  eqIRR 11.4 %  min price 1.302
+     supplier credit 10 yr + plant asset finance 7 yr     debt  7.34 M equity  2.56 M  minDSCR 0.64  eqIRR 14.7 %  min price 2.001
+     supplier credit 15 yr + plant asset finance 10 yr    debt  7.34 M equity  2.56 M  minDSCR 0.83  eqIRR 16.7 %  min price 1.750
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  7.34 M equity  2.56 M  minDSCR 0.88  eqIRR 17.9 %  min price 1.705
+  undercut 5%: price 1.453  capex 9.90 M  opex 0.726/kg  LCOP8 1.302  NPV8 +2.80 M  IRR 10.9 %  payback 8.5
+     all equity (8 % benchmark)                           debt  0.00 M equity  9.90 M  minDSCR inf  eqIRR 10.9 %  min price 1.302
+     supplier credit 10 yr + plant asset finance 7 yr     debt  7.34 M equity  2.56 M  minDSCR 0.60  eqIRR 13.7 %  min price 2.001
+     supplier credit 15 yr + plant asset finance 10 yr    debt  7.34 M equity  2.56 M  minDSCR 0.79  eqIRR 15.4 %  min price 1.750
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  7.34 M equity  2.56 M  minDSCR 0.83  eqIRR 16.5 %  min price 1.705
+  undercut 10%: price 1.377  capex 9.90 M  opex 0.726/kg  LCOP8 1.302  NPV8 +1.39 M  IRR 9.4 %  payback 9.9
+     all equity (8 % benchmark)                           debt  0.00 M equity  9.90 M  minDSCR inf  eqIRR 9.4 %  min price 1.302
+     supplier credit 10 yr + plant asset finance 7 yr     debt  7.34 M equity  2.56 M  minDSCR 0.51  eqIRR 11.2 %  min price 2.001
+     supplier credit 15 yr + plant asset finance 10 yr    debt  7.34 M equity  2.56 M  minDSCR 0.67  eqIRR 12.3 %  min price 1.750
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  7.34 M equity  2.56 M  minDSCR 0.71  eqIRR 13.3 %  min price 1.705
+
+2.9 ha ppfd 150 turbines 1: Y 93.0 kg/m2, winter 26%, CO2e 0.47 (0.98 dose counted), HP 2382 kW, store 155 MWh, cap 2400.0, parity 1.555
+  undercut 3%: price 1.508  capex 11.34 M  opex 0.717/kg  LCOP8 1.136  NPV8 +11.11 M  IRR 17.3 %  payback 5.7
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.34 M  minDSCR inf  eqIRR 17.3 %  min price 1.136
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.03 M equity  3.31 M  minDSCR 0.99  eqIRR 26.4 %  min price 1.658
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.03 M equity  3.31 M  minDSCR 1.30  eqIRR 30.8 %  min price 1.485
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.03 M equity  3.31 M  minDSCR 1.38  eqIRR 32.1 %  min price 1.454
+  undercut 5%: price 1.477  capex 11.34 M  opex 0.717/kg  LCOP8 1.136  NPV8 +10.18 M  IRR 16.5 %  payback 5.9
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.34 M  minDSCR inf  eqIRR 16.5 %  min price 1.136
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.03 M equity  3.31 M  minDSCR 0.94  eqIRR 24.7 %  min price 1.658
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.03 M equity  3.31 M  minDSCR 1.23  eqIRR 28.8 %  min price 1.485
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.03 M equity  3.31 M  minDSCR 1.30  eqIRR 30.0 %  min price 1.454
+  undercut 10%: price 1.399  capex 11.34 M  opex 0.717/kg  LCOP8 1.136  NPV8 +7.86 M  IRR 14.7 %  payback 6.6
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.34 M  minDSCR inf  eqIRR 14.7 %  min price 1.136
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.03 M equity  3.31 M  minDSCR 0.80  eqIRR 20.7 %  min price 1.658
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.03 M equity  3.31 M  minDSCR 1.06  eqIRR 23.9 %  min price 1.485
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.03 M equity  3.31 M  minDSCR 1.12  eqIRR 25.1 %  min price 1.454
+
+2.9 ha ppfd 150 turbines 2: Y 93.0 kg/m2, winter 26%, CO2e 0.37 (0.89 dose counted), HP 2598 kW, store 111 MWh, cap 2400.0, parity 1.555
+  undercut 3%: price 1.508  capex 11.45 M  opex 0.690/kg  LCOP8 1.112  NPV8 +11.83 M  IRR 17.7 %  payback 5.5
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.45 M  minDSCR inf  eqIRR 17.7 %  min price 1.112
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.12 M equity  3.34 M  minDSCR 1.04  eqIRR 27.6 %  min price 1.634
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.12 M equity  3.34 M  minDSCR 1.36  eqIRR 32.2 %  min price 1.459
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.12 M equity  3.34 M  minDSCR 1.44  eqIRR 33.5 %  min price 1.428
+  undercut 5%: price 1.477  capex 11.45 M  opex 0.690/kg  LCOP8 1.112  NPV8 +10.90 M  IRR 17.0 %  payback 5.8
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.45 M  minDSCR inf  eqIRR 17.0 %  min price 1.112
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.12 M equity  3.34 M  minDSCR 0.98  eqIRR 25.9 %  min price 1.634
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.12 M equity  3.34 M  minDSCR 1.29  eqIRR 30.2 %  min price 1.459
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.12 M equity  3.34 M  minDSCR 1.37  eqIRR 31.5 %  min price 1.428
+  undercut 10%: price 1.399  capex 11.45 M  opex 0.690/kg  LCOP8 1.112  NPV8 +8.58 M  IRR 15.2 %  payback 6.4
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.45 M  minDSCR inf  eqIRR 15.2 %  min price 1.112
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.12 M equity  3.34 M  minDSCR 0.85  eqIRR 21.8 %  min price 1.634
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.12 M equity  3.34 M  minDSCR 1.12  eqIRR 25.3 %  min price 1.459
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.12 M equity  3.34 M  minDSCR 1.18  eqIRR 26.5 %  min price 1.428
+
+2.9 ha ppfd 200 turbines 2: Y 98.7 kg/m2, winter 30%, CO2e 0.42 (0.93 dose counted), HP 2062 kW, store 229 MWh, cap 2400.0, parity 1.560
+  undercut 3%: price 1.513  capex 11.57 M  opex 0.723/kg  LCOP8 1.128  NPV8 +12.20 M  IRR 17.9 %  payback 5.5
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.57 M  minDSCR inf  eqIRR 17.9 %  min price 1.128
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.20 M equity  3.36 M  minDSCR 1.02  eqIRR 28.0 %  min price 1.640
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.20 M equity  3.36 M  minDSCR 1.34  eqIRR 32.6 %  min price 1.473
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.20 M equity  3.36 M  minDSCR 1.42  eqIRR 33.9 %  min price 1.443
+  undercut 5%: price 1.482  capex 11.57 M  opex 0.723/kg  LCOP8 1.128  NPV8 +11.21 M  IRR 17.2 %  payback 5.7
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.57 M  minDSCR inf  eqIRR 17.2 %  min price 1.128
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.20 M equity  3.36 M  minDSCR 0.97  eqIRR 26.2 %  min price 1.640
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.20 M equity  3.36 M  minDSCR 1.27  eqIRR 30.5 %  min price 1.473
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.20 M equity  3.36 M  minDSCR 1.35  eqIRR 31.8 %  min price 1.443
+  undercut 10%: price 1.404  capex 11.57 M  opex 0.723/kg  LCOP8 1.128  NPV8 +8.74 M  IRR 15.3 %  payback 6.3
+     all equity (8 % benchmark)                           debt  0.00 M equity 11.57 M  minDSCR inf  eqIRR 15.3 %  min price 1.128
+     supplier credit 10 yr + plant asset finance 7 yr     debt  8.20 M equity  3.36 M  minDSCR 0.83  eqIRR 21.9 %  min price 1.640
+     supplier credit 15 yr + plant asset finance 10 yr    debt  8.20 M equity  3.36 M  minDSCR 1.09  eqIRR 25.4 %  min price 1.473
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt  8.20 M equity  3.36 M  minDSCR 1.15  eqIRR 26.6 %  min price 1.443
+
+4.4 ha ppfd 150 turbines 2: Y 92.7 kg/m2, winter 26%, CO2e 0.42 (0.94 dose counted), HP 3247 kW, store 334 MWh, cap None, parity 1.555
+  undercut 3%: price 1.508  capex 15.87 M  opex 0.690/kg  LCOP8 1.078  NPV8 +19.41 M  IRR 19.4 %  payback 5.1
+     all equity (8 % benchmark)                           debt  0.00 M equity 15.87 M  minDSCR inf  eqIRR 19.4 %  min price 1.078
+     supplier credit 10 yr + plant asset finance 7 yr     debt 11.32 M equity  4.54 M  minDSCR 1.13  eqIRR 31.8 %  min price 1.571
+     supplier credit 15 yr + plant asset finance 10 yr    debt 11.32 M equity  4.54 M  minDSCR 1.49  eqIRR 37.2 %  min price 1.410
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt 11.32 M equity  4.54 M  minDSCR 1.58  eqIRR 38.5 %  min price 1.381
+  undercut 5%: price 1.477  capex 15.87 M  opex 0.690/kg  LCOP8 1.078  NPV8 +18.01 M  IRR 18.6 %  payback 5.3
+     all equity (8 % benchmark)                           debt  0.00 M equity 15.87 M  minDSCR inf  eqIRR 18.6 %  min price 1.078
+     supplier credit 10 yr + plant asset finance 7 yr     debt 11.32 M equity  4.54 M  minDSCR 1.08  eqIRR 29.8 %  min price 1.571
+     supplier credit 15 yr + plant asset finance 10 yr    debt 11.32 M equity  4.54 M  minDSCR 1.41  eqIRR 34.9 %  min price 1.410
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt 11.32 M equity  4.54 M  minDSCR 1.50  eqIRR 36.3 %  min price 1.381
+  undercut 10%: price 1.399  capex 15.87 M  opex 0.690/kg  LCOP8 1.078  NPV8 +14.50 M  IRR 16.7 %  payback 5.9
+     all equity (8 % benchmark)                           debt  0.00 M equity 15.87 M  minDSCR inf  eqIRR 16.7 %  min price 1.078
+     supplier credit 10 yr + plant asset finance 7 yr     debt 11.32 M equity  4.54 M  minDSCR 0.93  eqIRR 25.2 %  min price 1.571
+     supplier credit 15 yr + plant asset finance 10 yr    debt 11.32 M equity  4.54 M  minDSCR 1.22  eqIRR 29.4 %  min price 1.410
+     supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %   debt 11.32 M equity  4.54 M  minDSCR 1.30  eqIRR 30.7 %  min price 1.381

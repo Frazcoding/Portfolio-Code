@@ -1,0 +1,12 @@
+cucu Cameronbridge distille with-waste 1.099  no-waste 1.341  kgCO2 0.31->0.70  heat 413  hpMWh 5189 hp_elec 1733 COP 3.00  elec_price 0.163 wind 279 batt 53 en_cost/kg 0.410  unmet 119  import 1.574
+cucu Girvan + Ailsa Bay dis with-waste 1.100  no-waste 1.194  kgCO2 0.29->0.47  heat 408  hpMWh 5178 hp_elec 1682 COP 3.08  elec_price 0.101 wind 451 batt 207 en_cost/kg 0.238  unmet 148  import 1.574
+cucu North British distille with-waste 1.152  no-waste 1.504  kgCO2 0.31->0.86  heat 594  hpMWh 6067 hp_elec 2192 COP 2.77  elec_price 0.154 wind 372 batt 65 en_cost/kg 0.543  unmet 669  import 1.574
+cucu Caledonian Paper Mill, with-waste 1.175  no-waste 1.382  kgCO2 0.33->0.62  heat 349  hpMWh 22943 hp_elec 7281 COP 3.15  elec_price 0.138 wind 1669 batt 912 en_cost/kg 0.349  unmet 82  import 1.574
+cucu The Creamery, Commerce with-waste 1.182  no-waste 1.222  kgCO2 0.41->0.51  heat 330  hpMWh 4711 hp_elec 1458 COP 3.23  elec_price 0.131 wind 352 batt 184 en_cost/kg 0.265  unmet 77  import 1.574
+cucu Station Rd, Cowie      with-waste 1.207  no-waste 1.623  kgCO2 0.33->0.91  heat 452  hpMWh 8237 hp_elec 2835 COP 2.91  elec_price 0.170 wind 307 batt 0 en_cost/kg 0.539  unmet 172  import 1.574
+toma Girvan + Ailsa Bay dis with-waste 1.439  no-waste 1.506  kgCO2 0.37->0.55  heat 222  hpMWh 3457 hp_elec 943 COP 3.67  elec_price 0.121 wind 218 batt 125 en_cost/kg 0.203  unmet 48  import 1.77
+toma Cameronbridge distille with-waste 1.451  no-waste 1.623  kgCO2 0.41->0.73  heat 236  hpMWh 4741 hp_elec 1371 COP 3.46  elec_price 0.170 wind 172 batt 45 en_cost/kg 0.328  unmet 74  import 1.77
+toma The Creamery, Commerce with-waste 1.475  no-waste 1.488  kgCO2 0.45->0.56  heat 202  hpMWh 2227 hp_elec 592 COP 3.76  elec_price 0.143 wind 134 batt 81 en_cost/kg 0.212  unmet 35  import 1.77
+toma Caledonian Paper Mill, with-waste 1.499  no-waste 1.651  kgCO2 0.42->0.68  heat 216  hpMWh 14107 hp_elec 3907 COP 3.61  elec_price 0.155 wind 569 batt 261 en_cost/kg 0.288  unmet 54  import 1.77
+toma North British distille with-waste 1.500  no-waste 1.693  kgCO2 0.41->0.78  heat 264  hpMWh 4489 hp_elec 1344 COP 3.34  elec_price 0.166 wind 160 batt 43 en_cost/kg 0.366  unmet 106  import 1.77
+toma Sapphire Mill, Leslie, with-waste 1.542  no-waste 1.616  kgCO2 0.49->0.72  heat 248  hpMWh 2743 hp_elec 799 COP 3.43  elec_price 0.161 wind 104 batt 26 en_cost/kg 0.319  unmet 61  import 1.77
