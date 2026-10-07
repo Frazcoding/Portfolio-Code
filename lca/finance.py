@@ -23,8 +23,11 @@ Inputs, tier and source:
   * DSRA = 6 months of the next year's debt service, funded at close, moved to target every year, released at the end.
     Working capital = 2 months of opex, funded at close, grows with CPI, released in year 30.
   * Supplier credit (ECA-backed Dutch builder, OECD Arrangement): 85 % of the export contract (15 % minimum down
-    payment), 15 yr max; rate = 15-yr gilt 5.09 % (Apr 2026) + 1.0 % = 6.09 % (PLACEHOLDER: OECD GBP CIRR table returned
-    403, BP37d); equal-principal instalments (Arrangement standard repayment).
+    payment), 15 yr max; fixed rate = GBP CIRR 5.81 % (sourced: OECD CIRR table, valid 15 Sep - 14 Oct 2026, bond
+    maturity = drawdown 1 yr + 0.5 x repayment 14 yr + 0.5 x 0.5 yr frequency = 8.25 -> 8 yr; the 15 Oct - 14 Nov 2026
+    table gives 6.09 %); equal-principal instalments (Arrangement standard repayment). ECA premium 2 % of the credit
+    paid up front (PLACEHOLDER: Atradius DSB premium depends on the buyer's rating and tenor; needs an indication).
+    Lender arrangement fee 1 % on asset finance and bank debt (PLACEHOLDER).
   * Plant asset finance (heat pump, store, LEDs, battery): 90 % advance, Bank Rate 3.75 % + 3.25 % = 7.0 %, 10 yr,
     annuity (PLACEHOLDER, margin range 3.0-3.5 % to be quoted).
   * Alternative bank term debt: sculpted to DSCR 1.25 on CFADS, 15 yr, Bank Rate + 3.0 % = 6.75 %, gearing cap 65 %
@@ -55,7 +58,7 @@ import cashflow  # noqa: E402
 OUT = HERE / "results" / "bplan"
 YEARS = cashflow.YEARS
 CPI, CT = 0.02, 0.25
-BANK_RATE, GILT_15 = 0.0375, 0.0509
+BANK_RATE, CIRR_GBP_8Y = 0.0375, 0.0581
 DSCR_MIN, EQUITY_HURDLE, ALL_EQUITY_HURDLE = 1.25, 0.12, 1.08 * (1 + CPI) - 1
 CO2_BASE = 0.06
 LABOUR_KG_SHARE = 0.5                       # site_opt.LABOUR_KG_SHARE (placeholder): half of labour scales with kg
@@ -90,6 +93,7 @@ class Tranche:
     grace: int = 1
     profile: str = "annuity"                 # annuity | equal | sculpt
     gearing_cap: float = 1.0
+    upfront_fee: float = 0.01
 
 
 @dataclass(frozen=True)
@@ -110,7 +114,7 @@ class Stress:
     labour_mult: float = 1.0
 
 
-ECA = Tranche("glasshouse supplier credit (ECA)", STRUCT_KEYS, 0.85, GILT_15 + 0.010, 15, profile="equal")
+ECA = Tranche("glasshouse supplier credit (ECA)", STRUCT_KEYS, 0.85, CIRR_GBP_8Y, 15, profile="equal", upfront_fee=0.02)
 PLANT_AF = Tranche("plant asset finance", PLANT_KEYS, 0.90, BANK_RATE + 0.0325, 10)
 BANK = Tranche("bank term debt, sculpted", (), 1.0, BANK_RATE + 0.030, 15, profile="sculpt", gearing_cap=0.65)
 SCHEMES = (
@@ -302,7 +306,8 @@ class Finance:
         ddsra = np.diff(np.concatenate([[0.0], dsra]))
         eq = ebitda - rep - tax - service - dwc - ddsra - buyout
         eq[YEARS] += resid
-        eq[0] = -(project_capex - debt - sc.grant) - dwc[0] - ddsra[0]
+        fees = sum(d.amount * d.tr.upfront_fee for d in debts)
+        eq[0] = -(project_capex - debt - sc.grant) - dwc[0] - ddsra[0] - fees
         pref = self.pref(eq, -eq[0] * sc.pref_frac) if sc.pref_frac else np.zeros(YEARS + 1)
         ordinary = eq - pref
         mask = service > 0
@@ -311,7 +316,7 @@ class Finance:
         unlev = real["ebitda"] - real["rep"]
         unlev[0], unlev[YEARS] = -sum(capex.values()), unlev[YEARS] + real["resid"]
         return dict(price=price, debt=debt, gearing=debt / sum(capex.values()), equity=-ordinary[0], pref=-pref[0],
-                    esco_capex=esco_amount, grant=sc.grant, dsra0=dsra[0], wc0=wc[0],
+                    esco_capex=esco_amount, grant=sc.grant, dsra0=dsra[0], wc0=wc[0], fees0=fees,
                     tranches=[dict(name=d.tr.name, amount=d.amount, rate=d.tr.rate, tenor=d.tr.tenor, grace=d.tr.grace,
                                    profile=d.tr.profile) for d in debts],
                     service_yr1=float(service[1]), service_yr2=float(service[2]),
