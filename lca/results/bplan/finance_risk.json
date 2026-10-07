@@ -1,0 +1,658 @@
+{
+ "designs": {
+  "lit lead 2.9 ha 150 umol 2T": {
+   "design": {
+    "site": "site_028",
+    "glazing": "single_2ar",
+    "cap": 500.0,
+    "product": "cucumber",
+    "follow": null,
+    "pipe": 4.5,
+    "co2": "byproduct",
+    "bulk": true,
+    "wind": "ppa",
+    "inter_frac": 0.4,
+    "hours": 18.0,
+    "dli": 25.0,
+    "ha": 2.9,
+    "ppfd": 150.0,
+    "turbines": 2
+   },
+   "capex": 11453364.594865898,
+   "kg_yr": 2698092.527416214,
+   "parity": 1.5549415851407211,
+   "at_parity_10": {
+    "price": 1.399447426626649,
+    "debt": 8116837.321214685,
+    "gearing": 0.708685841089277,
+    "equity": 4221465.870583114,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 573247.9757832501,
+    "wc0": 311690.6211486521,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 4694641.888435794,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 3422195.4327788907,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 525457.3713002622,
+    "service_yr2": 1146495.9515665001,
+    "dscr_yr1": 2.0719587202662435,
+    "min_dscr": 1.551947663478476,
+    "min_dscr_yr2on": 1.551947663478476,
+    "equity_irr": 0.22199979367814315,
+    "equity_irr_real": 0.19803901340994412,
+    "project_irr_real_pretax": 0.15215104061147533,
+    "project_payback_real": 6.359849891642825,
+    "equity_npv_hurdle": 4640573.645706238,
+    "equity_payback": 4.789617532228934,
+    "pref_irr": null,
+    "tax_total": 15226291.602408556,
+    "first_tax_year": 6,
+    "negative_equity_years": [
+     25
+    ]
+   },
+   "at_lender_102": {
+    "price": 1.02,
+    "debt": 8116837.321214685,
+    "gearing": 0.708685841089277,
+    "equity": 4221465.870583114,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 573247.9757832501,
+    "wc0": 311690.6211486521,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 4694641.888435794,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 3422195.4327788907,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 525457.3713002622,
+    "service_yr2": 1146495.9515665001,
+    "dscr_yr1": 0.48209052742511477,
+    "min_dscr": 0.48209052742511477,
+    "min_dscr_yr2on": 0.7044415580758077,
+    "equity_irr": 0.06030339923466388,
+    "equity_irr_real": 0.03951313650457222,
+    "project_irr_real_pretax": 0.0533039221607875,
+    "project_payback_real": 13.944753476680043,
+    "equity_npv_hurdle": -3151844.283962993,
+    "equity_payback": 17.94687566809732,
+    "pref_irr": null,
+    "tax_total": 4687599.492607655,
+    "first_tax_year": 14,
+    "negative_equity_years": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     10,
+     15,
+     20,
+     25
+    ]
+   },
+   "min_price": 1.2428212583312415,
+   "monte_carlo": {
+    "project_irr_real_pretax": {
+     "P10": 0.08270500464592337,
+     "P50": 0.11597746473281723,
+     "P90": 0.14677107483967147
+    },
+    "equity_irr": {
+     "P10": 0.10114253197844907,
+     "P50": 0.15426638827579198,
+     "P90": 0.21113827823725484
+    },
+    "min_dscr": {
+     "P10": 0.9167981710263937,
+     "P50": 1.2676922781002224,
+     "P90": 1.529398309989051
+    },
+    "equity_payback": {
+     "P10": 5.103293562824523,
+     "P50": 7.795068002357163,
+     "P90": 12.748711673450638
+    },
+    "p_dscr_below_1.25": 0.4715,
+    "p_dscr_below_1.0": 0.158,
+    "p_equity_irr_below_12": 0.213,
+    "p_no_payback": 0.0
+   }
+  },
+  "verified site_002 4.44 ha 232 umol 4T": {
+   "design": {
+    "site": "site_002",
+    "ha": 4.44,
+    "ppfd": 232.0,
+    "inter_frac": 0.45,
+    "hours": 20.0,
+    "dli": 18.3,
+    "glazing": "dbl_ar",
+    "cap": 2400.0,
+    "product": "cucumber",
+    "follow": null,
+    "pipe": 4.5,
+    "co2": "byproduct",
+    "bulk": true,
+    "wind": "ppa",
+    "turbines": 4
+   },
+   "capex": 16300824.24474387,
+   "kg_yr": 4382280.004382281,
+   "parity": 1.5549415851407211,
+   "at_parity_10": {
+    "price": 1.399447426626649,
+    "debt": 11712615.249776836,
+    "gearing": 0.718529018773607,
+    "equity": 5977544.927915269,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 831816.6440444246,
+    "wc0": 557519.2889038099,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 6337807.195684209,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 5374808.054092629,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 762209.0220036524,
+    "service_yr2": 1663633.2880888493,
+    "dscr_yr1": 1.9553891097190472,
+    "min_dscr": 1.5657940128874492,
+    "min_dscr_yr2on": 1.5657940128874492,
+    "equity_irr": 0.2248816367730927,
+    "equity_irr_real": 0.20086434977754197,
+    "project_irr_real_pretax": 0.1552677044838774,
+    "project_payback_real": 6.223184969767751,
+    "equity_npv_hurdle": 6865481.302131397,
+    "equity_payback": 4.6936635335795245,
+    "pref_irr": null,
+    "tax_total": 22227337.14800624,
+    "first_tax_year": 6,
+    "negative_equity_years": []
+   },
+   "at_lender_102": {
+    "price": 1.02,
+    "debt": 11712615.249776836,
+    "gearing": 0.718529018773607,
+    "equity": 5977544.927915269,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 831816.6440444246,
+    "wc0": 557519.2889038099,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 6337807.195684209,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 5374808.054092629,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 762209.0220036524,
+    "service_yr2": 1663633.2880888493,
+    "dscr_yr1": 0.17519315940603258,
+    "min_dscr": 0.17519315940603258,
+    "min_dscr_yr2on": 0.6181123221860193,
+    "equity_irr": 0.0447654141996604,
+    "equity_irr_real": 0.024279817842804086,
+    "project_irr_real_pretax": 0.04137066274156409,
+    "project_payback_real": 17.597914938119796,
+    "equity_npv_hurdle": -5851967.107146491,
+    "equity_payback": 21.746683665320493,
+    "pref_irr": null,
+    "tax_total": 5110244.52207293,
+    "first_tax_year": 17,
+    "negative_equity_years": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     15,
+     20,
+     25
+    ]
+   },
+   "min_price": 1.2505669320380544,
+   "monte_carlo": {
+    "project_irr_real_pretax": {
+     "P10": 0.07667781460352252,
+     "P50": 0.11424061882457837,
+     "P90": 0.14849455863244926
+    },
+    "equity_irr": {
+     "P10": 0.09098074080090038,
+     "P50": 0.14929965180537563,
+     "P90": 0.21156010845220705
+    },
+    "min_dscr": {
+     "P10": 0.6704927673394333,
+     "P50": 1.2302360948707072,
+     "P90": 1.5139778103158295
+    },
+    "equity_payback": {
+     "P10": 5.064532278213118,
+     "P50": 8.24485142633559,
+     "P90": 13.737238968241403
+    },
+    "p_dscr_below_1.25": 0.5265,
+    "p_dscr_below_1.0": 0.298,
+    "p_equity_irr_below_12": 0.271,
+    "p_no_payback": 0.0
+   }
+  },
+  "verified site_028 4.61 ha 245 umol 4T": {
+   "design": {
+    "site": "site_028",
+    "ha": 4.61,
+    "ppfd": 245.0,
+    "inter_frac": 0.38,
+    "hours": 20.0,
+    "dli": 27.1,
+    "glazing": "dbl_ar",
+    "cap": 2400.0,
+    "product": "cucumber",
+    "follow": null,
+    "pipe": 4.5,
+    "co2": "byproduct",
+    "bulk": true,
+    "wind": "ppa",
+    "turbines": 4
+   },
+   "capex": 16960508.617032107,
+   "kg_yr": 4550070.0045500705,
+   "parity": 1.5549415851407211,
+   "at_parity_10": {
+    "price": 1.399447426626649,
+    "debt": 12203244.80734099,
+    "gearing": 0.7195093663102904,
+    "equity": 6246338.120873181,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 867132.6418871447,
+    "wc0": 621941.6692949197,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 6558670.491928374,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 5644574.315412617,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 794543.2350373212,
+    "service_yr2": 1734265.2837742893,
+    "dscr_yr1": 1.617773852654712,
+    "min_dscr": 1.4584684610448457,
+    "min_dscr_yr2on": 1.4584684610448457,
+    "equity_irr": 0.1928053677353968,
+    "equity_irr_real": 0.16941702719156537,
+    "project_irr_real_pretax": 0.13944983225253915,
+    "project_payback_real": 6.82854278611106,
+    "equity_npv_hurdle": 5133084.554489964,
+    "equity_payback": 5.678924407263424,
+    "pref_irr": null,
+    "tax_total": 20413524.395814314,
+    "first_tax_year": 7,
+    "negative_equity_years": [
+     15
+    ]
+   },
+   "at_lender_102": {
+    "price": 1.02,
+    "debt": 12203244.80734099,
+    "gearing": 0.7195093663102904,
+    "equity": 6246338.120873181,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 867132.6418871447,
+    "wc0": 621941.6692949197,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 6558670.491928374,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 5644574.315412617,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 794543.2350373212,
+    "service_yr2": 1734265.2837742893,
+    "dscr_yr1": -0.1553632390720711,
+    "min_dscr": -0.1553632390720711,
+    "min_dscr_yr2on": 0.4614941967855625,
+    "equity_irr": 0.01959836075090815,
+    "equity_irr_real": -0.0003937639696980355,
+    "project_irr_real_pretax": 0.018952597537290727,
+    "project_payback_real": 23.954193417609705,
+    "equity_npv_hurdle": -8358975.362940902,
+    "equity_payback": 27.60321828290465,
+    "pref_irr": null,
+    "tax_total": 2641047.592761956,
+    "first_tax_year": 22,
+    "negative_equity_years": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     15,
+     20,
+     25
+    ]
+   },
+   "min_price": 1.3207446331856771,
+   "monte_carlo": {
+    "project_irr_real_pretax": {
+     "P10": 0.05766085324218788,
+     "P50": 0.0977169986434977,
+     "P90": 0.13238113401817533
+    },
+    "equity_irr": {
+     "P10": 0.06481775739203288,
+     "P50": 0.12120688810612079,
+     "P90": 0.17985174534674656
+    },
+    "min_dscr": {
+     "P10": 0.32736021480695493,
+     "P50": 0.9305335043736735,
+     "P90": 1.3917130846092978
+    },
+    "equity_payback": {
+     "P10": 6.242681383820024,
+     "P50": 11.1677511095977,
+     "P90": 17.9853883265754
+    },
+    "p_dscr_below_1.25": 0.7695,
+    "p_dscr_below_1.0": 0.5655,
+    "p_equity_irr_below_12": 0.4885,
+    "p_no_payback": 0.001
+   }
+  },
+  "verified site_002 5.54 ha 219 umol 2T": {
+   "design": {
+    "site": "site_002",
+    "ha": 5.54,
+    "ppfd": 219.0,
+    "inter_frac": 0.49,
+    "hours": 18.5,
+    "dli": 20.5,
+    "glazing": "dbl_ar",
+    "cap": 2400.0,
+    "product": "cucumber",
+    "follow": null,
+    "pipe": 2.25,
+    "co2": "byproduct",
+    "bulk": true,
+    "wind": "ppa",
+    "turbines": 2
+   },
+   "capex": 18887425.868281566,
+   "kg_yr": 5467980.00546798,
+   "parity": 1.5549415851407211,
+   "at_parity_10": {
+    "price": 1.399447426626649,
+    "debt": 13582189.837045217,
+    "gearing": 0.7191128072065315,
+    "equity": 6973212.894434455,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 964904.7435382204,
+    "wc0": 703072.119659886,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 7319861.479886599,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 6262328.357158618,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 884142.5491261971,
+    "service_yr2": 1929809.4870764408,
+    "dscr_yr1": 2.0544611616833692,
+    "min_dscr": 1.6557468050547235,
+    "min_dscr_yr2on": 1.6557468050547235,
+    "equity_irr": 0.24325758425433264,
+    "equity_irr_real": 0.21887998456307134,
+    "project_irr_real_pretax": 0.1652873960731921,
+    "project_payback_real": 5.8823317919263465,
+    "equity_npv_hurdle": 9288209.105131622,
+    "equity_payback": 4.263261498106563,
+    "pref_irr": null,
+    "tax_total": 27769560.49986894,
+    "first_tax_year": 6,
+    "negative_equity_years": []
+   },
+   "at_lender_102": {
+    "price": 1.02,
+    "debt": 13582189.837045217,
+    "gearing": 0.7191128072065315,
+    "equity": 6973212.894434455,
+    "pref": -0.0,
+    "esco_capex": 0.0,
+    "grant": 0.0,
+    "dsra0": 964904.7435382204,
+    "wc0": 703072.119659886,
+    "tranches": [
+     {
+      "name": "glasshouse supplier credit (ECA)",
+      "amount": 7319861.479886599,
+      "rate": 0.0609,
+      "tenor": 15,
+      "grace": 1,
+      "profile": "equal"
+     },
+     {
+      "name": "plant asset finance",
+      "amount": 6262328.357158618,
+      "rate": 0.07,
+      "tenor": 10,
+      "grace": 1,
+      "profile": "annuity"
+     }
+    ],
+    "service_yr1": 884142.5491261971,
+    "service_yr2": 1929809.4870764408,
+    "dscr_yr1": 0.1395598482236619,
+    "min_dscr": 0.1395598482236619,
+    "min_dscr_yr2on": 0.6420240250355158,
+    "equity_irr": 0.0483337398859226,
+    "equity_irr_real": 0.027778176358747686,
+    "project_irr_real_pretax": 0.04459908177565175,
+    "project_payback_real": 17.020389362369578,
+    "equity_npv_hurdle": -6482866.497383868,
+    "equity_payback": 21.293482355429628,
+    "pref_irr": null,
+    "tax_total": 6411746.727871085,
+    "first_tax_year": 16,
+    "negative_equity_years": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     15,
+     20,
+     25
+    ]
+   },
+   "min_price": 1.2400393590898604,
+   "monte_carlo": {
+    "project_irr_real_pretax": {
+     "P10": 0.08203223372688276,
+     "P50": 0.12174744461630127,
+     "P90": 0.15801439673288298
+    },
+    "equity_irr": {
+     "P10": 0.09783928250600633,
+     "P50": 0.16105131662354422,
+     "P90": 0.2283523924277021
+    },
+    "min_dscr": {
+     "P10": 0.6709281362065781,
+     "P50": 1.2876125091262822,
+     "P90": 1.59026983483951
+    },
+    "equity_payback": {
+     "P10": 4.591995761712862,
+     "P50": 7.230346650108885,
+     "P90": 13.035203226711975
+    },
+    "p_dscr_below_1.25": 0.462,
+    "p_dscr_below_1.0": 0.2765,
+    "p_equity_irr_below_12": 0.2155,
+    "p_no_payback": 0.0
+   }
+  }
+ },
+ "phasing": {
+  "modules": [
+   {
+    "start": 0,
+    "ha": 2.9,
+    "capex": 11453364.594865898,
+    "debt": 8116837.321214685,
+    "equity": 4221465.870583114,
+    "min_dscr": 1.551947663478476,
+    "equity_irr": 0.22199979367814315
+   },
+   {
+    "start": 3,
+    "ha": 2.9,
+    "capex": 11453364.594865898,
+    "debt": 8116837.321214685,
+    "equity": 4221465.870583114,
+    "min_dscr": 1.551947663478476,
+    "equity_irr": 0.22199979367814315
+   },
+   {
+    "start": 6,
+    "ha": 4.4,
+    "capex": 15868970.749660367,
+    "debt": 11324764.650802467,
+    "equity": 5815111.132533361,
+    "min_dscr": 1.6898447989706,
+    "equity_irr": 0.2515852002712148
+   }
+  ],
+  "total_ha": 10.2,
+  "peak_external_equity": 6355320.647356604,
+  "peak_year": 6,
+  "equity_irr": 0.2280535422754334,
+  "equity_payback": 8.1179890361818,
+  "debt_total": 27558439.293231837,
+  "capex_total": 38775699.939392164,
+  "first_three_years_eq": [
+   -4221465.870583114,
+   674570.9306855733,
+   850027.805458233,
+   -3311290.1146918377,
+   1645689.1621742598,
+   1882898.9282119842,
+   -3875751.488611702,
+   2762069.942720224
+  ]
+ }
+}
