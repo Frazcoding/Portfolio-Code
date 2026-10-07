@@ -54,6 +54,9 @@ BACKUP = {
                     fuel=0.044, ci_fuel=0.183, life=25.0, label="Natural-gas engine CHP (DEA 06)"),
     "biomethane_chp": dict(capex_kwe=957.0 * DEA_EUR, fom_kwe=9.889 * DEA_EUR, vom_kwhe=0.00542 * DEA_EUR, eff_e=0.47,
                            eff_h=0.47, fuel=0.084, ci_fuel=0.03, life=25.0, label="Engine CHP on certified biomethane (DEA 06)"),
+    "biomethane_chp_2025": dict(capex_kwe=957.0 * DEA_EUR, fom_kwe=9.889 * DEA_EUR, vom_kwhe=0.00542 * DEA_EUR, eff_e=0.47,
+                                eff_h=0.47, fuel=0.059, ci_fuel=0.03, life=25.0,
+                                label="Engine CHP on biomethane, certified-waste RGGOs at GBP 13-15/MWh (C-Zero Markets, Jul 2025)"),
     "hvo": dict(capex_kwe=362.0 * DEA_EUR, fom_kwe=8.983 * DEA_EUR, vom_kwhe=0.00638 * DEA_EUR, eff_e=0.35, eff_h=0.0,
                 fuel=0.153, ci_fuel=0.03, life=25.0, label="HVO engine generator, no heat recovery (DEA 50)"),
 }
@@ -158,13 +161,14 @@ def solve(P, rule, price, pu, store_cost, elec=None, hp_min_el=0.0, store_min=0.
           capital_cost=B["capex_kw"][0] * (ann(B["life"][0]) + B["om_frac"][0]))
     n.add("Link", "discharge", bus0="battery", bus1="el", p_nom=1e7, efficiency=eta)
     n.add("Generator", "grid", bus="el", p_nom=1e7 if import_cap_kw is None else import_cap_kw, marginal_cost=price)
-    if backup:                                             # firm engine: fuel -> electricity (+ recovered heat for CHP)
-        E = BACKUP[backup]
-        n.add("Bus", "fuel")
-        n.add("Generator", "fuel", bus="fuel", p_nom=1e7, marginal_cost=E["fuel"])
-        n.add("Link", "engine", bus0="fuel", bus1="el", efficiency=E["eff_e"], bus2="heat", efficiency2=E["eff_h"],
-              p_nom_extendable=True, capital_cost=(E["capex_kwe"] * ann(E["life"]) + E["fom_kwe"]) * E["eff_e"],
-              marginal_cost=E["vom_kwhe"] * E["eff_e"])
+    engines = backup.split("+") if backup else []        # "biomethane_chp+hvo": the LP sizes a CHP and a peaker together
+    for b in engines:                                      # firm engine: fuel -> electricity (+ recovered heat for CHP)
+        E = BACKUP[b]
+        n.add("Bus", f"fuel_{b}")
+        n.add("Generator", f"fuel_{b}", bus=f"fuel_{b}", p_nom=1e7, marginal_cost=E["fuel"])
+        n.add("Link", f"engine_{b}", bus0=f"fuel_{b}", bus1="el", efficiency=E["eff_e"], bus2="heat",
+              efficiency2=E["eff_h"], p_nom_extendable=True,
+              capital_cost=(E["capex_kwe"] * ann(E["life"]) + E["fom_kwe"]) * E["eff_e"], marginal_cost=E["vom_kwhe"] * E["eff_e"])
     if pv:
         pv_pu = np.clip(P["S"]["wx"]["ghi"].to_numpy()[:8760] / 1000.0, 0, 1) * PV["pr"]
         n.add("Generator", "pv", bus="wind", p_nom_extendable=True, p_max_pu=pv_pu,
@@ -201,15 +205,21 @@ def solve(P, rule, price, pu, store_cost, elec=None, hp_min_el=0.0, store_min=0.
                    (hp_el * cop).sum() / 1e3), hp_elec_MWh=float(hp_el.sum() / 1e3),
                used_wind_MWh=float((to_load.sum() + charge.sum()) / 1e3))
     res["elec"] = elec
-    if backup:
-        E = BACKUP[backup]
-        fuel = L.p0["engine"].to_numpy()
-        res.update(backup=backup, engine_kWe=float(n.links.p_nom_opt["engine"]) * E["eff_e"],
-                   engine_MWh_e=float(fuel.sum() * E["eff_e"] / 1e3), engine_heat_MWh=float(fuel.sum() * E["eff_h"] / 1e3),
-                   fuel_cost_gbp=float(fuel.sum() * E["fuel"]),
-                   engine_capex_gbp=float(n.links.p_nom_opt["engine"]) * E["eff_e"] * E["capex_kwe"],
-                   engine_om_gbp=float(n.links.p_nom_opt["engine"]) * E["eff_e"] * E["fom_kwe"] + float(fuel.sum()) * E["eff_e"] * E["vom_kwhe"],
-                   engine_carbon_kg=float(fuel.sum() * E["ci_fuel"]), engine_hours=int((fuel > 1.0).sum()))
+    if engines:
+        res["backup"], res["engines"] = backup, {}
+        for b in engines:
+            E = BACKUP[b]
+            fuel = L.p0[f"engine_{b}"].to_numpy()
+            kwe = float(n.links.p_nom_opt[f"engine_{b}"]) * E["eff_e"]
+            res["engines"][b] = dict(kWe=kwe, MWh_e=float(fuel.sum() * E["eff_e"] / 1e3),
+                                     heat_MWh=float(fuel.sum() * E["eff_h"] / 1e3), fuel_cost_gbp=float(fuel.sum() * E["fuel"]),
+                                     capex_gbp=kwe * E["capex_kwe"],
+                                     om_gbp=kwe * E["fom_kwe"] + float(fuel.sum()) * E["eff_e"] * E["vom_kwhe"],
+                                     carbon_kg=float(fuel.sum() * E["ci_fuel"]), hours=int((fuel > 1.0).sum()))
+        tot = {k: sum(e[k] for e in res["engines"].values()) for k in next(iter(res["engines"].values()))}
+        res.update(engine_kWe=tot["kWe"], engine_MWh_e=tot["MWh_e"], engine_heat_MWh=tot["heat_MWh"],
+                   fuel_cost_gbp=tot["fuel_cost_gbp"], engine_capex_gbp=tot["capex_gbp"], engine_om_gbp=tot["om_gbp"],
+                   engine_carbon_kg=tot["carbon_kg"], engine_hours=max(e["hours"] for e in res["engines"].values()))
     if pv:
         res.update(pv_kW=float(n.generators.p_nom_opt["pv"]), pv_MWh=float(g["pv"].sum() / 1e3),
                    pv_capex_gbp=float(n.generators.p_nom_opt["pv"]) * PV["capex_kw"],

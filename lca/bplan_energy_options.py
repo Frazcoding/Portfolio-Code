@@ -26,7 +26,8 @@ class Variant:
     @staticmethod
     def label(d):
         if d.get("grid") == "none":
-            b = {"gas_chp": "gas CHP", "biomethane_chp": "biomethane CHP", "hvo": "HVO generator"}[d["plant"]["backup"]]
+            names = {"gas_chp": "gas CHP", "biomethane_chp": "biomethane CHP", "biomethane_chp_2025": "biomethane CHP (2025 certificates)", "hvo": "HVO generator"}
+            b = " + ".join(names[k] for k in d["plant"]["backup"].split("+"))
             w = " + Creamery heat" if d.get("waste") else ""
             return f"Zero grid: {d['turbines']} turbines at GBP {d.get('ppa', 0.090) * 1e3:.0f}/MWh + {b}{w}"
         if d.get("hp_source") == "sea":

@@ -270,10 +270,32 @@ class Figures:
         f.legend(hs, ncol=1)
         return f.save()
 
+    def energy(self):
+        res = json.loads((HERE / "results" / "bplan" / "energy_options.json").read_text())
+        os_ = res["options"]
+        x = np.arange(len(os_))
+        cols = [C[i % len(C)] for i in x]
+        f = Fig("fig12_energy", 8.5, 4.4, 1, 3)
+        panels = [("Minimum price, equity 12 % [£/kg]", [o["min_price"] for o in os_]),
+                  ("Carbon [kg CO2e/kg]", [o["carbon"] for o in os_]),
+                  ("Energy cost [£ M/yr]", [o["energy_gbp_yr"] / 1e6 for o in os_])]
+        for ax, (lab, v) in zip(f.ax, panels):
+            ax.bar(x, v, color=cols, width=0.65, edgecolor=[INK if o["label"] == res["pick"] else "none" for o in os_],
+                   linewidth=1.5)
+            ax.set_ylabel(lab)
+            ax.set_xticks(x, [""] * len(x))
+        f.ax[0].set_ylim(min(o["min_price"] for o in os_) * 0.95, max(o["min_price"] for o in os_) * 1.02)
+        f.ax[1].axhline(res["carbon_max"], color=INK, lw=1.5, ls="--")
+        f.legend([Style.box(c, o["label"] + (" (pick)" if o["label"] == res["pick"] else "")) for c, o in zip(cols, os_)] +
+                 [Style.line(INK, f"Carbon limit {res['carbon_max']:.2f}", ls="--")], ncol=2)
+        return f.save()
+
     def all(self):
         out = [self.monthly_supply(), self.capex(), self.unit_cost(), self.scale(), self.cashflow(), self.dscr()]
         p, q = self.monte_carlo()
         out += [p, self.crops(), self.staffing(), self.viability_map(), self.growth()]
+        if (HERE / "results" / "bplan" / "energy_options.json").exists():
+            out.append(self.energy())
         return out, q
 
 

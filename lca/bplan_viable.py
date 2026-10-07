@@ -154,6 +154,8 @@ class Study:
         for waste in (False, True):
             self.run_one("cucumber", {**self.design("cucumber", ha), "grid": "none", "ppa": ppa,
                                       "plant": {"backup": "biomethane_chp", "pv": True}, **({"waste": True} if waste else {})})
+        for b in ("biomethane_chp+hvo", "biomethane_chp_2025", "biomethane_chp_2025+hvo"):
+            self.run_one("cucumber", {**self.design("cucumber", ha), "grid": "none", "ppa": ppa, "plant": {"backup": b, "pv": True}})
 
     def crops(self, ha):
         self.run_one("pepper", self.design("pepper", ha, "red"))
