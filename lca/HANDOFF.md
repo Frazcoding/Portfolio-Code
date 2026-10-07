@@ -590,7 +590,7 @@ Business plan (2026-10-05)
 - [x] BP23a DONE 2026-10-05: HV import connection now stepped on peak kVA (`cashflow.hv_conn_gbp`, input `hv_conn_steps`):
       SPEN Nov 2025 Ex. 5 (<=800 kVA £143,000), Ex. 17 (<=1 MVA £153,900), Ex. 18 (<=2.4 MVA £633,900), +£75k per 800 kVA
       above. 5 ha SCOP 4 case peak 1,852 kW -> £633,900 (was £150k). 1 ha cases -> £143k (was £150k)
-- [x] BP26. (DONE 2026-10-07, Claude Doc https://claude.ai/code/artifact/cf65b986-f2ca-4a1a-a924-13c38a97152b; BP26a workbook NOT rebuilt on the lead) Business proposition report (user, 2026-10-05: shareable Claude Doc; investors/bank at 8 % first, 3.5 %
+- [x] BP26. (UPDATED 2026-10-07 late, cloud: Summary and Funding and financing rebuilt on the lit 2.9 ha lead with finance.py results (routes table, stresses, Monte Carlo, phasing), checklist + asset-finance quote, ECA premium, heat-source run; Market/Design/Operations/Financials still describe the unlit GBP 9.9 M case and say so) (DONE 2026-10-07, Claude Doc https://claude.ai/code/artifact/cf65b986-f2ca-4a1a-a924-13c38a97152b; BP26a workbook NOT rebuilt on the lead) Business proposition report (user, 2026-10-05: shareable Claude Doc; investors/bank at 8 % first, 3.5 %
       public-value second). Numbers from `python bplan_5ha.py plan` -> results/bplan/viable_5ha_plan.json (SCOP 4 case,
       capex £17.16M incl. HV £0.63M; central = yield capped at light gain + direct retailer contract at £1.57):
       central LCOP 8 % £1.539, NPV +£0.91M, IRR 8.6 %; model yield +£3.87M 10.3 %; via marketing org -£1.37M 7.1 %;

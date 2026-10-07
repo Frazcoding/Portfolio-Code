@@ -26,3 +26,13 @@ The yield -15 % stress results and "DSCR year 1 1.23 / years 2+ 2.0" given earli
 4. BP37c: heat source on the lit design (air vs ground vs Loch Ryan sea water, ~7 C in Feb per the Millport record); costs unsourced, label placeholders.
 5. Tick BP33/34/35/35b/36/37 as appropriate; mark outside-dependent items BLOCKED with the exact need. Re-read HANDOFF before every edit (other agents edit it).
 6. Rebuild the business plan (Claude Doc from BP26) and the workbook (BP26a) on the lit 2.9 ha lead with the new finance. Commit as you go; the user pushes.
+
+## Progress (cloud session, 2026-10-07 late)
+- Items 1-3, 5, 6 DONE: `finance.py` (BP33/BP37e), `bplan_finance_risk.py` (BP36), CIRR 5.81 % (BP37d), HANDOFF ticked,
+  `bplan_workbook_lead.py` -> business_plan/Lead_Finance_Model.xlsx (matches finance.py exactly), Claude Doc Summary +
+  Funding rebuilt on the lit lead. Correction owed: done (BP37e line in HANDOFF).
+- Item 4 (BP37c) BLOCKED here: code ready (`bplan_heat_source.py`, site_opt `hp_source`), but this container's network
+  policy blocks api.carbonintensity.org.uk, api.octopus.energy and archive-api.open-meteo.com, so the uncached inputs
+  cannot be rebuilt. Run it on the desktop.
+- BLOCKED on outside parties: an asset-finance quote and the Atradius premium (BP37d).
+- Not done: the Market/Design/Operations/Financials sections of the Doc and the old S0-S4 workbook still show the unlit case.
