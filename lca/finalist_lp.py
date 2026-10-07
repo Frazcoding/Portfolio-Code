@@ -67,13 +67,13 @@ def _profiles(site, x, crop, o=None):
     o = {**site_opt.TRACK_OPTS, **(o or {})}
     S = site_opt.site_state(site)
     d, a, cfg, low, avail, waste_kw = site_opt.site_setup(site, x, crop, o)
-    ts = S["t_src"] if low else None
+    ts = site_opt.source_series(S, low, o)
     H, *_r, meta, _ = greenhouse_fast.simulate_fast(cfg, i_floor=a["I_floor"], waste_kw=waste_kw, t_source=ts)
     Hh, *_ = greenhouse_fast.simulate_fast(cfg, i_floor=a["I_floor"], waste_kw=None, t_source=ts)
     cop = offgrid.cop_profile(Hh["Q_c"][:8760], Hh["W_comp"][:8760])
     return dict(q=H["Q_pipe"][:8760], w_other=(H["W_total"] - H["W_comp"])[:8760], cop=cop, avail=avail,
                 waste_kw=0.0 if low or o.get("no_waste") else site["heat_GWh"] * 1e6 / 8760, design_kw=meta["design_heat_loss_kw"],
-                low=low, d=d, S=S)
+                low=low, hp_kind=site_opt.hp_kind(low, o), d=d, S=S)
 
 
 IO_API = os.environ.get("CEA_LP_IO", "direct")      # "direct": model passed to HiGHS in memory (no LP files); "lp" = old path
@@ -97,7 +97,7 @@ def solve(P, rule, price, pu, store_cost, elec=None, hp_min_el=0.0, store_min=0.
     q, cop = P["q"], P["cop"]
     cop_design = float(np.percentile(cop, 1))
     hp_kw_th_guess = P["design_kw"]
-    hp_gbp_kwth = site_opt.hp_gbp_per_kw(hp_kw_th_guess / 1e3, "waste" if P["low"] else "air")
+    hp_gbp_kwth = site_opt.hp_gbp_per_kw(hp_kw_th_guess / 1e3, P.get("hp_kind", "waste" if P["low"] else "air"))
     hp_cc = hp_gbp_kwth * cop_design * ann(site_opt.HP_LIFE) \
         + site_opt.DEA_OM_EUR_MW * site_opt.EUR_GBP / 1e3 * cop_design
     w_cc = energy_grid.WIND_CAPEX * (ann(offgrid.P["wind_life"][0]) + offgrid.P["wind_om_frac"][0])

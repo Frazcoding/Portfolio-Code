@@ -85,6 +85,9 @@ PIPE_M, PIPE_GBP_M = 500.0, 1000.0    # connection to the heat source: placehold
 # current Scottish/Welsh onshore projects 33.0 / 38.1 / 41.3 % (low / medium / high); losses 15 % (estimate, gross->net)
 WIND_NET, WIND_CF_CAP = 0.85, 0.413
 T_EFFLUENT = (12.3, 4.0)              # BRE mean; +-4 K seasonal swing, minimum in February (to source)
+# BP37c heat source option hp_source = "air" (default) | "ground" | "sea". Sea: monthly mean sea temperature at Millport,
+# Firth of Clyde (seatemperature.net monthly averages, secondary; Loch Ryan proxy, a shallow loch may run ~1 K colder in winter)
+SEA_T_MONTHLY = (8.3, 7.2, 7.2, 7.8, 9.4, 12.2, 13.9, 14.4, 14.4, 13.3, 11.1, 9.4)
 _S = {}
 # Heat-source availability: planned shutdown (days, start day of year) by site kind, plus an unplanned outage.
 OUTAGE = {  # kind: (planned days, start doy, tier, source)
@@ -180,6 +183,20 @@ def sample(rng, site, crop_heat_kwh_m2):
     return x
 
 
+def source_series(S, low, o):
+    """Heat-pump source temperature (C, hourly) for water sources; None for air and ground (simulated internally)."""
+    if low:
+        return S["t_src"]
+    if o.get("hp_source") == "sea":
+        mid = (np.arange(12) + 0.5) * 730.0
+        return np.interp(np.arange(8760), np.concatenate([mid - 8760, mid, mid + 8760]), np.tile(SEA_T_MONTHLY, 3))
+    return None
+
+
+def hp_kind(low, o):
+    return "waste" if low or o.get("hp_source") in ("sea", "ground") else "air"
+
+
 def site_setup(site, x, crop, o=None):
     """Design, light analysis, simulation config, waste-heat availability and profile for a design at a site."""
     o = {**TRACK_OPTS, **(o or {})}
@@ -189,8 +206,8 @@ def site_setup(site, x, crop, o=None):
     if a["usable_frac"] <= 0.2:
         return None
     low = site["grade"] == "low" and not o.get("no_waste")   # track B: air source everywhere
-    src = "water" if low else "air"
-    base = run_crops.variant(run_crops.base_cfg(crop, src), "ctrl_pc" if low else "ctrlair_pc")
+    src = "water" if low or o.get("hp_source") == "sea" else o.get("hp_source", "air")
+    base = run_crops.variant(run_crops.base_cfg(crop, src), "ctrlair_pc" if src == "air" else "ctrl_pc")
     base = replace(base, location=replace(base.location, site=site["site_key"], lat=site["lat"], lon=site["lon"]))
     night = max(p.heat_night for p in crops.CLIMATES[crop].periods)
     tr = o.get("transp_mult", 1.0)          # sensitivity on the whole transpiration law
@@ -251,7 +268,7 @@ def _evaluate(site, x, crop, opts=None):
         return None
     d, a, cfg, low, avail, waste_kw = setup
     H, acc, wx, gr, meta, _ = greenhouse_fast.simulate_fast(cfg, i_floor=a["I_floor"], waste_kw=waste_kw,
-                                                            t_source=S["t_src"] if low else None)
+                                                            t_source=source_series(S, low, o))
     sm = greenhouse.summary(H, gr, meta)
     A = d.floor
     load = H["W_total"][:8760]
@@ -281,7 +298,7 @@ def _evaluate(site, x, crop, opts=None):
     cap["capex_gbp"] *= o.get("capex_mult", 1.0)
     design_kw = meta["design_heat_loss_kw"]
     hp_kw = design_kw * (boiler_frac if boiler_frac is not None else o.get("hp_frac", 1.0))  # standby: full design load
-    hp_gbp = hp_kw * hp_gbp_per_kw(max(hp_kw, 1.0) / 1e3, "waste" if low else "air")
+    hp_gbp = hp_kw * hp_gbp_per_kw(max(hp_kw, 1.0) / 1e3, hp_kind(low, o))
     hp_om = hp_kw / 1e3 * DEA_OM_EUR_MW * EUR_GBP
     boiler_kw = design_kw - hp_kw if boiler_frac is not None else 0.0
     hp_gbp += boiler_kw * BOILER["meur_mw"] * 1e3 * EUR_GBP     # same 25-yr life as the heat pump
