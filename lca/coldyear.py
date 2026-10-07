@@ -34,7 +34,7 @@ def alias(site, year):
     path = CACHE / f"weather_{key}_{YEAR}.csv"
     if not path.exists():
         weather.SITES.setdefault(site["site_key"], (site["lat"], site["lon"], 0, site["name"]))
-        weather._fetch(site["site_key"], year).to_csv(path, index=False)
+        weather._source_frame(site["site_key"], year).to_csv(path, index=False)
     weather.SITES.setdefault(key, (site["lat"], site["lon"], 0, f"{site['name']} ({year} weather)"))
     return dict(site, site_key=key)
 

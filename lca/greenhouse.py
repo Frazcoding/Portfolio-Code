@@ -22,6 +22,7 @@ import pandas as pd
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+SIMCORE = ROOT / "simcore" if (ROOT / "simcore").is_dir() else ROOT.parent / "simcore"
 for p in (ROOT.parent, ROOT, ROOT / "sim", HERE):
     if str(p) not in sys.path:
         sys.path.insert(0, str(p))
@@ -128,7 +129,7 @@ def build_map(heat):
         if heat.source != "air":
             raise ValueError("the CO2 cycle is modelled for air source only")
         from simcore import co2_transcritical as mod
-        core = ROOT.parent / "simcore"
+        core = SIMCORE
         p = dict(CO2_AIR, UA_e=CO2_AIR["UA_e"] * heat.hx_scale, UA_gc=CO2_AIR["UA_gc"] * heat.hx_scale)
         axes = _orig.AX_AIR
         o, _ = mod.solve(p, {k: v[len(v) // 2] for k, v in axes.items()})
@@ -138,7 +139,7 @@ def build_map(heat):
         return _orig.build_map(heat.source)
     if heat.cycle == "single_stage" and heat.source == "air":
         raise ValueError("single-stage cycle is modelled for liquid sources only")
-    core = ROOT.parent / "simcore"
+    core = SIMCORE
     if heat.cycle == "two_stage":
         p = dict(_orig.SCENARIOS[heat.source]["params"])
         fn, axes = core / "two_stage.py", _orig.SCENARIOS[heat.source]["axes"]
@@ -556,7 +557,7 @@ def summary(H, gr, meta):
 
 SIM_CACHE = HERE / "results" / "simcache"
 _CODE_FILES = [HERE / "greenhouse.py", HERE / "config.py", HERE / "climate.py", ROOT / "sim" / "annual_sim.py",
-               ROOT / "sim" / "params.py", *sorted((ROOT.parent / "simcore").glob("*.py"))]
+               ROOT / "sim" / "params.py", *sorted(SIMCORE.glob("*.py"))]
 
 
 def simulate_cached(cfg, pmap=None):

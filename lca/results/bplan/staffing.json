@@ -1,0 +1,687 @@
+{
+ "2.9": {
+  "area_ha": 2.9,
+  "kg_yr": 2698092.527416214,
+  "roles": [
+   {
+    "dept": "Management",
+    "title": "General manager",
+    "fte": 1.0,
+    "salary": 75000.0,
+    "cost": 90000.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Head grower",
+    "fte": 1.0,
+    "salary": 55000.0,
+    "cost": 65800.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Assistant grower / IPM and crop registration",
+    "fte": 1.0,
+    "salary": 38000.0,
+    "cost": 45230.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Energy and controls engineer (heat pump, LEDs, climate computer, HV)",
+    "fte": 1.0,
+    "salary": 45000.0,
+    "cost": 53700.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Maintenance technician",
+    "fte": 1.0,
+    "salary": 36000.0,
+    "cost": 42810.0
+   },
+   {
+    "dept": "Quality",
+    "title": "QA and compliance (BRCGS, GLOBALG.A.P., food safety)",
+    "fte": 1.0,
+    "salary": 36000.0,
+    "cost": 42810.0
+   },
+   {
+    "dept": "Packhouse",
+    "title": "Packhouse and logistics supervisor",
+    "fte": 1.0,
+    "salary": 33000.0,
+    "cost": 39180.0
+   },
+   {
+    "dept": "Harvest",
+    "title": "Harvest team leader",
+    "fte": 2.0,
+    "salary": 30000.0,
+    "cost": 71100.0
+   },
+   {
+    "dept": "Office",
+    "title": "HR and administration",
+    "fte": 1.0,
+    "salary": 30000.0,
+    "cost": 35550.0
+   },
+   {
+    "dept": "Office",
+    "title": "Finance controller",
+    "fte": 0.5,
+    "salary": 55000.0,
+    "cost": 32900.0
+   },
+   {
+    "dept": "Sales",
+    "title": "Account manager (retailer contract, forecasting)",
+    "fte": 0.5,
+    "salary": 45000.0,
+    "cost": 26850.0
+   }
+  ],
+  "hourly": {
+   "crop_fte": 15.744686992425871,
+   "pack_fte": 3.8035417222322976,
+   "crop_month_fte": [
+    11.065322670804864,
+    11.84467273686496,
+    14.04447516630865,
+    16.293718578641677,
+    18.48270501892075,
+    15.955829717510538,
+    21.347050714978025,
+    21.349878572095204,
+    18.05652048901144,
+    13.658144436289719,
+    14.137270104214133,
+    12.700655703470453
+   ],
+   "permanent_crop_fte": 13.382983943561987,
+   "seasonal_fte_month": [
+    0.0,
+    0.0,
+    0.6614912227466636,
+    2.91073463507969,
+    5.099721075358763,
+    2.5728457739485506,
+    7.964066771416038,
+    7.9668946285332165,
+    4.673536545449453,
+    0.275160492727732,
+    0.7542861606521463,
+    0.0
+   ],
+   "crop_cost": 460544.0741897083,
+   "pack_cost": 111256.4893763892,
+   "pay_per_fte": 29250.760870080005
+  },
+  "departments": {
+   "Management": 1.0,
+   "Growing": 2.0,
+   "Engineering": 2.0,
+   "Quality": 1.0,
+   "Packhouse": 4.803541722232298,
+   "Harvest": 17.74468699242587,
+   "Office": 1.5,
+   "Sales": 0.5
+  },
+  "fte_total": 30.548228714658165,
+  "salaried_fte": 11.0,
+  "salaried_cost": 560090.0,
+  "packhouse_cost": 111256.4893763892,
+  "crop_cost_check": 460544.0741897083,
+  "added_cost": 671346.4893763892,
+  "added_gbp_kg": 0.24882263397367385,
+  "peak_month_fte": 36.1534202943275
+ },
+ "4.4": {
+  "area_ha": 4.4,
+  "kg_yr": 4093657.627803911,
+  "roles": [
+   {
+    "dept": "Management",
+    "title": "General manager",
+    "fte": 1.0,
+    "salary": 75000.0,
+    "cost": 90000.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Head grower",
+    "fte": 1.0,
+    "salary": 55000.0,
+    "cost": 65800.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Assistant grower / IPM and crop registration",
+    "fte": 1.0,
+    "salary": 38000.0,
+    "cost": 45230.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Energy and controls engineer (heat pump, LEDs, climate computer, HV)",
+    "fte": 1.0,
+    "salary": 45000.0,
+    "cost": 53700.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Maintenance technician",
+    "fte": 1.0,
+    "salary": 36000.0,
+    "cost": 42810.0
+   },
+   {
+    "dept": "Quality",
+    "title": "QA and compliance (BRCGS, GLOBALG.A.P., food safety)",
+    "fte": 1.0,
+    "salary": 36000.0,
+    "cost": 42810.0
+   },
+   {
+    "dept": "Packhouse",
+    "title": "Packhouse and logistics supervisor",
+    "fte": 1.0,
+    "salary": 33000.0,
+    "cost": 39180.0
+   },
+   {
+    "dept": "Harvest",
+    "title": "Harvest team leader",
+    "fte": 2.0,
+    "salary": 30000.0,
+    "cost": 71100.0
+   },
+   {
+    "dept": "Office",
+    "title": "HR and administration",
+    "fte": 1.0,
+    "salary": 30000.0,
+    "cost": 35550.0
+   },
+   {
+    "dept": "Office",
+    "title": "Finance controller",
+    "fte": 0.5,
+    "salary": 55000.0,
+    "cost": 32900.0
+   },
+   {
+    "dept": "Sales",
+    "title": "Account manager (retailer contract, forecasting)",
+    "fte": 0.5,
+    "salary": 45000.0,
+    "cost": 26850.0
+   }
+  ],
+  "hourly": {
+   "crop_fte": 23.88849060919787,
+   "pack_fte": 5.770890888904177,
+   "crop_month_fte": [
+    16.788765431566,
+    17.97122760076063,
+    21.30885887302002,
+    24.72150405035289,
+    28.042724856293553,
+    24.20884508863668,
+    32.38862867100114,
+    32.3929192128341,
+    27.39610005229322,
+    20.722701903336123,
+    21.449651192600754,
+    19.269960377679308
+   ],
+   "permanent_crop_fte": 20.30521701781819,
+   "seasonal_fte_month": [
+    0.0,
+    0.0,
+    1.0036418552018311,
+    4.416287032534701,
+    7.737507838475363,
+    3.9036280708184883,
+    12.083411653182953,
+    12.087702195015911,
+    7.090883034475031,
+    0.4174848855179327,
+    1.144434174782564,
+    0.0
+   ],
+   "crop_cost": 698756.5263567987,
+   "pack_cost": 168802.9493986595,
+   "pay_per_fte": 29250.760870080005
+  },
+  "departments": {
+   "Management": 1.0,
+   "Growing": 2.0,
+   "Engineering": 2.0,
+   "Quality": 1.0,
+   "Packhouse": 6.770890888904177,
+   "Harvest": 25.88849060919787,
+   "Office": 1.5,
+   "Sales": 0.5
+  },
+  "fte_total": 40.65938149810205,
+  "salaried_fte": 11.0,
+  "salaried_cost": 560090.0,
+  "packhouse_cost": 168802.9493986595,
+  "crop_cost_check": 698756.5263567987,
+  "added_cost": 728892.9493986595,
+  "added_gbp_kg": 0.17805420376341594,
+  "peak_month_fte": 49.16381010173828
+ },
+ "5.8": {
+  "area_ha": 5.8,
+  "kg_yr": 5396185.054832428,
+  "roles": [
+   {
+    "dept": "Management",
+    "title": "General manager",
+    "fte": 1.0,
+    "salary": 75000.0,
+    "cost": 90000.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Head grower",
+    "fte": 1.0,
+    "salary": 55000.0,
+    "cost": 65800.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Assistant grower / IPM and crop registration",
+    "fte": 1.0,
+    "salary": 38000.0,
+    "cost": 45230.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Energy and controls engineer (heat pump, LEDs, climate computer, HV)",
+    "fte": 1.0,
+    "salary": 45000.0,
+    "cost": 53700.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Maintenance technician",
+    "fte": 1.0,
+    "salary": 36000.0,
+    "cost": 42810.0
+   },
+   {
+    "dept": "Quality",
+    "title": "QA and compliance (BRCGS, GLOBALG.A.P., food safety)",
+    "fte": 1.0,
+    "salary": 36000.0,
+    "cost": 42810.0
+   },
+   {
+    "dept": "Packhouse",
+    "title": "Packhouse and logistics supervisor",
+    "fte": 1.0,
+    "salary": 33000.0,
+    "cost": 39180.0
+   },
+   {
+    "dept": "Harvest",
+    "title": "Harvest team leader",
+    "fte": 2.0,
+    "salary": 30000.0,
+    "cost": 71100.0
+   },
+   {
+    "dept": "Office",
+    "title": "HR and administration",
+    "fte": 1.0,
+    "salary": 30000.0,
+    "cost": 35550.0
+   },
+   {
+    "dept": "Office",
+    "title": "Finance controller",
+    "fte": 0.5,
+    "salary": 55000.0,
+    "cost": 32900.0
+   },
+   {
+    "dept": "Sales",
+    "title": "Account manager (retailer contract, forecasting)",
+    "fte": 0.5,
+    "salary": 45000.0,
+    "cost": 26850.0
+   }
+  ],
+  "hourly": {
+   "crop_fte": 31.489373984851742,
+   "pack_fte": 7.607083444464595,
+   "crop_month_fte": [
+    22.13064534160973,
+    23.68934547372992,
+    28.0889503326173,
+    32.587437157283354,
+    36.9654100378415,
+    31.911659435021075,
+    42.69410142995605,
+    42.69975714419041,
+    36.11304097802288,
+    27.316288872579438,
+    28.274540208428267,
+    25.401311406940906
+   ],
+   "permanent_crop_fte": 26.765967887123974,
+   "seasonal_fte_month": [
+    0.0,
+    0.0,
+    1.3229824454933272,
+    5.82146927015938,
+    10.199442150717527,
+    5.145691547897101,
+    15.928133542832075,
+    15.933789257066433,
+    9.347073090898906,
+    0.550320985455464,
+    1.5085723213042925,
+    0.0
+   ],
+   "crop_cost": 921088.1483794166,
+   "pack_cost": 222512.9787527784,
+   "pay_per_fte": 29250.760870080005
+  },
+  "departments": {
+   "Management": 1.0,
+   "Growing": 2.0,
+   "Engineering": 2.0,
+   "Quality": 1.0,
+   "Packhouse": 8.607083444464596,
+   "Harvest": 33.48937398485174,
+   "Office": 1.5,
+   "Sales": 0.5
+  },
+  "fte_total": 50.09645742931633,
+  "salaried_fte": 11.0,
+  "salaried_cost": 560090.0,
+  "packhouse_cost": 222512.9787527784,
+  "crop_cost_check": 921088.1483794166,
+  "added_cost": 782602.9787527784,
+  "added_gbp_kg": 0.14502893633196226,
+  "peak_month_fte": 61.306840588655
+ },
+ "7.3": {
+  "area_ha": 7.3,
+  "kg_yr": 6791750.155220125,
+  "roles": [
+   {
+    "dept": "Management",
+    "title": "General manager",
+    "fte": 1.0,
+    "salary": 75000.0,
+    "cost": 90000.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Head grower",
+    "fte": 1.0,
+    "salary": 55000.0,
+    "cost": 65800.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Assistant grower / IPM and crop registration",
+    "fte": 2.0,
+    "salary": 38000.0,
+    "cost": 90460.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Energy and controls engineer (heat pump, LEDs, climate computer, HV)",
+    "fte": 1.0,
+    "salary": 45000.0,
+    "cost": 53700.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Maintenance technician",
+    "fte": 2.0,
+    "salary": 36000.0,
+    "cost": 85620.0
+   },
+   {
+    "dept": "Quality",
+    "title": "QA and compliance (BRCGS, GLOBALG.A.P., food safety)",
+    "fte": 1.0,
+    "salary": 36000.0,
+    "cost": 42810.0
+   },
+   {
+    "dept": "Packhouse",
+    "title": "Packhouse and logistics supervisor",
+    "fte": 1.0,
+    "salary": 33000.0,
+    "cost": 39180.0
+   },
+   {
+    "dept": "Harvest",
+    "title": "Harvest team leader",
+    "fte": 3.0,
+    "salary": 30000.0,
+    "cost": 106650.0
+   },
+   {
+    "dept": "Office",
+    "title": "HR and administration",
+    "fte": 1.0,
+    "salary": 30000.0,
+    "cost": 35550.0
+   },
+   {
+    "dept": "Office",
+    "title": "Finance controller",
+    "fte": 1.0,
+    "salary": 55000.0,
+    "cost": 65800.0
+   },
+   {
+    "dept": "Sales",
+    "title": "Account manager (retailer contract, forecasting)",
+    "fte": 1.0,
+    "salary": 45000.0,
+    "cost": 53700.0
+   }
+  ],
+  "hourly": {
+   "crop_fte": 39.63317760162374,
+   "pack_fte": 9.574432611136473,
+   "crop_month_fte": [
+    27.854088102370863,
+    29.81590033762559,
+    35.35333403932867,
+    41.01522262899457,
+    46.52542987521431,
+    40.16467480614722,
+    53.73567938597917,
+    53.74279778492931,
+    45.45262054130466,
+    34.38084633962584,
+    35.586921296814886,
+    31.970616081149764
+   ],
+   "permanent_crop_fte": 33.688200961380176,
+   "seasonal_fte_month": [
+    0.0,
+    0.0,
+    1.6651330779484965,
+    7.327021667614396,
+    12.837228913834132,
+    6.4764738447670425,
+    20.047478424598992,
+    20.054596823549133,
+    11.764419579924486,
+    0.6926453782456647,
+    1.8987203354347102,
+    0.0
+   ],
+   "crop_cost": 1159300.6005465072,
+   "pack_cost": 280059.43877504865,
+   "pay_per_fte": 29250.760870080005
+  },
+  "departments": {
+   "Management": 1.0,
+   "Growing": 3.0,
+   "Engineering": 3.0,
+   "Quality": 1.0,
+   "Packhouse": 10.574432611136473,
+   "Harvest": 42.63317760162374,
+   "Office": 2.0,
+   "Sales": 1.0
+  },
+  "fte_total": 64.20761021276022,
+  "salaried_fte": 15.0,
+  "salaried_cost": 743430.0,
+  "packhouse_cost": 280059.43877504865,
+  "crop_cost_check": 1159300.6005465072,
+  "added_cost": 1023489.4387750486,
+  "added_gbp_kg": 0.1506959790015828,
+  "peak_month_fte": 78.31723039606578
+ },
+ "10.2": {
+  "area_ha": 10.2,
+  "kg_yr": 9489842.682636337,
+  "roles": [
+   {
+    "dept": "Management",
+    "title": "General manager",
+    "fte": 1.0,
+    "salary": 75000.0,
+    "cost": 90000.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Head grower",
+    "fte": 1.0,
+    "salary": 55000.0,
+    "cost": 65800.0
+   },
+   {
+    "dept": "Growing",
+    "title": "Assistant grower / IPM and crop registration",
+    "fte": 2.0,
+    "salary": 38000.0,
+    "cost": 90460.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Energy and controls engineer (heat pump, LEDs, climate computer, HV)",
+    "fte": 1.0,
+    "salary": 45000.0,
+    "cost": 53700.0
+   },
+   {
+    "dept": "Engineering",
+    "title": "Maintenance technician",
+    "fte": 2.0,
+    "salary": 36000.0,
+    "cost": 85620.0
+   },
+   {
+    "dept": "Quality",
+    "title": "QA and compliance (BRCGS, GLOBALG.A.P., food safety)",
+    "fte": 2.0,
+    "salary": 36000.0,
+    "cost": 85620.0
+   },
+   {
+    "dept": "Packhouse",
+    "title": "Packhouse and logistics supervisor",
+    "fte": 1.0,
+    "salary": 33000.0,
+    "cost": 39180.0
+   },
+   {
+    "dept": "Harvest",
+    "title": "Harvest team leader",
+    "fte": 4.0,
+    "salary": 30000.0,
+    "cost": 142200.0
+   },
+   {
+    "dept": "Office",
+    "title": "HR and administration",
+    "fte": 1.5,
+    "salary": 30000.0,
+    "cost": 53325.0
+   },
+   {
+    "dept": "Office",
+    "title": "Finance controller",
+    "fte": 1.0,
+    "salary": 55000.0,
+    "cost": 65800.0
+   },
+   {
+    "dept": "Sales",
+    "title": "Account manager (retailer contract, forecasting)",
+    "fte": 1.0,
+    "salary": 45000.0,
+    "cost": 53700.0
+   }
+  ],
+  "hourly": {
+   "crop_fte": 55.37786459404962,
+   "pack_fte": 13.377974333368769,
+   "crop_month_fte": [
+    38.919410773175734,
+    41.66057307449055,
+    49.39780920563732,
+    57.308941207636245,
+    65.00813489413505,
+    56.120504523657765,
+    75.08273010095719,
+    75.09267635702452,
+    63.5091410303161,
+    48.038990775915565,
+    49.724191401029024,
+    44.671271784620224
+   ],
+   "permanent_crop_fte": 47.07118490494215,
+   "seasonal_fte_month": [
+    0.0,
+    0.0,
+    2.3266243006951726,
+    10.237756302694095,
+    17.936949989192904,
+    9.049319618715614,
+    28.011545196015042,
+    28.021491452082365,
+    16.43795612537395,
+    0.9678058709734145,
+    2.653006496086874,
+    0.0
+   ],
+   "crop_cost": 1619844.6747362155,
+   "pack_cost": 391315.92815143784,
+   "pay_per_fte": 29250.760870080005
+  },
+  "departments": {
+   "Management": 1.0,
+   "Growing": 3.0,
+   "Engineering": 3.0,
+   "Quality": 2.0,
+   "Packhouse": 14.377974333368769,
+   "Harvest": 59.37786459404962,
+   "Office": 2.5,
+   "Sales": 1.0
+  },
+  "fte_total": 86.25583892741838,
+  "salaried_fte": 17.5,
+  "salaried_cost": 839565.0,
+  "packhouse_cost": 391315.92815143784,
+  "crop_cost_check": 1619844.6747362155,
+  "added_cost": 1230880.9281514378,
+  "added_gbp_kg": 0.12970509304686295,
+  "peak_month_fte": 105.97065069039328
+ }
+}

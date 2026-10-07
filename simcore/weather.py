@@ -5,6 +5,7 @@ Derived psychrometric and sky quantities are added so every model works from
 the same weather frame.
 """
 import json
+import os
 import time
 import urllib.request
 
@@ -81,11 +82,23 @@ def _fetch_marine(site, year):
     return df
 
 
+def _source_frame(site, year):
+    """Archive API, or Open-Meteo's ERA5 open data on S3 (era5_open) when CEA_WEATHER_SOURCE=era5_s3 or the API fails."""
+    if os.environ.get("CEA_WEATHER_SOURCE") != "era5_s3":
+        try:
+            return _fetch(site, year)
+        except OSError:
+            print(f"weather: archive API unreachable, using ERA5 open data on S3 for {site} {year}", flush=True)
+    from .era5_open import ArchiveFrame
+    lat, lon, _, _ = SITES[site]
+    return ArchiveFrame(lat, lon, year).frame()
+
+
 def load(site, year=YEAR, marine=False):
     """Return an 8760-row DataFrame of observed and derived hourly weather."""
     path = CACHE / f"weather_{site}_{year}.csv"
     if not path.exists():
-        _fetch(site, year).to_csv(path, index=False)
+        _source_frame(site, year).to_csv(path, index=False)
     df = pd.read_csv(path, parse_dates=["time"])
     if marine:
         mpath = CACHE / f"marine_{site}_{year}.csv"

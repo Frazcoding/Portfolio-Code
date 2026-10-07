@@ -5,6 +5,7 @@ Price:  Octopus Agile import tariff, region C (London), p/kWh inc. VAT, half-hou
 Both are cached as hourly CSV in simcore/cache.
 """
 import json
+import os
 import time
 import urllib.request
 
@@ -67,6 +68,11 @@ def _agile(year):
 def load(year=YEAR):
     """Return hourly frame with ci [gCO2/kWh] and price [p/kWh] for 8760 hours."""
     path = CACHE / f"grid_gb_{year}.csv"
+    if not path.exists() and os.environ.get("CEA_GRID_SOURCE") == "proxy":     # cloud fallback, see grid_proxy
+        path = CACHE / f"grid_gb_{year}_proxy.csv"
+        if not path.exists():
+            from .grid_proxy import GbGridProxy
+            GbGridProxy(year).frame().iloc[:8760].to_csv(path, index=False)
     if not path.exists():
         idx = pd.DataFrame({"time": pd.date_range(f"{year}-01-01", periods=17520, freq="30min")})
         c = idx.merge(_carbon(year), on="time", how="left")

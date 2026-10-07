@@ -58,7 +58,7 @@ def build_map(key):
     sc = SCENARIOS[key]
     pt = {k: v[len(v) // 2] for k, v in sc["axes"].items()}
     o, _ = two_stage.solve(sc["params"], pt)
-    core = ROOT.parent / "simcore"
+    core = ROOT / "simcore" if (ROOT / "simcore").is_dir() else ROOT.parent / "simcore"
     return PerfMap(f"greenhouse_nh3_{key}", core / "two_stage.py", "solve", sc["params"], sc["axes"], list(o),
                    deps=[core / "hx.py", core / "thermo.py"])
 
