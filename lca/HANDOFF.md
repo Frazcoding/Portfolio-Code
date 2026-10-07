@@ -693,6 +693,21 @@ Business plan (2026-10-05)
             costs sourced (none usable found 2026-10-07), Loch Ryan monthly sea temperature
       - [ ] BP37d. (CIRR DONE 2026-10-07: OECD table (via Firecrawl), GBP 8-yr bond bucket (1 yr drawdown + 0.5 x 14 yr + 0.25) = 5.81 % for 15 Sep-14 Oct 2026, 6.09 % from 15 Oct; now in finance.py. Asset finance BLOCKED: NEEDS one indicative quote from a UK asset-finance lender for ~GBP 3.4 M of heat pump + store + LEDs over 10 yr (rate, advance, deferral), and an Atradius DSB premium indication for the ECA cover) Read the OECD GBP CIRR table and get one asset-finance indication to replace the PLACEHOLDER rates
 
+- [x] BP38. (DONE 2026-10-07 late, cloud; user: "lights do not follow the wind. Eliminate grid top-ups. Run the Loch Ryan heat
+      pump, the Creamery waste heat, make all electricity as cheap as possible") `bplan_energy_options.py` ->
+      results/bplan/energy_options.json + ENERGY_OPTIONS.md, figures/report/fig12_energy, report section "Energy supply: no grid
+      top-ups". Physics via `bplan_viable.py energy|zerogrid|cheapest 8` (finalist_lp: zero import cap, BACKUP engines from DEA
+      incl. CHP + peaker combinations "a+b", PV on the wind bus; design key "ppa" sets the private-wire price). 8 ha lit cucumber,
+      min price for equity 12 % / carbon / P50: lead grid top-up 1.340 / 0.41 / 12.2 %; Creamery waste heat 1.334 / 0.40 / 12.5 %;
+      Loch Ryan sea water 1.373 / 0.42 / 10.6 % (not viable); zero grid gas CHP 1.290 / 0.92 (rejected: carbon, developer margin
+      -6 GBP/MWh); zero grid biomethane at RGGO GBP 40 1.352 / 0.27 / 11.7 % (not viable). PICK: zero grid, 4 PPA turbines at
+      GBP 82/MWh (developer break-even at 8 %: 6 / 8 turbines need 91 / 101 because more is exported at GBP 60), biomethane CHP at
+      2025 certified-waste RGGO GBP 13-15/MWh (C-Zero Markets Jul 2025; fuel GBP 59/MWh) + HVO peaker + PV: 1.319 / 0.27 / 13.3 %,
+      capex 32.77 M, debt 22.9 M, equity 13.1 M, P(min DSCR < 1) 4 %. Waste heat adds nothing on top of zero grid (CHP heat).
+      OPEN: plan.json / workbook / report body still on the grid-backed lead (adopting the pick = re-point bplan_plan.Plan.run's
+      pick to this row and rebuild); RGGO price is the swing (back at GBP 40 -> not viable); certificate-based (market-based)
+      carbon acceptance by the buyer; biomethane supply + RGGO contract and engine quotes NEEDED
+
 Housekeeping
 - [x] 18. SCOPE.md §3.16 and §3.17; tests/test_costing.py
 - [ ] 19. Supermarket waste heat (SM) with real refrigeration profiles; vertical farm coupled to the glasshouse;

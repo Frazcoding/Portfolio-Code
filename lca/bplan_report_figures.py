@@ -270,24 +270,33 @@ class Figures:
         f.legend(hs, ncol=1)
         return f.save()
 
+    SHOWN = (("Lead: air-source heat pump, grid top-up", "Grid top-up, air heat pump (current lead)"),
+             ("Creamery waste heat + air heat pump", "Grid top-up + Creamery waste heat"),
+             ("Sea-water heat pump (Loch Ryan)", "Grid top-up, Loch Ryan sea-water heat pump"),
+             ("Zero grid: 4 turbines at GBP 90/MWh + gas CHP", "No grid: natural-gas engine"),
+             ("Zero grid: 4 turbines at GBP 82/MWh + biomethane CHP", "No grid: biomethane engine, 2024 certificate price"),
+             ("Zero grid: 4 turbines at GBP 82/MWh + biomethane CHP (2025 certificates) + HVO generator",
+              "No grid: biomethane engine (2025 certificates) + HVO peaker (pick)"))
+
     def energy(self):
         res = json.loads((HERE / "results" / "bplan" / "energy_options.json").read_text())
-        os_ = res["options"]
-        x = np.arange(len(os_))
-        cols = [C[i % len(C)] for i in x]
-        f = Fig("fig12_energy", 8.5, 4.4, 1, 3)
-        panels = [("Minimum price, equity 12 % [£/kg]", [o["min_price"] for o in os_]),
-                  ("Carbon [kg CO2e/kg]", [o["carbon"] for o in os_]),
-                  ("Energy cost [£ M/yr]", [o["energy_gbp_yr"] / 1e6 for o in os_])]
+        by = {o["label"]: o for o in res["options"]}
+        os_ = [(by[k], name) for k, name in self.SHOWN]
+        y = np.arange(len(os_))[::-1]
+        cols = [C[i % len(C)] for i in range(len(os_))]
+        f = Fig("fig12_energy", 8.5, 3.6, 1, 3, sharey=True)
+        panels = [("Minimum price, equity 12 % [£/kg]", [o["min_price"] for o, _ in os_]),
+                  ("Carbon [kg CO2e/kg]", [o["carbon"] for o, _ in os_]),
+                  ("Energy cost [£ M/yr]", [o["energy_gbp_yr"] / 1e6 for o, _ in os_])]
         for ax, (lab, v) in zip(f.ax, panels):
-            ax.bar(x, v, color=cols, width=0.65, edgecolor=[INK if o["label"] == res["pick"] else "none" for o in os_],
-                   linewidth=1.5)
-            ax.set_ylabel(lab)
-            ax.set_xticks(x, [""] * len(x))
-        f.ax[0].set_ylim(min(o["min_price"] for o in os_) * 0.95, max(o["min_price"] for o in os_) * 1.02)
-        f.ax[1].axhline(res["carbon_max"], color=INK, lw=1.5, ls="--")
-        f.legend([Style.box(c, o["label"] + (" (pick)" if o["label"] == res["pick"] else "")) for c, o in zip(cols, os_)] +
-                 [Style.line(INK, f"Carbon limit {res['carbon_max']:.2f}", ls="--")], ncol=2)
+            ax.barh(y, v, color=cols, height=0.65)
+            ax.set_xlabel(lab)
+            ax.set_yticks(y, [""] * len(y))
+        lo = min(o["min_price"] for o, _ in os_)
+        f.ax[0].set_xlim(lo * 0.95, max(o["min_price"] for o, _ in os_) * 1.01)
+        f.ax[1].axvline(res["carbon_max"], color=INK, lw=1.5, ls="--")
+        f.legend([Style.box(c, name) for c, (_, name) in zip(cols, os_)] +
+                 [Style.line(INK, f"Carbon limit {res['carbon_max']:.2f} kg CO2e/kg", ls="--")], ncol=2)
         return f.save()
 
     def all(self):
