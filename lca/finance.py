@@ -65,11 +65,11 @@ LABOUR_KG_SHARE = 0.5                       # site_opt.LABOUR_KG_SHARE (placehol
 RESID_KEY = "residual (SAC-calibrated: install, climate computer, irrigation, vents ...)"
 STRUCT_KEYS = ("steel", "aluminium", "glass_single_m2", "glass_double_m2", "concrete", "pir_panel_m2", "heating_pipe_m",
                "energy_screen_m2", RESID_KEY)
-PLANT_KEYS = ("heat_pump", "hot_water_store", "led_lighting", "peak_boiler", "battery")
+PLANT_KEYS = ("heat_pump", "hot_water_store", "led_lighting", "peak_boiler", "battery", "backup_engine", "solar_pv")
 SPECIAL_KEYS = ("heat_pump", "hot_water_store", "peak_boiler", "battery", "led_lighting", "heating_pipe_m")
 NO_ALLOWANCE_KEYS = ("hv_import_connection", "development", "waste_heat_pipe")
 ESCO_KEYS = ("heat_pump", "hot_water_store", "peak_boiler")
-ELEC_KEYS = ("electricity_grid", "electricity_wind_from_turbine", "network_charge_increase")
+ELEC_KEYS = ("electricity_grid", "electricity_wind_from_turbine", "network_charge_increase", "backup_fuel")
 PER_KG_KEYS = ("packing", "haulage_to_rdc")
 
 
@@ -164,7 +164,7 @@ class Project:
         c = self.costs
         fixed = sum(v for k, v in c.items() if k not in ELEC_KEYS + PER_KG_KEYS + ("labour", "co2_purchased", "sales_commission"))
         labour = c["labour"] * s.labour_mult * ((1 - LABOUR_KG_SHARE) + LABOUR_KG_SHARE * s.yield_mult)
-        opex = (fixed + labour + sum(c[k] for k in ELEC_KEYS) * s.power_mult + c["co2_purchased"] * s.co2_gbp_kg / CO2_BASE
+        opex = (fixed + labour + sum(c.get(k, 0.0) for k in ELEC_KEYS) * s.power_mult + c["co2_purchased"] * s.co2_gbp_kg / CO2_BASE
                 + self.per_kg * kg + self.comm_frac * rev) * (t > 0)
         out = dict(kg=kg, revenue=rev, opex=opex, ebitda=rev - opex)
         if rep:

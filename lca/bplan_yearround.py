@@ -81,11 +81,16 @@ class WindRoute:
     BASE = {"own": "own_2p5MW", "ppa": "tp_2p5MW"}
 
     @classmethod
-    def key(cls, route, n):
+    def key(cls, route, n, ppa=None):
         if route == "farm_share":
             return "farm_share"
         base = cls.BASE[route]
-        return base if n == 1 else f"{base}_x{n}"
+        k = base if n == 1 else f"{base}_x{n}"
+        if ppa is None:
+            return k
+        priced = f"{k}_p{round(ppa * 1e3)}"
+        energy_grid.ELEC_OPTIONS.setdefault(priced, {**energy_grid.ELEC_OPTIONS[k], "ppa": ppa})
+        return priced
 
     @classmethod
     def register(cls):
@@ -163,7 +168,11 @@ class Point:
         self.sites = {s["site_key"]: s for s in json.loads((B5.HERE / "data" / "siting" / "shortlist.json").read_text())}
 
     def opts(self, d):
-        o = {"elec": WindRoute.key(d["wind"], d["turbines"]), "pipe_m2": d.get("pipe", 4.5), "hx_scale": 1.0}
+        o = {"elec": WindRoute.key(d["wind"], d["turbines"], d.get("ppa")), "pipe_m2": d.get("pipe", 4.5), "hx_scale": 1.0}
+        if d.get("hp_source"):                           # BP37c: air (default) / ground / sea (site_opt.source_series)
+            o["hp_source"] = d["hp_source"]
+        if d.get("waste"):                               # host waste heat on a track-B run (site_opt PIPE_M, HEAT_GBP_MWH)
+            o["no_waste"] = False
         if d["ppfd"] > 0:
             h = d["hours"]
             o["light"] = {"ppfd": d["ppfd"], "inter_frac": d["inter_frac"], "dli_target": d["dli"],
@@ -189,11 +198,15 @@ class Point:
         # Lights and auxiliaries are a fixed load the store cannot shift: a cap below it makes the LP buy batteries
         # (first pilot: 17 MWh, GBP 7.0 M against a GBP 0.6 M bigger connection). Start at the SPEN step above it.
         fixed_kw = float(np.max(finalist_lp.profiles(site, x, crop, o)["w_other"])) * 1.1
-        first = next(i for i, c in enumerate(CAPS) if c is None or (c * 0.95 >= fixed_kw and i >= CAPS.index(d["cap"])))
-        for c in CAPS[first:]:
+        if d.get("grid") == "none":                      # zero grid import (user 2026-10-07): firm supply on site
+            caps = [0.0]
+        else:
+            first = next(i for i, c in enumerate(CAPS) if c is None or (c * 0.95 >= fixed_kw and i >= CAPS.index(d["cap"])))
+            caps = CAPS[first:]
+        for c in caps:
             try:
                 lp = finalist_lp.run(site, x, crop, row, st.study.price, "lp", store_kwh0=B5.CopLevers.STORE0 * d["ha"] / B5.HA,
-                                     o=o, boiler=False, elec=o["elec"], store=True,
+                                     o=o, boiler=False, elec=o["elec"], store=True, **d.get("plant", {}),
                                      **({} if c is None else {"import_cap_kw": c * 0.95}))
                 cap = c
                 break
@@ -299,11 +312,12 @@ class HighlandDev:
         if d["wind"] != "ppa":
             return None
         O, Oo = energy_grid.ELEC_OPTIONS["tp_2p5MW"], energy_grid.ELEC_OPTIONS["own_2p5MW"]
+        ppa = d.get("ppa", O["ppa"])
         gen = float((O["kw"] * d["turbines"] * site_opt.site_state(site)["pu80"][:8760]).sum()) / 1e3
         a8 = 0.08 / (1 - 1.08 ** -20)
         lcoe8 = (Oo["capex"] * a8 + Oo["om_kw_yr"]) * Oo["kw"] * d["turbines"] / gen
         used = lp["used_wind_MWh"]
-        return (used * O["ppa"] * 1e3 + (gen - used) * Oo["export"] * 1e3) / gen - lcoe8
+        return (used * ppa * 1e3 + (gen - used) * Oo["export"] * 1e3) / gen - lcoe8
 
 
 class DOE:

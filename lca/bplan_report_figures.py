@@ -53,7 +53,7 @@ class Data:
                          and d["product"] == pk["product"])
         rows = json.loads((HERE / "results" / "bplan" / "viable_lit.json").read_text())
         self.row = next(r for r in rows if r["crop"] == pk["crop"] and r["design"]["ha"] == pk["ha"]
-                        and r["design"]["product"] == pk["product"])
+                        and r["design"]["product"] == pk["product"] and not (r["design"].get("grid") or r["design"].get("hp_source") or r["design"].get("waste")))
         self.design = P.Design(self.row)
         self.scheme = P.LenderSizing(self.design.project).scheme(self.design.price)
 

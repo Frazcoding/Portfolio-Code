@@ -311,7 +311,7 @@ class PlanWorkbook(LeadWorkbook):
         plan = json.loads((HERE / "results" / "bplan" / "plan.json").read_text())["pick"]
         rows = json.loads((HERE / "results" / "bplan" / "viable_lit.json").read_text())
         row = next(r for r in rows if r["crop"] == plan["crop"] and r["design"]["ha"] == plan["ha"]
-                   and r["design"]["product"] == plan["product"])
+                   and r["design"]["product"] == plan["product"] and not (r["design"].get("grid") or r["design"].get("hp_source") or r["design"].get("waste")))
         d = PL.Design(row)
         self.p, self.case, self.price = d.project, {"design": d.d}, d.price
         self.ls = PL.LenderSizing(self.p)

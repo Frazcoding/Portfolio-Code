@@ -174,9 +174,11 @@ def build(track_dir, crop, entry, lp, rule, opts=None):
     plant = {"heat_pump": lp["hp_capex_gbp"] * cm, "peak_boiler": lp.get("boiler_capex_gbp", 0.0) * cm,
              "hot_water_store": lp["store_capex_gbp"] * cm,
              "battery": lp["batt_capex_gbp"] * cm, "waste_heat_pipe": L["pipe_gbp"] * cm,
-             "hv_import_connection": hv_conn_gbp(lp["import_peak_kW"]) * cm, "led_lighting": L.get("led_gbp", 0.0) * cm}
+             "hv_import_connection": (0.0 if lp.get("plant", {}).get("import_cap_kw") == 0 else hv_conn_gbp(lp["import_peak_kW"])) * cm,
+             "led_lighting": L.get("led_gbp", 0.0) * cm,
+             "backup_engine": lp.get("engine_capex_gbp", 0.0) * cm, "solar_pv": lp.get("pv_capex_gbp", 0.0) * cm}
     lives.update(heat_pump=site_opt.HP_LIFE, peak_boiler=site_opt.BOILER["life"], hot_water_store=40.0, battery=15.0, waste_heat_pipe=YEARS,
-                 hv_import_connection=YEARS, led_lighting=L.get("led_life", 15.0))
+                 hv_import_connection=YEARS, led_lighting=L.get("led_life", 15.0), backup_engine=25.0, solar_pv=25.0)
     base = sum(struct.values()) + sum(plant.values())
     capex = dict(**struct, **plant, development=base * v("dev_frac"), contingency=base * v("contingency"))
     capex_total = sum(capex.values())
@@ -210,6 +212,8 @@ def build(track_dir, crop, entry, lp, rule, opts=None):
         "overheads": v("overheads_m2") * A,
         "land_rent": v("land_gbp_ha") * A / 1e4 * 1.3,             # 30 % extra land for access, packhouse, plant
         "sales_commission": o.get("commission", v("commission")) * revenue,
+        "backup_fuel": lp.get("fuel_cost_gbp", 0.0),
+        "engine_pv_om": lp.get("engine_om_gbp", 0.0) + lp.get("pv_om_gbp", 0.0),
     }
     opex = sum(costs.values())
     import bplan_residual

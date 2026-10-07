@@ -75,6 +75,7 @@ class Design:
         self.project = copy.deepcopy(self.base)
         self.project.costs["staff_salaried_packhouse_oncall"] = self.staff["added_cost"]
         self.price = row["parity_gbp_kg"] * (1 - UNDERCUT)
+        self.ppa_mwh = self.d.get("ppa", 0.090) * 1e3
 
     def finance(self):
         ls = LenderSizing(self.project)
@@ -115,7 +116,7 @@ class Design:
                          floor_price=fin["floor_price"], parity=self.row["parity_gbp_kg"],
                          indexation="CPI, annual", term_yr="10 + 5 (covers the 15-yr supplier credit)",
                          revenue_yr=kg * self.price, collection="retailer collects at the farm, bulk crates"),
-            power=dict(wind_mwh_yr=e["costs"]["electricity_wind_from_turbine"] / 90.0, ppa_price_gbp_mwh=90.0,
+            power=dict(wind_mwh_yr=e["costs"]["electricity_wind_from_turbine"] / self.ppa_mwh, ppa_price_gbp_mwh=self.ppa_mwh,
                        turbines=self.d["turbines"], grid_peak_kw=s["import_peak_kW"], term_yr=15),
             co2=dict(t_yr=e["costs"]["co2_purchased"] / 0.06 / 1e3 if e["costs"]["co2_purchased"] else 0.0,
                      price_gbp_kg=0.06, source="The Creamery by-product, piped or tankered"),
@@ -173,12 +174,14 @@ class Mix:
 
 class Plan:
     def run(self):
-        rows = json.loads((OUT / "viable_lit.json").read_text())
+        rows = [r for r in json.loads((OUT / "viable_lit.json").read_text())
+                if not (r["design"].get("grid") or r["design"].get("hp_source") or r["design"].get("waste"))]
         rows += [Mix.row(rows, n, ha, parts) for n, (ha, parts) in MIXES.items()
                  if all(any(r["crop"] == c and r["design"]["product"] == pr and r["design"]["ha"] == ha for r in rows)
                         for c, pr, _ in parts)]
         res = [Design(r).result() for r in rows]
-        viable = [r for r in res if r["finance"]["viable"] and r["crop"] == "cucumber"]
+        base = lambda d: not (d.get("grid") or d.get("hp_source") or d.get("waste"))  # noqa: E731  (energy variants: bplan_energy_options)
+        viable = [r for r in res if r["finance"]["viable"] and r["crop"] == "cucumber" and base(r["design"])]
         pick = min(viable, key=lambda r: r["ha"]) if viable else None      # smallest viable: least equity and market risk
         return dict(designs=res, pick=pick and {"crop": pick["crop"], "product": pick["product"], "ha": pick["ha"]})
 

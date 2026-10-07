@@ -186,7 +186,8 @@ class PlanGrowth:
         import bplan_plan as PL
         import staffing as S
         self.PL, self.S, self.copy = PL, S, copy
-        rows = [r for r in json.loads((OUT / "viable_lit.json").read_text()) if r["crop"] == "cucumber"]
+        rows = [r for r in json.loads((OUT / "viable_lit.json").read_text()) if r["crop"] == "cucumber"
+                and not (r["design"].get("grid") or r["design"].get("hp_source") or r["design"].get("waste"))]
         self.rows = {r["design"]["ha"]: r for r in rows}
         self.first_ha, self.self_funded, self.s = first_ha, self_funded, F.Stress(yield_mult=yield_mult)
 

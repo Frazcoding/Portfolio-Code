@@ -43,6 +43,22 @@ EUR15_EUR25 = 128.76 / 100.0
 STORE = {"capex_a": 7450.0, "capex_b": -0.47, "loss_day": 0.002, "life": 40.0, "om_eur_mwh": 8.6,
          "kwh_m3": 4.186 * 25 / 3.6}
 HEAT_PRICE = 10.0 / 1e3        # GBP/kWh
+# Zero-grid supply (user 2026-10-07: no grid top-ups). Firm backup engines and PV from the Danish Energy Agency technology
+# data (data/dea_el_dh_datasheets_2026.xlsx, 2030 column, EUR 2020 x 1.20 to 2025 x EUR_GBP); fuels:
+#   natural gas 4.4 p/kWh: DESNZ Quarterly Energy Prices June 2026, non-domestic medium, Q1 2026 (secondary: search extract
+#   of table 3.4.2); biomethane = gas + RGGO certificates ~GBP 40/MWh (Green Gas Certification Scheme, Feb 2024 level);
+#   HVO GBP 1.50/l = 0.153 GBP/kWh at 9.8 kWh/l (PLACEHOLDER: pump median 206 p/l incl. duty and VAT, bulk 10-30 % above diesel)
+DEA_EUR = 1.20 * 0.8567
+BACKUP = {
+    "gas_chp": dict(capex_kwe=957.0 * DEA_EUR, fom_kwe=9.889 * DEA_EUR, vom_kwhe=0.00542 * DEA_EUR, eff_e=0.47, eff_h=0.47,
+                    fuel=0.044, ci_fuel=0.183, life=25.0, label="Natural-gas engine CHP (DEA 06)"),
+    "biomethane_chp": dict(capex_kwe=957.0 * DEA_EUR, fom_kwe=9.889 * DEA_EUR, vom_kwhe=0.00542 * DEA_EUR, eff_e=0.47,
+                           eff_h=0.47, fuel=0.084, ci_fuel=0.03, life=25.0, label="Engine CHP on certified biomethane (DEA 06)"),
+    "hvo": dict(capex_kwe=362.0 * DEA_EUR, fom_kwe=8.983 * DEA_EUR, vom_kwhe=0.00638 * DEA_EUR, eff_e=0.35, eff_h=0.0,
+                fuel=0.153, ci_fuel=0.03, life=25.0, label="HVO engine generator, no heat recovery (DEA 50)"),
+}
+PV = dict(capex_kw=595.4 * DEA_EUR / 1.20, fom_kw=10.03 * DEA_EUR / 1.20, pr=0.82, life=25.0,
+          label="Utility-scale PV, DEA 22 (2025, already 2025 EUR)")
 FINALISTS = 3
 
 
@@ -80,7 +96,7 @@ IO_API = os.environ.get("CEA_LP_IO", "direct")      # "direct": model passed to 
 
 
 def solve(P, rule, price, pu, store_cost, elec=None, hp_min_el=0.0, store_min=0.0, boiler=False, store=True,
-          import_cap_kw=None, design_kw=None):
+          import_cap_kw=None, design_kw=None, backup=None, pv=False):
     """elec: energy_grid.ELEC_OPTIONS key (default site_opt.CENTRAL_ELEC). Fixed turbine / PPA routes: the greenhouse
     takes wind up to the turbine's hourly output at the transfer price (turbine LCOE) or the PPA price; the surplus is
     the turbine owner's (as energy_grid.supply_option).
@@ -142,6 +158,17 @@ def solve(P, rule, price, pu, store_cost, elec=None, hp_min_el=0.0, store_min=0.
           capital_cost=B["capex_kw"][0] * (ann(B["life"][0]) + B["om_frac"][0]))
     n.add("Link", "discharge", bus0="battery", bus1="el", p_nom=1e7, efficiency=eta)
     n.add("Generator", "grid", bus="el", p_nom=1e7 if import_cap_kw is None else import_cap_kw, marginal_cost=price)
+    if backup:                                             # firm engine: fuel -> electricity (+ recovered heat for CHP)
+        E = BACKUP[backup]
+        n.add("Bus", "fuel")
+        n.add("Generator", "fuel", bus="fuel", p_nom=1e7, marginal_cost=E["fuel"])
+        n.add("Link", "engine", bus0="fuel", bus1="el", efficiency=E["eff_e"], bus2="heat", efficiency2=E["eff_h"],
+              p_nom_extendable=True, capital_cost=(E["capex_kwe"] * ann(E["life"]) + E["fom_kwe"]) * E["eff_e"],
+              marginal_cost=E["vom_kwhe"] * E["eff_e"])
+    if pv:
+        pv_pu = np.clip(P["S"]["wx"]["ghi"].to_numpy()[:8760] / 1000.0, 0, 1) * PV["pr"]
+        n.add("Generator", "pv", bus="wind", p_nom_extendable=True, p_max_pu=pv_pu,
+              capital_cost=PV["capex_kw"] * ann(PV["life"]) + PV["fom_kw"])
     n.add("Store", "heat_store", bus="heat", e_nom_extendable=True, e_cyclic=True, e_nom_min=store_min,
           e_nom_max=np.inf if store else 0.0,
           standing_loss=STORE["loss_day"] / 24,
@@ -174,6 +201,19 @@ def solve(P, rule, price, pu, store_cost, elec=None, hp_min_el=0.0, store_min=0.
                    (hp_el * cop).sum() / 1e3), hp_elec_MWh=float(hp_el.sum() / 1e3),
                used_wind_MWh=float((to_load.sum() + charge.sum()) / 1e3))
     res["elec"] = elec
+    if backup:
+        E = BACKUP[backup]
+        fuel = L.p0["engine"].to_numpy()
+        res.update(backup=backup, engine_kWe=float(n.links.p_nom_opt["engine"]) * E["eff_e"],
+                   engine_MWh_e=float(fuel.sum() * E["eff_e"] / 1e3), engine_heat_MWh=float(fuel.sum() * E["eff_h"] / 1e3),
+                   fuel_cost_gbp=float(fuel.sum() * E["fuel"]),
+                   engine_capex_gbp=float(n.links.p_nom_opt["engine"]) * E["eff_e"] * E["capex_kwe"],
+                   engine_om_gbp=float(n.links.p_nom_opt["engine"]) * E["eff_e"] * E["fom_kwe"] + float(fuel.sum()) * E["eff_e"] * E["vom_kwhe"],
+                   engine_carbon_kg=float(fuel.sum() * E["ci_fuel"]), engine_hours=int((fuel > 1.0).sum()))
+    if pv:
+        res.update(pv_kW=float(n.generators.p_nom_opt["pv"]), pv_MWh=float(g["pv"].sum() / 1e3),
+                   pv_capex_gbp=float(n.generators.p_nom_opt["pv"]) * PV["capex_kw"],
+                   pv_om_gbp=float(n.generators.p_nom_opt["pv"]) * PV["fom_kw"])
     if boiler:
         b_el = L.p0["boiler"].to_numpy()
         res.update(boiler_kW_th=float(n.links.p_nom_opt["boiler"]) * BO["eff"], boiler_MWh=float(b_el.sum() * BO["eff"] / 1e3),
@@ -187,10 +227,10 @@ def solve(P, rule, price, pu, store_cost, elec=None, hp_min_el=0.0, store_min=0.
     res["wind_cost_gbp"] = float(g["wind"].to_numpy().sum() * n.generators.at["wind", "marginal_cost"])         if O["kind"] in ("own_fixed", "ppa") else float(n.generators.p_nom_opt["wind"]) * w_cc
     # export earns SEG only for own-sized turbines; for the fixed turbine / PPA the surplus belongs to the turbine owner
     res["export_credit_gbp"] = res["export_MWh"] * 1e3 * energy_grid.SEG if O["kind"] == "own_sized" else 0.0
-    res["net_gbp"] = site_opt.network_inc_gbp(res["import_peak_kW"])
+    res["net_gbp"] = 0.0 if import_cap_kw == 0 else site_opt.network_inc_gbp(res["import_peak_kW"])
     res["annual_gbp"] = res["objective"] - res["export_credit_gbp"] + res["net_gbp"]
     res["carbon_kg"] = float(imp @ CI) + res["used_wind_MWh"] * 1e3 * energy_grid.WIND_CI \
-        + res["batt_kWh"] * B["co2_kwh"][0] / B["life"][0]
+        + res["batt_kWh"] * B["co2_kwh"][0] / B["life"][0] + res.get("engine_carbon_kg", 0.0)
     return res
 
 
@@ -230,7 +270,7 @@ def run(site, x, crop, row, price, rule, store_kwh0=None, o=None, boiler=False, 
 
 
 def _run(site, x, crop, price, rule, store_kwh0=None, o=None, boiler=False, elec=None, store=True,
-         import_cap_kw=None, screen_design=False):
+         import_cap_kw=None, screen_design=False, backup=None, pv=False):
     """rule 'lp': the LP sizes heat pump and store on 2023, then the pair is checked on the 2010 heat demand (coldest
     recent year, coldyear.py); if 2010 leaves heat unmet the heat pump is floored at the 2010 requirement with that
     store and the LP re-solved (R10, 2026-10-03: the 2023-only sizing left 76-444 h unmet in 2010)."""
@@ -240,7 +280,7 @@ def _run(site, x, crop, price, rule, store_kwh0=None, o=None, boiler=False, elec
     if screen_design:
         cfg = site_opt.site_setup(site, x, crop, o)[2]
         design = cfg.design_heat_loss_w(screen=True) / 1e3
-    plant = dict(store=store, import_cap_kw=import_cap_kw, design_kw=design)
+    plant = dict(store=store, import_cap_kw=import_cap_kw, design_kw=design, backup=backup, pv=pv)
     sc = store_gbp_kwh(store_kwh0 if store_kwh0 else P["design_kw"] * 6)
     floor = dict(hp_min_el=0.0, store_min=0.0)
     for _ in range(3 if store else 1):
@@ -272,7 +312,7 @@ def _run(site, x, crop, price, rule, store_kwh0=None, o=None, boiler=False, elec
                                                                       r.get("boiler_kW_th", 0.0))
     r["design_kW"] = P["design_kw"]
     r["standby_design_kW"] = design
-    r["plant"] = dict(store=store, boiler=boiler, import_cap_kw=import_cap_kw, screen_design=screen_design)
+    r["plant"] = dict(store=store, boiler=boiler, import_cap_kw=import_cap_kw, screen_design=screen_design, backup=backup, pv=pv)
     return r
 
 

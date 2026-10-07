@@ -33,6 +33,12 @@ BASE = dict(site="site_028", glazing="single_2ar", cap=500.0, follow=None, pipe=
             wind="ppa", inter_frac=0.0, hours=18.0, dli=25.0, ppfd=150.0)
 
 
+for _n in range(5, 9):                                    # PPA contracts for 5-8 turbines (zero-grid designs)
+    Y.energy_grid.ELEC_OPTIONS.setdefault(f"tp_2p5MW_x{_n}", {**Y.energy_grid.ELEC_OPTIONS["tp_2p5MW"],
+                                                             "kw": 2500.0 * _n, "label": f"{_n} x third-party 2.5 MW"})
+SEA_INTAKE_EUR_KW = 240.0   # DEA technology data 2026: '40 Comp. hp, seawater 20 MW' 1.19 less '40 waste heat 3 MW' 0.95 MEUR/MW_h
+
+
 class CapturePoint(Y.Point):
     """Point.run plus the lender cash-flow build it makes (its inputs are what finance.Project needs)."""
 
@@ -50,6 +56,10 @@ class CapturePoint(Y.Point):
         finally:
             cashflow.build = build
         r = calls[0]
+        if d.get("hp_source") == "sea":                  # DEA 2026: seawater HP 1.19 vs waste-heat HP 0.95 MEUR/MW_h (2025)
+            r["capex"]["sea_water_intake"] = SEA_INTAKE_EUR_KW * site_opt.EUR_GBP * row["hp_kW_th"]
+            r["capex_total"] = sum(r["capex"].values())
+            r["cashflow"][0] = -r["capex_total"]
         entry = dict(price=r["price_gbp_kg"], capex=r["capex"], capex_total=r["capex_total"], costs=r["costs"],
                      kg_yr=r["kg_yr"], revenue=r["revenue_gbp_yr"], cashflow=r["cashflow"], ramp=cashflow.v("ramp"),
                      lcop_008=r["lcop_0.08"], monthly_price_defra=r["monthly_price"])
@@ -117,13 +127,33 @@ class Study:
                               inputs="cloud" if os.environ.get("CEA_WEATHER_SOURCE") == "era5_s3" else "api"))
         OUT.write_text(json.dumps(self.rows, indent=1, default=float))
         s = row
-        print(f"{crop}/{d['product']} {d['ha']} ha: Y {s['Y']:.1f}, capex {s['capex'] / 1e6:.2f} M, opex {s['opex_gbp_kg']:.3f}/kg, "
+        print(f"{crop}/{d['product']} {d['ha']} ha {d.get('hp_source', '')}{' waste' if d.get('waste') else ''}"
+              f"{' zero-grid T' + str(d['turbines']) + ' ' + d['plant']['backup'] if d.get('grid') == 'none' else ''}: Y {s['Y']:.1f}, capex {s['capex'] / 1e6:.2f} M, opex {s['opex_gbp_kg']:.3f}/kg, "
               f"LCOP8 {s['lcop8']:.3f}, parity {par:.3f}, winter {s['winter_share']:.0%}, carbon {s['carbon']:.2f}, "
               f"HP {s['hp_kW_th']:.0f} kW, store {s['store_kWh'] / 1e3:.0f} MWh, import {s['import_peak_kW']:.0f} kW", flush=True)
 
     def scale(self):
         for ha in self.SCALE:
             self.run_one("cucumber", self.design("cucumber", ha))
+
+    def energy(self, ha):
+        """Heat-source options on the lit cucumber house: Loch Ryan sea water and The Creamery's waste heat."""
+        self.run_one("cucumber", self.design("cucumber", ha, hp_source="sea"))
+        self.run_one("cucumber", self.design("cucumber", ha, waste=True))
+
+    def zero_grid(self, ha, turbines=(4, 6, 8), backups=("gas_chp", "biomethane_chp", "hvo")):
+        """No grid import: the LP sizes battery, heat store and the backup engine (and may add PV) against the turbines."""
+        for n in turbines:
+            for b in backups:
+                self.run_one("cucumber", {**self.design("cucumber", ha), "turbines": n, "grid": "none",
+                                          "plant": {"backup": b, "pv": True}})
+
+    def cheapest(self, ha, ppa=0.082):
+        """Least-cost zero grid: four turbines on a cost-reflective PPA (developer break-even at 8 %), biomethane CHP backup,
+        with and without The Creamery's waste heat."""
+        for waste in (False, True):
+            self.run_one("cucumber", {**self.design("cucumber", ha), "grid": "none", "ppa": ppa,
+                                      "plant": {"backup": "biomethane_chp", "pv": True}, **({"waste": True} if waste else {})})
 
     def crops(self, ha):
         self.run_one("pepper", self.design("pepper", ha, "red"))
@@ -135,5 +165,11 @@ if __name__ == "__main__":
     st = Study()
     if sys.argv[1] == "scale":
         st.scale()
+    elif sys.argv[1] == "zerogrid":
+        st.zero_grid(float(sys.argv[2]))
+    elif sys.argv[1] == "cheapest":
+        st.cheapest(float(sys.argv[2]))
+    elif sys.argv[1] == "energy":
+        st.energy(float(sys.argv[2]))
     else:
         st.crops(float(sys.argv[2]))
