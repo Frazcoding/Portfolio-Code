@@ -1,5 +1,7 @@
 # Handoff — UK glasshouse vs imports study (state at 2026-10-05: business-plan preparation started)
 
+**2026-10-07 FINANCE (cloud): `finance.py` / `bplan_finance_risk.py`, see BP33/BP36/BP37.** Lit lead 2.9 ha, capex GBP 11.45 M: ECA supplier credit + plant asset finance with a 1-yr holiday needs a real price of GBP 1.237/kg (DSCR 1.25 binds); at parity -10 % (GBP 1.40) equity GBP 4.34 M, equity IRR 21.8 % nominal, min DSCR 1.56. The lender case (GBP 1.01-1.20) fails. Yield -15 % breaches DSCR 1.25 (1.18); Monte Carlo P(DSCR < 1.25) 45 %.
+
 **2026-10-05 LATE: design under GBP 10 M, see `CAPEX_10M_DESIGN.md` (BP28).** User goal: capex < GBP 10 M, cost held at
 GBP 1.00/kg, carbon <= 0.50 kg CO2e/kg, payback 5-10 yr. Lead: track B cucumber, Stranraer, **2.9 ha** single glass,
 R717 heat pump 1.9 MW + 358 MWh store, 0.5 MVA import cap, third-party turbine on a private wire, CO2 1,000 ppm (AHDB),
@@ -645,15 +647,15 @@ Business plan (2026-10-05)
 - [x] BP31. Highlands screen (`bplan_highlands.py`): Inverness, Invergordon, Moray all worse than Stranraer (capex
       GBP 11.0-11.5 M, cost 1.12-1.25, carbon 0.52-0.65, uplift ~GBP 0.04/kg). Stranraer stays
 - [x] BP32. (DONE 2026-10-07: bplan_lit_winter.py -> results/bplan/lit_winter.json; lead + LED at 0/100/150/220 umol: cost at 8 % GBP 1.47 / 1.34 / 1.29 / 1.36 per kg, capex 9.94 / 11.27 / 11.38 / 11.78 M, winter share 11 / 24 / 28 / 33 %, CO2e 0.41 / 0.42 / 0.47 / 0.60; best at ~150, over the GBP 10 M cap; LED GBP 515/kW is a placeholder inside the RVO cap GBP 900/kW) Lit winter crop case on the GBP 10 M design (LED capex sourced, power at GBP 90/MWh, winter CIF prices)
-- [ ] BP33. Financing model (`finance.py`): nominal (CPI), corporation tax 25 % + full expensing (glasshouse = plant,
+- [x] BP33. (DONE 2026-10-07, cloud: `finance.py` -> results/bplan/finance.json + FINANCE.md on the lit lead 2.9 ha/150 umol/2 PPA turbines, from lit_open.json, no physics rerun; the rebuilt real layer matches lit_open to 1e-9. Nominal CPI 2 %, CT 25 %, full expensing with integral features at special rate (conservative), losses carried forward, interest-only year 1, DSRA 6 months, WC 2 months, ECA supplier credit at the OECD GBP CIRR 5.81 % (85 %, 15 yr, equal principal, 2 % premium PLACEHOLDER) + plant asset finance 7.0 % 10 yr (PLACEHOLDER). MIN REAL PRICE (DSCR 1.25 binds; equity 12 % nominal never binds): central vendor scheme GBP 1.237/kg; without the holiday 1.514; bank debt sculpted to 1.25 at 65 % gearing 1.190; ESCo 1.257; pref shares / FDPSS grant 1.237 (do not move the DSCR); all equity at 8 % real = 10.2 % nominal post-tax 1.188. LENDER CASE FAILS: min DSCR 0.45 / 0.84 / 1.16 at GBP 1.01 / 1.10 / 1.20. SPONSOR CASE: parity -5 % (GBP 1.477) equity GBP 4.34 M, min DSCR 1.74, equity IRR 25.5 % nominal, payback 4.0 yr; parity -10 % (GBP 1.399) min DSCR 1.56, equity IRR 21.8 % (19.4 % real), payback 4.9, first tax year 6. Equity cheque 4.34 M = 3.34 M capex + DSRA 0.57 + WC 0.31 + fees 0.13. Pref-share and grant options do not change the min price) Financing model (`finance.py`): nominal (CPI), corporation tax 25 % + full expensing (glasshouse = plant,
       CAA 2001 s.23 List C item 17), DSRA + working capital, company-only debt sized on DSCR, non-voting preference
       shares (12 % hurdle), grants, heat-plant ESCo with buyout; lender case at GBP 1.01-1.20, sponsor case at a premium
-- [ ] BP34. Year-round study (user question 2026-10-05, `CONSTRAINTS.md`): design-of-experiments on the full model (lighting
+- [x] BP34. (DONE for cucumber via BP35/BP35b: DOE, fit, verify incl. water balance and the 105 kg/m2 ceiling; LED rate still the BP32 PLACEHOLDER GBP 515/kW; tomato BLOCKED with BP19h on the desktop run) Year-round study (user question 2026-10-05, `CONSTRAINTS.md`): design-of-experiments on the full model (lighting
       ppfd/hours/DLI target, glazing, screens, area <= 5 ha, heat pump + store, site), fit a surrogate for yield,
       monthly supply, heat, electricity, water, capex, opex, carbon; optimise payback against the 21 constraints;
       confirm winners on the full model. Needs: LED capex rate (rates.csv, quote range), water balance (rain capture vs
       irrigation demand), yield ceiling cap (105 kg/m2 lit cucumber)
-- [ ] BP35. PLANNED RUN ON THE DESKTOP (2026-10-06, user: "big run tomorrow on the better computer"). From lca/:
+- [x] BP35. (run done 2026-10-06, see next line) PLANNED RUN ON THE DESKTOP (2026-10-06, user: "big run tomorrow on the better computer"). From lca/:
       `set CEA_WORKERS=5` then `python bplan_yearround.py doe cucumber 60` and `python bplan_yearround.py doe tomato 80`
       (resumable; results/bplan/yearround_doe_<crop>.json), then `python bplan_yearround.py fit <crop>` and
       `python bplan_yearround.py verify <crop>`. Levers in CONSTRAINTS.md "Levers built in". Target: price cover <= 1
@@ -661,12 +663,12 @@ Business plan (2026-10-05)
 - [x] BP35 run 2026-10-06 (desktop, 5 workers): cucumber 60 + tomato 80 designs, fit, verify. Best verified cover 1.14
       (cucumber, site_002, 1.06 ha); no tomato design meets month-min >= 0.6. Diagnosis: one fixed 2.5 MW turbine
       (tp_2p5MW) for every area, so capex/m2 fell 22 % from 1 to 4.5 ha but grid import cancelled it (cover 1.21 both)
-- [ ] BP35b. Wind scales with area (user 2026-10-06): routes own (SPV, judged on greenhouse + turbine cash flow), ppa
+- [x] BP35b. (DONE for cucumber: results/bplan/yearround_wind_verify_cucumber.json, 3 verified designs, all fail the lender price GBP 1.02 (IRR 1.9-4.4 %); tomato BLOCKED = BP19h) Wind scales with area (user 2026-10-06): routes own (SPV, judged on greenhouse + turbine cash flow), ppa
       and farm_share, 1-4 turbines per module; cap GBP 20 M/phase, carbon ceiling 1.0, area 1-8 ha. Results in
       results/bplan/yearround_wind_*. Fix: farm_share LP now on the 80 m wind profile (was 45 m). Smoke 5 ha cucumber
       site_002: cover own x4 1.07 (greenhouse-only 0.98; SPV NPV8 -5.9 M), ppa x4 1.09, farm_share 1.09
-- [ ] BP36. Financing model (BP33) on the verified designs, phased; Monte Carlo on the cash-flow layer (P50/P90)
-- [ ] BP37. (user, 2026-10-07) Lights allowed, capex cap REMOVED; price = slightly under import parity (user: import
+- [x] BP36. (DONE 2026-10-07, cloud: `bplan_finance_risk.py` -> results/bplan/finance_risk.json + FINANCE_RISK.md. Central vendor scheme at parity -10 %: min price lead 1.237, verified 4.44 ha 1.246, 4.61 ha 1.315, 5.54 ha 1.234 (verified capex/opex split apportioned on the lead; lead parity used as their price proxy). Monte Carlo 2,000 draws (skewed-downside PLACEHOLDER ranges in the docstring), lead: project IRR real pre-tax P10/P50/P90 8.3/11.6/14.7 %, equity IRR nominal 10.0/15.2/20.8 %, min DSCR 0.93/1.28/1.53, P(min DSCR < 1.25) 45 %, P(< 1.0) 14 %. Phasing 2.9 + 2.9 + 4.4 = 10.2 ha at years 0/3/6: capex GBP 38.8 M, debt 27.6 M, peak external equity GBP 6.68 M (year 6), combined equity IRR 22.4 %, payback 8.2 yr) Financing model (BP33) on the verified designs, phased; Monte Carlo on the cash-flow layer (P50/P90)
+- [ ] BP37. (all financing parts DONE 2026-10-07; open: BP37c BLOCKED, asset-finance quote BLOCKED in BP37d) (user, 2026-10-07) Lights allowed, capex cap REMOVED; price = slightly under import parity (user: import
       parity itself is not credible); supplier / asset finance instead of 8 % all-investor money.
       - [x] BP37a. `bplan_lit_open.py` -> results/bplan/lit_open.json (log lit_open.log): lit lead (150/200 umol, 1-2 PPA turbines, 2.9/4.4 ha),
             by-product CO2 + bulk crates, priced at monthly import parity (CIF + GBP 0.162 haul) x (1 - 3/5/10 %)
@@ -678,15 +680,15 @@ Business plan (2026-10-05)
             DSRA (not modelled yet). 10 yr / 7 yr terms too short. Unlit cannot carry this debt (DSCR 0.5-0.8).
             OPEN: re-run of design 2 at 10 % gave LCOP 1.100 / NPV +8.94 M vs 1.112 / +8.58 M in the main run (cache or
             LP warm-start difference, ~1p): find cause. Carbon not reported in lit_open (BP32: 0.47 at 150 umol, 1 turbine)
-            - [ ] BP37e. Add a year-1 repayment holiday / DSRA to vendor_finance; report carbon in lit_open
+            - [x] BP37e. (DONE in finance.py (BP33): interest-only year 1 + DSRA 6 months; carbon is in lit_open.json (lead 0.37, 0.89 with the CO2 dose counted). CORRECTION 2026-10-07: the earlier yield -15 % figures (IRR 10.5 %, payback 8.7, DSCR yr 1 1.23 / yrs 2+ 2.0) came from a track-A import order and are withdrawn. Redone on track B at parity -10 %, cash-flow layer (half of labour scales with kg): project IRR real pre-tax 10.6 %, payback 8.6 yr; central scheme DSCR yr 1 1.32, min 1.18 (BREACHES 1.25), equity IRR 13.6 % nominal; min price 1.431. Yield -15 % + capex +20 %: min DSCR 0.97. The re-run discrepancy (1.100 vs 1.112) stays OPEN: needs a physics rerun on the desktop) Add a year-1 repayment holiday / DSRA to vendor_finance; report carbon in lit_open
       - [x] BP37b. `vendor_finance.py`: glasshouse supplier credit (ECA-backed, OECD Arrangement 85 % max, rate/tenor
             PLACEHOLDER 6 %/10-15 yr), plant asset finance (Bank Rate 3.75 % + 3 %, 7-10 yr, PLACEHOLDER), equity rest;
             equity IRR, min DSCR, min price for equity 12 % + DSCR 1.25. Pre-tax, real (BP33 adds tax/CPI)
-      - [ ] BP37c. Heat source on the LIT design: air vs ground vs sea water (Loch Ryan). Earlier results were unlit only
+      - [ ] BP37c. (BLOCKED in the cloud 2026-10-07: code ready, `python bplan_heat_source.py` (site_opt option hp_source air/ground/sea, Millport monthly sea temperature 7.2-14.4 C as the Loch Ryan proxy, source works GBP 300/kW sea + 50 k licence and GBP 1,200/kW boreholes, PLACEHOLDERS). NEEDS: a run on the desktop (caches), or the cloud environment allowing api.carbonintensity.org.uk, api.octopus.energy and archive-api.open-meteo.com (uncached weather/grid inputs); and sourced costs for a sea intake and a borehole field) Heat source on the LIT design: air vs ground vs sea water (Loch Ryan). Earlier results were unlit only
             (BP21 water source -GBP 0.027/kg cancelled by intake; old Chelmsford study: ground loses once boreholes
             costed). Needs: site_opt option hp_source (sim already supports ground/river), borehole and sea-intake
             costs sourced (none usable found 2026-10-07), Loch Ryan monthly sea temperature
-      - [ ] BP37d. Read the OECD GBP CIRR table and get one asset-finance indication to replace the PLACEHOLDER rates
+      - [ ] BP37d. (CIRR DONE 2026-10-07: OECD table (via Firecrawl), GBP 8-yr bond bucket (1 yr drawdown + 0.5 x 14 yr + 0.25) = 5.81 % for 15 Sep-14 Oct 2026, 6.09 % from 15 Oct; now in finance.py. Asset finance BLOCKED: NEEDS one indicative quote from a UK asset-finance lender for ~GBP 3.4 M of heat pump + store + LEDs over 10 yr (rate, advance, deferral), and an Atradius DSB premium indication for the ECA cover) Read the OECD GBP CIRR table and get one asset-finance indication to replace the PLACEHOLDER rates
 
 Housekeeping
 - [x] 18. SCOPE.md §3.16 and §3.17; tests/test_costing.py
