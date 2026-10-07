@@ -24,6 +24,8 @@ import numpy as np
 CROPS = {
     "tomato": dict(A0=0.30 / (1 - math.exp(-0.64 * 2.56)), k=0.64, B0=53.0 / 2.56, lai=2.56,
                    src="fitted to GreenLight tomato (LAI 2.56); k Stanghellini 1987"),
+    "pepper": dict(A0=0.27 / (1 - math.exp(-0.70 * 3.0)), k=0.70, B0=25.0, lai=3.0,
+                   src="PLACEHOLDER between tomato and cucumber; sweet pepper LAI ~3 (design value)"),
     "cucumber": dict(A0=0.24, k=0.70, B0=30.0, lai=3.0,
                      src="Medrano et al. 2005 (A 0.24, B 22-37.6, k 0.63-0.86); LAI design value 3.0"),
 }
@@ -42,9 +44,9 @@ TOMATO_LAI = [(1, 0.41), (15, 0.69), (30, 0.93), (45, 1.25), (60, 1.87), (75, 2.
 
 def lai_by_doy(crop, doy):
     doy = np.asarray(doy, float)
-    if crop == "tomato":
+    if crop in ("tomato", "pepper"):                    # pepper: the tomato calendar (planted Dec, one long crop), LAI 3.0
         x, y = zip(*TOMATO_LAI)
-        return np.interp(doy, x, y)
+        return np.interp(doy, x, y) * (CROPS[crop]["lai"] / 2.57 if crop == "pepper" else 1.0)
     t = (doy - 1) % 120
     lai = np.minimum(CROPS[crop]["lai"], 0.2 + 0.05 * t)
     return np.where(t > 115, 0.0, lai)

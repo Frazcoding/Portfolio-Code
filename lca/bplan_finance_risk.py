@@ -81,8 +81,8 @@ class Phasing:
 class MonteCarlo:
     N, SEED = 2000, 7
 
-    def __init__(self, project):
-        self.p = project
+    def __init__(self, project, scheme=CENTRAL):
+        self.p, self.scheme = project, scheme
         rng = np.random.default_rng(self.SEED)
         tri = lambda a, m, b: rng.triangular(a, m, b, self.N)  # noqa: E731
         self.draws = dict(yield_mult=tri(0.80, 1.0, 1.05), price_x=tri(0.80, 0.90, 0.97), capex_mult=tri(0.90, 1.0, 1.30),
@@ -95,10 +95,11 @@ class MonteCarlo:
         for i in range(self.N):
             d = {k: float(v[i]) for k, v in self.draws.items()}
             s = F.Stress(**{k: d[k] for k in ("yield_mult", "capex_mult", "power_mult", "co2_gbp_kg", "labour_mult")})
-            r = F.Finance(self.p, CENTRAL, s).run(self.p.parity * d["price_x"])
+            r = F.Finance(self.p, self.scheme, s).run(self.p.parity * d["price_x"])
             for k in keys:
                 res[k].append(np.nan if r[k] is None else r[k])
         a = {k: np.asarray(v, float) for k, v in res.items()}
+        self.arrays = a
         q = {k: dict(P10=float(np.nanpercentile(v, 10)), P50=float(np.nanpercentile(v, 50)),
                      P90=float(np.nanpercentile(v, 90))) for k, v in a.items()}
         q["p_dscr_below_1.25"] = float((a["min_dscr"] < F.DSCR_MIN).mean())

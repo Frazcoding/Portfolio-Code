@@ -169,9 +169,81 @@ class Study:
         return "\n".join(L) + "\n"
 
 
+
+
+class PlanGrowth:
+    """Growth from the viable first phase of bplan_plan (8 ha lit cucumber, lender-sized debt, full team).
+
+    Expansion modules are the cucumber designs of viable_lit.json (4.4, 6, 8 ha) on the same site: the HV connection is
+    extended at the SPEN incremental rate and the salaried team grows only by the step in staffing.py between the area
+    before and after (the packhouse and crop staff scale with kg). Same triggers as Growth (one full-output year at DSCR
+    >= 1.25 before the next build; retained cash or new equity); market cap MAX_HA (PLACEHOLDER 16 ha = ~14 kt/yr,
+    ~7 % of UK cucumber imports)."""
+    RECORD, MAX_HA, HORIZON = 1, 16.0, 20
+
+    def __init__(self, first_ha=8.0, self_funded=True, yield_mult=1.0):
+        import copy
+        import bplan_plan as PL
+        import staffing as S
+        self.PL, self.S, self.copy = PL, S, copy
+        rows = [r for r in json.loads((OUT / "viable_lit.json").read_text()) if r["crop"] == "cucumber"]
+        self.rows = {r["design"]["ha"]: r for r in rows}
+        self.first_ha, self.self_funded, self.s = first_ha, self_funded, F.Stress(yield_mult=yield_mult)
+
+    def module(self, ha, area_before):
+        r = self.rows[ha]
+        p = self.PL.Design(r).base
+        p = self.copy.deepcopy(p)
+        e = r["entry"]
+        staff = lambda a: self.S.Staffing(a, e["kg_yr"] / ha * a, e["costs"]["labour"] / ha * a, r["harvest_share"]).summary()  # noqa: E731
+        if area_before > 0:
+            p.capex0["hv_import_connection"] = np.ceil(r["summary"]["import_peak_kW"] / 0.95 / HV_UNIT_KVA) * HV_UNIT_GBP
+            p.costs["staff_salaried_packhouse_oncall"] = staff(area_before + ha)["added_cost"] - staff(area_before)["added_cost"]
+        else:
+            p.costs["staff_salaried_packhouse_oncall"] = staff(ha)["added_cost"]
+        price = r["parity_gbp_kg"] * (1 - self.PL.UNDERCUT)
+        sc = self.PL.LenderSizing(p).scheme(price)
+        return F.Finance(p, sc, self.s).run(price)
+
+    def run(self):
+        n = self.HORIZON + F.YEARS + 2
+        eq = np.zeros(n)
+        r0 = self.module(self.first_ha, 0.0)
+        eq[:F.YEARS + 1] += r0["equity_cf"]
+        built = [dict(year=0, ha=self.first_ha, equity=r0["equity"], min_dscr=r0["min_dscr"], debt=r0["debt"])]
+        area = self.first_ha
+        for s in range(1, self.HORIZON + 1):
+            if not all(s >= b["year"] + 2 + self.RECORD and b["min_dscr"] >= F.DSCR_MIN - 1e-9 for b in built):
+                continue
+            cash = float(eq[1:s].sum())
+            for ha in sorted(self.rows, reverse=True):
+                if ha == 10.0 or area + ha > self.MAX_HA + 1e-9:
+                    continue
+                r = self.module(ha, area)
+                if cash >= r["equity"] or not self.self_funded:
+                    eq[s:s + F.YEARS + 1] += r["equity_cf"]
+                    built.append(dict(year=s, ha=ha, equity=r["equity"], min_dscr=r["min_dscr"], debt=r["debt"]))
+                    area += ha
+                    break
+        cum = np.cumsum(eq)
+        return dict(self_funded=self.self_funded, yield_mult=self.s.yield_mult, steps=built, final_ha=area,
+                    area_by_year={y: sum(b["ha"] for b in built if b["year"] < y) for y in range(0, 16)},
+                    outside_equity=float(-cum.min()), equity_irr=F.irr(eq), equity_npv_12=cashflow.npv(eq, F.EQUITY_HURDLE),
+                    debt_total=sum(b["debt"] for b in built))
+
+
 if __name__ == "__main__":
-    res = Study().run()
-    (OUT / "growth.json").write_text(json.dumps(res, indent=1, default=float))
-    md = Study.markdown(res)
-    (OUT / "GROWTH.md").write_text(md)
-    print(md)
+    import sys
+    if sys.argv[1:] == ["plan"]:
+        out = {f"{'self' if sf else 'new equity'} / yield x{ym}": PlanGrowth(8.0, sf, ym).run()
+               for sf in (True, False) for ym in (1.0, 0.85)}
+        (OUT / "growth_plan.json").write_text(json.dumps(out, indent=1, default=float))
+        for k, g in out.items():
+            print(k, [(b["year"], b["ha"]) for b in g["steps"]], f"outside equity {g['outside_equity'] / 1e6:.1f} M",
+                  f"IRR {g['equity_irr'] and g['equity_irr'] * 100:.1f} %", f"NPV12 {g['equity_npv_12'] / 1e6:.1f} M")
+    else:
+        res = Study().run()
+        (OUT / "growth.json").write_text(json.dumps(res, indent=1, default=float))
+        md = Study.markdown(res)
+        (OUT / "GROWTH.md").write_text(md)
+        print(md)

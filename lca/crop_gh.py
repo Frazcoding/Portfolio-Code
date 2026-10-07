@@ -33,7 +33,7 @@ import crop as cropmod  # noqa: E402
 import transp  # noqa: E402
 
 CAL = HERE / "data" / "crop_gh_calibration.json"
-CBS_REF = {"tomato": 48.0, "cucumber": 65.0}           # kg/m2/yr, crops.py (CBS NL), the reference-house anchor
+CBS_REF = {"tomato": 48.0, "cucumber": 65.0, "pepper": 26.4}           # kg/m2/yr, crops.py (CBS NL), the reference-house anchor
 
 # leaf parameters: PLACEHOLDERS in the literature range (greenhouse tomato leaf Amax ~ 20-30, cucumber ~ 25-35 umol/m2/s
 # at 25 C, 400 ppm, saturating light); they set response shape, the absolute scale is calibrated through the partition
@@ -41,6 +41,9 @@ PARAMS = {
     "tomato": dict(leaf=cropmod.LeafParams(amax_ref=25.0, phi_app=0.055, vpd_slope=0.15, chill_factor=1.0),
                    carbon=cropmod.CarbonParams(gr_fruit=1 / 0.7, dm_fraction=0.06), maint20=0.30, k_ext=0.7, lai=2.6,
                    heat_stress=(25.0, 0.16, 0.2)),
+    "pepper": dict(leaf=cropmod.LeafParams(amax_ref=22.0, phi_app=0.055, vpd_slope=0.15, chill_factor=1.0),
+                   carbon=cropmod.CarbonParams(gr_fruit=1 / 0.7, dm_fraction=0.08), maint20=0.30, k_ext=0.7, lai=3.0,
+                   heat_stress=(28.0, 0.12, 0.2)),          # PLACEHOLDER: pepper leaf Amax ~ 20-25, fruit DM ~8 %
     "cucumber": dict(leaf=cropmod.LeafParams(amax_ref=30.0, phi_app=0.055, vpd_slope=0.20, chill_factor=1.0),
                      carbon=cropmod.CarbonParams(gr_fruit=1 / 0.7, dm_fraction=0.04), maint20=0.30, k_ext=0.7, lai=3.0,
                      heat_stress=(28.0, 0.10, 0.2)),

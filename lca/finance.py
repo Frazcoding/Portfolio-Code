@@ -91,9 +91,12 @@ class Tranche:
     rate: float
     tenor: int
     grace: int = 1
-    profile: str = "annuity"                 # annuity | equal | sculpt
+    profile: str = "annuity"                 # annuity | equal | sculpt | given (service fixed by an earlier sizing)
     gearing_cap: float = 1.0
     upfront_fee: float = 0.01
+    fixed_amount: float = 0.0
+    schedule: tuple = ()                     # 'given': debt service in years grace+1 .. tenor
+    capitalise_grace: bool = False           # interest in the grace years rolls into the loan (no cash service)
 
 
 @dataclass(frozen=True)
@@ -176,21 +179,27 @@ class Debt:
         self.tr, n = tr, YEARS + 1
         self.interest, self.principal = np.zeros(n), np.zeros(n)
         g, r, m = tr.grace, tr.rate, tr.tenor - tr.grace
+        roll = (1 + r) ** g if tr.capitalise_grace else 1.0
         if tr.profile == "sculpt":
             d = np.array([(1 + r) ** -(k - g) for k in range(g + 1, tr.tenor + 1)])
             target = np.clip(cfads[g + 1:tr.tenor + 1], 0.0, None) / DSCR_MIN
-            amount = min(float(target @ d), amount)
-            service = target * amount / max(float(target @ d), 1e-9)
+            amount = min(float(target @ d) / roll, amount)
+            service = target * amount * roll / max(float(target @ d), 1e-9)
+        elif tr.profile == "given":
+            amount, service = tr.fixed_amount, np.asarray(tr.schedule, float)
         self.amount = amount
         bal = amount
         for t in range(1, tr.tenor + 1):
+            if t <= g and tr.capitalise_grace:
+                bal *= 1 + r
+                continue
             self.interest[t] = bal * r
             if t <= g:
                 continue
             if tr.profile == "annuity":
-                p = amount * cashflow.annuity_at(r, m) - self.interest[t]
+                p = amount * roll * cashflow.annuity_at(r, m) - self.interest[t]
             elif tr.profile == "equal":
-                p = amount / m
+                p = amount * roll / m
             else:
                 p = service[t - g - 1] - self.interest[t]
             p = min(max(p, 0.0), bal)
@@ -295,7 +304,8 @@ class Finance:
         tax = self.tax(ebitda, np.zeros(YEARS + 1), ca)
         for _ in range(6):
             cfads = ebitda - tax - reserve - np.where(self.t > 0, dwc, 0.0)
-            debts = [Debt(tr, (sum(capex.get(k, 0.0) for k in tr.keys) * tr.advance if tr.keys else
+            debts = [Debt(tr, (tr.fixed_amount if tr.profile == "given" else
+                               sum(capex.get(k, 0.0) for k in tr.keys) * tr.advance if tr.keys else
                                tr.gearing_cap * project_capex), cfads) for tr in sc.tranches]
             interest = sum((d.interest for d in debts), np.zeros(YEARS + 1))
             tax = self.tax(ebitda, interest, ca)

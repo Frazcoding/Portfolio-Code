@@ -39,8 +39,8 @@ import site_opt
 
 OUT = B5.OUTDIR
 SITES = ("site_028", "site_002", "site_024")                 # Stranraer, Girvan, Ayr (south-west; Highlands screen BP31)
-CEILING = {"cucumber": 105.0, "tomato": 100.0}               # kg/m2/yr, CONSTRAINTS.md #7
-HOURS_MAX = {"cucumber": 20.0, "tomato": 18.0}               # tomato leaf injury under long photoperiods (to source)
+CEILING = {"cucumber": 105.0, "tomato": 100.0, "pepper": 35.0}   # kg/m2/yr, CONSTRAINTS.md #7; pepper PLACEHOLDER (lit ~30-40)
+HOURS_MAX = {"cucumber": 20.0, "tomato": 18.0, "pepper": 18.0}               # tomato leaf injury under long photoperiods (to source)
 CAPS = (500.0, 1000.0, 2400.0, None)
 LENDER_MEAN, PREMIUM = 1.01, 1.57
 # Water (CONSTRAINTS.md #16), PLACEHOLDERS until sourced: roof runoff coefficient 0.9 on the floor-area catchment;
@@ -51,6 +51,7 @@ RUNOFF, DISCHARGE, BASIN_GBP_M3 = 0.9, 0.10, 15.0
 # crop model; labour_f = labour per m2 vs the base crop; bulk = loose/bulk packing allowed. Sources: cherry 27-30 kg/m2
 # high-tech (Dutch Greenhouses crop guide, secondary) vs CBS round 48 -> 0.6; others PLACEHOLDERS (KWIN not available).
 PRODUCTS = {"cucumber": {"cucumber": dict(item=("cucumbers", "cucumbers"), yield_f=1.0, labour_f=1.0, bulk=True)},
+            "pepper": {"red": dict(item=("capsicum", "red"), yield_f=1.0, labour_f=1.0, bulk=True)},
             "tomato": {"round": dict(item=("tomatoes", "round"), yield_f=1.0, labour_f=1.0, bulk=True),
                        "vine": dict(item=("tomatoes", "vine"), yield_f=0.95, labour_f=1.05, bulk=False),
                        "plum": dict(item=("tomatoes", "plum"), yield_f=0.80, labour_f=1.15, bulk=False),

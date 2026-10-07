@@ -11,7 +11,7 @@ own harvest. Tomato products other than round take round-tomato parity times the
 (the same chain margin assumed).
 
     python bplan_viable.py scale        cucumber at 4.4 / 6 / 8 / 10 ha  -> results/bplan/viable_lit.json
-    python bplan_viable.py crops <ha>   tomato (round, vine, cherry) at that area, same house
+    python bplan_viable.py crops <ha>   sweet pepper (red) and tomato (round, vine, cherry) at that area, same house
 Needs the physics inputs: on the cloud set CEA_WEATHER_SOURCE=era5_s3 CEA_GRID_SOURCE=proxy (simcore/era5_open.py,
 grid_proxy.py); results then carry "inputs": "cloud".
 """
@@ -56,13 +56,27 @@ class CapturePoint(Y.Point):
         return row, entry, r["monthly_share"]
 
 
+class PepperParity(L.ImportParity):
+    """Monthly CIF from the diversification import table (Comtrade 2023-25, World) + the same UK haul."""
+
+    def __init__(self):
+        import pandas as pd
+        im = pd.read_csv(Y.B5.HERE / "data" / "imports_monthly_diversify.csv")
+        im = im[(im["crop"] == "pepper") & (im["origin"] == "World")]
+        self.haul = L.ImportParity("cucumber").haul
+        self.monthly = im.groupby("month")["gbp_per_kg_cif"].mean().reindex(range(1, 13)).to_numpy() + self.haul
+
+
 class Parity:
     def __init__(self):
-        self.cuc, self.tom = L.ImportParity("cucumber"), L.ImportParity("tomato")
+        self.cuc, self.tom, self.pep = L.ImportParity("cucumber"), L.ImportParity("tomato"), PepperParity()
+        self.tom.monthly = self.tom.monthly - self.tom.haul + self.cuc.haul       # ImportParity derives haul from cucumber
 
     def of(self, crop, product, share):
         if crop == "cucumber":
             return self.cuc.price(share, 0.0)
+        if crop == "pepper":
+            return self.pep.price(share, 0.0)
         p = self.tom.price(share, 0.0)
         if product == "round":
             return p
@@ -85,7 +99,7 @@ class Study:
         return self.points[crop]
 
     def design(self, crop, ha, product=None, **kw):
-        d = {**BASE, "ha": ha, "product": product or crop, "turbines": max(2, round(ha / 2.2)), **kw}
+        d = {**BASE, "ha": ha, "product": product or crop, "turbines": min(4, max(2, round(ha / 2.2))), **kw}
         if crop == "tomato":
             d["hours"] = min(d["hours"], Y.HOURS_MAX["tomato"])
         return d
@@ -96,6 +110,7 @@ class Study:
             return
         row, entry, share = self.point(crop).run(d)
         par = self.parity.of(crop, d["product"], share)
+        self.rows = json.loads(OUT.read_text()) if OUT.exists() else []       # another run may have written since
         self.rows.append(dict(key=key, crop=crop, design=d, summary={k: v for k, v in row.items()
                                                                          if k not in ("cashflow_lender", "cashflow_wholesale")},
                               entry=entry, harvest_share=list(share), parity_gbp_kg=par,
@@ -111,6 +126,7 @@ class Study:
             self.run_one("cucumber", self.design("cucumber", ha))
 
     def crops(self, ha):
+        self.run_one("pepper", self.design("pepper", ha, "red"))
         for product in ("round", "vine", "cherry"):
             self.run_one("tomato", self.design("tomato", ha, product))
 

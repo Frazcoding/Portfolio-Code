@@ -55,17 +55,17 @@ C = {
     "land_gbp_ha": (1000.0, "GBP/ha/yr", "placeholder", "land rent near an industrial host; Scottish arable rent is "
                     "~GBP 250-500/ha, industrial land more"),
     "commission": (0.05, "of revenue", "placeholder", "marketing organisation / sales commission, typical 3-8 %"),
-    "plants_m2": ({"tomato": 4.0, "cucumber": 3.5}, "GBP/m2/yr", "sourced (range)",
+    "plants_m2": ({"tomato": 4.0, "cucumber": 3.5, "pepper": 4.0}, "GBP/m2/yr", "sourced (range)",
                   "UK greenhouse tomato plant material GBP 1.61-2.01/m2 (Life cycle cost analysis of tomato production in "
                   "innovative urban agriculture systems, J. Cleaner Production 2022); KWIN 2023: tomato seedling EUR 3.00/plant "
                   "(grafted, ~2.5 plants/m2 -> ~GBP 6.4/m2); central between. Cucumber: three crops/yr of cheaper plants (estimate)"),
     "substrate_m2": (0.75, "GBP/m2/yr", "sourced", "KWIN 2023 growing media EUR 0.86/m2"),
-    "materials_m2": ({"tomato": 2.4, "cucumber": 2.0}, "GBP/m2/yr", "sourced (secondary)",
+    "materials_m2": ({"tomato": 2.4, "cucumber": 2.0, "pepper": 2.4}, "GBP/m2/yr", "sourced (secondary)",
                      "UK greenhouse tomato other materials GBP 2.27-2.48/m2 (J. Cleaner Production 2022, as above): "
                      "fertiliser, crop protection, pollination, strings, water; cucumber without bumblebees (estimate)"),
     "consumables_high": (1.5, "x", "sensitivity", "consumables x1.5"),
 }
-PRICE_ITEM = {"tomato": ("tomatoes", "round"), "cucumber": ("cucumbers", "cucumbers")}
+PRICE_ITEM = {"tomato": ("tomatoes", "round"), "cucumber": ("cucumbers", "cucumbers"), "pepper": ("capsicum", "red")}
 PRICE_YEARS = (2023, 2026)
 
 

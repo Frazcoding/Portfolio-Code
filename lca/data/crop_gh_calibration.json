@@ -18,5 +18,15 @@
   "interception": 0.877543571747018,
   "co2_dosed_kg_m2": 38.22077577587808,
   "ref_PAR_mol_m2": 8141.1512710856705
+ },
+ "pepper": {
+  "partition": 0.5272264014262964,
+  "ref_yield_kg_m2": 26.4,
+  "unit_partition_yield": 50.0733649312336,
+  "net_assim_g_CH2O_m2": 8104.306416443957,
+  "maint_g_CH2O_m2": 2381.6361385886867,
+  "interception": 0.877543571747018,
+  "co2_dosed_kg_m2": 39.637375590725995,
+  "ref_PAR_mol_m2": 7704.840911592221
  }
 }
