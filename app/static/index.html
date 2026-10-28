@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ember Hub Simulator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="/static/tokens.css">
+<link rel="stylesheet" href="/static/bundle.css">
+<link rel="stylesheet" href="/static/ember.css">
+<script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/static/bundle.js"></script>
+</head>
+<body>
+<div class="sw sw-workbench is-fill eb" id="wb">
+<header class="sw-topbar">
+  <span class="sw-project" id="project-name">Ember Hub Simulator</span>
+  <span class="sw-divider"></span>
+  <label class="sw-field"><span class="sw-field-label">Hub site</span><select class="sw-select eb-site-select" id="site-select"></select></label>
+  <span class="sw-divider"></span>
+  <button type="button" class="sw-btn" data-sw="play">Play</button>
+  <button type="button" class="sw-btn" data-sw="reset">Reset</button>
+  <label class="sw-field"><span class="sw-field-label">Speed</span>
+    <select class="sw-select" data-sw="speed"><option value="15">15 min/s</option><option value="60" selected>1 h/s</option><option value="180">3 h/s</option><option value="480">8 h/s</option></select></label>
+  <span class="eb-clock" data-sw="time">–</span>
+  <span class="sw-spacer"></span>
+  <button type="button" class="sw-btn is-ghost" id="save-run" title="Record this case as a run folder (results/)">Save run</button>
+  <button type="button" class="sw-btn is-ghost" data-sw="theme" title="Toggle light / dark">Theme</button>
+  <span class="sw-status is-paused" data-sw="status"><span>Ready</span></span>
+</header>
+<div class="sw-main eb-main">
+  <aside class="sw-pane eb-inputs" data-sw="left">
+    <div class="sw-pane-head"><span class="sw-pane-title ui-label sw-upper">Inputs</span><span class="sw-spacer"></span>
+      <button type="button" class="sw-btn is-ghost" id="reset-inputs" title="Back to the sheet baseline">Baseline</button></div>
+    <div class="eb-scroll">
+      <details class="eb-group" open>
+        <summary>Route</summary>
+        <div class="eb-search"><label>From</label><input class="sw-input" id="origin-q" autocomplete="off" placeholder="Search a place"><div class="eb-results" id="origin-res"></div></div>
+        <div class="eb-search"><label>To</label><input class="sw-input" id="dest-q" autocomplete="off" placeholder="Search a place"><div class="eb-results" id="dest-res"></div></div>
+        <div class="eb-fields" data-group="Route"></div>
+        <p class="eb-note" id="route-note">Bristol Coach Station to London Victoria, from the sheet. Search to change either end; the road distance and coach time come from OSRM (car time x coach factor).</p>
+      </details>
+      <details class="eb-group" open>
+        <summary>Hub site</summary>
+        <div class="eb-site-meta" id="site-meta"></div>
+        <div class="eb-fields" data-group="Site"></div>
+        <div class="eb-row"><button type="button" class="sw-btn" id="screen-btn" title="Add brownfield / industrial plots from the site screening near the route origin">Add screened sites</button>
+          <button type="button" class="sw-btn is-ghost" id="pick-btn" title="Click the map to place a custom site">Pick on map</button></div>
+        <p class="eb-note" id="screen-note"></p>
+      </details>
+      <div id="groups"></div>
+    </div>
+  </aside>
+  <div class="sw-splitter" data-sw="split-l" aria-label="Resize inputs panel"></div>
+  <section class="sw-pane">
+    <div class="sw-pane-head">
+      <div class="sw-seg" id="view-seg" role="group" aria-label="View"><button type="button" data-view="map" aria-pressed="true">Map</button><button type="button" data-view="plan" aria-pressed="false">Plan</button><button type="button" data-view="3d" aria-pressed="false">3D</button></div>
+      <span class="sw-spacer"></span>
+      <button type="button" class="sw-btn is-ghost" id="swept-btn" hidden title="Show the swept-path envelopes and clearances of the hub design">Swept paths</button>
+      <span class="ui-caption sw-muted" id="view-hint">drag to pan · scroll to zoom</span>
+    </div>
+    <div class="sw-viewport" data-sw="viewport">
+      <div class="eb-map" id="map"></div>
+      <canvas class="eb-plan" id="plan" hidden></canvas>
+      <canvas class="eb-3d" id="three" hidden></canvas>
+      <div class="sw-overlay tl" data-sw="ov-tl"></div>
+      <div class="sw-overlay tr" data-sw="ov-tr"></div>
+      <div class="sw-overlay bl eb-legend" data-sw="ov-bl"></div>
+      <div class="eb-banner" id="banner" hidden></div>
+    </div>
+  </section>
+  <div class="sw-splitter" data-sw="split-x" aria-label="Resize metrics panel"></div>
+  <aside class="sw-pane sw-kpi-panel" data-sw="side">
+    <div class="sw-pane-head">
+      <div class="sw-tabs" role="tablist" aria-label="Metrics view" data-sw="metric-tabs">
+        <button type="button" class="sw-tab" role="tab" id="tab-kpi" data-tab="kpis" aria-controls="panel-kpi" aria-selected="true">Indicators</button>
+        <button type="button" class="sw-tab" role="tab" id="tab-sites" data-tab="sites" aria-controls="panel-sites" aria-selected="false">Sites</button>
+        <button type="button" class="sw-tab" role="tab" id="tab-cost" data-tab="cost" aria-controls="panel-cost" aria-selected="false">Costs</button>
+        <button type="button" class="sw-tab" role="tab" id="tab-plots" data-tab="plots" aria-controls="panel-plots" aria-selected="false">Plots</button>
+      </div>
+      <span class="sw-spacer"></span>
+      <button type="button" class="sw-btn is-ghost" data-sw="add-plot" hidden>+ Add plot</button>
+    </div>
+    <div class="sw-tabpanel" role="tabpanel" id="panel-kpi" aria-labelledby="tab-kpi"><div id="checks"></div><div id="annual"></div><div class="sw-section">At playhead</div><div data-sw="kpis"></div></div>
+    <div class="sw-tabpanel" role="tabpanel" id="panel-sites" aria-labelledby="tab-sites" hidden><div id="sites-table"></div></div>
+    <div class="sw-tabpanel" role="tabpanel" id="panel-cost" aria-labelledby="tab-cost" hidden><div id="cost-panel"></div></div>
+    <div class="sw-tabpanel" role="tabpanel" id="panel-plots" aria-labelledby="tab-plots" hidden><div data-sw="plots"></div></div>
+  </aside>
+</div>
+<div class="sw-splitter" data-sw="split-y" aria-label="Resize time-series pane"></div>
+<div class="sw-bottom">
+  <section class="sw-pane sw-ts">
+    <div class="sw-pane-head"><span class="sw-pane-title ui-label sw-upper" style="flex:none">Operating day</span><div data-sw="ts-chips" style="flex:none"></div></div>
+    <div class="sw-ts-body" data-sw="ts-body"></div>
+  </section>
+</div>
+</div>
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* Sim Workbench — generated from tokens.json */
+:root, [data-theme="dark"] {
+  --bg-000: #0d1117;
+  --bg-100: #151b23;
+  --bg-200: #1e2631;
+  --bg-viewport: #080b10;
+  --line: #2a3441;
+  --line-strong: #6b7a8c;
+  --ink: #e6edf3;
+  --ink-muted: #9aa7b4;
+  --ink-faint: #808c9a;
+  --accent: #4cc9d6;
+  --on-accent: #0d1117;
+  --accent-soft: #133a40;
+  --ok: #3fb950;
+  --warn: #e3b341;
+  --err: #ff7b72;
+  --series-1: #e69f00;
+  --series-2: #56b4e9;
+  --series-3: #2fc497;
+  --series-4: #f0e442;
+  --series-5: #5aa7e0;
+  --series-6: #ff8a4c;
+  --series-7: #e08cbb;
+  --shadow-pop: 0 8px 24px rgba(0,0,0,0.55);
+}
+[data-theme="light"] {
+  --bg-000: #f4f5f7;
+  --bg-100: #ffffff;
+  --bg-200: #eef0f3;
+  --bg-viewport: #e9ecf0;
+  --line: #d5dae1;
+  --line-strong: #7a8491;
+  --ink: #161b22;
+  --ink-muted: #57606a;
+  --ink-faint: #5e6772;
+  --accent: #0b7f8c;
+  --on-accent: #ffffff;
+  --accent-soft: #d6eff2;
+  --ok: #1a7f37;
+  --warn: #9a6700;
+  --err: #cf222e;
+  --series-1: #b07400;
+  --series-2: #1f7bb8;
+  --series-3: #00845f;
+  --series-4: #857600;
+  --series-5: #0068a3;
+  --series-6: #c95700;
+  --series-7: #a8467f;
+  --shadow-pop: 0 8px 24px rgba(22,27,34,0.14);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --topbar-height: 48px;
+  --splitter-size: 8px;
+  --side-default: 380px;
+  --bottom-default: 240px;
+  --pane-min: 220px;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+.ui-title { font-family: var(--font-sans); font-size: 15px; line-height: 20px; font-weight: 600; }
+.ui-body { font-family: var(--font-sans); font-size: 13px; line-height: 18px; font-weight: 400; }
+.ui-label { font-family: var(--font-sans); font-size: 11px; line-height: 14px; font-weight: 500; letter-spacing: 0.04em; }
+.ui-caption { font-family: var(--font-sans); font-size: 11px; line-height: 14px; font-weight: 400; }
+.data-kpi { font-family: var(--font-mono); font-size: 24px; line-height: 28px; font-weight: 500; }
+.data-value { font-family: var(--font-mono); font-size: 12px; line-height: 16px; font-weight: 400; }
+.data-axis { font-family: var(--font-mono); font-size: 10px; line-height: 12px; font-weight: 400; }
