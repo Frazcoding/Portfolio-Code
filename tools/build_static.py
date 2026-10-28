@@ -15,7 +15,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SIMCORE = ROOT.parent / "simcore" / "src" / "simcore"
+SIMCORE = ROOT / "src" / "simcore"
 DIST = ROOT / "dist"
 
 # modules the web API needs (cli / figures / report / plotting need matplotlib or typst and stay server-side)
@@ -34,16 +34,14 @@ __all__ = ["Constants", "Units"]
 
 
 class StaticBuild:
-    def bundle(self, prev: dict[str, str] | None = None) -> dict[str, str]:
+    def bundle(self) -> dict[str, str]:
         """Python sources and data, keyed by their path under the virtual project root (/app in Pyodide)."""
-        prev = prev or {}
         files = {f"src/ember_hub_simulator/{m}": (ROOT / "src" / "ember_hub_simulator" / m).read_text(encoding="utf-8")
                  for m in PACKAGE}
         files["src/simcore/__init__.py"] = SIMCORE_INIT
         files["src/simcore/core/__init__.py"] = SIMCORE_CORE_INIT
         for m in ("units.py", "constants.py"):
-            src = SIMCORE / "core" / m
-            files[f"src/simcore/core/{m}"] = src.read_text(encoding="utf-8") if src.exists() else prev[f"src/simcore/core/{m}"]
+            files[f"src/simcore/core/{m}"] = (SIMCORE / "core" / m).read_text(encoding="utf-8")
         files["config/baseline.toml"] = (ROOT / "config" / "baseline.toml").read_text(encoding="utf-8")
         for d in DATA:
             files[f"data/{d}"] = (ROOT / "data" / d).read_text(encoding="utf-8")
@@ -55,14 +53,12 @@ class StaticBuild:
         return html.replace("<head>", "<head>\n<script>window.EMBER_STATIC = true;</script>", 1)
 
     def build(self) -> Path:
-        prev_bundle = DIST / "static" / "py_bundle.json"
-        prev = json.loads(prev_bundle.read_text(encoding="utf-8")) if prev_bundle.exists() else {}
         if DIST.exists():
             shutil.rmtree(DIST)
         (DIST / "static").mkdir(parents=True)
         for f in STATIC:
             shutil.copy2(ROOT / "app" / "static" / f, DIST / "static" / f)
-        (DIST / "static" / "py_bundle.json").write_text(json.dumps(self.bundle(prev)), encoding="utf-8")
+        (DIST / "static" / "py_bundle.json").write_text(json.dumps(self.bundle()), encoding="utf-8")
         (DIST / "index.html").write_text(self.index(), encoding="utf-8")
         size = sum(p.stat().st_size for p in DIST.rglob("*") if p.is_file())
         zpath = ROOT / "ember-hub-simulator-web.zip"
