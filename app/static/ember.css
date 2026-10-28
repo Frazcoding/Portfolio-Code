@@ -54,7 +54,6 @@ html, body { margin: 0; height: 100%; background: var(--bg-000); }
 .sw-overlay.tr:empty { display: none; }
 .eb-banner { position: absolute; z-index: 600; left: var(--space-3); top: 30px; background: var(--bg-100); border: 1px solid var(--warn); color: var(--ink); padding: 6px 12px; border-radius: var(--radius-sm); font-size: 12px; box-shadow: var(--shadow-pop); max-width: min(560px, 60%); }
 .eb-banner.is-err { border-color: var(--err); }
-[data-theme="dark"] .eb-map .leaflet-tile-pane { filter: invert(1) hue-rotate(180deg) brightness(.85) contrast(.9) saturate(.6); }
 .leaflet-container { font-family: var(--font-sans); background: var(--bg-viewport); }
 .leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--bg-100); color: var(--ink); }
 .leaflet-popup-content { font-size: 12px; line-height: 16px; margin: 10px 12px; }

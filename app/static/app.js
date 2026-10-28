@@ -23,14 +23,14 @@ const BRISTOL = [-2.593702, 51.458905];
 /* ------------------------------------------------------------------------------------------------ helpers */
 class Fmt {
   static num(v, dec = 0) {
-    if (v == null || !isFinite(v)) return "–";
+    if (v == null || !isFinite(v)) return "â€“";
     return Number(v).toLocaleString("en-GB", { minimumFractionDigits: dec, maximumFractionDigits: dec });
   }
-  static gbp(v) { return v == null || !isFinite(v) ? "–" : "£" + Fmt.num(v, 0); }
+  static gbp(v) { return v == null || !isFinite(v) ? "â€“" : "Â£" + Fmt.num(v, 0); }
   static hm(min) {
-    if (min == null || !isFinite(min)) return "–";
+    if (min == null || !isFinite(min)) return "â€“";
     const neg = min < 0, m = Math.round(Math.abs(min)), h = Math.floor(m / 60);
-    return (neg ? "−" : "") + h + ":" + String(m % 60).padStart(2, "0");
+    return (neg ? "âˆ’" : "") + h + ":" + String(m % 60).padStart(2, "0");
   }
   static clock(hours) {
     const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -250,8 +250,8 @@ class MapView {
       const color = s.kind === "listed" ? SW.token("series-6") : s.kind === "custom" ? SW.token("series-7") : SW.token("series-3");
       const m = LF.circleMarker([s.lat, s.lon], { radius: sel ? 9 : 6, color: sel ? SW.token("ink") : "#fff", weight: sel ? 3 : 1.5, fillColor: color, fillOpacity: 0.95 });
       const r = this.page.siteResult(s.id);
-      const res = r ? `<br>Fleet ${r.fleet_total} · chargers ${r.total_chargers} · drivers ${r.drivers}<br>${Fmt.gbp(r.total_gbp_yr)}/yr · ${Fmt.gbp(r.gbp_per_trip)}/trip<br>${r.feasible ? '<span style="color:var(--ok)">Feasible</span>' + (r.rank ? ` · rank ${r.rank}` : "") : '<span style="color:var(--err)">Not feasible</span>'}` : "";
-      m.bindPopup(`<b>${esc(s.name)}</b><br>Dead run ${Fmt.num(s.deadrun_km, 1)} km / ${Fmt.num(s.deadrun_min)} min · ${Fmt.num(s.area_m2)} m²${s.status ? "<br>" + esc(s.status) : ""}${s.design ? `<br>Hub design: ${esc(s.design)}` : ""}${res}<br>${sel ? "<i>Selected</i>" : `<button class="sw-btn" data-pick="${esc(s.id)}">Use this site</button>`}`);
+      const res = r ? `<br>Fleet ${r.fleet_total} Â· chargers ${r.total_chargers} Â· drivers ${r.drivers}<br>${Fmt.gbp(r.total_gbp_yr)}/yr Â· ${Fmt.gbp(r.gbp_per_trip)}/trip<br>${r.feasible ? '<span style="color:var(--ok)">Feasible</span>' + (r.rank ? ` Â· rank ${r.rank}` : "") : '<span style="color:var(--err)">Not feasible</span>'}` : "";
+      m.bindPopup(`<b>${esc(s.name)}</b><br>Dead run ${Fmt.num(s.deadrun_km, 1)} km / ${Fmt.num(s.deadrun_min)} min Â· ${Fmt.num(s.area_m2)} mÂ²${s.status ? "<br>" + esc(s.status) : ""}${s.design ? `<br>Hub design: ${esc(s.design)}` : ""}${res}<br>${sel ? "<i>Selected</i>" : `<button class="sw-btn" data-pick="${esc(s.id)}">Use this site</button>`}`);
       m.on("popupopen", (e) => {
         const b = e.popup.getElement().querySelector("[data-pick]");
         if (b) b.addEventListener("click", () => { this.map.closePopup(); this.page.selectSite(b.dataset.pick); });
@@ -322,7 +322,7 @@ class MapView {
       const col = Ramps.css(Ramps.soc(c.soc));
       const icon = LF.divIcon({ className: "eb-coach-icon", iconSize: [18, 18], html: `<div style="background:${col}">${c.idx}</div>` });
       LF.marker(ll, { icon, interactive: true, keyboard: false })
-        .bindTooltip(`Coach ${c.idx}: ${MODE_LABEL[c.mode]} · SOC ${Fmt.num(c.soc * 100)} %`).addTo(this.coaches);
+        .bindTooltip(`Coach ${c.idx}: ${MODE_LABEL[c.mode]} Â· SOC ${Fmt.num(c.soc * 100)} %`).addTo(this.coaches);
     }
   }
 
@@ -509,7 +509,7 @@ class Scene3DView {
     this.renderer.setAnimationLoop(() => this.frame());
   }
 
-  setTheme() { this.scene.background = new THREE.Color(document.documentElement.dataset.theme === "dark" ? 0x1a2230 : 0x9fbad6); }
+  setTheme() { this.scene.background = new THREE.Color(0x9fbad6); }
   resize() {
     const w = this.host.clientWidth || 1, h = this.host.clientHeight || 1;
     this.renderer.setSize(w, h, false); this.camera.aspect = w / h; this.camera.updateProjectionMatrix();
@@ -706,15 +706,8 @@ class WorkbenchPage {
   }
 
   initTheme() {
-    let saved = null;
-    try { saved = localStorage.getItem("sw-theme"); } catch (e) { /* storage blocked */ }
-    const dark = saved ? saved === "dark" : !(window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches);
-    document.documentElement.dataset.theme = dark ? "dark" : "light";
-    this.q("theme").addEventListener("click", () => {
-      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      document.documentElement.dataset.theme = next;
-      try { localStorage.setItem("sw-theme", next); } catch (e) { /* storage blocked */ }
-    });
+    document.documentElement.dataset.theme = "light";
+    try { localStorage.setItem("sw-theme", "light"); } catch (e) { /* storage blocked */ }
   }
 
   layout() {
@@ -897,19 +890,19 @@ class WorkbenchPage {
     this.params[`route.${which}_lat`] = place.lat;
     this.text[`route.${which === "origin" ? "origin" : "dest"}_name`] = short;
     this.updateRouteInputs();
-    this.note("route-note", "Routing…");
+    this.note("route-note", "Routingâ€¦");
     try {
       const r = await this.api.route(this.origin(), this.dest());
       this.params["route.distance_km"] = r.distance_km;
       this.params["route.drive_time_min"] = r.drive_time_min;
       this.routeGeom = r.geometry;
-      this.note("route-note", `OSRM road route: ${Fmt.num(r.distance_km, 1)} km, car ${Fmt.hm(r.car_time_min)} → coach ${Fmt.hm(r.drive_time_min)} (× ${r.coach_factor} calibrated on the sheet's Bristol–Victoria 3:07). Edit the fields to override.`);
+      this.note("route-note", `OSRM road route: ${Fmt.num(r.distance_km, 1)} km, car ${Fmt.hm(r.car_time_min)} â†’ coach ${Fmt.hm(r.drive_time_min)} (Ã— ${r.coach_factor} calibrated on the sheet's Bristolâ€“Victoria 3:07). Edit the fields to override.`);
     } catch (e) {
       const km = Fmt.km(this.origin(), this.dest()) * 1.25;
       this.params["route.distance_km"] = Math.round(km * 10) / 10;
       this.params["route.drive_time_min"] = Math.round(km / 61.4 * 60);
       this.routeGeom = null;
-      this.note("route-note", `Routing service unavailable (${e.message}); distance estimated as 1.25 × straight line at the sheet's average speed. Edit to correct.`, true);
+      this.note("route-note", `Routing service unavailable (${e.message}); distance estimated as 1.25 Ã— straight line at the sheet's average speed. Edit to correct.`, true);
     }
     this.markChanged();
     this.redrawRoute(true);
@@ -932,7 +925,7 @@ class WorkbenchPage {
     }
     const near = this.sites.filter((s) => s.deadrun_km <= 15);
     if (!near.length) {
-      this.banner("No candidate hub within 15 km of the new origin, screening OSM plots near it…");
+      this.banner("No candidate hub within 15 km of the new origin, screening OSM plots near itâ€¦");
       await this.screen();
     }
     this.applySite(this.currentSite() && this.currentSite().deadrun_km <= 15 ? this.currentSite().id : this.bestSiteId());
@@ -987,10 +980,10 @@ class WorkbenchPage {
   renderSiteMeta() {
     const s = this.currentSite(), el = $("#site-meta");
     if (!s) { el.textContent = ""; return; }
-    const tags = [s.kind === "listed" ? "Listed" : s.kind === "custom" ? "Custom" : `Screened · score ${Fmt.num(s.score)}`];
+    const tags = [s.kind === "listed" ? "Listed" : s.kind === "custom" ? "Custom" : `Screened Â· score ${Fmt.num(s.score)}`];
     if (s.landuse) tags.push(s.landuse);
     el.innerHTML = `<b>${esc(s.name)}</b><br>${tags.map((t) => `<span class="eb-tag">${esc(t)}</span>`).join("")}${s.status ? esc(s.status) : ""}`
-      + (s.url ? ` · <a href="${esc(s.url)}" target="_blank" rel="noopener">listing</a>` : "")
+      + (s.url ? ` Â· <a href="${esc(s.url)}" target="_blank" rel="noopener">listing</a>` : "")
       + (s.primary_sub ? `<br>Nearest 33 kV primary: ${esc(s.primary_sub)}` : "")
       + (s.placeholder && !s.edited ? `<br><span class="sw-muted">Dashed fields are placeholders (no agent's figures yet).</span>` : "");
   }
@@ -1006,7 +999,7 @@ class WorkbenchPage {
       btn.disabled = false;
       return;
     }
-    this.note("screen-note", "Screening OSM plots (Overpass + OSRM), up to a minute…");
+    this.note("screen-note", "Screening OSM plots (Overpass + OSRM), up to a minuteâ€¦");
     try {
       const res = await this.api.screen(this.origin(), this.routeGeom);
       this.sites = this.sites.filter((s) => s.kind !== "screened" || !s.id.startsWith("Q")).concat(res.sites);
@@ -1037,7 +1030,7 @@ class WorkbenchPage {
     try {
       const [r] = await this.api.deadruns(this.origin(), [{ id: site.id, lon: site.lon, lat: site.lat }]);
       if (r && r.deadrun_km != null) Object.assign(site, { deadrun_km: r.deadrun_km, deadrun_min: r.deadrun_min });
-    } catch (e) { this.banner("Dead run estimated as 1.4 × straight line (routing unavailable)", true); }
+    } catch (e) { this.banner("Dead run estimated as 1.4 Ã— straight line (routing unavailable)", true); }
     this.sites.push(site);
     this.selectSite(site.id);
   }
@@ -1053,7 +1046,7 @@ class WorkbenchPage {
     $("#pick-btn").addEventListener("click", () => {
       this.picking = !this.picking;
       this.root.classList.toggle("eb-picking", this.picking);
-      $("#pick-btn").textContent = this.picking ? "Click the map…" : "Pick on map";
+      $("#pick-btn").textContent = this.picking ? "Click the mapâ€¦" : "Pick on map";
       if (this.picking) this.setView("map");
     });
     $("#save-run").addEventListener("click", async () => {
@@ -1084,7 +1077,7 @@ class WorkbenchPage {
     $("#three").hidden = v !== "3d";
     this.three.visible = v === "3d";
     $("#swept-btn").hidden = v === "map";
-    $("#view-hint").textContent = v === "map" ? "drag to pan · scroll to zoom · click a site" : v === "plan" ? "drag to pan · scroll to zoom · double-click to fit" : "drag to orbit · scroll to zoom · double-click to reset";
+    $("#view-hint").textContent = v === "map" ? "drag to pan Â· scroll to zoom Â· click a site" : v === "plan" ? "drag to pan Â· scroll to zoom Â· double-click to fit" : "drag to orbit Â· scroll to zoom Â· double-click to reset";
     if (v === "map") this.mapView.invalidate();
     if (v === "plan") this.plan.draw();
     if (v === "3d") this.three.resize();
@@ -1129,7 +1122,7 @@ class WorkbenchPage {
     if (this.run.layout.site_specific && !this.run.kpis.layout_fits) issues.push(`${sel.fleet_total} coaches but the Temple Works design holds ${this.run.layout.capacity}`);
     if (!sel.substation_kVA) issues.push("load above the largest standard substation");
     if (this.run.kpis.sim_on_time_pct < 99.5) issues.push(`only ${Fmt.num(this.run.kpis.sim_on_time_pct, 1)} % of simulated departures on time`);
-    this.banner(issues.length ? "Check: " + issues.join(" · ") : "", issues.length > 0);
+    this.banner(issues.length ? "Check: " + issues.join(" Â· ") : "", issues.length > 0);
   }
 
   redrawMap() {
@@ -1160,12 +1153,12 @@ class WorkbenchPage {
     const checks = [
       ["Battery", s.battery_ok, `SOC at plug-in ${Fmt.num(s.soc_plug_in * 100, 1)} %`],
       ["EU driving hours", s.eu_ok, `driving ${Fmt.hm(s.driving_min)} per shift`],
-      ["Hub area (sheet)", s.area_ok, `${Fmt.num(s.area_req_m2)} of ${Fmt.num(k.site_area_m2)} m²`],
+      ["Hub area (sheet)", s.area_ok, `${Fmt.num(s.area_req_m2)} of ${Fmt.num(k.site_area_m2)} mÂ²`],
       ["Hub design", k.layout_fits > 0, this.run.layout.site_specific ? `${Fmt.num(k.fleet_total)} coaches in ${this.run.layout.lanes} lanes (${this.run.layout.drawing})` : "no detailed design: sheet area check"],
       ["Substation", !!s.substation_kVA, s.substation_kVA ? `${Fmt.num(s.substation_kVA)} kVA` : "> 4,000 kVA"],
       ["Timetable (sim)", k.sim_on_time_pct >= 99.5, `${Fmt.num(k.sim_on_time_pct, 1)} % on time`],
     ];
-    $("#checks").innerHTML = `<div class="eb-checks">${checks.map(([n, ok, t]) => `<span class="eb-check ${ok ? "ok" : "bad"}" title="${esc(t)}">${ok ? "✓" : "✗"} ${esc(n)}</span>`).join("")}</div>`;
+    $("#checks").innerHTML = `<div class="eb-checks">${checks.map(([n, ok, t]) => `<span class="eb-check ${ok ? "ok" : "bad"}" title="${esc(t)}">${ok ? "âœ“" : "âœ—"} ${esc(n)}</span>`).join("")}</div>`;
     const tile = (key, val, sub, bad) => {
       const i = info[key] || { label: key, unit: "" };
       return `<div class="sw-kpi${bad ? " is-bad" : ""}"><div class="k-name" title="${esc(i.label)}">${esc(i.label)}</div><div class="k-val">${val}</div><div class="k-unit">${esc(i.unit === "min" ? "h:mm" : i.unit)}</div>${sub ? `<div class="k-delta" title="${esc(sub)}">${esc(sub)}</div>` : ""}</div>`;
@@ -1177,18 +1170,18 @@ class WorkbenchPage {
         tile("peak_drivers", Fmt.num(k.peak_drivers), `sim peak on duty ${Fmt.num(k.sim_peak_drivers)}`),
         tile("shift_min", Fmt.hm(k.shift_min), `driving ${Fmt.hm(s.driving_min)}`),
         tile("cycle_min", Fmt.hm(k.cycle_min), `${Fmt.num(k.trips_per_day, 0)} return trips/day`),
-        tile("slack_min", Fmt.hm(k.slack_min), "fleet × headway − cycle", k.slack_min < 0),
+        tile("slack_min", Fmt.hm(k.slack_min), "fleet Ã— headway âˆ’ cycle", k.slack_min < 0),
       ]],
       ["Charging and grid", [
         tile("total_chargers", Fmt.num(k.total_chargers), `${Fmt.num(k.active_chargers)} active + ${Fmt.num(k.total_chargers - k.active_chargers)} backup`),
         tile("charge_min", Fmt.hm(k.charge_min), `${Fmt.num(k.energy_rotation_kWh, 0)} kWh per rotation`),
         tile("soc_plug_in_pct", Fmt.num(k.soc_plug_in_pct, 1), `sim lowest ${Fmt.num(k.sim_min_soc_plug_in_pct, 1)} %`, !s.battery_ok),
         tile("peak_kVA", Fmt.num(k.peak_kVA), `sim peak ${Fmt.num(k.sim_peak_kVA)} kVA`),
-        tile("substation_kVA", s.substation_kVA ? Fmt.num(k.substation_kVA) : "> 4,000", "peak ÷ utilisation → BS EN 60076 size", !s.substation_kVA),
+        tile("substation_kVA", s.substation_kVA ? Fmt.num(k.substation_kVA) : "> 4,000", "peak Ã· utilisation â†’ BS EN 60076 size", !s.substation_kVA),
         tile("sim_grid_kWh_per_day", Fmt.num(k.sim_grid_kWh_per_day), `charger use ${Fmt.num(k.sim_charger_util_pct, 0)} %`),
       ]],
       ["Hub and site", [
-        tile("area_req_m2", Fmt.num(k.area_req_m2), `site ${Fmt.num(k.site_area_m2)} m²`, !s.area_ok),
+        tile("area_req_m2", Fmt.num(k.area_req_m2), `site ${Fmt.num(k.site_area_m2)} mÂ²`, !s.area_ok),
         tile("design_lanes", Fmt.num(k.design_lanes), this.run.layout.site_specific ? `${this.run.layout.drawing} (${this.run.layout.name}), ${this.run.layout.capacity} max on site` : "S1 design shown for reference", !(k.layout_fits > 0)),
       ]],
       ["Cost", [
@@ -1202,22 +1195,22 @@ class WorkbenchPage {
     ];
     $("#annual").innerHTML = sections.map(([t, tiles]) => `<div class="sw-section">${esc(t)}</div><div class="sw-kpis eb-annual">${tiles.join("")}</div>`).join("");
     const f = (v, n) => Fmt.num(v, n);
-    this.q("ov-tr").innerHTML = `<b>${esc(this.text["site.name"])}</b><br>${f(k.fleet_total)} coaches · ${f(k.total_chargers)} × ${f(this.params["hub.charge_power_kW"])} kW · ${f(k.drivers)} drivers<br>${Fmt.gbp(k.total_gbp_yr)}/yr · <b>${Fmt.gbp(k.gbp_per_trip)}</b>/trip`;
+    this.q("ov-tr").innerHTML = `<b>${esc(this.text["site.name"])}</b><br>${f(k.fleet_total)} coaches Â· ${f(k.total_chargers)} Ã— ${f(this.params["hub.charge_power_kW"])} kW Â· ${f(k.drivers)} drivers<br>${Fmt.gbp(k.total_gbp_yr)}/yr Â· <b>${Fmt.gbp(k.gbp_per_trip)}</b>/trip`;
   }
 
   sitesTable() {
     const rows = [...this.run.sites].sort((a, b) => (a.rank || 1e9) - (b.rank || 1e9) || a.total_gbp_yr - b.total_gbp_yr);
     const sel = this.text["site.id"];
-    const h = `<table class="eb-table"><thead><tr><th>#</th><th>Site</th><th class="num">Dead run</th><th class="num">Fleet</th><th class="num">Drivers</th><th class="num">Area</th><th class="num">£/trip</th></tr></thead><tbody>` +
+    const h = `<table class="eb-table"><thead><tr><th>#</th><th>Site</th><th class="num">Dead run</th><th class="num">Fleet</th><th class="num">Drivers</th><th class="num">Area</th><th class="num">Â£/trip</th></tr></thead><tbody>` +
       rows.map((r) => {
         const why = [!r.battery_ok && "battery", !r.eu_ok && "EU hours", !r.area_ok && "area", !r.substation_kVA && "grid"].filter(Boolean).join(", ");
-        return `<tr data-id="${esc(r.site_id)}" class="${r.site_id === sel ? "is-sel" : ""}" title="${esc(r.site_name)}${why ? " · fails: " + why : ""}">
-          <td>${r.rank ? r.rank : '<span class="bad">✗</span>'}</td><td>${esc(r.site_name.length > 34 ? r.site_name.slice(0, 33) + "…" : r.site_name)}</td>
-          <td class="num">${Fmt.num(r.site.deadrun_min)}′</td><td class="num">${r.fleet_total}</td><td class="num">${r.drivers}</td>
+        return `<tr data-id="${esc(r.site_id)}" class="${r.site_id === sel ? "is-sel" : ""}" title="${esc(r.site_name)}${why ? " Â· fails: " + why : ""}">
+          <td>${r.rank ? r.rank : '<span class="bad">âœ—</span>'}</td><td>${esc(r.site_name.length > 34 ? r.site_name.slice(0, 33) + "â€¦" : r.site_name)}</td>
+          <td class="num">${Fmt.num(r.site.deadrun_min)}â€²</td><td class="num">${r.fleet_total}</td><td class="num">${r.drivers}</td>
           <td class="num ${r.area_ok ? "" : "bad"}">${Fmt.num(r.area_req_m2 / 1000, 1)}/${Fmt.num(r.site.area_m2 / 1000, 1)}k</td>
           <td class="num">${Fmt.gbp(r.gbp_per_trip)}</td></tr>`;
       }).join("") + "</tbody></table>" +
-      `<p class="eb-note">Ranked by annual cost among feasible sites (sheet rule). Area = required / available, thousand m². Click a row to select the site. Screened and custom sites use placeholder lease (£20/m²/yr) and spare grid capacity (1,000 kVA) until edited.</p>`;
+      `<p class="eb-note">Ranked by annual cost among feasible sites (sheet rule). Area = required / available, thousand mÂ². Click a row to select the site. Screened and custom sites use placeholder lease (Â£20/mÂ²/yr) and spare grid capacity (1,000 kVA) until edited.</p>`;
     const host = $("#sites-table");
     host.innerHTML = h;
     host.querySelectorAll("tbody tr").forEach((tr) => tr.addEventListener("click", () => this.selectSite(tr.dataset.id)));
@@ -1234,7 +1227,7 @@ class WorkbenchPage {
     if (feas.length > 1) {
       h += `<div class="sw-section">Feasible sites</div><table class="eb-table"><thead><tr><th>Site</th>${Object.keys(names).map((k) => `<th class="num">${names[k].split(" ")[0]}</th>`).join("")}<th class="num">Total</th></tr></thead><tbody>` +
         feas.map((r) => `<tr class="${r.site_id === s.site_id ? "is-sel" : ""}"><td>${esc(r.site_id)}</td>${Object.keys(names).map((k) => `<td class="num">${Fmt.num(r.costs_gbp_yr[k] / 1000)}</td>`).join("")}<td class="num">${Fmt.num(r.total_gbp_yr / 1000)}</td></tr>`).join("") +
-        `</tbody></table><p class="eb-note">£ thousand per year. Capital items annualised at the discount rate over the asset life (sheet PMT).</p>`;
+        `</tbody></table><p class="eb-note">Â£ thousand per year. Capital items annualised at the discount rate over the asset life (sheet PMT).</p>`;
     }
     $("#cost-panel").innerHTML = h;
   }
@@ -1255,9 +1248,9 @@ class WorkbenchPage {
     this.q("time").textContent = label;
     const counts = new Array(8).fill(0);
     for (const c of coaches) counts[c.mode]++;
-    this.q("ov-tl").innerHTML = `${this.view === "3d" ? "perspective" : this.view} · <b>${label}</b>`;
-    this.q("ov-bl").innerHTML = MODE_LABEL.map((l, m) => (counts[m] ? `${l} <b>${counts[m]}</b>` : null)).filter(Boolean).join(" · ")
-      + `<br>Grid <b>${Fmt.num(run.data.grid_kVA[f])}</b> kVA · SOC min <b>${Fmt.num(run.data.soc_min[f])}</b> %`;
+    this.q("ov-tl").innerHTML = `${this.view === "3d" ? "perspective" : this.view} Â· <b>${label}</b>`;
+    this.q("ov-bl").innerHTML = MODE_LABEL.map((l, m) => (counts[m] ? `${l} <b>${counts[m]}</b>` : null)).filter(Boolean).join(" Â· ")
+      + `<br>Grid <b>${Fmt.num(run.data.grid_kVA[f])}</b> kVA Â· SOC min <b>${Fmt.num(run.data.soc_min[f])}</b> %`;
     if (f === run.n - 1 && this.playing) { this.playing = false; this.status("done", "Done"); }
   }
 
