@@ -5,7 +5,7 @@
 const PYODIDE = "https://cdn.jsdelivr.net/pyodide/v0.27.2/full/";   // Pyodide CDN (core + package wheels)
 const OSRM = "https://router.project-osrm.org";
 const NOMINATIM = "https://nominatim.openstreetmap.org/search";
-const OVERPASS = "https://overpass-api.de/api/interpreter";
+const OVERPASS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter"];
 // Coach time = OSRM car time x factor, calibrated so Bristol Coach Station -> London Victoria gives the sheet's 3:07
 // (same reference as ember_hub_simulator.geo.Router).
 const REF = { a: [-2.593702, 51.458905], b: [-0.14807, 51.4926], sheet_min: 187.0 };
@@ -31,7 +31,7 @@ export class LocalBackend {
     status("Loading numpy and pandas…");
     await this.py.loadPackage(["numpy", "pandas"]);
     status("Loading the Ember model…");
-    const bundle = await (await fetch("static/py_bundle.json")).json();
+    const bundle = await this.json("static/py_bundle.json");
     for (const [path, text] of Object.entries(bundle)) {
       const full = "/app/" + path, dir = full.slice(0, full.lastIndexOf("/"));
       this.py.FS.mkdirTree(dir);
@@ -65,10 +65,19 @@ api = WebApi(_paths.baseline, Runner(_paths.root))
   async swept(params) { return this.call("swept", { params }); }
   async save() { throw new Error("saving run folders needs the Python server version (uv run ember-hub-simulator app)"); }
 
+  // Reads the body as text first: r.json() on an HTML page (busy Overpass, a sign-in redirect) throws Safari's
+  // "The string did not match the expected pattern", which says nothing about the cause.
   async json(url, opts) {
-    const r = await fetch(url, opts);
-    if (!r.ok) throw new Error(`${new URL(url).host} answered ${r.status}`);
-    return r.json();
+    const host = new URL(url, location.href).host;
+    const r = await fetch(url, { credentials: "same-origin", ...opts });
+    const text = await r.text();
+    if (!r.ok) throw new Error(`${host} answered ${r.status}`);
+    try {
+      return JSON.parse(text);
+    } catch (e) {
+      const page = /^\s*</.test(text);
+      throw new Error(`${host} did not return data${page ? " (a web page: the server is busy or the sign-in has expired, reload and retry)" : ""}`);
+    }
   }
 
   async geocode(q) {
@@ -127,7 +136,14 @@ api = WebApi(_paths.baseline, Runner(_paths.root))
   async screen(origin, route) {
     if (!this.geoLoaded) { await this.py.loadPackage(["shapely", "pyproj"]); this.geoLoaded = true; }
     const q = this.call("screen_query", { origin });
-    const data = await this.json(OVERPASS, { method: "POST", body: new URLSearchParams({ data: q }) });
+    let data = null, failure = null;
+    for (const endpoint of OVERPASS) {        // the main instance often answers with an HTML error page when busy
+      try {
+        data = await this.json(endpoint, { method: "POST", body: new URLSearchParams({ data: q }) });
+        break;
+      } catch (e) { failure = e; }
+    }
+    if (!data) throw failure;
     const scored = this.call("screen_score", { data, origin, route, top: 15 });
     let roads = [];
     try { roads = await this.table(origin, scored.best.map((r) => [r.lon, r.lat])); } catch (e) { /* estimates kept */ }
