@@ -509,7 +509,7 @@ class Scene3DView {
     this.renderer.setAnimationLoop(() => this.frame());
   }
 
-  setTheme() { this.scene.background = new THREE.Color(document.documentElement.dataset.theme === "dark" ? 0x1a2230 : 0x9fbad6); }
+  setTheme() { this.scene.background = new THREE.Color(0x9fbad6); }
   resize() {
     const w = this.host.clientWidth || 1, h = this.host.clientHeight || 1;
     this.renderer.setSize(w, h, false); this.camera.aspect = w / h; this.camera.updateProjectionMatrix();
@@ -706,15 +706,8 @@ class WorkbenchPage {
   }
 
   initTheme() {
-    let saved = null;
-    try { saved = localStorage.getItem("sw-theme"); } catch (e) { /* storage blocked */ }
-    const dark = saved ? saved === "dark" : !(window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches);
-    document.documentElement.dataset.theme = dark ? "dark" : "light";
-    this.q("theme").addEventListener("click", () => {
-      const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
-      document.documentElement.dataset.theme = next;
-      try { localStorage.setItem("sw-theme", next); } catch (e) { /* storage blocked */ }
-    });
+    document.documentElement.dataset.theme = "light";
+    try { localStorage.setItem("sw-theme", "light"); } catch (e) { /* storage blocked */ }
   }
 
   layout() {
