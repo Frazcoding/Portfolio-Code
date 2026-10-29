@@ -1,0 +1,42 @@
+﻿# Python & environments
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.class
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+dist/
+build/
+mlruns/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Browser QA & Blender backups
+.browser-qa*/
+.viewer-edge-check/
+*.blend1
+*_backup.blend
+
+# Regenerable caches & large simulation stores (>35 MB raw logs/stores)
+_legacy/simcore/cache/
+BEng-CEA-Heatpump/simcore/cache/
+BEng-CEA-Heatpump/lca/results/store/
+BEng-CEA-Heatpump/lca/results/greenlight/
+BEng-CEA-Heatpump/lca/p.out
+BEng-CEA-Heatpump/GreenhousehorticultureStanghellinivantOosterHeuvelink-1.pdf
+cea-glasshouse-plan/simcore/cache/
+cea-glasshouse-plan/lca/results/store/
+cea-glasshouse-plan/lca/results/greenlight/
+Ember-Hub-Simulator/results/**/*.parquet
+Ember-Hub-Simulator/data/cache/
+Ember-Hub-Simulator/data/cache_sheet_dump.txt
+Ember-Hub-Simulator/ember-hub-simulator-web.zip
