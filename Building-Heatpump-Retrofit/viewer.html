@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Commercial Heat Pump Retrofit under a 60 kWe Grid Cap · Annual Simulation Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="4 × 40 kW R290 cascade · 2 × 100 m³ thermal stores · 6,000 m² Edinburgh office · full-year 2023, 10-min control">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../viewer_core/viewer.css">
+<script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand"><h1>Commercial Heat Pump Retrofit under a 60 kWe Grid Cap</h1><span class="sub">4 × 40 kW R290 cascade · 2 × 100 m³ thermal stores · 6,000 m² Edinburgh office · full-year 2023, 10-min control</span></div>
+    <nav class="runs" aria-label="Scenario and display options">
+      <div class="pick"><label for="scenario">Scenario</label><select id="scenario"></select></div>
+      <label class="toggle"><input type="checkbox" id="labelsToggle" checked> Tags</label>
+      <label class="toggle"><input type="checkbox" id="spToggle" checked> State points</label>
+      <label class="toggle"><input type="checkbox" id="flowToggle" checked> Flow</label>
+      <label class="toggle" title="Ambient occlusion (turn off on slow machines)"><input type="checkbox" id="aoToggle" checked> AO</label>
+      <span class="navsep"></span>
+      <a href="../index.html" class="btn" title="Return to portfolio hub">Hub ↗</a>
+    </nav>
+  </header>
+  <main>
+    <div class="stage">
+      <div id="three"></div>
+      <div id="tags"></div>
+      <div id="tip"></div>
+      <div id="inspect"></div>
+      <div id="modelStatus" role="status"></div>
+      <div class="view-tools"><button class="btn" id="topView" type="button">Top</button><button class="btn" id="frontView" type="button">Front</button><button class="btn" id="resetView" type="button">Reset</button></div>
+      <div class="legend" id="legend"></div>
+      <div class="hint">drag orbit · scroll zoom · right-drag pan · click equipment for specs</div>
+    </div>
+    <aside>
+      <div class="clockbar">
+        <div><div class="d" id="clockDate">–</div><div class="t" id="clock">–</div></div>
+        <span class="run-tag" id="scenarioBadge">–</span>
+      </div>
+      <div class="tabs" role="tablist">
+        <button data-tab="overview" aria-selected="true">Overview</button>
+        <button data-tab="sp" id="tabSp" aria-selected="false">State points</button>
+        <button data-tab="diag" id="tabDiag" aria-selected="false">Diagrams</button>
+        <button data-tab="vars" aria-selected="false">Variables</button>
+        <button data-tab="kpi" aria-selected="false">Annual KPIs</button>
+      </div>
+      <div class="tabpanes">
+        <section class="pane on" data-tab="overview">
+          <div class="cmds" id="cmds"></div>
+          <h2>Live telemetry at cursor</h2>
+          <table><thead id="sensHead"><tr><th>Channel</th><th>Sim.</th><th>Ref.</th><th>Δ</th></tr></thead><tbody id="sens"></tbody></table>
+          <h2 id="ledgerTitle">Energy flows</h2>
+          <div class="ledger" id="ledger"></div>
+          <p class="note" id="sensorNote"></p>
+          <p class="note" id="provenance"></p>
+        </section>
+        <section class="pane" data-tab="sp" id="spPane"><div id="spTables"></div>
+          <p class="note">Hourly-mean states from full CoolProp equation-of-state solutions. Hover a row to locate the point in 3D.</p></section>
+        <section class="pane" data-tab="diag" id="diagPane"></section>
+        <section class="pane" data-tab="vars">
+          <input class="vsearch" id="vsearch" type="search" placeholder="Search channels… (e.g. enthalpy, pressure, 5_T)">
+          <p class="note" id="varCount" style="margin:0 0 6px"></p>
+          <div class="vfocus" id="vfocus"><b id="vfTitle"></b><div class="stats" id="vfStats"></div><canvas id="monthly"></canvas></div>
+          <div id="vars"></div>
+        </section>
+        <section class="pane" data-tab="kpi"><div id="kpis"></div></section>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <div class="ctrl">
+      <button id="play" type="button">Play</button>
+      <div class="row"><button class="ghost" id="stepBack" type="button" title="Previous sample (←)">◀</button><button class="ghost" id="stepFwd" type="button" title="Next sample (→)">▶</button></div>
+      <label for="speed">Playback
+        <select id="speed"><option value="3600">1 h / s</option><option value="21600">6 h / s</option><option value="86400" selected>1 day / s</option><option value="604800">1 week / s</option><option value="2592000">1 month / s</option></select>
+      </label>
+    </div>
+    <div class="chartwrap">
+      <div class="charttools">
+        <button class="btn" type="button" data-win="24">Day</button><button class="btn" type="button" data-win="168">Week</button><button class="btn" type="button" data-win="744">Month</button><button class="btn on" type="button" data-win="0">Year</button>
+        <span class="sp"></span><span class="info" id="winInfo"></span>
+      </div>
+      <canvas id="chart" aria-label="Timeline: click or drag to seek, scroll to zoom"></canvas>
+      <canvas id="overview" aria-label="Full-period overview: drag to move the window"></canvas>
+    </div>
+  </footer>
+</div>
+<script type="application/json" id="viewer-config">{"title": "Commercial Heat Pump Retrofit under a 60 kWe Grid Cap", "scenarios": [{"key": "tes_smart", "name": "Edinburgh 2023 · 200 m³ TES · price-aware charging · 60 kWe cap", "badge": "TES smart"}, {"key": "tes_basic", "name": "Edinburgh 2023 · 200 m³ TES · thermostatic charging · 60 kWe cap", "badge": "TES basic"}, {"key": "direct", "name": "Edinburgh 2023 · no TES · direct load following · uncapped", "badge": "Direct (no TES)"}], "scene": {"glb": "retrofit_plant.glb", "meta": "retrofit_plant_meta.json", "fov": 32, "camera": {"pos": [44.0, 24.0, 24.0], "target": [12.0, 2.0, -1.0]}, "groundRadius": 90, "gridStep": 5, "grid": false, "bindings": [{"type": "spin", "nodes": ["Module_1_Fan_1", "Module_1_Fan_2"], "key": "mod1_run", "scale": 0.25, "axis": "y"}, {"type": "spin", "nodes": ["Module_2_Fan_1", "Module_2_Fan_2"], "key": "mod2_run", "scale": 0.25, "axis": "y"}, {"type": "spin", "nodes": ["Module_3_Fan_1", "Module_3_Fan_2"], "key": "mod3_run", "scale": 0.25, "axis": "y"}, {"type": "spin", "nodes": ["Module_4_Fan_1", "Module_4_Fan_2"], "key": "mod4_run", "scale": 0.25, "axis": "y"}, {"type": "color", "nodes": ["StoreA_Band_1"], "key": "tesA_T1", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_1"], "key": "tesB_T1", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_2"], "key": "tesA_T2", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_2"], "key": "tesB_T2", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_3"], "key": "tesA_T3", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_3"], "key": "tesB_T3", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_4"], "key": "tesA_T4", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_4"], "key": "tesB_T4", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_5"], "key": "tesA_T5", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_5"], "key": "tesB_T5", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_6"], "key": "tesA_T6", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_6"], "key": "tesB_T6", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_7"], "key": "tesA_T7", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_7"], "key": "tesB_T7", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_8"], "key": "tesA_T8", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_8"], "key": "tesB_T8", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_9"], "key": "tesA_T9", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_9"], "key": "tesB_T9", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_10"], "key": "tesA_T10", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_10"], "key": "tesB_T10", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_11"], "key": "tesA_T11", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_11"], "key": "tesB_T11", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreA_Band_12"], "key": "tesA_T12", "range": [-15, 75], "mix": 1.0}, {"type": "color", "nodes": ["StoreB_Band_12"], "key": "tesB_T12", "range": [-15, 75], "mix": 1.0}, {"type": "emissive", "nodes": ["Transformer_Kiosk"], "key": "over_cap", "range": [0, 60], "color": "#ff3b1f", "intensity": 1.2}], "flows": [{"path": "p_charge", "key": "W2_m", "colorKey": "W2_T", "range": [-15, 75], "scale": 0.25, "spacing": 0.5, "radius": 0.05}, {"path": "p_return", "key": "W1_m", "colorKey": "W1_T", "range": [-15, 75], "scale": 0.25, "spacing": 0.5, "radius": 0.05}, {"path": "p_series", "key": "W1_m", "colorKey": "tesA_T12", "range": [-15, 75], "scale": 0.25, "spacing": 0.5, "radius": 0.05}, {"path": "p_discharge", "key": "Q_emit", "colorKey": "tesA_T1", "range": [-15, 75], "scale": 0.01, "spacing": 0.5, "radius": 0.05}, {"path": "b_flow", "key": "Q_emit", "colorKey": "T_flow", "range": [-15, 75], "scale": 0.01, "spacing": 0.5, "radius": 0.05}, {"path": "b_ret", "key": "Q_emit", "colorKey": "T_ret", "range": [-15, 75], "scale": 0.01, "spacing": 0.5, "radius": 0.05}], "tags": [{"label": "R290 cascade", "anchor": "Modules", "fmt": "{n_on|1} on · {Q_hp|0} kW · COP {cop|2}"}, {"label": "Store A", "anchor": "StoreA", "fmt": "{tesA_T1|1} / {tesA_T12|1} °C"}, {"label": "Store B", "anchor": "StoreB", "fmt": "{tesB_T1|1} / {tesB_T12|1} °C · SOC {tes_soc|0} %"}, {"label": "Grid connection", "anchor": "Grid", "fmt": "{W_total|1} / 60 kWe", "alertKey": "over_cap", "alertAbove": 0.5}, {"label": "Office", "anchor": "Building", "fmt": "{T_room|1} °C · {Q_emit|0} kW · {T_amb|1} °C out"}]}}</script>
+<script type="module" src="../viewer_core/viewer.js"></script>
+</body>
+</html>

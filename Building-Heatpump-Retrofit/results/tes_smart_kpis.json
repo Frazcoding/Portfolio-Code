@@ -1,0 +1,218 @@
+[
+ {
+  "label": "Seasonal COP (modules, H2)",
+  "value": 2.697282252634914,
+  "unit": "–",
+  "group": "Performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "System SPF (all plant electricity)",
+  "value": 2.090979720780485,
+  "unit": "–",
+  "group": "Performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Heat delivered to building",
+  "value": 257.5737126946545,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Heat from modules",
+  "value": 294.2423816186999,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Store standing losses",
+  "value": 32.89889304867201,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Plant electricity",
+  "value": 140.71986384873694,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Electric boiler",
+  "value": 0.0,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Design heat loss (−4 °C)",
+  "value": 241.65,
+  "unit": "kW",
+  "group": "Design",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Peak hourly plant demand",
+  "value": 57.44699663367241,
+  "unit": "kW",
+  "group": "Grid",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Peak 10-min demand",
+  "value": 60.0,
+  "unit": "kW",
+  "group": "Grid",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Hours above 60 kWe cap",
+  "value": 0.0,
+  "unit": "h",
+  "group": "Grid",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Hours output limited by cap",
+  "value": 2446.0,
+  "unit": "h",
+  "group": "Grid",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Load factor on 60 kWe connection",
+  "value": 26.773185663762735,
+  "unit": "%",
+  "group": "Grid",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Electricity cost (Agile)",
+  "value": 28.768589660651795,
+  "unit": "k£",
+  "group": "Cost & carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Average price paid",
+  "value": 20.443872580473656,
+  "unit": "p/kWh",
+  "group": "Cost & carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Operational CO₂",
+  "value": 20.96559412178066,
+  "unit": "t",
+  "group": "Cost & carbon",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Gas boiler counterfactual cost",
+  "value": 18.787729631845384,
+  "unit": "k£",
+  "group": "Cost & carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Gas boiler counterfactual CO₂",
+  "value": 55.42380241394389,
+  "unit": "t",
+  "group": "Cost & carbon",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Unmet occupied hours (<20 °C)",
+  "value": 69.0,
+  "unit": "h",
+  "group": "Comfort",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Min occupied indoor temperature",
+  "value": 18.448872232623646,
+  "unit": "°C",
+  "group": "Comfort",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Module starts",
+  "value": 4902.0,
+  "unit": "",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Defrost cycles (all modules)",
+  "value": 6576.0,
+  "unit": "",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Module 1 run hours",
+  "value": 2394.7674986259613,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Module 2 run hours",
+  "value": 2394.6027087273646,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Module 3 run hours",
+  "value": 2394.6047141531863,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Module 4 run hours",
+  "value": 2394.602980749231,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Mean store SOC",
+  "value": 83.39397024570562,
+  "unit": "%",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ }
+]

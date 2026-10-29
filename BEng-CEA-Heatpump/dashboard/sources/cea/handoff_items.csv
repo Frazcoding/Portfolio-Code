@@ -1,0 +1,85 @@
+item,parent,state,text
+3,3,done,Heat-pump capex: DEA Aug 2026 data sheets ch. 40; 2026-10-03 now at full design load everywhere
+4,4,done,"Heat store + plant sizing by LP for the finalists, grid-backed (`finalist_lp.py`); off-grid not rerun"
+7,7,done,"(DONE 2026-10-03: `cashflow.py`, `costing_report.py` -> results/costing/FULL_COSTING.md; organic premium/yield still open under item 9) Lifecycle cash flow + sales report (cash purchase, payback; supermarket price basis;..."
+9,9,open,"Organic system: digestate fertility, AD CO₂ for dosing (replaces liquid CO₂ and the DAC idea), certifier check"
+10,10,open,"Screen factor, h_min, path share, hung-crop load (EN 13031-1 annex), ground bearing, snow zone / v_b"
+11,11,open,"Asset lives, O&M fractions, labour hours, packing, consumables, battery inverter £/kW"
+12,12,open,"Berry/grape yields, WWTP flow per p.e. and effluent temperature profile"
+13,13,open,"Embodied factors for screens, ETFE, XPS, polycarbonate"
+14,14,open,Distillery cooling-water heat (second distillery case)
+15,15,open,"Outage timing (distillery, paper) and food/AD shutdown length: operator data (see B6)"
+16,16,open,Wall thermal-mass node (earth-sheltered designs)
+17,17,open,Inter-span shading of low sun
+BP1,BP1,done,"Pack started: `BUSINESS_PLAN.md`, figures bp01-bp11, `bplan_*.py`. Regression tests rerun and PASS"
+BP2,BP2,done,Winter price defect fixed in `cashflow.defra_monthly` (CIF where DEFRA has < 3 observations)
+BP3,BP3,done,"Independent verification `bplan_verify.py` (13 pass, 3 flags)"
+BP4,BP4,done,"(DONE 2026-10-07: written as the Claude Doc in BP26, https://claude.ai/code/artifact/cf65b986-f2ca-4a1a-a924-13c38a97152b; lead = GBP 10 M 2.9 ha case at CO2 0.25) Write the business plan itself from the pack (structure:..."
+BP5,BP5,done,"(desk evidence done 2026-10-07; buyer indication = user outreach, listed in PRICE_EVIDENCE.md) Sales-price evidence: supermarket contract prices vs DEFRA wholesale, low-carbon/Scottish premium (= §5 step 2)"
+BP6,BP6,done,"(DONE 2026-10-07, DEFRA Table 17 in PRICE_EVIDENCE.md; a named UK high-tech grower yield still not found) UK commercial yield evidence for cucumber and tomato (AHDB, growers): yields are 0.89-1.03 x CBS NL"
+BP7,BP7,done,"(REVIEWED 2026-10-07: lca/THESIS_NUMBERS_REVIEW.md; README, CLAUDE.md, GEMINI.md, AGENTS.md edited 2026-10-07 with user OK: COP definition note, 80 °C as design condition, no 'near Carnot'; 4.29 itself unchanged) Thesis ..."
+BP8,BP8,done,"(DONE 2026-10-07: cashflow.build re-prices the LP wind cost at the turbine LCOE for each discount rate (annuity ratio); 3.5 % results unchanged,"
+BP9,BP9,done,"(done 2026-10-05, 3,724 rows; screen and figures rerun) Monthly import prices for diversification crops: `fetch_imports_monthly.py strawberry raspberry blueberry"
+BP10,BP10,done,"(DESK SOURCING DONE 2026-10-07: DIVERSIFY_SOURCING.md; model placeholders unchanged; UK grower yields, picking rates, winter berry contracts NOT found) Diversification phase 2 (sourcing, before any modelling): cherry/vin..."
+BP11,BP11,blocked,"(BLOCKED 2026-10-07: needs a calibrated strawberry/lettuce crop model; DIVERSIFY_SOURCING.md has no UK yield, picking-rate or winter-price source to calibrate against, and the sourcing rule forbids placeholder-calibrated..."
+BP12,BP12,blocked,(BLOCKED on BP11 outputs: zone revenue and labour need modelled monthly yields per zone) Diversification phase 4: zones in cashflow.py (portfolio revenue and labour by month)
+BP13,BP13,done,"(CLOSED 2026-10-07 by later work: step 1 sweep still at 3.5 % (NOT re-run at 8 %: open); 2 single vs double = BP23/BP28 (single wins); 3 boiler = BP19a; 4 CO2 = BP28 (1,000 ppm, lower rejected) + BP20b pricing; 5 labour ..."
+BP14,BP14,done,"(DONE: 14 % commission in cashflow; contract evidence = PRICE_EVIDENCE.md BP5/BP30) Price basis (user, 2026-10-05): central = DEFRA wholesale net of 14 % market commission (BritFarmers,"
+BP15,BP15,done,"(DONE 2026-10-07 for cost: shelf_chain.py + SHELF_CHAIN.md; duty/BTOM sourced; port/RDC/importer margin PLACEHOLDER; cucumber carbon chain by origin NOT built) Soil-to-shelf boundary (user, 2026-10-05). Functional unit: ..."
+BP16,BP16,done,"(CLOSED 2026-10-07: components now fixed + stepped + per-m2: fixed residual 17.7 % (BP19b/d), perimeter 10.1 %, HV connection stepped on kVA (BP23a), heat pump per DEA curve, turbines per module (BP35b). Size evidence fr..."
+BP17,BP17,done,"(DONE: greenhouse and energy capex reported separately in the workbook and BP19a/BP23; PPA, grid + small turbine and owned-turbine routes compared in BP17 results, BP23, BP28, BP35b; leasing not modelled) Initial expendi..."
+BP18,BP18,done,"Capex/opex workbook (user, 2026-10-05): `../business_plan/Glasshouse_Capex_Opex_Model.xlsx`, built by"
+BP19,BP19,done,"Next capex work (split into parts and done 2026-10-05; tests: `tests/test_bp19.py`, `tests/test_costing.py`):"
+BP19a,BP19,done,"Boiler cases WITH a store. `finalist_lp.solve(boiler=True)` sizes heat pump, electric peak boiler and"
+BP19b,BP19,done,"Residual itemised in `data/residual_items.csv` (`bplan_residual.py`; RFQ_SPEC §3.7). Seven systems,"
+BP19c,BP19,done,"Second-hand glasshouse: `bplan_secondhand.py`, `results/bplan/secondhand.json`, RFQ_SPEC §3.8, Levers row."
+BP19d,BP19,done,Scale shares: fixed residual 17.7 % from BP19b; perimeter share 10.1 % geometric (wall glazing + bars; a
+BP19e,BP19,done,`business_plan/Glasshouse_Capex_Opex_Model.xlsx` overwritten 2026-10-05 (0 formula errors; S0-S4 8 % £/kg 1.759 / 1.686 / 1.617 / 1.657 / 1.719)
+BP19f,BP19,done,"(DONE via BP29, verified 2026-10-07: changing CEA_RESID_FIXED re-costs in 1.3 s vs 7.3 s cold, same yield, physics not re-run) Split the store so physics is cached once and cost-only options (residual share) apply after ..."
+BP19g,BP19,blocked,"(BLOCKED: outbound RFQ emails are the user's to send; RFQ_SPEC.md is ready) Quotes: send RFQ_SPEC §3.7/§3.8; re-run `bplan_residual.py`, `bplan_secondhand.py`, workbook"
+BP19h,BP19,blocked,"(cucumber DONE in BP35b: 90-point wind-scaled DOE; TOMATO wind DOE stopped at 34 of ~80: BLOCKED on the 32 GB desktop, `python bplan_yearround.py doe tomato 80` with CEA_WORKERS=5, resumable) Size study with the energy s..."
+BP19i,BP19,done,(2010 CHECK DONE 2026-10-07; GreenLight/yield-source confirmation of S1 still open) Boiler cases: 2010 cold-year check for the 'lp' rule.
+BP20,BP20,done,"(DONE 2026-10-07: 20a, 20b) Gemini notes check (2026-10-05; restored after a parallel edit dropped it). `business_plan/` and `docs/`"
+BP20a,BP20,done,"CO2 £0.20 -> £0.25/kg DONE 2026-10-07 (user OK): breakeven.py P, bplan_workbook.py, bplan_diversify.py,"
+BP20b,BP20,done,(DONE 2026-10-07 as priced sensitivities; supplier tank/capture capex still needs a quote) Replace `co2_free` lever with priced routes: cashflow.SENS co2_recovered_low/high = GBP 0.048/0.088 per kg (US ethanol-plant prod...
+BP21,BP21,done,"(findings entered in data/input_register.csv 2026-10-07; quotes themselves outstanding, see BP19g) Desk research for the 8 RFQ lines (2026-10-05):"
+BP22,BP22,done,"(DONE 2026-10-07: DEA ch.40 kept, modular recorded in the register (NOT modelled); double count checked: contractor design_pm is GBP 10/m2 (GBP 0.1 M per ha, GBP 60k of it fixed) at the SAC anchor vs owner dev_frac 5 % (..."
+BP23,BP23,done,"5 ha viable case (2026-10-05, `bplan_5ha.py`, results/bplan/viable_5ha*.json; track B cucumber, Stranraer,"
+BP23a,BP23,done,"(done, see the DONE line below) HV import connection still £150k fixed but 5 ha import peak ~2.1 MW (SPEN Example 5 is 600 kVA):"
+BP23b,BP23,done,"(turbines/wind-farm share per area DONE in BP35b: cucumber 4.4 ha, 4 turbines, carbon 0.34-0.39; the GreenLight check of single glass stays open: GreenLight is tomato-only, BP25 resolved the +14 % as the Dutch-anchor eff..."
+BP23c,BP23,done,"(SUPERSEDED 2026-10-07: the lead is the GBP 10 M 2.9 ha case; business plan written as a Claude Doc (BP26); minimum price at 8 % for the lead = GBP 1.48/kg ex-farm (= LCOP 8 %), 3.5 % GBP 1.27; the workbook is NOT rebuil..."
+BP24,BP24,done,"(a-d done) 5 ha follow-ups (user, 2026-10-05):"
+BP24a,BP24,done,"COP levers: new options `pipe_m2` (emitter m/m2, costed via costing.bill) and `hx_scale` (physics only,"
+BP24b,BP24,done,"Speed: finalist_lp solves with io_api=""direct"" (CEA_LP_IO=lp restores LP files); warm start"
+BP24c,BP24,done,"Retailer-partner model (ECF/REWE Wiesbaden 2021). New cashflow.build options commission, haul_mult,"
+BP25,BP25,done,"(RESOLVED in BP28 2026-10-05: model anchored on single plain glass; cap = light-only CBS expectation 0.976) Single-glass yield check (2026-10-05). GreenLight is tomato-only, so no direct cucumber check. Model: single vs"
+BP25a,BP25,done,"(resolved, see BP28) Find why crop_gh gives 2.2x the light response for single glass (compare hourly T_air, RH, CO2, LAI)"
+BP26,BP26,done,"(DONE 2026-10-07, Claude Doc https://claude.ai/code/artifact/cf65b986-f2ca-4a1a-a924-13c38a97152b; BP26a workbook NOT rebuilt on the lead) Business proposition report (user, 2026-10-05: shareable Claude Doc; investors/ba..."
+BP26a,BP26,open,"(NOT DONE, user decision wanted: the workbook is built around the 1 ha S0-S4 concept (own turbine, text notes per scenario); a lead-case workbook needs a new inputs builder and edits to bplan_workbook.py, about a day) Wo..."
+BP24d,BP24,done,"(DONE 2026-10-07: GRANTS.md; no open grant for a Scottish glasshouse found, FDPSS up to GBP 0.4 M for a packhouse only) Grants: GHISP closed and aimed at heat-tech makers; FPMC 40 % (Annex I) is processing/marketing, so ..."
+BP27,BP27,done,"(done, with BP27a) Capex/opex audit of the 5 ha case (user, 2026-10-05: £23 M raise too high). Findings in `CAPEX_OPEX_AUDIT.md`"
+BP27a,BP27,done,"(DONE 2026-10-07 except two user/outside items: DNO operating-limit term for the 1 MVA cap, and the rebuilt workbook + plan on the lean case = BP26a/BP23c) climate_control split computer 70 % (10 yr) / wiring 30 % (30 yr..."
+BP28,BP28,done,"Design under GBP 10 M (user goal 2026-10-05; `bplan_10m.py`, `CAPEX_10M_DESIGN.md`, results/bplan/capex10m*.json)."
+BP28a,BP28,done,(SUPERSEDED 2026-10-07: the 5 ha plan is no longer the lead; the GBP 10 M lead case (bplan_10m.py lead) already applies the BP25a cap and the 2026 labour rate; 5 ha files stay historical at CO2 0.20) Apply the BP25a yiel...
+BP28b,BP28,blocked,"(BLOCKED: needs an outbound approach to a developer or community-turbine group, the user's to make) Turbine developer at 2.9 ha: margin GBP 2.4/MWh at GBP 90; get a developer or community-turbine offer"
+BP28d,BP28,done,Sale price GBP 1.00/kg checked: infeasible (10-yr payback allows <= GBP 77/m2 capex); minimum sale price
+BP28c,BP28,done,(stated in CAPEX_10M_DESIGN.md; goes into the business plan text) 5-year payback is not reachable (opex ceiling GBP 0.65 M/yr < labour + packing + power); say so in the plan
+BP29,BP29,done,"Cache keyed on real dependencies (2026-10-05): simstore per-kind import graph + named data files (cost,"
+BP30,BP30,done,Price evidence (BP5 partly): `PRICE_EVIDENCE.md`. DEFRA Horticulture Statistics 2026 (data/hort-dataset-
+BP31,BP31,done,"Highlands screen (`bplan_highlands.py`): Inverness, Invergordon, Moray all worse than Stranraer (capex"
+BP32,BP32,done,"(DONE 2026-10-07: bplan_lit_winter.py -> results/bplan/lit_winter.json; lead + LED at 0/100/150/220 umol: cost at 8 % GBP 1.47 / 1.34 / 1.29 / 1.36 per kg, capex 9.94 / 11.27 / 11.38 / 11.78 M, winter share 11 / 24 / 28 ..."
+BP33,BP33,open,"Financing model (`finance.py`): nominal (CPI), corporation tax 25 % + full expensing (glasshouse = plant,"
+BP34,BP34,open,"Year-round study (user question 2026-10-05, `CONSTRAINTS.md`): design-of-experiments on the full model (lighting"
+BP35,BP35,open,"PLANNED RUN ON THE DESKTOP (2026-10-06, user: ""big run tomorrow on the better computer""). From lca/:"
+BP35b,BP35,open,"Wind scales with area (user 2026-10-06): routes own (SPV, judged on greenhouse + turbine cash flow), ppa"
+BP36,BP36,open,"Financing model (BP33) on the verified designs, phased; Monte Carlo on the cash-flow layer (P50/P90)"
+BP37,BP37,open,"(user, 2026-10-07) Lights allowed, capex cap REMOVED; price = slightly under import parity (user: import"
+BP37a,BP37,done,"`bplan_lit_open.py` -> results/bplan/lit_open.json (log lit_open.log): lit lead (150/200 umol, 1-2 PPA turbines, 2.9/4.4 ha),"
+BP37e,BP37,open,Add a year-1 repayment holiday / DSRA to vendor_finance; report carbon in lit_open
+BP37b,BP37,done,"`vendor_finance.py`: glasshouse supplier credit (ECA-backed, OECD Arrangement 85 % max, rate/tenor"
+BP37c,BP37,open,Heat source on the LIT design: air vs ground vs sea water (Loch Ryan). Earlier results were unlit only
+BP37d,BP37,open,Read the OECD GBP CIRR table and get one asset-finance indication to replace the PLACEHOLDER rates
+18,18,done,SCOPE.md §3.16 and §3.17; tests/test_costing.py
+19,19,open,Supermarket waste heat (SM) with real refrigeration profiles; vertical farm coupled to the glasshouse;
+20,20,done,New-machine setup: `setup_machine.ps1` + pinned requirements (2026-10-03)
+21,21,open,"GitHub: not pushed (user, 2026-10-03). When wanted: decide what may go public (third-party PDFs in"

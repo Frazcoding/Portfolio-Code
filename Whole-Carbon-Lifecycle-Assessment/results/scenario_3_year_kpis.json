@@ -1,0 +1,146 @@
+[
+ {
+  "label": "Heating demand",
+  "value": 4.533590898166109,
+  "unit": "kWh/m²",
+  "group": "Demand",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Cooling demand",
+  "value": 13.242741791482597,
+  "unit": "kWh/m²",
+  "group": "Demand",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Peak heating load",
+  "value": 291.8913365491781,
+  "unit": "kW",
+  "group": "Demand",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Peak cooling load",
+  "value": 294.1687196948266,
+  "unit": "kW",
+  "group": "Demand",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Electricity EUI (gross)",
+  "value": 82.39627641373609,
+  "unit": "kWh/m²",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Gas EUI",
+  "value": 0.0,
+  "unit": "kWh/m²",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "PV yield",
+  "value": 9.999999999999998,
+  "unit": "kWh/m²",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "PV array",
+  "value": 71.97476077507336,
+  "unit": "kWp",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Net EUI",
+  "value": 72.60036646853074,
+  "unit": "kWh/m²",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Configured net EUI (engine)",
+  "value": 55.0,
+  "unit": "kWh/m²",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Seasonal heating COP",
+  "value": 3.2733922346522792,
+  "unit": "–",
+  "group": "Plant",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Seasonal cooling EER",
+  "value": 4.213684407748506,
+  "unit": "–",
+  "group": "Plant",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Operational CO₂ 2023",
+  "value": 86.58247190897254,
+  "unit": "t",
+  "group": "Carbon",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Operational CO₂ intensity",
+  "value": 11.544329587863006,
+  "unit": "kgCO₂/m²",
+  "group": "Carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Energy cost 2023",
+  "value": 122.41677630954463,
+  "unit": "k£",
+  "group": "Cost",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Occupied hours < 20 °C",
+  "value": 0.0,
+  "unit": "h",
+  "group": "Comfort",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Occupied hours > 25 °C",
+  "value": 0.0,
+  "unit": "h",
+  "group": "Comfort",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Fabric heat loss coefficient",
+  "value": 3.3438399999999997,
+  "unit": "kW/K",
+  "group": "Fabric",
+  "dec": 2,
+  "note": ""
+ }
+]

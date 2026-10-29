@@ -1,0 +1,178 @@
+[
+ {
+  "label": "Wind generation",
+  "value": 60402.81741782402,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Wind capacity factor",
+  "value": 37.071498881661526,
+  "unit": "%",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Island demand",
+  "value": 30741.985130999998,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Electrolyser energy",
+  "value": 15855.539665037257,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Export",
+  "value": 13176.40935924978,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Import",
+  "value": 9191.382280549493,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Curtailment",
+  "value": 8453.329284895135,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Diesel station energy",
+  "value": 5.444972702031663,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Hydrogen produced",
+  "value": 301.372922845582,
+  "unit": "t",
+  "group": "Hydrogen",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Electrolyser capacity factor",
+  "value": 45.24982781117939,
+  "unit": "%",
+  "group": "Hydrogen",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Mean specific energy",
+  "value": 57.16479348331471,
+  "unit": "kWh/kg",
+  "group": "Hydrogen",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Mean cell voltage (running)",
+  "value": 1.8896053095256276,
+  "unit": "V",
+  "group": "Hydrogen",
+  "dec": 3,
+  "note": ""
+ },
+ {
+  "label": "Stack degradation (voltage)",
+  "value": 18.647999999999996,
+  "unit": "mV",
+  "group": "Hydrogen",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Water consumed",
+  "value": 3037.8390622834677,
+  "unit": "m³",
+  "group": "Hydrogen",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Recoverable heat",
+  "value": 3413.909722062049,
+  "unit": "MWh",
+  "group": "Hydrogen",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Hydrogen bunkered",
+  "value": 301.2713273225318,
+  "unit": "t",
+  "group": "Ferry",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Ferry demand met by H₂",
+  "value": 68.783408064505,
+  "unit": "%",
+  "group": "Ferry",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "MGO burned (shortfall)",
+  "value": 729.674285837989,
+  "unit": "m³",
+  "group": "Ferry",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Ferry CO₂ avoided",
+  "value": 3363.8600687860953,
+  "unit": "t",
+  "group": "Ferry",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "LCOH (8 % WACC, 20 yr, £45/MWh)",
+  "value": 7.492011113170291,
+  "unit": "£/kg",
+  "group": "Economics",
+  "dec": 2,
+  "note": "indicative: £1,400/kW PEM, £3.5 M compression, £2.5 M storage"
+ },
+ {
+  "label": "Min storage pressure",
+  "value": 48.3873803295502,
+  "unit": "bar",
+  "group": "Storage",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Max storage pressure",
+  "value": 350.71993311422574,
+  "unit": "bar",
+  "group": "Storage",
+  "dec": 0,
+  "note": ""
+ }
+]

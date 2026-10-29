@@ -1,0 +1,346 @@
+[
+ {
+  "label": "SCOP (H2: compressors + fans)",
+  "value": 3.2615567738769062,
+  "unit": "–",
+  "group": "Seasonal performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "SPF H4 (incl. backup, pumps, aux)",
+  "value": 2.960282047181979,
+  "unit": "–",
+  "group": "Seasonal performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Heat delivered by heat pump",
+  "value": 85.24876234995875,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "  of which space heating",
+  "value": 67.99740184799305,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "  of which DHW",
+  "value": 17.251360501965696,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Radiator heat to building",
+  "value": 66.59805954666125,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "DHW energy at taps",
+  "value": 17.171766032386316,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Store standing losses",
+  "value": 0.8649007655574026,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Electricity, total",
+  "value": 28.94818543464406,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "  compressors",
+  "value": 25.343679976880768,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "  fans / pumps / aux",
+  "value": 2.2008042038662463,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "  backup + legionella",
+  "value": 1.4037012538970448,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Peak site demand",
+  "value": 32.49890423383912,
+  "unit": "kW",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Electricity cost (Agile)",
+  "value": 6953.754881850409,
+  "unit": "£",
+  "group": "Cost & carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Average price paid",
+  "value": 24.021384337024546,
+  "unit": "p/kWh",
+  "group": "Cost & carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Agile year-average price",
+  "value": 21.082909878424655,
+  "unit": "p/kWh",
+  "group": "Cost & carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Gas boiler counterfactual cost",
+  "value": 5901.964983978351,
+  "unit": "£",
+  "group": "Cost & carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Operational CO₂",
+  "value": 4.865065399460025,
+  "unit": "t",
+  "group": "Cost & carbon",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Carbon intensity of heat",
+  "value": 56.772006708596734,
+  "unit": "gCO₂/kWh",
+  "group": "Cost & carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Gas boiler counterfactual CO₂",
+  "value": 17.410796702736132,
+  "unit": "t",
+  "group": "Cost & carbon",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Design heat loss",
+  "value": 36.55,
+  "unit": "kW",
+  "group": "Design",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Heat loss coefficient",
+  "value": 1.462,
+  "unit": "kW/K",
+  "group": "Design",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Compressor run hours",
+  "value": 2066.3035571918163,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Compressor starts",
+  "value": 2851.0,
+  "unit": "",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Reverse-cycle defrosts",
+  "value": 1066.0,
+  "unit": "",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Condensate + frost removed",
+  "value": 22.0078756809188,
+  "unit": "m³",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Hours in DHW mode",
+  "value": 122.16535194710623,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Hours at max LP speed",
+  "value": 264.0,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Max HP discharge temperature",
+  "value": 100.50409610622756,
+  "unit": "°C",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Min evaporating temperature",
+  "value": -13.153164027903216,
+  "unit": "°C",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Mean injection ratio (running)",
+  "value": 0.2307248476664362,
+  "unit": "–",
+  "group": "Operation",
+  "dec": 3,
+  "note": ""
+ },
+ {
+  "label": "Unmet occupied hours (air > 1 K below)",
+  "value": 0.0,
+  "unit": "h",
+  "group": "Comfort",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Mean operative temp, occupied heating hours",
+  "value": 20.6284528239612,
+  "unit": "°C",
+  "group": "Comfort",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Min indoor temperature",
+  "value": 17.99999999999999,
+  "unit": "°C",
+  "group": "Comfort",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Min DHW outlet temperature",
+  "value": 49.076445953160594,
+  "unit": "°C",
+  "group": "Comfort",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Annual exergy efficiency",
+  "value": 36.97352671558308,
+  "unit": "%",
+  "group": "Exergy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · LP compressors",
+  "value": 4.426421878895845,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · HP compressor",
+  "value": 4.606983293264934,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · Condenser",
+  "value": 2.0095159673913683,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · Evaporator",
+  "value": 1.6038579640419781,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · HP EEV",
+  "value": 1.0314465959530672,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · LP EEV",
+  "value": 0.7339247257803044,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · Flash + mixing",
+  "value": 0.03742464765395178,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 2,
+  "note": ""
+ }
+]

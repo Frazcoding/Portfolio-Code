@@ -1,0 +1,18 @@
+deployment:
+  basePath: ""
+
+appearance:
+  default: light
+  switcher: false
+
+theme:
+  colors:
+    base-content-muted:
+      light: "#000000"
+      dark: "#000000"
+
+plugins:
+  components:
+    "@evidence-dev/core-components": {}
+  datasources:
+    "@evidence-dev/csv": {}

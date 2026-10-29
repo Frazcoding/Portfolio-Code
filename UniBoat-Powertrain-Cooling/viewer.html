@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UniBoat Electric Hydrofoil · Two-Phase Cooling · Annual Simulation Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Monaco Energy Class catamaran, 10 kWh cap · pumped R1233zd(E) loop · 2023 season and race day">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../viewer_core/viewer.css">
+<script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand"><h1>UniBoat Electric Hydrofoil · Two-Phase Cooling</h1><span class="sub">Monaco Energy Class catamaran, 10 kWh cap · pumped R1233zd(E) loop · 2023 season and race day</span></div>
+    <nav class="runs" aria-label="Scenario and display options">
+      <div class="pick"><label for="scenario">Scenario</label><select id="scenario"></select></div>
+      <label class="toggle"><input type="checkbox" id="labelsToggle" checked> Tags</label>
+      <label class="toggle"><input type="checkbox" id="spToggle" checked> State points</label>
+      <label class="toggle"><input type="checkbox" id="flowToggle" checked> Flow</label>
+      <label class="toggle" title="Ambient occlusion (turn off on slow machines)"><input type="checkbox" id="aoToggle" checked> AO</label>
+      <span class="navsep"></span>
+      <a href="../index.html" class="btn" title="Return to portfolio hub">Hub ↗</a>
+    </nav>
+  </header>
+  <main>
+    <div class="stage">
+      <div id="three"></div>
+      <div id="tags"></div>
+      <div id="tip"></div>
+      <div id="inspect"></div>
+      <div id="modelStatus" role="status"></div>
+      <div class="view-tools"><button class="btn" id="topView" type="button">Top</button><button class="btn" id="frontView" type="button">Front</button><button class="btn" id="resetView" type="button">Reset</button></div>
+      <div class="legend" id="legend"></div>
+      <div class="hint">drag orbit · scroll zoom · right-drag pan · click equipment for specs</div>
+    </div>
+    <aside>
+      <div class="clockbar">
+        <div><div class="d" id="clockDate">–</div><div class="t" id="clock">–</div></div>
+        <span class="run-tag" id="scenarioBadge">–</span>
+      </div>
+      <div class="tabs" role="tablist">
+        <button data-tab="overview" aria-selected="true">Overview</button>
+        <button data-tab="sp" id="tabSp" aria-selected="false">State points</button>
+        <button data-tab="diag" id="tabDiag" aria-selected="false">Diagrams</button>
+        <button data-tab="vars" aria-selected="false">Variables</button>
+        <button data-tab="kpi" aria-selected="false">Annual KPIs</button>
+      </div>
+      <div class="tabpanes">
+        <section class="pane on" data-tab="overview">
+          <div class="cmds" id="cmds"></div>
+          <h2>Live telemetry at cursor</h2>
+          <table><thead id="sensHead"><tr><th>Channel</th><th>Sim.</th><th>Ref.</th><th>Δ</th></tr></thead><tbody id="sens"></tbody></table>
+          <h2 id="ledgerTitle">Energy flows</h2>
+          <div class="ledger" id="ledger"></div>
+          <p class="note" id="sensorNote"></p>
+          <p class="note" id="provenance"></p>
+        </section>
+        <section class="pane" data-tab="sp" id="spPane"><div id="spTables"></div>
+          <p class="note">Hourly-mean states from full CoolProp equation-of-state solutions. Hover a row to locate the point in 3D.</p></section>
+        <section class="pane" data-tab="diag" id="diagPane"></section>
+        <section class="pane" data-tab="vars">
+          <input class="vsearch" id="vsearch" type="search" placeholder="Search channels… (e.g. enthalpy, pressure, 5_T)">
+          <p class="note" id="varCount" style="margin:0 0 6px"></p>
+          <div class="vfocus" id="vfocus"><b id="vfTitle"></b><div class="stats" id="vfStats"></div><canvas id="monthly"></canvas></div>
+          <div id="vars"></div>
+        </section>
+        <section class="pane" data-tab="kpi"><div id="kpis"></div></section>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <div class="ctrl">
+      <button id="play" type="button">Play</button>
+      <div class="row"><button class="ghost" id="stepBack" type="button" title="Previous sample (←)">◀</button><button class="ghost" id="stepFwd" type="button" title="Next sample (→)">▶</button></div>
+      <label for="speed">Playback
+        <select id="speed"><option value="1">1 s / s</option><option value="10">10 s / s</option><option value="60" selected>1 min / s</option><option value="3600">1 h / s</option><option value="86400">1 day / s</option><option value="604800">1 week / s</option></select>
+      </label>
+    </div>
+    <div class="chartwrap">
+      <div class="charttools">
+        <button class="btn" type="button" data-win="1">Hour</button><button class="btn" type="button" data-win="24">Day</button><button class="btn" type="button" data-win="168">Week</button><button class="btn on" type="button" data-win="0">All</button>
+        <span class="sp"></span><span class="info" id="winInfo"></span>
+      </div>
+      <canvas id="chart" aria-label="Timeline: click or drag to seek, scroll to zoom"></canvas>
+      <canvas id="overview" aria-label="Full-period overview: drag to move the window"></canvas>
+    </div>
+  </footer>
+</div>
+<script type="application/json" id="viewer-config">{"title": "UniBoat Electric Hydrofoil · Two-Phase Cooling", "scenarios": [{"key": "season", "name": "Monaco 2023 · training season + race week (hourly)", "badge": "Season 2023"}, {"key": "race", "name": "Monaco 8 July 2023 · sprint heats at 1 s", "badge": "Race · 1 s"}], "scene": {"glb": "uniboat_cooling.glb", "meta": "uniboat_cooling_meta.json", "fov": 34, "groundTex": "", "groundRadius": 60, "camera": {"pos": [11.0, 5.5, 12.5], "target": [-0.6, 0.3, 0.0]}, "bindings": [{"type": "translate", "nodes": ["Boat"], "key": "foil", "range": [0, 100], "axis": "y", "from": 0.0, "to": 0.95}, {"type": "spin", "nodes": ["Propeller"], "key": "v", "scale": 1.2, "axis": "y"}, {"type": "color", "nodes": ["Battery_Pack"], "key": "T_b", "range": [15, 50], "mix": 0.6}, {"type": "color", "nodes": ["Inverter"], "key": "T_i", "range": [15, 50], "mix": 0.6}, {"type": "color", "nodes": ["Motor"], "key": "T_m", "range": [15, 50], "mix": 0.6}], "flows": [{"path": "r_pump_batt", "key": "m_r", "colorKey": "2_T", "range": [15, 50], "scale": 20.0, "spacing": 0.05, "radius": 0.012}, {"path": "r_batt_inv", "key": "m_r", "colorKey": "3_T", "range": [15, 50], "scale": 20.0, "spacing": 0.05, "radius": 0.012}, {"path": "r_inv_motor", "key": "m_r", "colorKey": "4_T", "range": [15, 50], "scale": 20.0, "spacing": 0.05, "radius": 0.012}, {"path": "r_motor_cond", "key": "m_r", "colorKey": "5_T", "range": [15, 50], "scale": 20.0, "spacing": 0.05, "radius": 0.012}, {"path": "r_cond_pump", "key": "m_r", "colorKey": "6_T", "range": [15, 50], "scale": 20.0, "spacing": 0.05, "radius": 0.012}], "tags": [{"label": "UniBoat", "anchor": "BoatTag", "fmt": "{v|1} kt · {P_elec|1} kW · SOC {soc|0} %"}, {"label": "Battery 10 kWh", "anchor": "Battery", "fmt": "{T_b|1} °C · {Q_b|2} kW heat"}, {"label": "Motor", "anchor": "Motor", "fmt": "{T_m|1} °C · {Q_m|2} kW heat"}, {"label": "Sea", "anchor": "Sea", "fmt": "{T_sea|1} °C · waves {wave_h|2} m"}]}}</script>
+<script type="module" src="../viewer_core/viewer.js"></script>
+</body>
+</html>

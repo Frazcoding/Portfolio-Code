@@ -1,0 +1,284 @@
+[
+ {
+  "site": "site_001",
+  "name": "Cameronbridge distillery",
+  "geometry": {
+   "floor_m2": 12337.34224854736,
+   "length_m": 363.61281138723706,
+   "width_m": 33.9298887777869,
+   "n_spans": 2,
+   "span_w": 16.96494438889345,
+   "gutter_h": 5.5136408575235025,
+   "ridge_bearing": 0.0,
+   "glazing": "dbl_ar",
+   "roof_glazed_m2": 13098.345388280839,
+   "wall_glazed_m2": 4435.133173105142,
+   "steel_t": 102.199880152861,
+   "n_columns": 246,
+   "pitch": 19.626735840936743,
+   "form": "pitched"
+  },
+  "items": [
+   {
+    "key": "steel",
+    "unit": "t",
+    "qty": 102.199880152861,
+    "rate": 4890.0,
+    "gbp": 499757.4139474903,
+    "tier": "industry cost model",
+    "placeholder": false
+   },
+   {
+    "key": "aluminium",
+    "unit": "kg",
+    "qty": 22442.852558574057,
+    "rate": 6.0,
+    "gbp": 134657.11535144434,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "glass_dbl_ar_m2",
+    "unit": "m2",
+    "qty": 17533.478561385982,
+    "rate": 65.0,
+    "gbp": 1139676.1064900889,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "concrete",
+    "unit": "m3",
+    "qty": 461.44198140190025,
+    "rate": 102.0,
+    "gbp": 47067.08210299382,
+    "tier": "trade price",
+    "placeholder": false
+   },
+   {
+    "key": "pir_panel_m2",
+    "unit": "m2",
+    "qty": 0.0,
+    "rate": 52.0,
+    "gbp": 0.0,
+    "tier": "retail",
+    "placeholder": false
+   },
+   {
+    "key": "heating_pipe_m",
+    "unit": "m",
+    "qty": 27759.02005923156,
+    "rate": 8.0,
+    "gbp": 222072.16047385248,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "energy_screen_m2",
+    "unit": "m2",
+    "qty": 12337.34224854736,
+    "rate": 6.0,
+    "gbp": 74024.05349128417,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   }
+  ],
+  "plant": {
+   "hp_kW_design": 1816.4214680212478,
+   "wind_kW": 0.0,
+   "batt_kWh": 0.0,
+   "lp_store_kWh": 0.0,
+   "lp_hp_kW_th": 1816.4214680212478,
+   "lp_wind_kW": 19.383411444485468,
+   "lp_batt_kWh": 0.0
+  }
+ },
+ {
+  "site": "site_002",
+  "name": "Girvan + Ailsa Bay distilleries",
+  "geometry": {
+   "floor_m2": 12469.527908275675,
+   "length_m": 342.3949494466349,
+   "width_m": 36.41855094074381,
+   "n_spans": 2,
+   "span_w": 18.209275470371907,
+   "gutter_h": 6.613305942240323,
+   "ridge_bearing": 0.0,
+   "glazing": "dbl_ar",
+   "roof_glazed_m2": 13326.985494722032,
+   "wall_glazed_m2": 5052.1061704915055,
+   "steel_t": 126.22314571990485,
+   "n_columns": 234,
+   "pitch": 20.66495652648707,
+   "form": "pitched"
+  },
+  "items": [
+   {
+    "key": "steel",
+    "unit": "t",
+    "qty": 126.22314571990485,
+    "rate": 4890.0,
+    "gbp": 617231.1825703348,
+    "tier": "industry cost model",
+    "placeholder": false
+   },
+   {
+    "key": "aluminium",
+    "unit": "kg",
+    "qty": 23525.23733147333,
+    "rate": 6.0,
+    "gbp": 141151.42398884,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "glass_dbl_ar_m2",
+    "unit": "m2",
+    "qty": 18379.09166521354,
+    "rate": 65.0,
+    "gbp": 1194640.95823888,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "concrete",
+    "unit": "m3",
+    "qty": 459.0050638704605,
+    "rate": 102.0,
+    "gbp": 46818.51651478697,
+    "tier": "trade price",
+    "placeholder": false
+   },
+   {
+    "key": "pir_panel_m2",
+    "unit": "m2",
+    "qty": 0.0,
+    "rate": 52.0,
+    "gbp": 0.0,
+    "tier": "retail",
+    "placeholder": false
+   },
+   {
+    "key": "heating_pipe_m",
+    "unit": "m",
+    "qty": 28056.43779362027,
+    "rate": 8.0,
+    "gbp": 224451.50234896215,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "energy_screen_m2",
+    "unit": "m2",
+    "qty": 12469.527908275675,
+    "rate": 6.0,
+    "gbp": 74817.16744965405,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   }
+  ],
+  "plant": {
+   "hp_kW_design": 1964.467860489505,
+   "wind_kW": 61.93074191360498,
+   "batt_kWh": 0.0,
+   "lp_store_kWh": 73.85456958472628,
+   "lp_hp_kW_th": 1964.467860489505,
+   "lp_wind_kW": 42.77859257819416,
+   "lp_batt_kWh": 0.0
+  }
+ },
+ {
+  "site": "site_008",
+  "name": "North British distillery",
+  "geometry": {
+   "floor_m2": 10000.0,
+   "length_m": 48.21998020457956,
+   "width_m": 207.38291383724538,
+   "n_spans": 7,
+   "span_w": 29.626130548177912,
+   "gutter_h": 5.205627918386363,
+   "ridge_bearing": 90.0,
+   "glazing": "dbl_ar",
+   "roof_glazed_m2": 12040.017614741795,
+   "wall_glazed_m2": 5111.887155422115,
+   "steel_t": 75.21214736132781,
+   "n_columns": 96,
+   "pitch": 21.89016965835227,
+   "form": "arch"
+  },
+  "items": [
+   {
+    "key": "steel",
+    "unit": "t",
+    "qty": 75.21214736132781,
+    "rate": 4890.0,
+    "gbp": 367787.400596893,
+    "tier": "industry cost model",
+    "placeholder": false
+   },
+   {
+    "key": "aluminium",
+    "unit": "kg",
+    "qty": 21954.438105809808,
+    "rate": 6.0,
+    "gbp": 131726.62863485885,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "glass_dbl_ar_m2",
+    "unit": "m2",
+    "qty": 17151.90477016391,
+    "rate": 65.0,
+    "gbp": 1114873.810060654,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "concrete",
+    "unit": "m3",
+    "qty": 307.4927352590751,
+    "rate": 102.0,
+    "gbp": 31364.258996425662,
+    "tier": "trade price",
+    "placeholder": false
+   },
+   {
+    "key": "pir_panel_m2",
+    "unit": "m2",
+    "qty": 0.0,
+    "rate": 52.0,
+    "gbp": 0.0,
+    "tier": "retail",
+    "placeholder": false
+   },
+   {
+    "key": "heating_pipe_m",
+    "unit": "m",
+    "qty": 22500.0,
+    "rate": 8.0,
+    "gbp": 180000.0,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   },
+   {
+    "key": "energy_screen_m2",
+    "unit": "m2",
+    "qty": 10000.0,
+    "rate": 6.0,
+    "gbp": 60000.0,
+    "tier": "needs quote (placeholder)",
+    "placeholder": true
+   }
+  ],
+  "plant": {
+   "hp_kW_design": 2033.6494636283976,
+   "wind_kW": 0.0,
+   "batt_kWh": 0.0,
+   "lp_store_kWh": 0.0,
+   "lp_hp_kW_th": 2033.6494636283976,
+   "lp_wind_kW": 16.245582858168987,
+   "lp_batt_kWh": 0.0
+  }
+ }
+]

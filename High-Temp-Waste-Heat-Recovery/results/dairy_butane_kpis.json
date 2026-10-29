@@ -1,0 +1,258 @@
+[
+ {
+  "label": "Seasonal COP (compressor)",
+  "value": 3.622408763929801,
+  "unit": "–",
+  "group": "Performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Seasonal system COP (incl. aux)",
+  "value": 3.2471555099041005,
+  "unit": "–",
+  "group": "Performance",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Mean exergy efficiency (running)",
+  "value": 55.869476421324194,
+  "unit": "%",
+  "group": "Performance",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Heat pump heat delivered",
+  "value": 3493.6510881138383,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Waste heat recovered",
+  "value": 2595.6227093698208,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Process heat demand",
+  "value": 3478.6658151419815,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Heat pump coverage of demand",
+  "value": 100.0,
+  "unit": "%",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Boiler top-up heat",
+  "value": 6.460446615580691,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Electricity (HP + aux)",
+  "value": 1075.9112329107445,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Gas displaced",
+  "value": 3945.687918780001,
+  "unit": "MWh",
+  "group": "Energy",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Run hours",
+  "value": 6418.5,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Starts",
+  "value": 2971.0,
+  "unit": "",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Mean capacity when running",
+  "value": 77.44024252410965,
+  "unit": "%",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Max discharge temperature",
+  "value": 112.47868962988301,
+  "unit": "°C",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Hours source-limited",
+  "value": 1435.0,
+  "unit": "h",
+  "group": "Operation",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Mean effluent discharge temp (running)",
+  "value": 32.07714675061193,
+  "unit": "°C",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Heat lost to sump overflow",
+  "value": 342.6182512214762,
+  "unit": "MWh",
+  "group": "Operation",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Energy cost, gas-only baseline",
+  "value": 271.6521759279056,
+  "unit": "k£",
+  "group": "Economics",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Energy cost with heat pump",
+  "value": 253.81689899939943,
+  "unit": "k£",
+  "group": "Economics",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Annual saving",
+  "value": 17.835276928506183,
+  "unit": "k£",
+  "group": "Economics",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Electricity / gas price ratio",
+  "value": 3.4260748882605814,
+  "unit": "–",
+  "group": "Economics",
+  "dec": 2,
+  "note": "consumption-weighted electricity price over gas price incl. CCL"
+ },
+ {
+  "label": "Break-even system COP vs boiler",
+  "value": 3.0149459016693116,
+  "unit": "–",
+  "group": "Economics",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Installed cost (estimate)",
+  "value": 487.5,
+  "unit": "k£",
+  "group": "Economics",
+  "dec": 0,
+  "note": "£/kW benchmark, not a quotation"
+ },
+ {
+  "label": "Simple payback",
+  "value": 27.333469614975648,
+  "unit": "years",
+  "group": "Economics",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "CO₂, gas-only baseline",
+  "value": 723.0090654425778,
+  "unit": "t",
+  "group": "Carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "CO₂ with heat pump",
+  "value": 172.25771858456022,
+  "unit": "t",
+  "group": "Carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "CO₂ avoided",
+  "value": 550.7513468580175,
+  "unit": "t",
+  "group": "Carbon",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · compressor",
+  "value": 254.00645272425567,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · condenser",
+  "value": 107.22171878274109,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · evaporator",
+  "value": 60.24264338317397,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · valves",
+  "value": 42.89360560240457,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Exergy destroyed · economiser",
+  "value": 27.87086224750779,
+  "unit": "MWh",
+  "group": "Exergy",
+  "dec": 1,
+  "note": ""
+ }
+]

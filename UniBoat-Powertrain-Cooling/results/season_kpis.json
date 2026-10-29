@@ -1,0 +1,106 @@
+[
+ {
+  "label": "Sessions",
+  "value": 111.0,
+  "unit": "",
+  "group": "Season",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "On-water hours",
+  "value": 111.0,
+  "unit": "h",
+  "group": "Season",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Energy drawn",
+  "value": 930.8443885228238,
+  "unit": "kWh",
+  "group": "Season",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Shore charging energy",
+  "value": 1000.9079446481976,
+  "unit": "kWh",
+  "group": "Season",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Sessions ending in limp mode (10 kWh cap)",
+  "value": 4.0,
+  "unit": "",
+  "group": "Season",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Peak battery heat",
+  "value": 2.9404132876395606,
+  "unit": "kW",
+  "group": "Thermal",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Max battery temperature",
+  "value": 35.9906865987328,
+  "unit": "°C",
+  "group": "Thermal",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Max inverter junction",
+  "value": 36.80149864760477,
+  "unit": "°C",
+  "group": "Thermal",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Max motor winding",
+  "value": 36.648056734635645,
+  "unit": "°C",
+  "group": "Thermal",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Max saturation temperature",
+  "value": 36.1,
+  "unit": "°C",
+  "group": "Thermal",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Hours T_sat floated above set-point",
+  "value": 0.0,
+  "unit": "h",
+  "group": "Thermal",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Mean sea temperature (sessions)",
+  "value": 21.211711711711715,
+  "unit": "°C",
+  "group": "Thermal",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Pump energy",
+  "value": 0.005717628235797718,
+  "unit": "kWh",
+  "group": "Thermal",
+  "dec": 3,
+  "note": ""
+ }
+]

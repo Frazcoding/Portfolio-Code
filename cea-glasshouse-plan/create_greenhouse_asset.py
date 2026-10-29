@@ -16,6 +16,7 @@ import numpy as np
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
+sys.path.insert(0, str(HERE.parents[1] / 'Tools'))
 
 from blendlib import parts as pt  # noqa: E402
 from blendlib.core import (MB, R, T, align, anchor, box, cyl, decal_mat, empty, export, extrude, lathe, mat, pbr,  # noqa: E402

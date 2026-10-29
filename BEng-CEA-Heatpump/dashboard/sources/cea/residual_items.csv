@@ -1,0 +1,9 @@
+key,label,gbp_m2,fixed_gbp,life_yr,tier,rfq_to
+install_labour,Installation labour,30.0,0.0,30,placeholder,structure supplier
+climate_computer,"Climate computer, sensors, controllers",9.8,27000.0,10,vendor price list,greenhouse installer
+climate_wiring,Climate-system wiring and actuator cabling,4.2,0.0,30,placeholder,greenhouse installer
+vents,"Roof vent racks, motors, actuators, insect screens",12.0,0.0,30,placeholder,structure supplier
+irrigation,"Irrigation, fertigation unit, water treatment, tanks, drain recirculation",14.0,60000.0,20,placeholder,irrigation specialist
+crop_wires,"Crop hanging wires, rails, trolleys, gutters or bed edging",8.0,0.0,15,placeholder,greenhouse installer
+electrics,"Electrical distribution, lighting, plant-room wiring, earthing",6.0,20000.0,30,placeholder,electrical contractor
+design_pm,"Design, permits, project management and unitemised remainder",,60000.0,30,placeholder,structure supplier

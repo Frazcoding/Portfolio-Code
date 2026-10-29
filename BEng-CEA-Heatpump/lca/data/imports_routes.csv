@@ -1,0 +1,10 @@
+origin,iso3,mode,farm_region,road_to_port_km,port,port_lat,port_lon,road_km_europe,air_from,air_lat,air_lon,confidence,source
+Peru,PER,sea,"La Libertad / Lambayeque coast",400,Paita,-5.08,-81.11,0,Lima,-12.02,-77.11,estimated,"Coastal export farms (Chavimochic, Olmos) to Paita; Callao is the other main port"
+Chile,CHL,sea,"Valparaiso region (Quillota)",130,San Antonio,-33.59,-71.62,0,Santiago,-33.39,-70.79,estimated,"Pedreschi et al. (2022) Foods 11:1807 use Quillota origin"
+Colombia,COL,sea,"Antioquia / Caldas",650,Cartagena,10.40,-75.53,0,Bogota,4.70,-74.15,estimated,"Hass belt in central Andes, export via Cartagena (Turbo is shorter, ~350 km)"
+South Africa,ZAF,sea,"Limpopo (Tzaneen)",1810,Cape Town,-33.91,18.43,0,Johannesburg,-26.14,28.25,measured,"Blaauw et al. (2024): Tzaneen to Cape Town 1,810 km by road, sea to Rotterdam 12,500 km"
+Israel,ISR,sea,"Coastal plain / Galilee",100,Ashdod,31.82,34.64,0,Tel Aviv,32.01,34.89,estimated,""
+Kenya,KEN,sea,"Central highlands (Murang'a)",550,Mombasa,-4.06,39.67,0,Nairobi,-1.32,36.93,estimated,"Kenyan avocados go mostly by reefer sea freight; air is used for early-season fruit"
+Mexico,MEX,sea,"Michoacan (Uruapan)",750,Veracruz,19.21,-96.13,0,Mexico City,19.44,-99.07,estimated,"Atlantic port for European shipments"
+Morocco,MAR,road,"Gharb / Loukkos (Larache-Kenitra)",150,,,,2600,,,,estimated,"Truck via Tanger Med - Algeciras ferry, then road through Spain and France to the UK"
+Spain,ESP,road,"Axarquia (Malaga)",0,,,,2350,,,,estimated,"Reefer truck Malaga to UK Midlands via Channel crossing; Pedreschi et al. (2022) Spain-to-European-capitals road case"

@@ -1,0 +1,1008 @@
+{
+ "site_000": {
+  "name": "Caledonian Paper Mill, Shewalton, Irvine",
+  "n": 5,
+  "n_big": 0,
+  "nearest_km": 1.3955758720666078,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 1.3955758720666078,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 1.6421716092582683,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.0139983698513766,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.290039649795039,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.384313332238215,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_001": {
+  "name": "Cameronbridge distillery",
+  "n": 11,
+  "n_big": 7,
+  "nearest_km": 1.901866531261835,
+  "nearest_big_km": 1.901866531261835,
+  "mw_known": 17.75,
+  "turbines": [
+   {
+    "km": 1.901866531261835,
+    "kw": 750.0,
+    "name": ""
+   },
+   {
+    "km": 2.175431162784088,
+    "kw": 7000.0,
+    "name": "Levenmouth demonstration turbine (Fife Energy Park)"
+   },
+   {
+    "km": 2.325809307861032,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.1095600108337176,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.419296730428417,
+    "kw": 2000.0,
+    "name": ""
+   },
+   {
+    "km": 3.911891252533397,
+    "kw": 2000.0,
+    "name": ""
+   },
+   {
+    "km": 4.115702467839452,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.437638213569221,
+    "kw": 2000.0,
+    "name": ""
+   },
+   {
+    "km": 4.679892842482875,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.740964840689691,
+    "kw": 2000.0,
+    "name": ""
+   },
+   {
+    "km": 4.974270120341357,
+    "kw": 2000.0,
+    "name": ""
+   }
+  ]
+ },
+ "site_002": {
+  "name": "Girvan + Ailsa Bay distilleries",
+  "n": 18,
+  "n_big": 16,
+  "nearest_km": 1.4991139299518734,
+  "nearest_big_km": 3.101275977538687,
+  "mw_known": 38.8,
+  "turbines": [
+   {
+    "km": 1.4991139299518734,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.885983868651137,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.101275977538687,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.1171359943896584,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.3186765782326786,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.366150357377895,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.39236644164362,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.5758511440664176,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.6196977683570997,
+    "kw": 2500.0,
+    "name": ""
+   },
+   {
+    "km": 3.62484707660764,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.688303938812503,
+    "kw": 2350.0,
+    "name": ""
+   },
+   {
+    "km": 3.9193276217767474,
+    "kw": 2500.0,
+    "name": ""
+   },
+   {
+    "km": 4.245380216471496,
+    "kw": 2500.0,
+    "name": ""
+   },
+   {
+    "km": 4.381518515383442,
+    "kw": 2500.0,
+    "name": ""
+   },
+   {
+    "km": 4.561473371200101,
+    "kw": 2500.0,
+    "name": ""
+   },
+   {
+    "km": 4.711774550757298,
+    "kw": 2500.0,
+    "name": ""
+   },
+   {
+    "km": 4.85341153586441,
+    "kw": 2500.0,
+    "name": ""
+   },
+   {
+    "km": 4.994029583068083,
+    "kw": 2500.0,
+    "name": ""
+   }
+  ]
+ },
+ "site_003": {
+  "name": "Station Rd, Cowie",
+  "n": 5,
+  "n_big": 4,
+  "nearest_km": 3.3578745968545203,
+  "nearest_big_km": 3.3578745968545203,
+  "mw_known": 5.25,
+  "turbines": [
+   {
+    "km": 3.3578745968545203,
+    "kw": 800.0,
+    "name": ""
+   },
+   {
+    "km": 3.575239051798884,
+    "kw": 800.0,
+    "name": ""
+   },
+   {
+    "km": 3.5842755984388153,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.80549456061349,
+    "kw": 800.0,
+    "name": ""
+   },
+   {
+    "km": 4.782723846492273,
+    "kw": 2850.0,
+    "name": "Todhill Wind Farm - WT01"
+   }
+  ]
+ },
+ "site_004": {
+  "name": "EDINBURGH, SEAFIELD WWTW",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_005": {
+  "name": "Norbord Ltd, Morayhill, Inverness",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_006": {
+  "name": "DALMUIR PFI - DALMUIR WWTW",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_007": {
+  "name": "SHIELDHALL S.T.W.",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 4.330483648018308,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 4.330483648018308,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_008": {
+  "name": "North British distillery",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_009": {
+  "name": "Strathclyde distillery",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 3.634201308524773,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 3.634201308524773,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_010": {
+  "name": "MEADOWHEAD W.W.T. SERVICE",
+  "n": 5,
+  "n_big": 0,
+  "nearest_km": 0.5596143788359248,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 0.5596143788359248,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 0.9569029897616689,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 1.4193235548296226,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.420601197596968,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.5025752117213855,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_011": {
+  "name": "Invergordon distillery",
+  "n": 2,
+  "n_big": 0,
+  "nearest_km": 3.4632330290957003,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 3.4632330290957003,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.5316247443256468,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_012": {
+  "name": "NIGG WWTW- ABERDEEN PFI",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 1.9448013321879098,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 1.9448013321879098,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_013": {
+  "name": "Energen Biogas Ltd, Cumbernauld",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_014": {
+  "name": "DALDOWIE S.T.W.",
+  "n": 5,
+  "n_big": 0,
+  "nearest_km": 3.2394334021860693,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 3.2394334021860693,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.247975317474543,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.901757793255302,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.9037052410259796,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.019787793261506,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_015": {
+  "name": "TAY PFI - HATTON WWTW",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_016": {
+  "name": "DALMARNOCK S.T.W.",
+  "n": 2,
+  "n_big": 1,
+  "nearest_km": 2.235813893352273,
+  "nearest_big_km": 4.187277683456066,
+  "mw_known": 3.0,
+  "turbines": [
+   {
+    "km": 2.235813893352273,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.187277683456066,
+    "kw": 3000.0,
+    "name": "Cathkin Braes Wind Farm"
+   }
+  ]
+ },
+ "site_017": {
+  "name": "Starlaw distillery",
+  "n": 2,
+  "n_big": 0,
+  "nearest_km": 2.29080756611039,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 2.29080756611039,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.36784640150751,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_018": {
+  "name": "Loch Lomond distillery",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_019": {
+  "name": "Glenfiddich",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_020": {
+  "name": "LEVEN VALLEY, LEVENMOUTH WWTW",
+  "n": 8,
+  "n_big": 4,
+  "nearest_km": 1.0072055014950139,
+  "nearest_big_km": 1.0072055014950139,
+  "mw_known": 11.75,
+  "turbines": [
+   {
+    "km": 1.0072055014950139,
+    "kw": 750.0,
+    "name": ""
+   },
+   {
+    "km": 2.0712620362631147,
+    "kw": 7000.0,
+    "name": "Levenmouth demonstration turbine (Fife Energy Park)"
+   },
+   {
+    "km": 3.2977019130418124,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.010358575623534,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.26132103512499,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.305992630652096,
+    "kw": 2000.0,
+    "name": ""
+   },
+   {
+    "km": 4.778176873122533,
+    "kw": 2000.0,
+    "name": ""
+   },
+   {
+    "km": 4.811703834337733,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_021": {
+  "name": "LAIGHPARK   S.T.W.",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_022": {
+  "name": "The Macallan distillery",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_023": {
+  "name": "Sapphire Mill, Leslie, Fife",
+  "n": 14,
+  "n_big": 0,
+  "nearest_km": 1.9513240042694033,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 1.9513240042694033,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.070175089805813,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.792985628226169,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.8021931827008886,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.820008192326462,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.889777735984013,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.8898141142947797,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.8906930955957013,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.9267458206791788,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.313791209352939,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.333344897893875,
+    "kw": null,
+    "name": "Noble Foods"
+   },
+   {
+    "km": 4.446384103905926,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.618920068562345,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.787952661709948,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_024": {
+  "name": "Egger, Barony Rd, Ayr",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 4.847903590886894,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 4.847903590886894,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_025": {
+  "name": "Glen Ord distillery",
+  "n": 2,
+  "n_big": 0,
+  "nearest_km": 4.592739514279338,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 4.592739514279338,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.709317068675976,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_026": {
+  "name": "Earnside Energy Ltd, Glenfarg",
+  "n": 7,
+  "n_big": 0,
+  "nearest_km": 0.3185951397796249,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 0.3185951397796249,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 0.32164179926749287,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 0.5405408510656587,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 0.6804154009343755,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.100340764059451,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.12886238577355,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.925871915047107,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_027": {
+  "name": "Dundas Chemical Co, Mosspark, Dumfries",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 2.4421707655324627,
+  "nearest_big_km": null,
+  "mw_known": 0.0075,
+  "turbines": [
+   {
+    "km": 2.4421707655324627,
+    "kw": 7.5,
+    "name": ""
+   }
+  ]
+ },
+ "site_028": {
+  "name": "The Creamery, Commerce Rd, Stranraer, Wigtown",
+  "n": 11,
+  "n_big": 0,
+  "nearest_km": 3.006917960290482,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 3.006917960290482,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.763124088691605,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.8609891504691607,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 3.943236887576289,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.343891927516084,
+    "kw": null,
+    "name": "North Rhins"
+   },
+   {
+    "km": 4.4026268535404975,
+    "kw": null,
+    "name": "North Rhins"
+   },
+   {
+    "km": 4.7810986575361465,
+    "kw": null,
+    "name": "North Rhins"
+   },
+   {
+    "km": 4.794987384122885,
+    "kw": null,
+    "name": "North Rhins"
+   },
+   {
+    "km": 4.803716721998834,
+    "kw": null,
+    "name": "North Rhins"
+   },
+   {
+    "km": 4.813129514270781,
+    "kw": null,
+    "name": "North Rhins"
+   },
+   {
+    "km": 4.866036526038531,
+    "kw": null,
+    "name": "North Rhins"
+   }
+  ]
+ },
+ "site_029": {
+  "name": "EAST CALDER WWTW",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 2.800195105012863,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 2.800195105012863,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_030": {
+  "name": "PERTH CITY WWTP",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_031": {
+  "name": "DALDERSE WWTW",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_032": {
+  "name": "The Glenlivet distillery",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_033": {
+  "name": "INVERCLYDE W.W.T. SERVICE",
+  "n": 3,
+  "n_big": 0,
+  "nearest_km": 4.298853547203919,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 4.298853547203919,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.8919332271422755,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 4.98812095206547,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_034": {
+  "name": "ALLANFEARN WWTP, INVERNESS",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_035": {
+  "name": "Caledonian Proteins, Biggar Rd, Newarthill",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 4.106380511647171,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 4.106380511647171,
+    "kw": null,
+    "name": "Damhead Farm"
+   }
+  ]
+ },
+ "site_036": {
+  "name": "Dalmunach distillery",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_037": {
+  "name": "Roseisle distillery",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 0.5075329681014795,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 0.5075329681014795,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_038": {
+  "name": "DUNFERMLINE STW",
+  "n": 1,
+  "n_big": 1,
+  "nearest_km": 4.215693951526669,
+  "nearest_big_km": 4.215693951526669,
+  "mw_known": 1.5,
+  "turbines": [
+   {
+    "km": 4.215693951526669,
+    "kw": 1500.0,
+    "name": ""
+   }
+  ]
+ },
+ "site_039": {
+  "name": "ERSKINE S.T.W.",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_040": {
+  "name": "STEVENSTON W.W.T.SERVICE",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 3.229495254794102,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 3.229495254794102,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_041": {
+  "name": "Baxters Food Group Ltd, Fochabers, Moray",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_042": {
+  "name": "Teaninich distillery",
+  "n": 2,
+  "n_big": 0,
+  "nearest_km": 2.6887977191817773,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 2.6887977191817773,
+    "kw": null,
+    "name": ""
+   },
+   {
+    "km": 2.7405410416137124,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_043": {
+  "name": "STIRLING WWTW",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ },
+ "site_044": {
+  "name": "Wellpark Brewery, Dennistoun, Glasgow",
+  "n": 1,
+  "n_big": 0,
+  "nearest_km": 3.7021287341716356,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": [
+   {
+    "km": 3.7021287341716356,
+    "kw": null,
+    "name": ""
+   }
+  ]
+ },
+ "site_045": {
+  "name": "HAMILTON S.T.W.",
+  "n": 0,
+  "n_big": 0,
+  "nearest_km": null,
+  "nearest_big_km": null,
+  "mw_known": 0.0,
+  "turbines": []
+ }
+}

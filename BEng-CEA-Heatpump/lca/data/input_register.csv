@@ -1,0 +1,134 @@
+group,input,value,unit,status,source,notes
+design choice,discount_rate,0.035,1/yr real,standard,"HM Treasury (2022) The Green Book, Annex 6 / §A6.4: 3.5 % social time preference rate, years 0-30",Choice tied to a standard; private WACC sensitivity to be shown alongside
+design choice,heating_design_outdoor_C,-3.1,C,standard,"ANSI/ASAE EP406.4 (2003) §4.6: 99 % winter design dry bulb for year-round greenhouses; value = 1st percentile of hourly 2 m temperature, Open-Meteo ERA5 1995-2024 at 56.42N 3.20W (computed)",Replaces -4.0 C. CIBSE 99.6 % equivalent is -4.6 C
+design choice,heating_design_indoor_C,crop night setpoint,C,standard,ANSI/ASAE EP406.4 (2003) §4.7: maximum design heating load based on the inside temperature required by the plants at night,Replaces max(18 C; crop night) floor from the thesis
+envelope,u_single_glass,6.2,W/m2K,standard,"ANSI/ASAE EP406.4 (2003) Table 1: single glass, sealed",Model used 6.0
+envelope,u_double_glass_plain,3.7,W/m2K,standard,"ANSI/ASAE EP406.4 (2003) Table 1: double glass, sealed",
+envelope,u_pc_twinwall,3.4,W/m2K,standard,ANSI/ASAE EP406.4 (2003) Table 1: rigid polycarbonate double-wall 3.2-3.6 (midpoint),Thesis used 3.0 (kept only for thesis reproduction)
+envelope,u_double_glass_AR,2.9,W/m2K,sourced,Hemming et al. (2011) Acta Hort 893: whole-greenhouse k 3.6 vs 7.6 single glass; ratio applied to EP406.4 single glass 6.2,
+envelope,u_double_glass_AR_lowe,2.0,W/m2K,sourced,Hemming et al. (2011) Acta Hort 893: whole-greenhouse k 2.4 vs 7.6 single glass; ratio applied to EP406.4 single glass 6.2,Earlier test used 1.9
+envelope,tau_double_glass_AR_lowe,0.785,-,sourced,Hemming et al. (2011) Acta Hort 893: hemispherical transmission 78.5 % (double AR + low-e) vs 82-83 % single glass,Structure shading to be applied from the design (frame share)
+envelope,infiltration_ach_new_glass,0.5-1.0,1/h,standard,"ANSI/ASAE EP406.4 (2003) Table 2: new construction, glass",Model base 0.5 = lower bound; earlier 'tight' 0.25 test is BELOW the standard and is withdrawn unless a measured source is found
+envelope,infiltration_ach_double_film,0.75-1.5,1/h,standard,"ANSI/ASAE EP406.4 (2003) Table 2: new construction, double plastic film",
+envelope,screen_u_factor,0.55,-,sourced (vendor),"Ludvig Svensson product specifications, energy saving by the Svensson method (closed screen vs none): LUXOUS 1243 43 %, XLS 10 47 % (ludvigsvensson.com, accessed 2026-10-05)","0.55 = 45 % saving, mid of the two. BP27: also used for the screened standby design load (config.design_heat_loss_w(screen=True))"
+heat store,tank_capex,150-330,EUR/m3,sourced,"IEA DHC Annex XII, Design aspects for large-scale ATES and PTES (TTES range)",~GBP 4-8 /kWh at 30 K
+heat store,pit_capex_10000m3,67,EUR/m3,sourced,"IEA DHC Annex XII: first Danish 10,000 m3 pit; 210,000 m3 at 24 EUR/m3",~GBP 2 /kWh at 30 K
+heat store,standing_loss,0.002,1/day,sourced,"DEA (2019) Technology Data for Energy Storage, large-scale hot water tanks: 0.2 %/day (data/dea_technology_data_energy_storage.pdf p. 59)",
+heat pump,capex,850+140 +18 %,GBP/kWth,unsourced,CALCULATIONS_WHITE_PAPER.md §6.1 (early estimate),Replace with packaged R290 cascade prices / Danish Energy Agency technology data
+heat pump,life,20,yr,pending,CIBSE Guide M (not yet checked),
+wind,capex,2500,GBP/kW,sourced,SAC/SRUC (2026) CEA guide Table 17: 250 kW turbine GBP 550-700k,
+wind,design_life,20,yr,standard,IEC 61400-1 Ed.4 (2019): minimum design lifetime 20 years,
+wind,om_frac,0.025,1/yr,pending,,
+wind,hub_m,45,m,sourced,SAC/SRUC (2026) Table 17: 250 kW turbine at 40-45 m,
+battery,capex,400,GBP/kWh,sourced,DESNZ (2024) long-duration storage analysis,
+battery,life,15,yr,sourced,"NREL Annual Technology Baseline 2024, utility-scale battery storage: 15-year life",
+battery,embodied_co2,75,kg CO2e/kWh,sourced,IVL report C444 (2019): Li-ion production 61-106 kg CO2e/kWh; mid value,
+battery,inverter_capex,150,GBP/kW,pending,,
+structure,capex,200,GBP/m2,to be replaced,SAC/SRUC (2026) Table 11: commercial glasshouse GBP 2M/ha,Replaced by the bottom-up design costing (BOM x unit rates)
+structure,embodied_co2,3.0,kg CO2e/m2/yr,to be replaced,,Replaced by BOM x ICE v3 factors
+structure,life,30,yr,pending,,
+operations,om_frac,0.02,1/yr,pending,,
+operations,labour_h_m2,0.75-1.0,h/m2/yr,pending,,Per crop; KWIN or AHDB labour standards
+operations,labour_rate,15.0,GBP/h,pending,UK National Living Wage 12.21 GBP/h (Apr 2025),On-cost uplift needs a source; NLW to be updated to Apr 2026 rate
+operations,packing,0.10-0.60,GBP/kg,pending,,
+operations,co2_price,0.25,GBP/kg,pending,,Superseded if CO2 comes from AD biogas upgrading
+operations,co2_dose,25,kg/m2/yr,pending,,
+operations,consumables_co2,2.5,kg CO2e/m2/yr,pending,,Changes with organic digestate system
+crops,yield_raspberry_blueberry_grape,,kg/m2,pending,,Marked EST in crops.py
+crops,yield_organic_factor,,-,pending,,Organic soil-grown glasshouse vs conventional
+sales,supermarket_price,,GBP/kg,partly sourced,DEFRA wholesale fruit and vegetable prices (data/defra_wholesale_prices.csv); ONS RPI average prices,Contract prices not public; organic premium needs a source
+humidity,rh_set,85,%,pending,,Dutch practice RH/humidity-deficit setpoint; source to find (e.g. Geelen et al. 2018 Plant Empowerment)
+humidity,vent_gap,0.05,-,pending,,Humidity gap ('vochtkier') opening
+humidity,pipe_min_C,40,C,pending,,Minimum pipe ('minimumbuis') at full humidity action
+humidity,cover_inner_Rsi,0.10,m2K/W,standard,BS EN ISO 6946:2017 Table 7: Rsi upward heat flow,Inner cover temperature for condensation
+dehumidification,hr_effectiveness,0.73,-,standard,EU Ecodesign Regulation 1253/2014 Annex III: minimum thermal efficiency of non-residential heat recovery,
+dehumidification,sfp,1250,W/(m3/s),standard,EN 16798-3: SFP category 3,
+heat pump,refrigerant_options,R717 (ammonia),,decided,IPCC AR6 WG1 Ch7 Table 7.SM.7 (GWP100); ISO 817 / ASHRAE 34 safety classes,"User decision 2026-10-03: ammonia heat pump stays (AGR Fenland precedent; DEA ch. 40 data is for ammonia units, p. 287-288)"
+heat pump,co2_compressor_coeffs,,,pending,,CompressorMap coefficients for CO2 (eta_is 0.70 etc.) need a manufacturer (Dorin/Bitzer) datasheet fit
+network,tnuos_residual_increase,HV1 10.0 / HV2 54.35 / HV3 63.62 / HV4 211.31,GBP/site/day,sourced,"NESO Final TNUoS Tariffs 2026/27 (Jan 2026) Table 10/TB minus Final 2025/26 Table 10; band by peak import kVA (HV1<=500, HV2<=1100, HV3<=2000, HV4>2000)",Added to DESNZ 2025 average price; DUoS not updated
+heat pump,capex_large,air 1.15/1.10/1.02; waste heat 1.13/0.95/0.95,MEUR/MW_heat at 1/3/10 MW,sourced,"Danish Energy Agency, Technology Data for Generation of Electricity and District Heating, data sheets Aug 2026, ch. 40 Comp. hp",Data sheets are for CO2 units (DEA note R): ammonia has higher COP and O&M
+heat pump,fixed_om,2127,EUR/MW_heat/yr,sourced,DEA data sheets Aug 2026 ch. 40,
+heat pump,life,25,yr,sourced,DEA data sheets Aug 2026 ch. 40 technical lifetime,Replaces 20 yr (CIBSE Guide M not checked)
+fx,eur_gbp,0.8567,GBP per EUR,sourced,ECB reference rates via api.frankfurter.dev: 2025 mean,
+logistics,ogv2_costs,"fuel a/v+b+cv+dv2 (611.88, 31.78, -0.2105, 0.0013) p/km; non-fuel 18.187 p/km; time GBP 86.476/h",2023 prices,sourced,"DfT TAG data book v2.03 (May 2026) Tables A1.3.12 (2026 row, work), A1.3.14, A1.3.1",
+logistics,reefer_artic,0.08908 + 0.02086 WTT; load 12.13 t,kg CO2e/tkm,sourced,DESNZ 2025 GHG conversion factors: HGV refrigerated articulated >33t average laden (1.08051 kg/km / 0.08908 kg/tkm),
+logistics,ehgv_factor,0.27,x diesel,derived,"ICCT (Aug 2025) real-world use cases for ZE trucks: 91 BEV tractor-trailers 0.92-1.50 kWh/km, 65 % less energy than diesel; DESNZ 2025 grid 0.245 kg/kWh",
+logistics,return_empty,2.0,x one-way,assumption,,No backhaul assumed: to source (operator data)
+siting,waste_heat_methods,BRE (2020) sector methods,-,sourced,BRE for ClimateXChange (2020) doi:10.7488/era/730: distillery 6.66 kWh/LPA x 0.76 x 0.8 x 10 %; paper fuel x 0.51 x 10 %; industrial x 0.8 x 10 %; WWTP 0.66 kWh/m3,
+siting,spri_2023,site CO2 to air,t,sourced,SEPA Scottish Pollutant Release Inventory 2023 full data (beta.sepa.scot),Fuel from CO2 at DESNZ 2025 natural gas 0.1829 kg/kWh
+siting,wind,GWA 3 mean wind 50/100 m,m/s,sourced,"Global Wind Atlas 3 (DTU / World Bank, CC BY 4.0) GBR rasters",ERA5 hourly shape scaled to GWA mean at 45 m hub (best cell within ~2 km)
+siting,heat_connection_pipe,500 m x GBP 1000/m,GBP,placeholder,,Needs DH pipe cost source / quote
+siting,effluent_temperature,12.3 +- 4 (min Feb),C,partly sourced,"BRE (2020) mean 12.3 C, sites 1-21 C through the year",Seasonal profile shape to source (Scottish Water)
+imports,monthly,Comtrade monthly UK imports by origin 2023-25,-,sourced,"UN Comtrade public API (freq M), data/imports_monthly.csv; ECB monthly FX",
+battery,round_trip_efficiency,0.85,-,sourced,NREL ATB 2024 utility-scale battery storage: 85 %,energy_grid.BATT
+battery,om_frac,0.025,1/yr of capex,sourced,NREL ATB 2024: fixed O&M 2.5 % of capex,
+battery,hours,2,h,design choice,,energy/power ratio; sweep chooses energy 0-4 h of mean demand
+heat store,capex,7450 V^-0.47 EUR2015/m3,EUR/m3,sourced,"DEA (2019) Technology Data for Energy Storage, large-scale hot water tanks, p. 59; x1.2876 to EUR2025 (Eurostat HICP EA prc_hicp_aind 2025/2015)",Replaces GBP 5/kWh estimate; 25 K swing (29 kWh/m3) is a design choice
+heat store,life,40,yr,sourced,DEA (2019) storage catalogue p. 59,
+heat pump,capex_scope,"DEA ch.40 incl. HP, air coolers, grid and DH connection, building; excl. advisors",,sourced,DEA technology data el/DH ch. 40 p. 294-295,Advisors/design fees not included: no sourced % (RFQ)
+heat pump,sizing_rule,full design heat load,kW,decided,,User 2026-10-03: heat pump always installed and costed at full design load as standby for waste-heat outages
+siting,outage_distillery,28 days from mid-July,d/yr,sourced (duration) / placeholder (timing),Whisky Advocate (McCormick 2022) silent season 3-4 weeks,Timing to confirm with operator
+siting,outage_paper_mill,10 days from August,d/yr,sourced (duration) / placeholder (timing),Process Barron: annual paper mill shutdown 5-10 days,Timing to confirm with operator
+siting,outage_food_ad,14,d/yr,placeholder,,No public source; operator data
+siting,outage_unplanned,7 days in the coldest week,d/yr,placeholder,,Stress case until operator availability data; example: Cameronbridge strikes 28 Sep-15 Oct 2026 (Food Manufacture 24 Sep 2026)
+structure,en13031_class,"Type A, A15, CC0",,standard,EN 13031-1:2019 Table 1 via Pertermann & Puthli (2022) Background Report Reliability Part 1 (data/standards/),
+structure,en13031_partial_factors,K_FI 0.8 (0.9 dominant G) x EN 1990 1.35/1.5,,standard,Background Report Table 10 (recommendation; UK NA may differ),
+structure,snow_reference_period,"n=15 yr, V=0.2 -> x0.874",,standard + choice,EN 1991-1-3 Annex D; V=0.2 conservative choice,V from UK NA/site data
+structure,wind_reference_period,"c_prob^2 = 0.862 (n=15 yr, K=0.2, n=0.5)",,standard,EN 1991-1-4 4.2(2)P Note 4,
+electricity,wholesale_share,0.32,-,sourced (secondary),UtilityBidder (16 Apr 2026) citing Drax spring 2026: wholesale ~31-32 % of a low-voltage small business bill,Only this share follows the hourly Agile shape (energy_grid.inputs); 0.5 sensitivity for a large HV site; primary source (DESNZ/Ofgem/Cornwall Insight) to find
+envelope,transpiration_tomato,"A0 0.372, k 0.64, B0 20.7 W/m2/kPa per LAI, LAI 2.56",W/m2 floor,calibrated,"Baille et al. 1994 form; k Stanghellini 1987; A0, B0 fitted to GreenLight hourly transpiration (R2 0.94, LAI 2.56), inside literature range A 0.12-0.67, B 9.5-25 W/m2/kPa/LAI","Replaces thesis avocado 0.21*I + 14*VPD (398 vs 645 kg/m2/yr). Reduced-form fit of a validated model, not an independent measurement; independent source still to find"
+envelope,transpiration_cucumber,"A0 0.24, k 0.70, B0 30 W/m2/kPa per LAI, LAI 3.0",W/m2 floor,sourced (independent test),"Medrano et al. (2005) Sci Hortic 105:163 (A 0.24, B 22-37.6, k 0.63-0.86); Nikolaou et al. (2017) Emir J Food Agric 29:911 (A 0.10-0.45, B 11-50)","Tested against Nikolaou's measured lysimeter transpiration (not used in fitting): -7 % (autumn-winter), -10 % (spring), transp.py. LAI 1-1.9 tested; design LAI 3.0 is an extrapolation (sensitivity LAI 2-4)"
+envelope,vent_capacity_ach,9 + 4*wind,1/h,calibrated,Matches GreenLight roof vents 11.7 % of floor (Katzin 2021) ~24-30 ACH open at 3.5 m/s; thesis value 6 + 3*wind,Vent area is a design variable not yet costed separately; summer hours >30 C: 22 vs GreenLight 7
+envelope,floor_light_absorption,0.3,-,pending,"Thesis value; GreenLight canopy transmission gives ~0.24 (PAR k 0.7, NIR k 0.27, LAI 2.6)",Minor lever: +4 kWh/m2/yr at 0.24. Option floor_sol_frac
+crop,tomato_maintenance_and_conversion,Rm25 0.015 g CH2O/g DM/d; CH2O->DM 0.7,-,sourced (two sources),"Leaf-level tomato photosynthesis model, PLOS ONE 17(11):e0275047; used with ~0.7 kg/m2 vegetative DM -> 0.30 g CH2O/m2/h at 20 C","Standing biomass 0.7 kg DM/m2 is an estimate (to source). Cross-check 2026-10-03 vs Vanthoor 2011 Table 9.1 (GreenLight crop model): maintenance leaf 0.030, stem 0.013, fruit 0.010 g/g/d at 25 C, Q10 2; at LAI 3 (SLA 26.6 m2/kg -> 113 g leaf DM/m2) plus stem and standing fruit this is ~0.2-0.3 g CH2O/m2/h at 20 C, so ours (0.30) sits at the high end. Fruit assimilate requirement 1+0.27 = 1.27 (Vanthoor) vs ours 1/0.7 = 1.43; both absorbed by the calibrated partition"
+crop,tomato_heat_stress,"fruit-set factor 1 - 0.16/K above 25 C daily mean, floor 0.2",-,sourced (secondary),"Tomato fruit set limited above 25-26 C daily mean, -40 % at +2.5 K (protected cultivation, Mediterranean); Peet & Willits",Linear interpolation of one reported point; cultivar dependent
+crop,cucumber_heat_stress,"1 - 0.10/K above 28 C daily mean, floor 0.2",-,placeholder,"Cucumber optimum 25-30 C, damage above 35 C (review sources); no quantitative yield-loss source found",Range 0.05-0.2/K
+crop,leaf_amax_quantum_yield,"tomato 25, cucumber 30 umol/m2/s; phi 0.055",umol/m2/s,literature-consistent (secondary check),"Literature range only; absolute scale absorbed by the calibrated partition (shape of light/T/CO2 responses from FvCB, Bernacchi 2001/2003). Tomato check vs Vanthoor 2011 Table 9.1: Jmax25 210 umol e-/m2/s, alpha 0.385 e-/photon, theta 0.7 -> light-saturated gross ~33 umol/m2/s and apparent quantum yield ~0.064 at 400 ppm (Ci 280, Gamma 40): ours 25 / 0.055 is ~25 % / ~15 % lower (net, incident basis). Cucumber growth respiration of fruit 30 % (conversion 0.70) per Marcelis cucumber model, matches ours","Elasticity checks: tomato 0.88, cucumber 1.00 vs Marcelis et al. 2006 ~0.8-1. Cucumber Amax 30 still literature range only; LAI 3.0 also equals Vanthoor laiMax for tomato (NL)"
+crop,fruit_partition_calibrated,"tomato 0.70, cucumber 0.77",-,calibrated,"Set so the Westland reference house reproduces CBS yield (tomato 48, cucumber 65 kg/m2) (crop_gh.py calibrate)",Plausible range 0.6-0.8 (not an independent test)
+crop,fruit_dry_matter_fraction,"tomato 0.06, cucumber 0.04",-,sourced (secondary),0.06: Katzin et al. 2021 / GreenLight tomato; cucumber 0.04 typical (to source),
+crop,co2_dose,"model, ~40 kg/m2/yr",kg/m2/yr,estimated,crop_gh.py CO2 balance with 800/450 ppm setpoints and 0.015 kg/m2/h capacity,Replaces crops.py placeholder 25 kg/m2/yr; capacity and setpoints to verify
+wind,net_loss_and_cf_cap,0.85; CF cap 41.3 %,-,sourced (cap) / estimate (loss),"Arup (2025) for DESNZ, Renewable Energy Generation Cost and Technical Assumptions 2024, Table 22: onshore net load factor 33.0 / 38.1 / 41.3 %",Added 2026-10-03 (R10): ideal curve on GWA best cell gave CF up to 54 % (45 m) / 62 % (80 m). Changes track A own-wind results slightly
+wind,capex_single_2p5MW,2240,GBP/kW,sourced (project),"Kilbirnie 2.5 MW community turbine, North Ayrshire: GBP 5.6 M blended finance, commercial operation Mar 2026 (Envirotec, 5 Mar 2026)","Includes connection presumably; single project, not a survey"
+wind,capex_wind_farm,1715,GBP/kW,sourced,"Arup (2025) for DESNZ Tables 13/15/17: 81 + 1,204 + 303 = 1,588 GBP/kW (2023 GBP) x 1.08",Multi-MW farm (median 52 MW); a share needs a willing developer and a private wire
+wind,om_large,21.1,kGBP/MW/yr,sourced,Arup (2025) Table 18: 19.5 kGBP/MW/a (2023 GBP) x 1.08,
+electricity,export_ppa_merchant,0.060,GBP/kWh,estimate on sourced anchor,Veyt UK PPA 2025: 10-yr pay-as-forecast onshore fair value GBP 69.9/MWh; CfD AR7a onshore GBP 72.24/MWh (Feb 2026),"Minus ~GBP 10/MWh shape, balancing and route-to-market discount for a single small merchant turbine (estimate)"
+electricity,private_wire_ppa,0.090,GBP/kWh,sourced (range),"Savills (2025) Unlocking the power of private wire: GBP 80-120/MWh fully delivered; Pexapark (2025): 6 UK on-site deals, 33.5 MW",Low-middle of range; needs a wind farm within a few km
+electricity,sleeved_ppa,0.070 + 0.005 fee,GBP/kWh,sourced / estimate,Veyt UK PPA 2025 (GBP 69.9/MWh); sleeving fee estimate,Replaces only the wholesale share
+crop,co2_price,0.25,GBP/kg,sourced (check),ChemAnalyst UK liquid CO2 price index USD 345/t (Jun 2026) ~ GBP 0.25/kg; KWIN 2023 (NL) EUR 0.12/kg,"Set to 0.25 by user 2026-10-07 (was 0.20). Distillery fermentation CO2 (biogenic, track A at distilleries) is an unmodelled saving"
+costing,ramp,0.8,-,estimate,year-1 output vs full (first crop establishment; Dutch practice for new houses),"cashflow.py (item 7, 2026-10-03)"
+costing,dev_frac,0.05,of capex,estimate,"design, planning, legal, site investigation (feasibility-stage allowance)","cashflow.py (item 7, 2026-10-03)"
+costing,contingency,0.1,of capex,estimate,"feasibility-stage contingency (estimate class 4, +-30 %)","cashflow.py (item 7, 2026-10-03)"
+costing,import_conn_gbp,150000.0,GBP,sourced (range),"11 kV connection near a substation GBP 50-150k (solargridcheck.co.uk G99 guide 2026, DNO averages); upper end","cashflow.py (item 7, 2026-10-03)"
+costing,overheads_m2,3.0,GBP/m2/yr,placeholder,"management, office, certification, accounts (no UK source found)","cashflow.py (item 7, 2026-10-03)"
+costing,land_gbp_ha,1000.0,GBP/ha/yr,placeholder,"land rent near an industrial host; Scottish arable rent is ~GBP 250-500/ha, industrial land more","cashflow.py (item 7, 2026-10-03)"
+costing,commission,0.05,of revenue,placeholder,"marketing organisation / sales commission, typical 3-8 %","cashflow.py (item 7, 2026-10-03)"
+costing,plants_m2,"{'tomato': 4.0, 'cucumber': 3.5}",GBP/m2/yr,sourced (range),"UK greenhouse tomato plant material GBP 1.61-2.01/m2 (Life cycle cost analysis of tomato production in innovative urban agriculture systems, J. Cleaner Production 2022); KWIN 2023: tomato seedling EUR 3.00/plant (grafted, ~2.5 plants/m2 -> ~GBP 6.4/m2); central between. Cucumber: three crops/yr of cheaper plants (estimate)","cashflow.py (item 7, 2026-10-03)"
+costing,substrate_m2,0.75,GBP/m2/yr,sourced,KWIN 2023 growing media EUR 0.86/m2,"cashflow.py (item 7, 2026-10-03)"
+costing,materials_m2,"{'tomato': 2.4, 'cucumber': 2.0}",GBP/m2/yr,sourced (secondary),"UK greenhouse tomato other materials GBP 2.27-2.48/m2 (J. Cleaner Production 2022, as above): fertiliser, crop protection, pollination, strings, water; cucumber without bumblebees (estimate)","cashflow.py (item 7, 2026-10-03)"
+costing,consumables_high,1.5,x,sensitivity,consumables x1.5,"cashflow.py (item 7, 2026-10-03)"
+structure,scale_anchor_4_8ha,177 (145-202),GBP/m2,sourced (indexed),"WUR/LEI Rapport 2016-068 Local-for-local productie kastomaten (edepot.wur.nl/387511) Bijlage 3 Table B3.1: standard NL high-tech tomato house 4-8 ha EUR 110-120/m2 (2012-14, incl. boiler + heating, screen, CO2, gutters, irrigation, computer, electrics, service area); England + / ++. Index: Eurostat sts_copi_a NL residential construction producer prices 2012-14 78.1 -> 2025 127.7 (low: input costs 83.9 -> 122.8). EUR_GBP 0.8567; England x1.10 (1.05-1.20)","BP27 (2026-10-05): replaces the SAC 1 ha anchor for 4-8 ha houses (CEA_RESID_ANCHOR=wur). Conservative: it includes a boiler our structure does not carry. Supersedes the HICP-indexed GBP 125-150 in HANDOFF BP22"
+electricity,tp_private_wire_ppa,0.090,GBP/kWh,sourced (range),"Savills (2025) Unlocking the power of private wire: GBP 80-120/MWh fully delivered","BP27: third-party-owned 2.5 MW turbine on the greenhouse site (energy_grid tp_2p5MW); developer check in bplan_5ha.py lean"
+wind,conn_single_2p5MW,0,GBP,sourced (inside capex),"Kilbirnie 2.5 MW: connection inside the GBP 5.6 M (Envirotec, 5 Mar 2026)","BP27: former GBP 0.3 M unsourced site margin removed (double count); 33 kV high case own_2p5MW_conn_high kept"
+costing,development_on_dea_plant,5 % kept,of capex,sourced (definition),"DEA Technology Data for el. and DH, methodology p.22: owners' predevelopment costs (administration, consultancy, project management, site preparation, approvals) and interest during construction are NOT included in DEA investment costs","BP27: so cashflow dev_frac correctly applies to DEA heat pump, boiler and store (audit finding 7 withdrawn)"
+crop,co2_setpoint_closed_vents,1000,ppm,sourced,"AHDB 'CO2 best practice guide: how much to use' (horticulture.ahdb.org.uk): supplement with 1,000 ppm on sunny days with vents closed; cucumber 800-1000 ppm spring/summer, 600 ppm Feb-Mar","BP28 (bplan_10m.py, site_opt option co2); model default stays 800 ppm. Single setpoint: the Feb-Mar 600 ppm step is not modelled"
+crop,single_glass_yield_cap,0.976 (2.9 ha),-,model calibration anchor,"crop_gh: CBS 65 kg/m2 on the Westland house with single plain glass; cap = CBS x light_rel (elasticity 1, Marcelis et al. 2006 0.8-1) / model yield, at 800 ppm","BP25a (2026-10-05): replaces the BP25 cap 0.93 in bplan_10m.py; double AR keeps its model yield (4-5 % below the same expectation)"
+operations,labour_rate_2026,16.3,GBP/h,sourced (derived),"NLW Apr 2026 GBP 12.71 (UK Government, Budget 26 Nov 2025) + holiday 12.07 % + employer NI 15 % above GBP 5,000/yr + 3 % pension","BP27a(h)/BP28: applied in bplan_10m.py via cashflow labour_mult; the global GBP 15 default is unchanged until BP28a"
+market,uk_cucumber_farmgate_price,1.01 (2023-25 mean; 0.94 / 1.15 / 0.95),GBP/kg,sourced (official),"DEFRA Horticulture Statistics dataset 25 Jun 2026 (data/hort-dataset-25-20260625.ods) Table 18 average farm-gate price, cucumbers","BP5: lender base-price reference; import unit value GBP 1.37-1.46/kg (Tables 19-20); see PRICE_EVIDENCE.md"
+crop,uk_cucumber_marketed_yield,50-52,kg/m2,sourced (official),"DEFRA Horticulture Statistics 2026 Table 17: cucumber marketed yield 500-522 t/ha 2021-25","BP6: model 57.7 kg/m2 at Stranraer (single glass) is 11-15 % above the UK average"
+lighting,led_kw,515 (310-900),GBP/kW,sourced cap / placeholder central,"RVO EG 2026: eligible cost cap EUR 0.35 per umol/s per m2, >=3 umol/J, tomato/cucumber <=77 W/m2; Dutch practice EUR 30-55/m2","BP34; rates.csv led_kw"
+lighting,inter_cost_premium,0.20,-,placeholder,"no source; interlighting needs more fixtures and wiring in the crop","site_opt.LED_INTER_COST"
+crop,interlight_absorption,"90 % absorbed over the lower 2/3 of LAI",-,placeholder,"to source (canopy absorption of interlighting); checked against +22-31 % yield for 1-2 rows (mini-cucumber trials)","crop.INTER_ABS / INTER_TOP_SKIP"
+operations,labour_kg_share,0.5,-,placeholder,"half of labour scales with kg harvested; labour up to ~40 % of Dutch cucumber opex (Rabobank via Hortidaily 12 Aug 2026)","site_opt.LABOUR_KG_SHARE"
+co2,byproduct_price,0.06 (0.03-0.10),GBP/kg,placeholder,"fermentation CO2 capture by dehydration + compression USD 6-35/t (IEA bioethanol CCS break-even 25-35; NETL screening estimates via OSTI)","bplan_yearround.CO2_BYPRODUCT; supplier deal needed"
+market,product_prices,"cucumber 1.16; tomato round 1.26, vine 1.61, plum 2.34, cherry 3.13; strawberry 4.85",GBP/kg,sourced,"DEFRA wholesale prices 2023-26 (data/defra_wholesale_prices.csv)","lender price = wholesale x 0.85 (farm-gate/wholesale, cucumber)"
+crop,cherry_yield_factor,0.6,-,sourced (secondary),"cherry 27-30 kg/m2 high-tech (Dutch Greenhouses crop guide) vs CBS round 48","vine 0.95, plum 0.80, labour factors: placeholders"
+water,runoff_discharge_basin,"0.9 / 10 % / GBP 15 per m3",-,placeholder,"roof runoff coefficient, recirculation discharge, lined basin cost: to source","bplan_yearround.Water"
+grid,hv_connection_steps,"<=800 kVA 143,000; <=1 MVA 153,900; <=2.4 MVA 633,900; +75,000 per 800 kVA above",GBP,sourced,"SP Energy Networks Statement of Methodology and Charges for Connection (Nov 2025) Examples 5, 17, 18 (pp. 52, 74, 76); repo root PDF","cashflow.hv_conn_gbp; excludes reinforcement; BP23a, BP21"
+heat pump,modular_air_water_dea,"160 kW unit EUR 147.0k total 2025 (EUR 919/kW); O&M EUR 2,932/unit/yr; life 20 yr",EUR,sourced,"DEA Technology Data for Individual Heating Plants (Apr 2026) sheet '207 HP air-water, new apart'","Scenario only: base stays DEA el/DH ch.40 (about EUR 1,140/kW at 0.86 MW, 25 yr); annual cost about equal (GBP 82k vs 80k per 857 kW); BP22"
+heat store,uk_cross_check,about EUR 470/m3 for a 300 m3 tank,EUR/m3,sourced (secondary),"UKERC/ERP 'The Future Role of Thermal Energy Storage in the UK' (2020) pp. 4, 25",Not used: DEA formula kept (about GBP 563/m3 at 300 m3); worth about GBP 0.008/kg if adopted; BP21
+heat source,water_intake_cost,100,GBP/kW,sourced (secondary),CIBSE Journal Oct 2019 (Oasthouse water-source heat pump intake),Cancels the water-source COP gain at S0 cucumber; air source kept unless next to a waste-water works; BP21
+market,uk_import_duty_cucumber,third-country 12 %; EU 0 %; Morocco 0 %,%,sourced,"UK Trade Tariff commodity 0707000520, queried 2026-10-07 (trade-tariff.service.gov.uk API)",shelf_chain.py; BP15
+market,border_sps_checks,low-risk plant products: 0 % checks,%,sourced (secondary),GOV.UK Border Target Operating Model Aug 2023 Fig. 4; cucumber risk category to confirm,shelf_chain.py; BP15
+co2,recovered_biogenic_delivered,0.048-0.088,GBP/kg,sourced (secondary),"Ethanol Producer Magazine 'Carbon Dioxide Use, Sequestration And New Markets': production USD 30-80/short ton + distribution about USD 30; USD 1 = GBP 0.73","cashflow.CO2_ROUTE_GBP_KG; US ethanol plants, not UK; supplier quote needed; BP20b"
+co2,bulk_liquid_delivered,0.25,GBP/kg,user decision,ChemAnalyst UK USD 345/t (Jun 2026) about GBP 0.25/kg; user set 0.25 on 2026-10-07,breakeven.P; supersedes 0.20; BP20a
+wind,turbine_life_check,model 20 yr + repower; literature 25-30+ yr,yr,sourced (secondary),"RenewableUK guest blog (UK financial models assume >30 yr, up from 20/25); AIS Wind Energy (civil works 25 yr, turbines often near 30); BP27a(c)",Default kept at 20 yr (conservative); a 25-30 yr life lowers turbine LCOE; sensitivity not run

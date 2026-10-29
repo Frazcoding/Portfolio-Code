@@ -1,0 +1,23 @@
+# Model and simulation audit (October 2026 upgrade)
+
+All eight projects were rebuilt with full-year simulations and new physically detailed 3D models. This register
+records what each model now computes, the key assumptions, the headline 2023 results, and the findings that differ
+from earlier documentation. The previous scripts and models are archived in `_archive/pre_upgrade_2026-10-01.zip`.
+
+| Project | Simulation (8,760 h, 2023) | Headline results | Notes and findings |
+| --- | --- | --- | --- |
+| Heat-Pump-Simulation | Two-stage R290 (2 LP + 1 HP inverter scrolls, flash economiser, optimum-Pi HP control), CoolProp map of 9,504 cycle solves; 12-flat 5R1C block, radiators, 1 m³ buffer, 1 m³ DHW with legionella cycle, frost/defrost, backup. London, London Agile-aware, Glasgow | London SCOP ≈ 3.2, ≈ 1,100 defrosts, DHW ≥ 51 °C; Glasgow SCOP ≈ 3.0 with backup on the coldest days | Energy and exergy balances close to machine precision. Agile-aware control (fabric pre-heat) saves only ~1-4 %: storage and COP penalty limit shifting with 55 °C radiators. Gas is cheaper than the heat pump at 2023 UK prices. |
+| High-Temp-Waste-Heat-Recovery | Screw HTHP with economiser port, closed subcooler and IHX; two-zone (desuperheat/condense) condenser; dairy sump/CIP/store model; spray-dryer recovery loop for steam. n-butane, R1234ze(Z), R1233zd(E) | Dairy COP 3.6-3.7 (system 3.25-3.33), ≈ 550 t CO₂ avoided/yr; steam COP 2.8 | At a 2023 electricity/gas price ratio of ≈ 3.4 the 95 °C HTHP pays back in 19-27 years and the steam case loses money while avoiding 441 t CO₂ — a policy/tariff finding, not a model error. |
+| Building-Heatpump-Retrofit | 4 × 40 kW R290 modules (lead/lag, per-module frost), 2 × 100 m³ series stores (24 nodes), grid-capped dispatch, 6,000 m² Edinburgh office | Cap respected (peak 60.0 kWe); price-aware charging ≈ £6 k/yr cheaper than thermostatic; no-store case peaks at 213 kWe | Store losses are material (25-33 MWh/yr) because the heating season covers most of the Edinburgh year. |
+| BEng-CEA-Heatpump | Dynamic Venlo greenhouse (air/crop/floor/pipe nodes, humidity, transpiration, condensation, screen, vents) + two-stage R717 with open intercooler on air, ground (borehole drawdown) or river source; thesis results kept as a replay scenario | ≈ 120 MWh/yr (≈ 300 kWh/m²); SCOP 3.1 air, 3.45 ground/river | Ranking agrees with the BEng thesis. Thesis notebooks and outputs are untouched. |
+| Plantpost | PV canopy (8 facets, Faiman, CAD-calibrated to 258 kWh/yr London), LiFePO4 equivalent circuit + thermal node + ageing, adaptive dimming, rain harvesting, 4 tier moisture buckets, drip hydraulics with node pressures, PM capture. London, Edinburgh, Bologna, Edinburgh 200 Ah | Lighting availability 87 % London, 73 % Edinburgh, 98 % Bologna | Winter lighting is generation-limited: doubling the battery only lifts Edinburgh from 73 % to 77 %. |
+| PyPsa-Green-Hydrogen-Microgrid | 3 × 6.2 MW wind (sheared ERA5 wind, power curve), island demand, 5 MW cable, 4 × 2 MW PEM with electrochemical polarisation and thermal model, real-gas compression/storage, ferry bunkering | CF 37 %, 365 t H₂/yr at 57.5 kWh/kg, 83 % of ferry demand, LCOH ≈ £8.6/kg (£7.5/kg with 4 MW PEM) | Rule-based dispatch (not a PyPSA optimisation). Output is storage-limited, so a weaker cable mainly raises curtailment and diesel use. |
+| UniBoat-Powertrain-Cooling | Catamaran resistance + foil L/D, PMSM/SiC/battery losses, 10 kWh cap with limp-home, pumped two-phase R1233zd(E) loop with CoolProp states; season (hourly) + race (1 s) | Peak ≈ 36 kW DC and ≈ 2.9 kW heat at 36 kt; battery ≤ 36 °C | Physics gives far lower heat than the earlier 11.6 kW algebraic assumption, so the loop as documented is oversized. Hull and foil geometry remain estimates. |
+| Whole-Carbon-Lifecycle-Assessment | Hourly 5R1C for each scenario's fabric, MVHR bypass/night purge, CoolProp heat-pump map, PV; 60-year lifecycle from the project engine | Baseline net EUI 136 kWh/m² (engine 140); retrofit/new-build 63-73 kWh/m² (engine 45-55); 60-yr WLC best for deep retrofit | The simulated low-carbon EUIs exceed the configured values because of unregulated small-power loads — a performance-gap finding. |
+
+## 3D models
+
+Models are generated in code with `blendlib` and exported as GLB with scanned PBR textures (CC0, Poly Haven and ambientCG),
+real-world texture scales, bevelled edges, printed signs/rating plates/BS 1710 pipe labels and routed pipework with real
+bend radii. Equipment envelopes follow the simulated duty and typical manufacturer data; they are not product selections.
+Edit a `.blend` and re-export with the project's `export_*_asset.py`, or change the `create_*_asset.py` script and rebuild.

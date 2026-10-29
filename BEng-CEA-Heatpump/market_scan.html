@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Glasshouse Market Scan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Who already grows heated glasshouse and CEA produce in Scotland and the UK, who sells greenhouse simulation tools, and what it means for the UK glasshouse vs imports study">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --ground: #eef1f4; --panel: #f9fbfc; --panel-2: #f1f4f7; --line: #d5dce3; --ink: #15202b; --muted: #5d6b78;
+  --faint: #8a97a3; --ok: #15803d; --limit: #b91c1c; --warn: #b45309;
+  --uk: #2a78d6; --sco: #1baf7a; --new: #eda100; --imp: #eb6834;
+  --sans: "Barlow", "Segoe UI", system-ui, sans-serif; --cond: "Barlow Semi Condensed", "Barlow", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark; --ground: #0e1318; --panel: #151c23; --panel-2: #1b242d; --line: #28323d; --ink: #e4e9ee;
+    --muted: #9aa7b3; --faint: #6c7a87; --ok: #4ade80; --limit: #f87171; --warn: #fbbf24;
+    --uk: #3987e5; --sco: #199e70; --new: #c98500; --imp: #d95926;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark; --ground: #0e1318; --panel: #151c23; --panel-2: #1b242d; --line: #28323d; --ink: #e4e9ee;
+  --muted: #9aa7b3; --faint: #6c7a87; --ok: #4ade80; --limit: #f87171; --warn: #fbbf24;
+  --uk: #3987e5; --sco: #199e70; --new: #c98500; --imp: #d95926;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 14px/1.5 var(--sans); }
+a { color: var(--uk); }
+.wrap { max-width: 1180px; margin: 0 auto; padding: 14px 16px 48px; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; margin-bottom: 10px; }
+h1 { font: 700 24px/1.2 var(--cond); margin: 0; letter-spacing: .01em; }
+header .sub { color: var(--muted); flex: 1 1 360px; }
+header .links a { color: var(--muted); text-decoration: none; border: 1px solid var(--line); border-radius: 6px; padding: 3px 9px; margin-left: 4px; }
+header .links a:hover { color: var(--ink); }
+nav { position: sticky; top: 0; z-index: 5; background: var(--ground); padding: 8px 0; margin-bottom: 10px;
+  display: flex; gap: 6px; overflow-x: auto; border-bottom: 1px solid var(--line); }
+nav a { flex: none; color: var(--muted); text-decoration: none; font: 600 13px var(--cond); padding: 4px 10px; border-radius: 6px; }
+nav a:hover { background: var(--panel-2); color: var(--ink); }
+section { margin: 18px 0 0; scroll-margin-top: 52px; }
+h2 { font: 700 18px/1.25 var(--cond); margin: 0 0 8px; }
+h3 { font: 600 15px/1.3 var(--cond); margin: 0 0 6px; }
+p { margin: 0 0 8px; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.muted { color: var(--muted); }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+.tile .k { font: 700 26px/1.1 var(--cond); }
+.tile .l { color: var(--muted); font-size: 13px; margin-top: 4px; }
+.tile.sco .k { color: var(--sco); } .tile.warn .k { color: var(--warn); } .tile.bad .k { color: var(--limit); } .tile.uk .k { color: var(--uk); }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 820px) { .grid2 { grid-template-columns: 1fr; } }
+ul.tight { margin: 0; padding-left: 18px; } ul.tight li { margin: 3px 0; }
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; vertical-align: top; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+th { font: 600 12px var(--cond); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); background: var(--panel-2); }
+td.num { font-family: var(--mono); white-space: nowrap; }
+td b { font-weight: 600; }
+.tag { display: inline-block; font: 600 11px var(--cond); text-transform: uppercase; letter-spacing: .04em; padding: 1px 6px; border-radius: 4px; border: 1px solid; white-space: nowrap; }
+.tag.src { color: var(--ok); } .tag.chk { color: var(--warn); } .tag.no { color: var(--limit); }
+/* bar chart */
+.bars { display: grid; grid-template-columns: minmax(120px, 210px) 1fr; gap: 6px 10px; align-items: center; }
+.bars .n { font-size: 13px; text-align: right; }
+.bars .n small { display: block; color: var(--faint); font-size: 11px; }
+.bars .track { position: relative; height: 20px; }
+.bars .bar { height: 100%; border-radius: 0 4px 4px 0; min-width: 3px; }
+.bars .v { position: absolute; top: 1px; font: 500 12px var(--mono); padding-left: 6px; white-space: nowrap; }
+.bar.uk { background: var(--uk); } .bar.sco { background: var(--sco); } .bar.new { background: var(--new); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin-top: 10px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.call { border-left: 3px solid var(--uk); padding: 8px 12px; background: var(--panel-2); border-radius: 0 8px 8px 0; margin-top: 10px; }
+.call.warn { border-color: var(--warn); }
+ol.acts { margin: 0; padding-left: 20px; } ol.acts li { margin: 6px 0; }
+.src-list { font-size: 12px; color: var(--muted); columns: 2 360px; column-gap: 24px; }
+.src-list li { break-inside: avoid; margin: 2px 0; }
+footer { margin-top: 24px; color: var(--faint); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Heated glasshouse &amp; CEA — Scotland / UK market scan</h1>
+  <span class="sub">Who already grows heated produce, who sells greenhouse simulation tools, and what that means for the glasshouse vs imports study. Desk research, 2 October 2026.</span>
+  <span class="links"><a href="crop_compare.html">Crop comparison</a><a href="lca/MARKET.md">Notes (.md)</a></span>
+</header>
+
+<nav>
+  <a href="#headlines">Headlines</a><a href="#size">Market size</a><a href="#scotland">Scotland</a>
+  <a href="#uk">UK incumbents</a><a href="#vertical">Vertical farms</a><a href="#policy">Headwinds</a>
+  <a href="#tools">Simulation tools</a><a href="#implications">Implications</a><a href="#sources">Sources</a>
+</nav>
+
+<section id="headlines">
+  <div class="tiles">
+    <div class="tile sco"><div class="k">1</div><div class="l">commercially heated glasshouse in Scotland (Standhill Farm, Hawick, ~1.6 ha) — SAC/SRUC, Jan 2026</div></div>
+    <div class="tile uk"><div class="k">2,085 ha</div><div class="l">UK glasshouse area; &gt; 70 % is over 40 years old</div></div>
+    <div class="tile warn"><div class="k">+94 %</div><div class="l">electricity network (TNUoS) charges from April 2026; &gt; £1 M/yr extra for some large growers</div></div>
+    <div class="tile uk"><div class="k">33 MW</div><div class="l">NH₃ heat pumps at AGR Fenland: the closest real benchmark for the thesis design</div></div>
+    <div class="tile bad"><div class="k">Apr 2025</div><div class="l">Jones Food Company, the UK's largest vertical farm, went into administration</div></div>
+  </div>
+  <div class="grid2" style="margin-top:10px">
+    <div class="panel">
+      <h3>Produce market</h3>
+      <ul class="tight">
+        <li><b>Scotland is nearly empty.</b> The competition is one 1.6 ha biomass site, heated soft-fruit tunnels, and imports.</li>
+        <li><b>UK prices are set by a handful of large growers</b> (Thanet Earth, APS, Green House Growers), most using gas CHP.</li>
+        <li><b>New UK capacity is heat pumps and waste heat</b> (AGR Fenland, Low Carbon Farming), the same approach as this study.</li>
+        <li>Supermarkets will sign <b>10-year</b> supply deals (Sainsbury's with Thanet Earth and Evesham Vale), so the sales channel exists.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Simulation tools</h3>
+      <ul class="tight">
+        <li>Dutch tools dominate: Hortinergy, Priva ECO, Source.ag, Blue Radix, and WUR's KASPRO research model.</li>
+        <li>None combines a UK heat-pump cycle model with wind/grid costs and an import benchmark. This study does.</li>
+        <li>Likely buyers want <b>feasibility studies</b>: owners of waste heat, funders and new entrants. That is consultancy work, not SaaS.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="size">
+  <h2>Market size and demand (UK)</h2>
+  <div class="panel tbl">
+    <table>
+      <thead><tr><th>Item</th><th>Figure</th><th>Confidence</th></tr></thead>
+      <tbody>
+        <tr><td>UK tomato harvest 2025</td><td class="num">~79,000 t (+4 % y/y)</td><td><span class="tag src">Sourced</span> FreshPlaza, Oct 2026</td></tr>
+        <tr><td>UK tomato self-sufficiency</td><td class="num">"5 %"</td><td><span class="tag chk">Check</span> BTGA via Wikipedia. 79 kt against ~0.4–0.5 Mt consumption implies ~15–20 %. Use Defra <i>Horticulture Statistics</i> before quoting</td></tr>
+        <tr><td>UK glasshouse area</td><td class="num">2,085 ha, &gt; 70 % over 40 yr old</td><td><span class="tag src">Sourced</span> Batke et al. 2026</td></tr>
+        <tr><td>Modern tomato glass (&lt; 20 yr old)</td><td class="num">~210 ha</td><td><span class="tag src">Sourced</span> BTGA</td></tr>
+        <tr><td>Tomato area for 100 % self-sufficiency</td><td class="num">~1,117 ha modern glass</td><td><span class="tag src">Sourced</span> Batke et al. 2026</td></tr>
+        <tr><td>Winter supply origin</td><td>Tomatoes: Spain (Almería), Morocco. Asparagus: ~95 % Peru/Mexico</td><td><span class="tag src">Sourced</span> FreshPlaza</td></tr>
+        <tr><td>European indoor farming market</td><td class="num">£9.6 bn → £29 bn by 2033</td><td><span class="tag chk">Check</span> Consultancy forecast quoted in SAC guide; treat as hype-grade</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="scotland">
+  <h2>Scotland — who is already doing it</h2>
+  <div class="panel tbl">
+    <table>
+      <thead><tr><th>Operator</th><th>What</th><th>Heat / energy</th><th>Relevance</th></tr></thead>
+      <tbody>
+        <tr><td><b>Standhill Farm</b><br><span class="muted">Hawick, Borders — "Scotty Brand"</span></td><td>~1.6 ha Venlo glasshouse, 55k tomato plants (vine and cherry). The only commercial Scottish tomato grower</td><td>2 × 1 MW wood-chip biomass + 2 × 121 m³ buffer tanks; biogas plant supplies CO₂ and power; rainwater</td><td><b>Closest direct competitor and proof of concept.</b> Sells on Scottish provenance at a premium. Built on RHI-era biomass economics</td></tr>
+        <tr><td><b>Angus Soft Fruits</b></td><td>Strawberries and raspberries, March–November</td><td>Glass and heated polytunnels, biomass, LED top-up</td><td>Season extension. Competes on berries, which the study scored as borderline</td></tr>
+        <tr><td><b>Castleton Farm</b><br><span class="muted">Aberdeenshire</span></td><td>Strawberries, raspberries, blueberries, cherries, ~9 months a year</td><td>Polytunnels + biomass</td><td>As above. Sells wholesale</td></tr>
+        <tr><td><b>Intelligent Growth Solutions</b><br><span class="muted">Edinburgh / Invergowrie</span></td><td>Vertical-farm technology supplier; demo farm at James Hutton Institute since 2018; exports (e.g. Dubai). Module ~£1.5–2 M</td><td>LED</td><td>Technology competitor or partner, not a produce competitor</td></tr>
+        <tr><td><b>SRUC vertical farm</b> + 2 unnamed commercial vertical farms in the north-east</td><td>Research and small commercial</td><td>LED</td><td>Small. At least one Scottish vertical farm has moved to medicinal cannabis</td></tr>
+        <tr><td><b>Shockingly Fresh</b><br><span class="muted">Edinburgh</span></td><td>Plans for naturally lit tower farms: 40 sites / 50 ha</td><td>Low energy</td><td><span class="tag chk">Check</span> Announced only; delivery not verified</td></tr>
+        <tr><td><b>ILI Group</b> — "Stoics" data centres</td><td>1.5 GW over 3 sites; lead site "Cato" near Auchtertool, Fife; grid 2028</td><td>Data-centre waste heat for tomato and berry tunnels</td><td><b>Possible heat partner or customer.</b> The horticulture part is a vision with no grower named</td></tr>
+        <tr><td>Orkney / Highlands &amp; Islands</td><td>Polycrubs; 2021 Orkney CEA feasibility studies</td><td>Mostly unheated</td><td>None commercialised</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="call">
+    <b>Scottish waste heat.</b> ClimateXChange (2020) ranked <b>distilleries</b> and <b>wastewater treatment</b> as Scotland's largest waste-heat sources, and a distillery-heated tomato glasshouse has been trialled before. These are the Scottish equivalent of Low Carbon Farming's Anglian Water model and match the study's waste-heat options.
+  </div>
+  <div class="call warn">
+    <b>Takeaway.</b> Scotland is open for heated tomatoes and cucumbers, but a site has to make money without the RHI. The Perthshire off-grid result, where no crop wins on cost, fits with nobody else having built there.
+  </div>
+</section>
+
+<section id="uk">
+  <h2>UK heated glasshouse incumbents</h2>
+  <div class="panel">
+    <h3>Area under glass by operator (ha)</h3>
+    <div class="bars" role="img" aria-label="Bar chart of glasshouse area by operator in hectares">
+      <div class="n">Thanet Earth<small>whole site; 51 ha glass planned</small></div><div class="track"><div class="bar uk" style="width:100%"></div><span class="v" style="left:100%;transform:translateX(-100%);color:#fff;padding-right:6px">90</span></div>
+      <div class="n">APS Group</div><div class="track"><div class="bar uk" style="width:62.7%"></div><span class="v" style="left:62.7%">56.4</span></div>
+      <div class="n">The Green House Growers</div><div class="track"><div class="bar uk" style="width:53.3%"></div><span class="v" style="left:53.3%">48</span></div>
+      <div class="n">Low Carbon Farming<small>2 sites, under construction</small></div><div class="track"><div class="bar new" style="width:32.2%"></div><span class="v" style="left:32.2%">29</span></div>
+      <div class="n">AGR Fenland<small>heat pumps + CHP, 2022</small></div><div class="track"><div class="bar new" style="width:24.1%"></div><span class="v" style="left:24.1%">21.7</span></div>
+      <div class="n">Flavourfresh</div><div class="track"><div class="bar uk" style="width:19.2%"></div><span class="v" style="left:19.2%">17.3</span></div>
+      <div class="n">Standhill Farm<small>Scotland</small></div><div class="track"><div class="bar sco" style="width:1.8%"></div><span class="v" style="left:1.8%">1.6</span></div>
+    </div>
+    <div class="legend"><span><i style="background:var(--uk)"></i>Established, mostly gas / CHP</span><span><i style="background:var(--new)"></i>New build, heat pump / waste heat</span><span><i style="background:var(--sco)"></i>Scotland</span></div>
+  </div>
+  <div class="panel tbl" style="margin-top:10px">
+    <table>
+      <thead><tr><th>Grower</th><th>Crops</th><th>Energy</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><b>Thanet Earth</b> (Kent)</td><td>Tomatoes, peppers, cucumbers</td><td>Gas CHP; new LEDs for winter cucumbers</td><td>Largest UK complex; Sainsbury's 10-year deal</td></tr>
+        <tr><td><b>APS Group</b></td><td>Tomatoes (65+ varieties)</td><td>Mostly gas / CHP</td><td>~30 % of UK tomato production</td></tr>
+        <tr><td><b>The Green House Growers</b></td><td>Tomatoes, cucumbers</td><td>Mixed</td><td>~20 % of UK tomatoes, ~25 % of UK cucumbers</td></tr>
+        <tr><td><b>Flavourfresh</b> (Lancashire)</td><td>Tomatoes, strawberries, blackberries</td><td>—</td><td>Northern grower; nearest climate analogue</td></tr>
+        <tr><td><b>Evesham Vale Growers</b></td><td>Tomatoes, peppers, cucumbers</td><td>—</td><td>Sainsbury's 10-year deal</td></tr>
+        <tr><td><b>AGR Fenland</b></td><td>Cucumbers (~10 % of UK)</td><td><b>4 × NH₃ heat pumps, 33 MW thermal</b> + gas CHP for power and CO₂; ~30 % less CO₂</td><td><b>Direct technical benchmark for the two-stage R717 design</b></td></tr>
+        <tr><td><b>Low Carbon Farming</b><br><span class="muted">Crown Point + Ingham; Greencoat Capital</span></td><td>Hydroponic tomatoes (~12 % of UK)</td><td>Heat pumps on Anglian Water wastewater heat; 72 MW recovered over 2.5 miles; ESB operates; ~75 % lower emissions</td><td>£120 M (Ingham), near completion with smaller revised plans; 41 more sites identified; expanding to Virginia</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="call warn">
+    <b>For the cost result.</b> Chelmsford tomato comes out at £1.45/kg against an import price of £1.60/kg. That margin is thin against growers with scale and CHP, or near-free waste heat. A commodity crop from a new grid-powered heat-pump site would be a price-taker; it needs differentiation or cheap heat. <b>Model gap:</b> there is no UK gas-CHP glasshouse reference case yet.
+  </div>
+</section>
+
+<section id="vertical">
+  <h2>Vertical farming (UK) — outcomes so far</h2>
+  <div class="panel tbl">
+    <table>
+      <thead><tr><th>Company</th><th>Status</th><th>Lesson</th></tr></thead>
+      <tbody>
+        <tr><td><b>Jones Food Company</b> (Lydney)</td><td><span class="tag no">Administration</span> April 2025; 61 redundancies. JFC2 was 15,000 m² / 1,000 t/yr</td><td>Grid-powered lit leafy greens could not raise more funding</td></tr>
+        <tr><td><b>GrowUp Farms</b> (Pepperness, Kent)</td><td><span class="tag src">Operating</span> Expanding output +40 %; in Tesco and Iceland</td><td>On-site renewable power, next to a bioenergy plant, protected it from the price shock. Build ~£100 M</td></tr>
+        <tr><td>Vertical Future, LettUs Grow, Fischer Farms</td><td><span class="tag chk">Check</span> Not verified</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="muted" style="margin-top:8px">This is consistent with the study's estimate that a vertical farm coupled to the glasshouse only works on electricity at ≤ 5–8 p/kWh.</p>
+</section>
+
+<section id="policy">
+  <h2>Headwinds and policy</h2>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Energy</h3>
+      <ul class="tight">
+        <li>TNUoS rates rose ~94 % from April 2026; some large growers pay <b>&gt; £1 M/yr</b> more.</li>
+        <li>Horticulture is excluded from the Energy Intensive Industries exemption because of outdated SIC codes; a review is due in 2026.</li>
+        <li>Electric heat pumps are hit harder than gas CHP. <b>Action:</b> add network charges explicitly in <code>energy_systems.py</code> and check the northern Scotland TNUoS zone, which may be favourable.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Support</h3>
+      <ul class="tight">
+        <li>No dedicated Scottish CEA or glasshouse scheme.</li>
+        <li>Routes: Future Farming Investment Scheme (round 2, £14.25 M), Agricultural Modernisation (£26 M), HIE in the Highlands &amp; Islands.</li>
+        <li>Scotland's producer organisation route is an advantage England and Wales lack.</li>
+        <li>England: Defra's <i>Blueprint to grow the UK fruit and vegetable sector</i>.</li>
+        <li>Industry's top three asks: labour, energy, investment (July 2026).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>Simulation, design and control tools</h2>
+  <div class="panel tbl">
+    <table>
+      <thead><tr><th>Tool</th><th>Type</th><th>Position</th></tr></thead>
+      <tbody>
+        <tr><td><b>KASPRO</b> (WUR, NL)</td><td>Research climate and energy model</td><td>Academic gold standard; used through WUR consultancy, not sold</td></tr>
+        <tr><td><b>Hortinergy</b> (FR)</td><td>Commercial greenhouse energy simulator / digital twin (SaaS)</td><td>Closest commercial analogue: heating, cooling, dehumidification and lighting sizing by site</td></tr>
+        <tr><td><b>Priva ECO</b> (NL)</td><td>Digital twin + ML energy cost optimiser</td><td>Built into Priva climate computers; for running sites, not feasibility</td></tr>
+        <tr><td><b>Source.ag</b> (NL)</td><td>AI cultivation and yield forecasting; &gt; $60 M raised</td><td>Crop and yield focus</td></tr>
+        <tr><td><b>Blue Radix</b> (NL)</td><td>Autonomous climate control; ~100 greenhouses; €5 M raised</td><td>Control, not design</td></tr>
+        <tr><td><b>Koidra</b> (US)</td><td>Autonomous greenhouse control; $4.5 M seed</td><td>Control</td></tr>
+        <tr><td>Builders and energy firms (Certhon, KUBO, Bridge Greenhouses, ESB, AGR, Clarke Energy)</td><td>In-house design simulation</td><td>Bundled with project sales</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="grid2" style="margin-top:10px">
+    <div class="panel">
+      <h3>The gap this study fills</h3>
+      <ul class="tight">
+        <li>Refrigerant-cycle heat pump model (two-stage NH₃, single-stage; air, ground and water sources)</li>
+        <li>Hourly UK weather for any site, UK tariffs, and real wind and battery costs (PyPSA)</li>
+        <li>UK import benchmark by origin, for carbon and cost per kg, across 10 crops</li>
+        <li>Scottish waste-heat options: distillery, wastewater, supermarket, data centre</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Plausible buyers (feasibility, not SaaS)</h3>
+      <ul class="tight">
+        <li>Owners of waste heat looking for a use: data-centre developers (ILI Group), distilleries, Scottish Water, supermarkets</li>
+        <li>Funders and advisers: HIE, SAC Consulting, SAOS, Greencoat-type investors</li>
+        <li>New entrants needing a bankable pre-feasibility before engaging a Dutch builder</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="implications">
+  <h2>Implications for the study</h2>
+  <div class="panel">
+    <ol class="acts">
+      <li><b>Scotland strategy:</b> differentiated produce plus a cheap heat source, not commodity tomatoes on grid power. Model a Standhill-style biomass + biogas-CO₂ comparator, and a distillery or wastewater heat case in the Carse of Gowrie / Tayside.</li>
+      <li><b>Add two reference cases:</b> a UK gas-CHP glasshouse (the domestic price-setter), and the AGR Fenland / Low Carbon Farming heat-pump sites (best new builds).</li>
+      <li><b>Add 2026 network charges</b> before the Perthshire grid-backup run, and check the northern Scotland TNUoS zone.</li>
+      <li><b>Sales report pricing:</b> the 10-year supermarket deals show the channel exists. Use DEFRA wholesale as the floor and the Scottish-provenance premium as upside; Standhill's retail prices could serve as evidence.</li>
+      <li><b>Resolve the self-sufficiency figure</b> (5 % vs ~15–20 %) with Defra <i>Horticulture Statistics</i> before it goes in any report.</li>
+    </ol>
+  </div>
+  <div class="panel" style="margin-top:10px">
+    <h3>Not verified in this scan</h3>
+    <ul class="tight muted">
+      <li>Current status of Vertical Future, LettUs Grow and Fischer Farms; names of the two north-east Scottish commercial vertical farms.</li>
+      <li>Whether Standhill still runs at full scale in 2026 (most coverage is 2017–2019; RHI closed to new applicants).</li>
+      <li>Hortinergy and Priva pricing; Shockingly Fresh delivery against its 40-site plan.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="sources">
+  <h2>Sources</h2>
+  <ul class="src-list">
+    <li><a href="../cea-guide-for-practitioners_v6-final-jan-2026.pdf">SAC/SRUC, Developing SME-scale CEA in the Highlands &amp; Islands (Jan 2026), pp. 4–5, 30–31</a></li>
+    <li><a href="https://www.freshplaza.com/europe/article/9878774/uk-winter-vegetable-supply-faces-higher-energy-and-import-costs/">FreshPlaza — UK winter vegetable supply (Oct 2026)</a></li>
+    <li><a href="https://www.thescottishfarmer.co.uk/news/26406574.sainsburys-backs-british-glasshouse-vegetable-growers/">The Scottish Farmer — Sainsbury's backs British glasshouse growers</a></li>
+    <li><a href="https://www.hortidaily.com/article/9875457/leds-will-help-thanet-earth-grow-cucumbers-throughout-the-uk-winter/">HortiDaily — Thanet Earth LED cucumbers</a></li>
+    <li><a href="https://nph.onlinelibrary.wiley.com/doi/full/10.1002/ppp3.70110">Batke et al. 2026 — Protected and productive</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/British_Tomato_Growers%27_Association">British Tomato Growers' Association (Wikipedia)</a></li>
+    <li><a href="https://apsgroup.uk.com/about/">APS Group</a> · <a href="https://www.britishtomatoes.co.uk/the-green-house-growers">The Green House Growers</a> · <a href="https://flavourfresh.com/about-us/">Flavourfresh</a> · <a href="https://en.wikipedia.org/wiki/Thanet_Earth">Thanet Earth</a></li>
+    <li><a href="https://www.alfalaval.com/media/stories/industrial-heat-pumps/fenland-glasshouse-a-greenhouse-heated-by-industrial-heat-pumps/">Alfa Laval — Fenland glasshouse heat pumps</a></li>
+    <li><a href="https://www.esbenergy.co.uk/business-solutions/success-stories/world-first-glass-house">ESB — Low Carbon Farming</a> · <a href="https://www.farminguk.com/news/huge-low-carbon-greenhouses-to-boost-uk-veg-production_55443.html">FarmingUK</a> · <a href="https://www.suffolknews.co.uk/bury-st-edmunds/news/concerns-raised-as-new-proposals-submitted-for-120m-facility-9130420/">Suffolk News (Ingham revisions)</a> · <a href="https://fruitnet.com/fpj/article/181478/sites-earmarked-for-41-giant-uk-glasshouses">Fruitnet (41 sites)</a></li>
+    <li><a href="https://www.standhillfarm.co.uk/">Standhill Farm</a> · <a href="https://cmwhorticulture.co.uk/scottish-tomato-production-revitalised/">CMW Horticulture</a> · <a href="https://www.fruitnet.com/fresh-produce-journal/scottish-tomatoes-return-to-supermarket-shelves/171878.article">Fruitnet</a></li>
+    <li><a href="https://castletonfarm.co.uk/">Castleton Farm</a> · <a href="https://www.hortidaily.com/article/9515715/first-scottish-strawberries-already-at-the-retailers/">HortiDaily — Scottish strawberries</a></li>
+    <li><a href="https://www.sdi.co.uk/news-and-success-stories/news-stories/igs-scottish-vertical-farming-innovator-goes-global">SDI — IGS</a> · <a href="https://www.insider.co.uk/news/vertical-farm-start-up-shockingly-21563038">Insider — Shockingly Fresh</a></li>
+    <li><a href="https://www.thescottishfarmer.co.uk/news/26566478.data-centre-heat-revive-scottish-fruit-growing/">The Scottish Farmer — ILI Group data-centre heat</a></li>
+    <li><a href="https://www.climatexchange.org.uk/projects/potential-sources-of-waste-heat-for-heat-networks-in-scotland/">ClimateXChange — Scottish waste heat sources</a> · <a href="https://www.osti.gov/etdeweb/biblio/5765793">OSTI — distillery-heated tomatoes</a></li>
+    <li><a href="https://www.agnavigator.com/Article/2025/04/14/vertical-farmer-jones-food-company-enters-administration/">AgNavigator — JFC administration</a> · <a href="https://www.thegrocer.co.uk/news/vertical-farming-giant-jones-food-company-appoints-administrators/703269.article">The Grocer</a></li>
+    <li><a href="https://www.thegrocer.co.uk/news/growup-farms-gets-green-light-for-major-vertical-farm-expansion/679937.article">The Grocer — GrowUp expansion</a></li>
+    <li><a href="https://www.nfuonline.com/news/standing-electricity-charges-due-to-come-into-force/">NFU — standing charges</a> · <a href="https://www.hortidaily.com/article/9825526/growers-warn-soaring-energy-charges-could-hit-uk-food-production/">HortiDaily</a> · <a href="https://www.fwi.co.uk/business/markets-and-trends/input-prices/glasshouse-growers-to-be-hit-by-massive-hike-in-electric-fees">Farmers Weekly</a></li>
+    <li><a href="https://www.agnavigator.com/Article/2026/07/28/uk-horticulture-is-being-held-back-industry-demands-action-on-labour-energy-and-investment/">AgNavigator — UK horticulture held back (Jul 2026)</a></li>
+    <li><a href="https://www.gov.scot/news/investing-in-sustainable-agriculture/">gov.scot — Investing in sustainable agriculture</a> · <a href="https://www.gov.uk/government/publications/a-blueprint-to-grow-the-uk-fruit-and-vegetable-sector/a-blueprint-to-grow-the-uk-fruit-and-vegetable-sector">Defra blueprint</a></li>
+    <li><a href="https://www.hortinergy.com/">Hortinergy</a> · <a href="https://www.hortidaily.com/article/9646287/energy-optimisation-for-grower-thanks-to-digital-twin-technology/">Priva ECO</a> · <a href="https://www.intechopen.com/chapters/76412">KASPRO review</a></li>
+    <li><a href="https://www.greenhousemag.com/news/source-ag-artificial-intelligence-software-controlled-environment-agriculture-series-b-funding/">Source.ag</a> · <a href="https://aiph.org/floraculture/news/blue-radix-boosts-commercial-expansion-with-e5-million-investment/">Blue Radix</a> · <a href="https://startupsmagazine.co.uk/article-koidra-raises-45m-seed-funding-bring-intelligent-automation-greenhouses">Koidra</a></li>
+  </ul>
+</section>
+
+<footer>Desk research, 2 October 2026. Companion notes: lca/MARKET.md. Figures are as reported by the sources; "Check" marks single-source, dated or conflicting figures.</footer>
+</div>
+</body>
+</html>

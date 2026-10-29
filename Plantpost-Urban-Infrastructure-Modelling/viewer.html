@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Plantpost Autonomous Urban Infrastructure · Annual Simulation Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="4.5 m street post: PV canopy, LiFePO4 microgrid, rain-fed drip irrigation of four planted tiers · full year 2023">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../viewer_core/viewer.css">
+<script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand"><h1>Plantpost Autonomous Urban Infrastructure</h1><span class="sub">4.5 m street post: PV canopy, LiFePO4 microgrid, rain-fed drip irrigation of four planted tiers · full year 2023</span></div>
+    <nav class="runs" aria-label="Scenario and display options">
+      <div class="pick"><label for="scenario">Scenario</label><select id="scenario"></select></div>
+      <label class="toggle"><input type="checkbox" id="labelsToggle" checked> Tags</label>
+      <label class="toggle"><input type="checkbox" id="spToggle" checked> State points</label>
+      <label class="toggle"><input type="checkbox" id="flowToggle" checked> Flow</label>
+      <label class="toggle" title="Ambient occlusion (turn off on slow machines)"><input type="checkbox" id="aoToggle" checked> AO</label>
+      <span class="navsep"></span>
+      <a href="../index.html" class="btn" title="Return to portfolio hub">Hub ↗</a>
+    </nav>
+  </header>
+  <main>
+    <div class="stage">
+      <div id="three"></div>
+      <div id="tags"></div>
+      <div id="tip"></div>
+      <div id="inspect"></div>
+      <div id="modelStatus" role="status"></div>
+      <div class="view-tools"><button class="btn" id="topView" type="button">Top</button><button class="btn" id="frontView" type="button">Front</button><button class="btn" id="resetView" type="button">Reset</button></div>
+      <div class="legend" id="legend"></div>
+      <div class="hint">drag orbit · scroll zoom · right-drag pan · click equipment for specs</div>
+    </div>
+    <aside>
+      <div class="clockbar">
+        <div><div class="d" id="clockDate">–</div><div class="t" id="clock">–</div></div>
+        <span class="run-tag" id="scenarioBadge">–</span>
+      </div>
+      <div class="tabs" role="tablist">
+        <button data-tab="overview" aria-selected="true">Overview</button>
+        <button data-tab="sp" id="tabSp" aria-selected="false">State points</button>
+        <button data-tab="diag" id="tabDiag" aria-selected="false">Diagrams</button>
+        <button data-tab="vars" aria-selected="false">Variables</button>
+        <button data-tab="kpi" aria-selected="false">Annual KPIs</button>
+      </div>
+      <div class="tabpanes">
+        <section class="pane on" data-tab="overview">
+          <div class="cmds" id="cmds"></div>
+          <h2>Live telemetry at cursor</h2>
+          <table><thead id="sensHead"><tr><th>Channel</th><th>Sim.</th><th>Ref.</th><th>Δ</th></tr></thead><tbody id="sens"></tbody></table>
+          <h2 id="ledgerTitle">Energy flows</h2>
+          <div class="ledger" id="ledger"></div>
+          <p class="note" id="sensorNote"></p>
+          <p class="note" id="provenance"></p>
+        </section>
+        <section class="pane" data-tab="sp" id="spPane"><div id="spTables"></div>
+          <p class="note">Hourly-mean states from full CoolProp equation-of-state solutions. Hover a row to locate the point in 3D.</p></section>
+        <section class="pane" data-tab="diag" id="diagPane"></section>
+        <section class="pane" data-tab="vars">
+          <input class="vsearch" id="vsearch" type="search" placeholder="Search channels… (e.g. enthalpy, pressure, 5_T)">
+          <p class="note" id="varCount" style="margin:0 0 6px"></p>
+          <div class="vfocus" id="vfocus"><b id="vfTitle"></b><div class="stats" id="vfStats"></div><canvas id="monthly"></canvas></div>
+          <div id="vars"></div>
+        </section>
+        <section class="pane" data-tab="kpi"><div id="kpis"></div></section>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <div class="ctrl">
+      <button id="play" type="button">Play</button>
+      <div class="row"><button class="ghost" id="stepBack" type="button" title="Previous sample (←)">◀</button><button class="ghost" id="stepFwd" type="button" title="Next sample (→)">▶</button></div>
+      <label for="speed">Playback
+        <select id="speed"><option value="3600">1 h / s</option><option value="21600">6 h / s</option><option value="86400" selected>1 day / s</option><option value="604800">1 week / s</option><option value="2592000">1 month / s</option></select>
+      </label>
+    </div>
+    <div class="chartwrap">
+      <div class="charttools">
+        <button class="btn" type="button" data-win="24">Day</button><button class="btn" type="button" data-win="168">Week</button><button class="btn" type="button" data-win="744">Month</button><button class="btn on" type="button" data-win="0">Year</button>
+        <span class="sp"></span><span class="info" id="winInfo"></span>
+      </div>
+      <canvas id="chart" aria-label="Timeline: click or drag to seek, scroll to zoom"></canvas>
+      <canvas id="overview" aria-label="Full-period overview: drag to move the window"></canvas>
+    </div>
+  </footer>
+</div>
+<script type="application/json" id="viewer-config">{"title": "Plantpost Autonomous Urban Infrastructure", "scenarios": [{"key": "london", "name": "London 2023", "badge": "London"}, {"key": "edinburgh", "name": "Edinburgh 2023", "badge": "Edinburgh"}, {"key": "bologna", "name": "Bologna 2023", "badge": "Bologna"}, {"key": "edinburgh_200ah", "name": "Edinburgh 2023 · 200 Ah pack", "badge": "Edinburgh · 200 Ah pack"}], "scene": {"glb": "plantpost.glb", "meta": "plantpost_meta.json", "fov": 34, "groundTex": "paving", "groundColor": "#a59484", "groundTile": 1.2, "groundRadius": 20, "camera": {"pos": [7.6, 4.9, 9.4], "target": [0.0, 2.55, 0.0]}, "bindings": [{"type": "emissive", "nodes": ["LED_Ring"], "key": "p_light", "range": [0, 47.1], "color": "#ffe2b0", "intensity": 6}, {"type": "spotlight", "anchor": "LEDsrc", "key": "p_light", "range": [0, 47.1], "intensity": 140, "angle": 62, "distance": 16}, {"type": "scale", "nodes": ["Tank_Level"], "key": "v_tank", "range": [0, 150], "axis": "y", "from": 0.02, "to": 1.0}, {"type": "color", "nodes": ["Tier_1_Plants"], "key": "theta1", "range": [12, 38], "ramp": "green", "mix": 0.55}, {"type": "color", "nodes": ["Tier_2_Plants"], "key": "theta2", "range": [12, 38], "ramp": "green", "mix": 0.55}, {"type": "color", "nodes": ["Tier_3_Plants"], "key": "theta3", "range": [12, 38], "ramp": "green", "mix": 0.55}, {"type": "color", "nodes": ["Tier_4_Plants"], "key": "theta4", "range": [12, 38], "ramp": "green", "mix": 0.55}], "flows": [{"path": "riser", "key": "pump_on", "colorKey": "T_amb", "range": [-5, 35], "scale": 0.08, "spacing": 0.08, "radius": 0.01}], "tags": [{"label": "PV canopy", "anchor": "Canopy", "fmt": "{p_pv|0} W · SOC {soc|0} %"}, {"label": "LED luminaire", "anchor": "LED", "fmt": "{p_light|1} W · {dim|0} %", "alertKey": "unserved", "alertAbove": 0.5}, {"label": "Base: tank + battery", "anchor": "Base", "fmt": "{v_tank|0} L · {T_bat|1} °C cells"}, {"label": "Tier 4", "anchor": "Tier4", "fmt": "{theta4|1} % vol · ET {et4|2} L/h"}, {"label": "Tier 1", "anchor": "Tier1", "fmt": "{theta1|1} % vol · ET {et1|2} L/h"}]}}</script>
+<script type="module" src="../viewer_core/viewer.js"></script>
+</body>
+</html>

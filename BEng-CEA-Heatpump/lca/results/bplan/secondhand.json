@@ -1,0 +1,50 @@
+{
+ "new_single_glass_gbp_m2": 190.63596287196538,
+ "cases": {
+  "low": {
+   "parts": {
+    "purchase": 60.0,
+    "re_erect": 25.0,
+    "foundations": 2.951145067283789,
+    "glass_replacement": 1.5428993527168173,
+    "heating_pipe_screens": 24.0,
+    "fitout_residual": 64.39592778805161
+   },
+   "total_gbp_m2": 177.88997220805223,
+   "dcap_gbp_m2": -12.745990663913148,
+   "dcap_gbp": -146578.89263500116,
+   "dgbp_kg_8": -0.02572027072965769,
+   "dgbp_kg_35": -0.017576917179154918
+  },
+  "central": {
+   "parts": {
+    "purchase": 60.0,
+    "re_erect": 35.0,
+    "foundations": 2.951145067283789,
+    "glass_replacement": 4.6286980581504515,
+    "heating_pipe_screens": 24.0,
+    "fitout_residual": 64.39592778805161
+   },
+   "total_gbp_m2": 190.97577091348586,
+   "dcap_gbp_m2": 0.3398080415204845,
+   "dcap_gbp": 3907.792477485571,
+   "dgbp_kg_8": 0.0006857022772475787,
+   "dgbp_kg_35": 0.0004686005160451521
+  },
+  "high": {
+   "parts": {
+    "purchase": 60.0,
+    "re_erect": 50.0,
+    "foundations": 2.951145067283789,
+    "glass_replacement": 9.257396116300903,
+    "heating_pipe_screens": 24.0,
+    "fitout_residual": 64.39592778805161
+   },
+   "total_gbp_m2": 210.6044689716363,
+   "dcap_gbp_m2": 19.96850609967092,
+   "dcap_gbp": 229637.82014621553,
+   "dgbp_kg_8": 0.040294661787605456,
+   "dgbp_kg_35": 0.027536877058845236
+  }
+ }
+}

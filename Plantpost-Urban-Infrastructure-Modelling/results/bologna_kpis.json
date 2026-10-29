@@ -1,0 +1,194 @@
+[
+ {
+  "label": "PV energy to battery",
+  "value": 324.21101081766255,
+  "unit": "kWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "LED lighting energy",
+  "value": 138.81783000000001,
+  "unit": "kWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Pump energy",
+  "value": 0.027569612225356442,
+  "unit": "kWh",
+  "group": "Energy",
+  "dec": 3,
+  "note": ""
+ },
+ {
+  "label": "Curtailed PV",
+  "value": 163.85271857187334,
+  "unit": "kWh",
+  "group": "Energy",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Unserved load",
+  "value": 1.0090503773563944,
+  "unit": "kWh",
+  "group": "Energy",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Lighting availability",
+  "value": 97.84836065573771,
+  "unit": "%",
+  "group": "Reliability",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Night hours dimmed",
+  "value": 2044.0,
+  "unit": "h",
+  "group": "Reliability",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Mean night light level",
+  "value": 75.49436475409836,
+  "unit": "%",
+  "group": "Reliability",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Minimum SOC",
+  "value": 20.0,
+  "unit": "%",
+  "group": "Reliability",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Days SOC < 30 %",
+  "value": 22.666666666666668,
+  "unit": "d",
+  "group": "Reliability",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Equivalent full cycles",
+  "value": 116.44804329005906,
+  "unit": "",
+  "group": "Battery",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Capacity fade (year 1)",
+  "value": 1.7328960865801182,
+  "unit": "%",
+  "group": "Battery",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Min battery temperature",
+  "value": 0.7015621685471102,
+  "unit": "°C",
+  "group": "Battery",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Rain harvested",
+  "value": 2312.1599745599997,
+  "unit": "L",
+  "group": "Water",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Irrigation delivered",
+  "value": 713.3424941990521,
+  "unit": "L",
+  "group": "Water",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Tank overflow",
+  "value": 1460.95888426395,
+  "unit": "L",
+  "group": "Water",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Days tank < 10 L",
+  "value": 14.416666666666666,
+  "unit": "d",
+  "group": "Water",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Water self-sufficiency",
+  "value": 100.0,
+  "unit": "%",
+  "group": "Water",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Hours of plant water stress > 50 %",
+  "value": 0.0,
+  "unit": "h",
+  "group": "Water",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "PM2.5 captured",
+  "value": 8.215989407999999,
+  "unit": "g",
+  "group": "Ecosystem",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "PM10 captured",
+  "value": 20.913427584000004,
+  "unit": "g",
+  "group": "Ecosystem",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Evaporative cooling",
+  "value": 615.379975,
+  "unit": "kWh",
+  "group": "Ecosystem",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "CO₂ avoided vs grid LED (50 W)",
+  "value": 50.752,
+  "unit": "kg",
+  "group": "Carbon",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "CO₂ avoided vs HPS (150 W)",
+  "value": 152.256,
+  "unit": "kg",
+  "group": "Carbon",
+  "dec": 1,
+  "note": ""
+ }
+]

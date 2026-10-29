@@ -1,0 +1,91 @@
+case_id,price_case,structure,tranche,amount_gbp,rate,tenor_yr,payment_gbp
+2.9ha_0umol_1T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_0umol_1T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,2649873.970380042,0.0675,7,487415.4939086974
+2.9ha_0umol_1T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_0umol_1T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,2649873.970380042,0.0675,10,372934.2938910826
+2.9ha_0umol_1T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_0umol_1T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,2649873.970380042,0.057499999999999996,10,355780.73675817915
+2.9ha_0umol_1T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_0umol_1T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,2649873.970380042,0.0675,7,487415.4939086974
+2.9ha_0umol_1T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_0umol_1T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,2649873.970380042,0.0675,10,372934.2938910826
+2.9ha_0umol_1T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_0umol_1T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,2649873.970380042,0.057499999999999996,10,355780.73675817915
+2.9ha_0umol_1T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_0umol_1T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,2649873.970380042,0.0675,7,487415.4939086974
+2.9ha_0umol_1T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_0umol_1T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,2649873.970380042,0.0675,10,372934.2938910826
+2.9ha_0umol_1T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_0umol_1T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,2649873.970380042,0.057499999999999996,10,355780.73675817915
+2.9ha_150umol_1T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_150umol_1T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3333070.7710185815,0.0675,7,613082.1141866108
+2.9ha_150umol_1T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_150umol_1T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3333070.7710185815,0.0675,10,469085.0992813627
+2.9ha_150umol_1T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_150umol_1T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3333070.7710185815,0.057499999999999996,10,447508.9713078207
+2.9ha_150umol_1T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_150umol_1T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3333070.7710185815,0.0675,7,613082.1141866108
+2.9ha_150umol_1T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_150umol_1T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3333070.7710185815,0.0675,10,469085.0992813627
+2.9ha_150umol_1T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_150umol_1T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3333070.7710185815,0.057499999999999996,10,447508.9713078207
+2.9ha_150umol_1T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_150umol_1T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3333070.7710185815,0.0675,7,613082.1141866108
+2.9ha_150umol_1T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_150umol_1T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3333070.7710185815,0.0675,10,469085.0992813627
+2.9ha_150umol_1T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_150umol_1T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3333070.7710185815,0.057499999999999996,10,447508.9713078207
+2.9ha_150umol_2T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_150umol_2T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3422195.4327788907,0.0675,7,629475.6262996101
+2.9ha_150umol_2T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_150umol_2T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3422195.4327788907,0.0675,10,481628.2025283053
+2.9ha_150umol_2T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_150umol_2T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3422195.4327788907,0.057499999999999996,10,459475.1395780266
+2.9ha_150umol_2T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_150umol_2T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3422195.4327788907,0.0675,7,629475.6262996101
+2.9ha_150umol_2T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_150umol_2T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3422195.4327788907,0.0675,10,481628.2025283053
+2.9ha_150umol_2T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_150umol_2T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3422195.4327788907,0.057499999999999996,10,459475.1395780266
+2.9ha_150umol_2T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_150umol_2T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3422195.4327788907,0.0675,7,629475.6262996101
+2.9ha_150umol_2T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_150umol_2T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3422195.4327788907,0.0675,10,481628.2025283053
+2.9ha_150umol_2T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_150umol_2T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3422195.4327788907,0.057499999999999996,10,459475.1395780266
+2.9ha_200umol_2T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_200umol_2T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3510097.93936977,0.0675,7,645644.3362626961
+2.9ha_200umol_2T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_200umol_2T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3510097.93936977,0.0675,10,493999.3037931795
+2.9ha_200umol_2T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_200umol_2T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3510097.93936977,0.057499999999999996,10,471277.2173022395
+2.9ha_200umol_2T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_200umol_2T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3510097.93936977,0.0675,7,645644.3362626961
+2.9ha_200umol_2T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_200umol_2T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3510097.93936977,0.0675,10,493999.3037931795
+2.9ha_200umol_2T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_200umol_2T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3510097.93936977,0.057499999999999996,10,471277.2173022395
+2.9ha_200umol_2T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,4694641.888435794,0.06,10,637851.4079576578
+2.9ha_200umol_2T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,3510097.93936977,0.0675,7,645644.3362626961
+2.9ha_200umol_2T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,4694641.888435794,0.06,15,483373.30461373786
+2.9ha_200umol_2T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,3510097.93936977,0.0675,10,493999.3037931795
+2.9ha_200umol_2T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,4694641.888435794,0.05,15,452292.53903808724
+2.9ha_200umol_2T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,3510097.93936977,0.057499999999999996,10,471277.2173022395
+4.4ha_150umol_2T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,6611637.4318394875,0.06,10,898309.6783574927
+4.4ha_150umol_2T,undercut 3%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,4713127.218962979,0.0675,7,866928.4867747489
+4.4ha_150umol_2T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,6611637.4318394875,0.06,15,680752.4642525987
+4.4ha_150umol_2T,undercut 3%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,4713127.218962979,0.0675,10,663309.5728589366
+4.4ha_150umol_2T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,6611637.4318394875,0.05,15,636980.2750263255
+4.4ha_150umol_2T,undercut 3%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,4713127.218962979,0.057499999999999996,10,632799.8588390171
+4.4ha_150umol_2T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,6611637.4318394875,0.06,10,898309.6783574927
+4.4ha_150umol_2T,undercut 5%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,4713127.218962979,0.0675,7,866928.4867747489
+4.4ha_150umol_2T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,6611637.4318394875,0.06,15,680752.4642525987
+4.4ha_150umol_2T,undercut 5%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,4713127.218962979,0.0675,10,663309.5728589366
+4.4ha_150umol_2T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,6611637.4318394875,0.05,15,636980.2750263255
+4.4ha_150umol_2T,undercut 5%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,4713127.218962979,0.057499999999999996,10,632799.8588390171
+4.4ha_150umol_2T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,glasshouse supplier credit,6611637.4318394875,0.06,10,898309.6783574927
+4.4ha_150umol_2T,undercut 10%,supplier credit 10 yr + plant asset finance 7 yr,plant asset finance,4713127.218962979,0.0675,7,866928.4867747489
+4.4ha_150umol_2T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,glasshouse supplier credit,6611637.4318394875,0.06,15,680752.4642525987
+4.4ha_150umol_2T,undercut 10%,supplier credit 15 yr + plant asset finance 10 yr,plant asset finance,4713127.218962979,0.0675,10,663309.5728589366
+4.4ha_150umol_2T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,glasshouse supplier credit,6611637.4318394875,0.05,15,636980.2750263255
+4.4ha_150umol_2T,undercut 10%,supplier credit 15 yr @ 5 % + plant 10 yr @ 5.75 %,plant asset finance,4713127.218962979,0.057499999999999996,10,632799.8588390171

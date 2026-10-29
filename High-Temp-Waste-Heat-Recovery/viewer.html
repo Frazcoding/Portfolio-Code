@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Industrial High-Temperature Heat Pumps · Annual Simulation Viewer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Dairy waste-heat recovery · screw HTHP with economiser and IHX · full-year 2023 at 15-min control steps">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../viewer_core/viewer.css">
+<script type="importmap">{"imports": {"three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div class="app">
+  <header>
+    <div class="brand"><h1>Industrial High-Temperature Heat Pumps</h1><span class="sub">Dairy waste-heat recovery · screw HTHP with economiser and IHX · full-year 2023 at 15-min control steps</span></div>
+    <nav class="runs" aria-label="Scenario and display options">
+      <div class="pick"><label for="scenario">Scenario</label><select id="scenario"></select></div>
+      <label class="toggle"><input type="checkbox" id="labelsToggle" checked> Tags</label>
+      <label class="toggle"><input type="checkbox" id="spToggle" checked> State points</label>
+      <label class="toggle"><input type="checkbox" id="flowToggle" checked> Flow</label>
+      <label class="toggle" title="Ambient occlusion (turn off on slow machines)"><input type="checkbox" id="aoToggle" checked> AO</label>
+      <span class="navsep"></span>
+      <a href="../index.html" class="btn" title="Return to portfolio hub">Hub ↗</a>
+    </nav>
+  </header>
+  <main>
+    <div class="stage">
+      <div id="three"></div>
+      <div id="tags"></div>
+      <div id="tip"></div>
+      <div id="inspect"></div>
+      <div id="modelStatus" role="status"></div>
+      <div class="view-tools"><button class="btn" id="topView" type="button">Top</button><button class="btn" id="frontView" type="button">Front</button><button class="btn" id="resetView" type="button">Reset</button></div>
+      <div class="legend" id="legend"></div>
+      <div class="hint">drag orbit · scroll zoom · right-drag pan · click equipment for specs</div>
+    </div>
+    <aside>
+      <div class="clockbar">
+        <div><div class="d" id="clockDate">–</div><div class="t" id="clock">–</div></div>
+        <span class="run-tag" id="scenarioBadge">–</span>
+      </div>
+      <div class="tabs" role="tablist">
+        <button data-tab="overview" aria-selected="true">Overview</button>
+        <button data-tab="sp" id="tabSp" aria-selected="false">State points</button>
+        <button data-tab="diag" id="tabDiag" aria-selected="false">Diagrams</button>
+        <button data-tab="vars" aria-selected="false">Variables</button>
+        <button data-tab="kpi" aria-selected="false">Annual KPIs</button>
+      </div>
+      <div class="tabpanes">
+        <section class="pane on" data-tab="overview">
+          <div class="cmds" id="cmds"></div>
+          <h2>Live telemetry at cursor</h2>
+          <table><thead id="sensHead"><tr><th>Channel</th><th>Sim.</th><th>Ref.</th><th>Δ</th></tr></thead><tbody id="sens"></tbody></table>
+          <h2 id="ledgerTitle">Energy flows</h2>
+          <div class="ledger" id="ledger"></div>
+          <p class="note" id="sensorNote"></p>
+          <p class="note" id="provenance"></p>
+        </section>
+        <section class="pane" data-tab="sp" id="spPane"><div id="spTables"></div>
+          <p class="note">Hourly-mean states from full CoolProp equation-of-state solutions. Hover a row to locate the point in 3D.</p></section>
+        <section class="pane" data-tab="diag" id="diagPane"></section>
+        <section class="pane" data-tab="vars">
+          <input class="vsearch" id="vsearch" type="search" placeholder="Search channels… (e.g. enthalpy, pressure, 5_T)">
+          <p class="note" id="varCount" style="margin:0 0 6px"></p>
+          <div class="vfocus" id="vfocus"><b id="vfTitle"></b><div class="stats" id="vfStats"></div><canvas id="monthly"></canvas></div>
+          <div id="vars"></div>
+        </section>
+        <section class="pane" data-tab="kpi"><div id="kpis"></div></section>
+      </div>
+    </aside>
+  </main>
+  <footer>
+    <div class="ctrl">
+      <button id="play" type="button">Play</button>
+      <div class="row"><button class="ghost" id="stepBack" type="button" title="Previous sample (←)">◀</button><button class="ghost" id="stepFwd" type="button" title="Next sample (→)">▶</button></div>
+      <label for="speed">Playback
+        <select id="speed"><option value="3600">1 h / s</option><option value="21600">6 h / s</option><option value="86400" selected>1 day / s</option><option value="604800">1 week / s</option><option value="2592000">1 month / s</option></select>
+      </label>
+    </div>
+    <div class="chartwrap">
+      <div class="charttools">
+        <button class="btn" type="button" data-win="24">Day</button><button class="btn" type="button" data-win="168">Week</button><button class="btn" type="button" data-win="744">Month</button><button class="btn on" type="button" data-win="0">Year</button>
+        <span class="sp"></span><span class="info" id="winInfo"></span>
+      </div>
+      <canvas id="chart" aria-label="Timeline: click or drag to seek, scroll to zoom"></canvas>
+      <canvas id="overview" aria-label="Full-period overview: drag to move the window"></canvas>
+    </div>
+  </footer>
+</div>
+<script type="application/json" id="viewer-config">{"title": "Industrial High-Temperature Heat Pumps", "scenarios": [{"key": "dairy_butane", "name": "Dairy effluent → 95 °C hot water · n-butane (R600) screw HTHP", "badge": "Dairy R600"}, {"key": "dairy_r1234zez", "name": "Dairy effluent → 95 °C hot water · R1234ze(Z) screw HTHP", "badge": "Dairy R1234ze(Z)"}, {"key": "steam_r1233", "name": "Spray-dryer exhaust → 2.7 bar steam · R1233zd(E) screw HTHP", "badge": "Steam R1233zd(E)"}], "scene": {"glb": "industrial_hthp.glb", "meta": "industrial_hthp_meta.json", "fov": 34, "camera": {"pos": [12.0, 10.5, 14.5], "target": [-0.5, 1.5, 0.0]}, "groundRadius": 40, "gridStep": 1, "bindings": [{"type": "visible", "nodes": ["Dairy_*"], "key": "layout", "threshold": 0.5, "invert": true}, {"type": "visible", "nodes": ["Steam_*"], "key": "layout", "threshold": 0.5}, {"type": "color", "nodes": ["Dairy_Compressor", "Steam_Compressor"], "key": "T_dis", "range": [60, 165], "mix": 0.3}, {"type": "scale", "nodes": ["Dairy_Sump_LevelFill"], "key": "src_level", "range": [0, 100], "axis": "y", "from": 0.02, "to": 1.0}, {"type": "emissive", "nodes": ["Gas_Boiler"], "key": "Q_boiler", "range": [0, 1200], "color": "#ff7a2f", "intensity": 0.35}, {"type": "color", "nodes": ["Dairy_Store_Band_1"], "key": "st_T1", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_2"], "key": "st_T2", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_3"], "key": "st_T3", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_4"], "key": "st_T4", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_5"], "key": "st_T5", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_6"], "key": "st_T6", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_7"], "key": "st_T7", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_8"], "key": "st_T8", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_9"], "key": "st_T9", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_10"], "key": "st_T10", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_11"], "key": "st_T11", "range": [20, 165], "mix": 1.0}, {"type": "color", "nodes": ["Dairy_Store_Band_12"], "key": "st_T12", "range": [20, 165], "mix": 1.0}], "flows": [{"gateKey": "layout", "gateMax": 0.5, "path": "d_suction", "key": "m_ref", "colorKey": "2_T", "range": [20, 165], "scale": 0.4, "spacing": 0.3, "radius": 0.025}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_discharge", "key": "m_ref", "colorKey": "5_T", "range": [20, 165], "scale": 0.4, "spacing": 0.3, "radius": 0.02}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_hotgas", "key": "m_ref", "colorKey": "5_T", "range": [20, 165], "scale": 0.4, "spacing": 0.3, "radius": 0.02}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_liquid", "key": "m_ref", "colorKey": "6_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.015}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_subcool", "key": "m_ref", "colorKey": "6_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_econ_vap", "key": "m_econ", "colorKey": "8_T", "range": [20, 165], "scale": 0.6, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_main_liq", "key": "m_ref", "colorKey": "9_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_evap_feed", "key": "m_ref", "colorKey": "11_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_suction", "key": "m_ref", "colorKey": "2_T", "range": [20, 165], "scale": 0.4, "spacing": 0.3, "radius": 0.025}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_discharge", "key": "m_ref", "colorKey": "5_T", "range": [20, 165], "scale": 0.4, "spacing": 0.3, "radius": 0.02}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_hotgas", "key": "m_ref", "colorKey": "5_T", "range": [20, 165], "scale": 0.4, "spacing": 0.3, "radius": 0.02}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_liquid", "key": "m_ref", "colorKey": "6_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.015}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_subcool", "key": "m_ref", "colorKey": "6_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_econ_vap", "key": "m_econ", "colorKey": "8_T", "range": [20, 165], "scale": 0.6, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_main_liq", "key": "m_ref", "colorKey": "9_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_evap_feed", "key": "m_ref", "colorKey": "11_T", "range": [20, 165], "scale": 0.25, "spacing": 0.3, "radius": 0.012}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_eff_in", "key": "on_frac", "colorKey": "S1_T", "range": [20, 165], "scale": 0.015, "spacing": 0.35, "radius": 0.03}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_eff_out", "key": "on_frac", "colorKey": "S2_T", "range": [20, 165], "scale": 0.015, "spacing": 0.35, "radius": 0.03}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_hw_flow", "key": "K2_m", "colorKey": "K2_T", "range": [20, 165], "scale": 0.3, "spacing": 0.4, "radius": 0.035}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_hw_ret", "key": "K1_m", "colorKey": "K1_T", "range": [20, 165], "scale": 0.3, "spacing": 0.4, "radius": 0.035}, {"gateKey": "layout", "gateMax": 0.5, "path": "d_process", "key": "Q_dem", "colorKey": "T_deliv", "range": [20, 165], "scale": 0.002, "spacing": 0.4, "radius": 0.04}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_loop_in", "key": "on_frac", "colorKey": "S1_T", "range": [20, 165], "scale": 0.015, "spacing": 0.35, "radius": 0.035}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_loop_out", "key": "on_frac", "colorKey": "S2_T", "range": [20, 165], "scale": 0.015, "spacing": 0.35, "radius": 0.035}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_steam", "key": "steam_kgh", "colorKey": "K2_T", "range": [20, 165], "scale": 0.004, "spacing": 0.3, "radius": 0.04}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_header", "key": "steam_kgh", "colorKey": "K2_T", "range": [20, 165], "scale": 0.004, "spacing": 0.45, "radius": 0.05}, {"gateKey": "layout", "gateMin": 0.5, "path": "s_feedwater", "key": "steam_kgh", "colorKey": "K1_T", "range": [20, 165], "scale": 0.001, "spacing": 0.3, "radius": 0.02}], "tags": [{"label": "Screw HTHP", "anchor": "Comp", "fmt": "{cap|0} % · COP {cop|2} · {W_hp|0} kWe"}, {"label": "Gas boiler", "anchor": "Boiler", "fmt": "{Q_boiler|0} kW top-up"}, {"gateKey": "layout", "gateMax": 0.5, "label": "Store 80 m³", "anchor": "Store", "fmt": "{T_deliv|1} °C · {store_soc|0} %"}, {"gateKey": "layout", "gateMax": 0.5, "label": "Effluent sump", "anchor": "Sump", "fmt": "{T_sump|1} °C · {src_level|0} m³"}, {"gateKey": "layout", "gateMin": 0.5, "label": "Dryer exhaust loop", "anchor": "Dryer", "fmt": "{T_loop|1} °C · {Q_recov|0} kW"}, {"gateKey": "layout", "gateMin": 0.5, "label": "Steam generator", "anchor": "SteamGen", "fmt": "{steam_kgh|0} kg/h · {Tc|1} °C cond."}]}}</script>
+<script type="module" src="../viewer_core/viewer.js"></script>
+</body>
+</html>

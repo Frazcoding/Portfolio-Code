@@ -1,0 +1,74 @@
+[
+ {
+  "label": "Peak speed",
+  "value": 35.99999692302198,
+  "unit": "kt",
+  "group": "Race",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Peak DC power",
+  "value": 35.55122959994067,
+  "unit": "kW",
+  "group": "Race",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Peak total heat",
+  "value": 2.86538712217761,
+  "unit": "kW",
+  "group": "Race",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Energy used",
+  "value": 5.494577210549311,
+  "unit": "kWh",
+  "group": "Race",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Max battery temperature",
+  "value": 35.9906865987328,
+  "unit": "°C",
+  "group": "Race",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Max inverter junction",
+  "value": 35.832182619637365,
+  "unit": "°C",
+  "group": "Race",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Max motor winding",
+  "value": 35.85202408987492,
+  "unit": "°C",
+  "group": "Race",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Peak refrigerant flow",
+  "value": 30.623349724778123,
+  "unit": "g/s",
+  "group": "Race",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Max exit quality",
+  "value": 0.4805754471412718,
+  "unit": "–",
+  "group": "Race",
+  "dec": 3,
+  "note": ""
+ }
+]

@@ -22,7 +22,7 @@
 
 ### Two-Stage Ammonia ($NH_3$ / R-717) Heat Pump with Flash Tank
 - **Natural Refrigerant**: Zero Ozone Depletion Potential ($ODP = 0$), Zero Global Warming Potential ($GWP = 0$).
-- **Condenser Supply**: High-temperature delivery at $T_{\text{cond}} = 80.0^\circ\text{C}$ to hydronic heating loops.
+- **Condenser Supply**: Design condensing temperature $T_{\text{cond}} = 80.0^\circ\text{C}$ to hydronic heating loops; the calibrated annual run condenses at 33-76 °C (mean about 52 °C), 56-59 % of Carnot. COP is the active-hour mean (see `lca/THESIS_NUMBERS_REVIEW.md`).
 - **Intermediate Flash Pressure**: $P_{\text{int}} = \sqrt{P_{\text{evap}} \cdot P_{\text{cond}}}$.
 - **Mass Flow Equations**:
   $$\dot{m}_2 = \frac{Q_c}{h_4 - h_5}$$

@@ -1,0 +1,18 @@
+# Main study environment (site model, sweeps, LP). Versions as used on 2026-10-03 (Python 3.14.7).
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+numba==0.67.0
+CoolProp==8.0.0
+pypsa==1.3.0
+linopy==0.9.1
+highspy==1.15.1
+searoute==1.6.0
+matplotlib==3.11.2
+pypdf==6.19.0
+openpyxl==3.1.5
+tifffile==2026.9.20
+imagecodecs==2026.8.16
+pyproj==3.8.0
+requests==2.34.2
+scikit-learn==1.9.1

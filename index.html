@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Engineering Simulation Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Semi+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root { color-scheme: light; --ground:#eef1f4; --panel:#f9fbfc; --line:#d5dce3; --ink:#15202b; --muted:#5d6b78; --faint:#8a97a3; --model:#2f5bd3;
+  --sans:"Barlow","Segoe UI",system-ui,sans-serif; --cond:"Barlow Semi Condensed","Barlow",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { color-scheme: dark; --ground:#0e1318; --panel:#151c23; --line:#28323d; --ink:#e4e9ee; --muted:#9aa7b3; --faint:#6c7a87; --model:#7c9cff; } }
+:root[data-theme="dark"] { color-scheme: dark; --ground:#0e1318; --panel:#151c23; --line:#28323d; --ink:#e4e9ee; --muted:#9aa7b3; --faint:#6c7a87; --model:#7c9cff; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 14.5px/1.5 var(--sans); }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 32px 16px 56px; }
+header { border-bottom: 1px solid var(--line); padding-bottom: 18px; margin-bottom: 24px; }
+h1 { font: 700 30px/1.1 var(--cond); margin: 0 0 8px; text-wrap: balance; }
+.lead { color: var(--muted); max-width: 900px; margin: 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 18px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+.shot { display: block; aspect-ratio: 16 / 10; overflow: hidden; background: #c8d2da; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.card:hover .shot img { transform: scale(1.03); }
+.body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+.tagrow { display: flex; justify-content: space-between; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tag { font: 600 10.5px var(--cond); text-transform: uppercase; letter-spacing: .07em; color: var(--model); background: color-mix(in srgb, var(--model) 12%, transparent); padding: 2px 7px; border-radius: 3px; }
+.meta { font: 500 11px var(--mono); color: var(--faint); }
+h2 { font: 700 18px/1.2 var(--cond); margin: 8px 0 4px; }
+p { color: var(--muted); font-size: 13px; margin: 0 0 12px; }
+.kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 14px; flex: 1; align-content: start; }
+.k { background: color-mix(in srgb, var(--ground) 70%, transparent); border-radius: 4px; padding: 5px 8px; min-width: 0; }
+.k span { display: block; font: 600 9.5px var(--cond); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); overflow-wrap: anywhere; }
+.k b { font: 600 14px var(--mono); }
+.k small { font: 500 11px var(--sans); color: var(--muted); }
+.btn { align-self: flex-start; font: 600 13px var(--cond); text-transform: uppercase; letter-spacing: .04em; color: var(--ground); background: var(--ink); text-decoration: none; padding: 8px 14px; border-radius: 4px; }
+.btn:hover { background: var(--model); }
+.btnrow { display: flex; flex-wrap: wrap; gap: 8px; }
+.btn.alt { background: transparent; color: var(--ink); box-shadow: inset 0 0 0 1px var(--ink); }
+.btn.alt:hover { background: var(--model); color: var(--ground); box-shadow: none; }
+footer { margin-top: 34px; color: var(--faint); font-size: 12px; border-top: 1px solid var(--line); padding-top: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Engineering Simulation Portfolio</h1>
+    <p class="lead">Eight annual (8,760-hour) simulations on real 2023 weather (ERA5), GB grid carbon and Agile prices, each with full
+    thermodynamic state points, energy and exergy balances and annual KPIs, shown on detailed, physically-based 3D models.
+    Open via <code>run_suite.cmd</code> or <code>python serve_viewers.py</code> (the viewers load their data from local files).</p>
+  </header>
+  <div class="grid">
+    <article class="card">
+      <a class="shot" href="Heat-Pump-Simulation/viewer.html"><img src="Heat-Pump-Simulation/heatpump_rig_preview.png" alt="Rendered 3D model: Two-stage R290 air-source heat pump" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Thermodynamics</span><span class="meta">3 scenarios · 210 channels × 8,760 h</span></div>
+        <h2>Two-stage R290 air-source heat pump</h2>
+        <p>Inverter LP pair + HP scroll with flash economiser serving a 12-flat block: 10 refrigerant state points, frost/defrost, stratified buffer and DHW cylinder, Agile-aware control.</p>
+        <div class="kpis"><div class="k"><span>SCOP (H2: compressors + fans)</span><b>3.26<small> –</small></b></div><div class="k"><span>Electricity cost (Agile)</span><b>6,954<small> £</small></b></div><div class="k"><span>Reverse-cycle defrosts</span><b>1,066<small> </small></b></div><div class="k"><span>Annual exergy efficiency</span><b>37.0<small> %</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="Heat-Pump-Simulation/viewer.html">Open simulation viewer →</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="High-Temp-Waste-Heat-Recovery/viewer.html"><img src="High-Temp-Waste-Heat-Recovery/industrial_hthp_preview.png" alt="Rendered 3D model: Industrial high-temperature heat pumps" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Industrial heat</span><span class="meta">3 scenarios · 169 channels × 8,760 h</span></div>
+        <h2>Industrial high-temperature heat pumps</h2>
+        <p>Dairy effluent and spray-dryer exhaust recovered by screw heat pumps with economiser + IHX to 95 °C water or 2.7 bar steam.</p>
+        <div class="kpis"><div class="k"><span>Seasonal system COP</span><b>3.25<small> –</small></b></div><div class="k"><span>Heat pump heat delivered</span><b>3,494<small> MWh</small></b></div><div class="k"><span>CO₂ avoided</span><b>551<small> t</small></b></div><div class="k"><span>Electricity / gas price ratio</span><b>3.43<small> –</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="High-Temp-Waste-Heat-Recovery/viewer.html">Open simulation viewer →</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="Building-Heatpump-Retrofit/viewer.html"><img src="Building-Heatpump-Retrofit/retrofit_plant_preview.png" alt="Rendered 3D model: Commercial retrofit under a 60 kWe cap" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Building services</span><span class="meta">3 scenarios · 129 channels × 8,760 h</span></div>
+        <h2>Commercial retrofit under a 60 kWe cap</h2>
+        <p>Four 40 kW R290 modules, 2 x 100 m³ stratified stores and grid-capped dispatch for a 6,000 m² Edinburgh office.</p>
+        <div class="kpis"><div class="k"><span>System SPF (all plant electricity)</span><b>2.09<small> –</small></b></div><div class="k"><span>Peak 10-min demand</span><b>60.0<small> kW</small></b></div><div class="k"><span>Electricity cost (Agile)</span><b>28.77<small> k£</small></b></div><div class="k"><span>Unmet occupied hours (&lt;20 °C)</span><b>69<small> h</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="Building-Heatpump-Retrofit/viewer.html">Open simulation viewer →</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="BEng-CEA-Heatpump/viewer.html"><img src="BEng-CEA-Heatpump/greenhouse_preview.png" alt="Rendered 3D model: Greenhouse + two-stage ammonia heat pump" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Controlled-environment agriculture</span><span class="meta">4 scenarios · 156 channels × 8,760 h</span></div>
+        <h2>Greenhouse + two-stage ammonia heat pump</h2>
+        <p>Dynamic Venlo glasshouse with tomato crop, screen and vents, heated by an R717 open-intercooler heat pump on air, ground or river.</p>
+        <div class="kpis"><div class="k"><span>Seasonal COP (unit)</span><b>3.45<small> –</small></b></div><div class="k"><span>Pipe-rail heat to greenhouse</span><b>120.5<small> MWh</small></b></div><div class="k"><span>Hours below 17 °C</span><b>10<small> h</small></b></div><div class="k"><span>Operational CO₂</span><b>6.70<small> t</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="BEng-CEA-Heatpump/viewer.html">Open simulation viewer →</a><a class="btn alt" href="BEng-CEA-Heatpump/crop_compare.html">Compare crops vs imports →</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="Plantpost-Urban-Infrastructure-Modelling/viewer.html"><img src="Plantpost-Urban-Infrastructure-Modelling/plantpost_preview.png" alt="Rendered 3D model: Plantpost autonomous street post" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Urban infrastructure</span><span class="meta">4 scenarios · 72 channels × 8,760 h</span></div>
+        <h2>Plantpost autonomous street post</h2>
+        <p>PV canopy, LiFePO4 microgrid with adaptive dimming, rain-fed drip irrigation of four planted tiers, particulate capture.</p>
+        <div class="kpis"><div class="k"><span>PV energy to battery</span><b>258.0<small> kWh</small></b></div><div class="k"><span>Lighting availability</span><b>86.95<small> %</small></b></div><div class="k"><span>Rain harvested</span><b>1,994<small> L</small></b></div><div class="k"><span>PM10 captured</span><b>12.8<small> g</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="Plantpost-Urban-Infrastructure-Modelling/viewer.html">Open simulation viewer →</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="PyPsa-Green-Hydrogen-Microgrid/viewer.html"><img src="PyPsa-Green-Hydrogen-Microgrid/hydrogen_microgrid_preview.png" alt="Rendered 3D model: Island wind–hydrogen microgrid" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Energy systems</span><span class="meta">3 scenarios · 95 channels × 8,760 h</span></div>
+        <h2>Island wind–hydrogen microgrid</h2>
+        <p>Three 6.2 MW turbines, electrochemical PEM model, real-gas 350 bar storage and nightly ferry bunkering on Lewis.</p>
+        <div class="kpis"><div class="k"><span>Hydrogen produced</span><b>365.0<small> t</small></b></div><div class="k"><span>Mean specific energy</span><b>57.49<small> kWh/kg</small></b></div><div class="k"><span>Ferry demand met by H₂</span><b>83.0<small> %</small></b></div><div class="k"><span>LCOH (8 % WACC, 20 yr, £45/MWh)</span><b>8.63<small> £/kg</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="PyPsa-Green-Hydrogen-Microgrid/viewer.html">Open simulation viewer →</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="UniBoat-Powertrain-Cooling/viewer.html"><img src="UniBoat-Powertrain-Cooling/uniboat_cooling_preview.png" alt="Rendered 3D model: UniBoat electric hydrofoil cooling" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Electric marine</span><span class="meta">2 scenarios · 68 channels × 8,760 h</span></div>
+        <h2>UniBoat electric hydrofoil cooling</h2>
+        <p>Monaco Energy Class catamaran: foil hydrodynamics, powertrain losses and a pumped two-phase R1233zd(E) cooling loop.</p>
+        <div class="kpis"><div class="k"><span>Sessions</span><b>111<small> </small></b></div><div class="k"><span>Energy drawn</span><b>930.8<small> kWh</small></b></div><div class="k"><span>Max battery temperature</span><b>36.0<small> °C</small></b></div><div class="k"><span>Peak battery heat</span><b>2.94<small> kW</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="UniBoat-Powertrain-Cooling/viewer.html">Open simulation viewer →</a></div>
+      </div>
+    </article>
+    <article class="card">
+      <a class="shot" href="Whole-Carbon-Lifecycle-Assessment/viewer.html"><img src="Whole-Carbon-Lifecycle-Assessment/wlc_office_preview.png" alt="Rendered 3D model: Whole-life carbon of a 7,500 m² office" loading="lazy"></a>
+      <div class="body">
+        <div class="tagrow"><span class="tag">Whole-life carbon</span><span class="meta">5 scenarios · 10 channels × 8,760 h</span></div>
+        <h2>Whole-life carbon of a 7,500 m² office</h2>
+        <p>Baseline, deep retrofit, standard and timber new build: hourly operation in 2023 and 60-year A1–C4 carbon.</p>
+        <div class="kpis"><div class="k"><span>Deep Retrofit · 60-yr WLC</span><b>3,051<small> tCO₂e</small></b></div><div class="k"><span>Timber New Build · 60-yr WLC</span><b>3,530<small> tCO₂e</small></b></div><div class="k"><span>Standard New Build · 60-yr WLC</span><b>4,776<small> tCO₂e</small></b></div><div class="k"><span>Baseline (Gas) · 60-yr WLC</span><b>11,060<small> tCO₂e</small></b></div></div>
+        <div class="btnrow"><a class="btn" href="Whole-Carbon-Lifecycle-Assessment/viewer.html">Open simulation viewer →</a></div>
+      </div>
+    </article>
+  </div>
+  <footer>Rebuild everything with <code>python build_all.py</code> (add <code>--force</code> to re-run all simulations). Textures and HDRI: CC0 (Poly Haven, ambientCG).</footer>
+</div>
+</body>
+</html>

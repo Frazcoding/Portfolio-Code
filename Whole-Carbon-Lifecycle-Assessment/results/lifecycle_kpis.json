@@ -1,0 +1,130 @@
+[
+ {
+  "label": "Baseline (Gas) · upfront A1-A5",
+  "value": 250.402625,
+  "unit": "tCO₂e",
+  "group": "Upfront",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Baseline (Gas) · 60-yr WLC (DESNZ central)",
+  "value": 11060.4345963966,
+  "unit": "tCO₂e",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Baseline (Gas) · WLC intensity",
+  "value": 1474.72461285288,
+  "unit": "kgCO₂e/m²",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Baseline (Gas) · installed plant",
+  "value": 590.495475,
+  "unit": "kW",
+  "group": "Plant",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Deep Retrofit · upfront A1-A5",
+  "value": 1164.1753273759998,
+  "unit": "tCO₂e",
+  "group": "Upfront",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Deep Retrofit · 60-yr WLC (DESNZ central)",
+  "value": 3051.3254973657795,
+  "unit": "tCO₂e",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Deep Retrofit · WLC intensity",
+  "value": 406.8433996487706,
+  "unit": "kgCO₂e/m²",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Deep Retrofit · installed plant",
+  "value": 215.62499999999997,
+  "unit": "kW",
+  "group": "Plant",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Standard New Build · upfront A1-A5",
+  "value": 2734.689806076,
+  "unit": "tCO₂e",
+  "group": "Upfront",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Standard New Build · 60-yr WLC (DESNZ central)",
+  "value": 4775.673713788879,
+  "unit": "tCO₂e",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Standard New Build · WLC intensity",
+  "value": 636.7564951718505,
+  "unit": "kgCO₂e/m²",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Standard New Build · installed plant",
+  "value": 215.62499999999997,
+  "unit": "kW",
+  "group": "Plant",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Timber New Build · upfront A1-A5",
+  "value": 1635.379705312,
+  "unit": "tCO₂e",
+  "group": "Upfront",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Timber New Build · 60-yr WLC (DESNZ central)",
+  "value": 3530.4003637494925,
+  "unit": "tCO₂e",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Timber New Build · WLC intensity",
+  "value": 470.7200484999323,
+  "unit": "kgCO₂e/m²",
+  "group": "Whole life",
+  "dec": 0,
+  "note": ""
+ },
+ {
+  "label": "Timber New Build · installed plant",
+  "value": 215.62499999999997,
+  "unit": "kW",
+  "group": "Plant",
+  "dec": 0,
+  "note": ""
+ }
+]
