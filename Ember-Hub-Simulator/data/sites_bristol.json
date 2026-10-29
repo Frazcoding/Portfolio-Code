@@ -1,0 +1,18 @@
+{
+  "note": "Listed hub sites S1-S3: values from the Ember sheet, tab Site Selection 3.2 (2026-10-28); coordinates and listing details from Ember-Site-Selection/Outputs/ember_hub_analysis.gpkg. Area, lease and spare grid capacity are estimates to confirm with the agents and on the NGED Network Opportunity Map.",
+  "origin": {"name": "Bristol Coach Station, BS1 3EW", "lon": -2.593702, "lat": 51.458905},
+  "sites": [
+    {"id": "S1", "name": "S1 Temple Works, Mead St BS3 4RP", "lon": -2.582811, "lat": 51.445682,
+     "deadrun_km": 3.3, "deadrun_min": 9, "area_m2": 9348, "lease_gbp_per_m2_yr": 25, "grid_distance_m": 1057,
+     "spare_grid_kVA": 1000, "kind": "listed", "status": "To let (Savills)", "tenure": "Leasehold (outside 1954 Act)",
+     "url": "https://www.primelocation.com/to-rent/details/73549557/", "primary_sub": "Bedminster", "design": "EMB-HUB-003"},
+    {"id": "S2", "name": "S2 Ex-Stagecoach Filton depot BS34 6QD", "lon": -2.561816, "lat": 51.522914,
+     "deadrun_km": 10.4, "deadrun_min": 21, "area_m2": 12586, "lease_gbp_per_m2_yr": 19, "grid_distance_m": 129,
+     "spare_grid_kVA": 1000, "kind": "listed", "status": "For sale, freehold (Montagu Evans)", "tenure": "Freehold",
+     "url": "https://www.montagu-evans.co.uk/properties/335977/", "primary_sub": "Patchway"},
+    {"id": "S3", "name": "S3 Hydro Estate Site 7, Avonmouth BS11 9HW", "lon": -2.694474, "lat": 51.509355,
+     "deadrun_km": 12.6, "deadrun_min": 25, "area_m2": 18616, "lease_gbp_per_m2_yr": 7.4, "grid_distance_m": 494,
+     "spare_grid_kVA": 2000, "kind": "listed", "status": "To let (JLL)", "tenure": "Leasehold",
+     "url": "https://property.jll.co.uk/rent-land/land-rent-bristol-bs11-9hw-189997", "primary_sub": "Avonmouth"}
+  ]
+}
