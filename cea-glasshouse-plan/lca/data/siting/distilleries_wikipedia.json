@@ -1,0 +1,1314 @@
+[
+ {
+  "name": "Balmaud distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Ben Cumhaill distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Blackness Bay Distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Burn O'Bennie distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Cabrach distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Aberargie distillery",
+  "capacity_raw": "750,000 litres<ref name=\"WM 2022\">{{cite web|website=Whisky Magazine|url=https://whiskymag.com/articles/new-beginnings-o",
+  "lpa": 750000.0,
+  "lat": 56.329,
+  "lon": -3.3491,
+  "type": "| mapframe      = y"
+ },
+ {
+  "name": "Aberfeldy distillery",
+  "capacity_raw": "3,500,000 litres",
+  "lpa": 3500000.0,
+  "lat": 56.62444444444444,
+  "lon": -3.8497222222222223,
+  "type": "Highland"
+ },
+ {
+  "name": "Aberlour distillery",
+  "capacity_raw": "3.900,000 L",
+  "lpa": 3900000.0,
+  "lat": 57.46722222222222,
+  "lon": -3.2288888888888887,
+  "type": "Speyside"
+ },
+ {
+  "name": "Abhainn Dearg distillery",
+  "capacity_raw": "20,000 liters per year",
+  "lpa": 20000.0,
+  "lat": 58.170833333333334,
+  "lon": -7.044722222222222,
+  "type": "Island"
+ },
+ {
+  "name": "Ailsa Bay distillery",
+  "capacity_raw": "12,000,000 liters",
+  "lpa": 12000000.0,
+  "lat": null,
+  "lon": null,
+  "type": "Lowland"
+ },
+ {
+  "name": "Allt-A-Bhainne distillery",
+  "capacity_raw": "4,000,000 litres",
+  "lpa": 4000000.0,
+  "lat": 57.39472222222222,
+  "lon": -3.2066666666666666,
+  "type": "Speyside"
+ },
+ {
+  "name": "Annandale distillery",
+  "capacity_raw": "260,000 L",
+  "lpa": 260000.0,
+  "lat": null,
+  "lon": null,
+  "type": "Lowland"
+ },
+ {
+  "name": "Arbikie distillery",
+  "capacity_raw": "200,000 litres",
+  "lpa": 200000.0,
+  "lat": 56.665607,
+  "lon": -2.527366,
+  "type": "Highland"
+ },
+ {
+  "name": "Ardbeg distillery",
+  "capacity_raw": "1,250,000 litres",
+  "lpa": 1250000.0,
+  "lat": 55.64055555555556,
+  "lon": -6.108611111111111,
+  "type": "Islay"
+ },
+ {
+  "name": "Ardgowan distillery",
+  "capacity_raw": "| brand_1 =",
+  "lpa": 1000000.0,
+  "lat": null,
+  "lon": null,
+  "type": "Lowland"
+ },
+ {
+  "name": "Ardmore distillery",
+  "capacity_raw": "5,530,000 litres",
+  "lpa": 5530000.0,
+  "lat": 57.35111111111111,
+  "lon": -2.745,
+  "type": "Highland"
+ },
+ {
+  "name": "Ardnahoe distillery",
+  "capacity_raw": "900,000 L",
+  "lpa": 900000.0,
+  "lat": 55.868985,
+  "lon": -6.117463,
+  "type": "Islay"
+ },
+ {
+  "name": "Ardnamurchan distillery",
+  "capacity_raw": "500,000 L",
+  "lpa": 500000.0,
+  "lat": 56.692,
+  "lon": -5.9396,
+  "type": "Highland"
+ },
+ {
+  "name": "Ardross distillery",
+  "capacity_raw": "1,000,000 L",
+  "lpa": 1000000.0,
+  "lat": 57.73976111111111,
+  "lon": -4.338141666666667,
+  "type": "Highland"
+ },
+ {
+  "name": "Auchentoshan distillery",
+  "capacity_raw": "1,800,000 litres<ref name=\"MaltMadness\"/>",
+  "lpa": 1800000.0,
+  "lat": 55.922,
+  "lon": -4.439,
+  "type": "Lowland"
+ },
+ {
+  "name": "Auchroisk distillery",
+  "capacity_raw": "3,100,000 litres of pure alcohol per year",
+  "lpa": 3100000.0,
+  "lat": 57.548,
+  "lon": -3.11553,
+  "type": "Speyside"
+ },
+ {
+  "name": "Aultmore distillery",
+  "capacity_raw": "2,100,000 litres of pure alcohol per year",
+  "lpa": 2100000.0,
+  "lat": 57.5673,
+  "lon": -3.0021,
+  "type": "Speyside"
+ },
+ {
+  "name": "Balblair distillery",
+  "capacity_raw": "1,800,000 litres of alcohol",
+  "lpa": 1800000.0,
+  "lat": 57.840472222222225,
+  "lon": -4.180416666666667,
+  "type": "Highland"
+ },
+ {
+  "name": "Ballindalloch distillery",
+  "capacity_raw": "100,000 L",
+  "lpa": 100000.0,
+  "lat": null,
+  "lon": null,
+  "type": "Speyside"
+ },
+ {
+  "name": "Balmenach distillery",
+  "capacity_raw": "2,000,000 litres of alcohol",
+  "lpa": 2000000.0,
+  "lat": 57.326708333333336,
+  "lon": -3.533908333333333,
+  "type": "Speyside"
+ },
+ {
+  "name": "Balvenie distillery",
+  "capacity_raw": "5,600,000 litres",
+  "lpa": 5600000.0,
+  "lat": 57.45919444444444,
+  "lon": -3.1285833333333333,
+  "type": "Speyside"
+ },
+ {
+  "name": "BenRiach distillery",
+  "capacity_raw": "{{convert|1300000|L}}",
+  "lpa": 1300000.0,
+  "lat": 57.61194444444445,
+  "lon": -3.292777777777778,
+  "type": "Speyside"
+ },
+ {
+  "name": "Benbecula Distillery",
+  "capacity_raw": "350,000 litres a year",
+  "lpa": 350000.0,
+  "lat": 57.446,
+  "lon": -7.32,
+  "type": "Island"
+ },
+ {
+  "name": "Benrinnes distillery",
+  "capacity_raw": "2,500,000 L",
+  "lpa": 2500000.0,
+  "lat": 57.44188,
+  "lon": -3.23686,
+  "type": "Speyside"
+ },
+ {
+  "name": "Benromach distillery",
+  "capacity_raw": "400,000 litres",
+  "lpa": 400000.0,
+  "lat": 57.614130555555555,
+  "lon": -3.620038888888889,
+  "type": "Speyside"
+ },
+ {
+  "name": "Bladnoch distillery",
+  "capacity_raw": "1.5 million litres",
+  "lpa": 1500000.0,
+  "lat": 54.858333333333334,
+  "lon": -4.461944444444445,
+  "type": "Lowland"
+ },
+ {
+  "name": "Blair Athol distillery",
+  "capacity_raw": "2,500,000 litres",
+  "lpa": 2500000.0,
+  "lat": 56.69847222222222,
+  "lon": -3.720833333333333,
+  "type": "Highland"
+ },
+ {
+  "name": "Bonnington distillery",
+  "capacity_raw": "500,000 L",
+  "lpa": 500000.0,
+  "lat": 55.9726,
+  "lon": -3.1851,
+  "type": "Lowland"
+ },
+ {
+  "name": "Borders distillery",
+  "capacity_raw": "2,000,000 L",
+  "lpa": 2000000.0,
+  "lat": 55.42452,
+  "lon": -2.78887,
+  "type": "Lowland"
+ },
+ {
+  "name": "Bowmore distillery",
+  "capacity_raw": "1,700,000 L",
+  "lpa": 1700000.0,
+  "lat": 55.75713888888889,
+  "lon": -6.289844444444444,
+  "type": "Islay"
+ },
+ {
+  "name": "Braeval distillery",
+  "capacity_raw": "4,200,000",
+  "lpa": 4200000.0,
+  "lat": 57.271388888888886,
+  "lon": -3.2591111111111113,
+  "type": "Speyside"
+ },
+ {
+  "name": "Brora distillery",
+  "capacity_raw": "| brand_1       =",
+  "lpa": 1000000.0,
+  "lat": 58.025,
+  "lon": -3.868055555555556,
+  "type": "Highland"
+ },
+ {
+  "name": "Bruichladdich distillery",
+  "capacity_raw": "1,500,000 litres",
+  "lpa": 1500000.0,
+  "lat": 55.766359,
+  "lon": -6.3625,
+  "type": "Islay"
+ },
+ {
+  "name": "Bunnahabhain distillery",
+  "capacity_raw": "3,500,000 litres per annum",
+  "lpa": 3500000.0,
+  "lat": 55.88323,
+  "lon": -6.126261,
+  "type": "Islay"
+ },
+ {
+  "name": "Ben Nevis Distillery",
+  "capacity_raw": "2,000,000 litres",
+  "lpa": 2000000.0,
+  "lat": 56.835144444444445,
+  "lon": -5.073886111111111,
+  "type": "Highland"
+ },
+ {
+  "name": "Cairn distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Deerness distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Caol Ila distillery",
+  "capacity_raw": "6,500,000 L",
+  "lpa": 6500000.0,
+  "lat": 55.85448,
+  "lon": -6.109343,
+  "type": "Islay"
+ },
+ {
+  "name": "Cardhu distillery",
+  "capacity_raw": "3,500,000 L",
+  "lpa": 3500000.0,
+  "lat": 57.47047222222222,
+  "lon": -3.3500555555555556,
+  "type": "Speyside"
+ },
+ {
+  "name": "Clynelish distillery",
+  "capacity_raw": "4,800,000 litres",
+  "lpa": 4800000.0,
+  "lat": 58.02458333333333,
+  "lon": -3.8681944444444443,
+  "type": "Highland"
+ },
+ {
+  "name": "Cragganmore distillery",
+  "capacity_raw": "1,520,000 litres",
+  "lpa": 1520000.0,
+  "lat": 57.41027777777778,
+  "lon": -3.395,
+  "type": "Speyside"
+ },
+ {
+  "name": "Craigellachie distillery",
+  "capacity_raw": "4,000,000&nbsp;litres of alcohol per annum",
+  "lpa": 4000000.0,
+  "lat": 57.48861111111111,
+  "lon": -3.1847222222222222,
+  "type": "Speyside"
+ },
+ {
+  "name": "Daftmill distillery",
+  "capacity_raw": "2,500 litre wash still / 1,500 litre spirit still",
+  "lpa": 2500.0,
+  "lat": 56.29725,
+  "lon": -3.1039833333333333,
+  "type": "Lowland"
+ },
+ {
+  "name": "Dailuaine distillery",
+  "capacity_raw": "3,370,000 litres",
+  "lpa": 3370000.0,
+  "lat": 57.45313888888889,
+  "lon": -3.2729444444444447,
+  "type": "Speyside"
+ },
+ {
+  "name": "Dalmore distillery",
+  "capacity_raw": "{{convert|4200000|L|impgal usgal|abbr=off}}",
+  "lpa": 4200000.0,
+  "lat": 57.68841111111111,
+  "lon": -4.239480555555556,
+  "type": "Highland"
+ },
+ {
+  "name": "Dalmunach distillery",
+  "capacity_raw": "10.000,000",
+  "lpa": 10000000.0,
+  "lat": 57.454877777777774,
+  "lon": -3.3005333333333335,
+  "type": "Speyside"
+ },
+ {
+  "name": "Dalwhinnie distillery",
+  "capacity_raw": "1,300,000 L",
+  "lpa": 1300000.0,
+  "lat": 56.940127777777775,
+  "lon": -4.2380611111111115,
+  "type": "Speyside"
+ },
+ {
+  "name": "Deanston distillery",
+  "capacity_raw": "3,000,000 litres",
+  "lpa": 3000000.0,
+  "lat": 56.189277777777775,
+  "lon": -4.071416666666667,
+  "type": "Highland"
+ },
+ {
+  "name": "Dornoch distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": 57.882555555555555,
+  "lon": -4.028444444444444,
+  "type": "Highland"
+ },
+ {
+  "name": "Dufftown distillery",
+  "capacity_raw": "4,000,000 litres",
+  "lpa": 4000000.0,
+  "lat": 57.435748,
+  "lon": -3.12782,
+  "type": "Speyside"
+ },
+ {
+  "name": "Dunphail distillery",
+  "capacity_raw": "200,000 litres<ref name=\"Ronde (2025)\">{{cite book|last=Ronde|first=Ingvar|date=2025|title=Malt Whisky Yearbook 2026|loc",
+  "lpa": 200000.0,
+  "lat": 57.5242,
+  "lon": -3.6098,
+  "type": "Speyside"
+ },
+ {
+  "name": "Eden Mill St Andrews distillery",
+  "capacity_raw": "0.06 MLPA",
+  "lpa": 60000.0,
+  "lat": 56.363964,
+  "lon": -2.892069,
+  "type": "Lowland"
+ },
+ {
+  "name": "Edradour distillery",
+  "capacity_raw": "95,000 litres",
+  "lpa": 95000.0,
+  "lat": 56.700894444444444,
+  "lon": -3.7028138888888886,
+  "type": "Highland"
+ },
+ {
+  "name": "Falkirk distillery",
+  "capacity_raw": "200,000 L",
+  "lpa": 200000.0,
+  "lat": 55.995111111111115,
+  "lon": -3.725,
+  "type": "Lowland"
+ },
+ {
+  "name": "Fettercairn distillery",
+  "capacity_raw": "2,200,000 litres of pure alcohol per year [approx.]",
+  "lpa": 2200000.0,
+  "lat": 56.8535,
+  "lon": -2.5825,
+  "type": "highland"
+ },
+ {
+  "name": "Galloway distillery",
+  "capacity_raw": "25,000 litres <ref name=\"Ronde 2025\">{{cite book|last=Ronde|first=Ingvar|date=2025|title=Malt Whisky Yearbook 2026|locat",
+  "lpa": 25000.0,
+  "lat": 54.9497,
+  "lon": -4.4814,
+  "type": "Lowland"
+ },
+ {
+  "name": "Glasgow distillery",
+  "capacity_raw": "440,000 litres",
+  "lpa": 440000.0,
+  "lat": 55.863287,
+  "lon": -4.36214,
+  "type": "Lowland"
+ },
+ {
+  "name": "Glen Elgin distillery",
+  "capacity_raw": "1,830,000 litres",
+  "lpa": 1830000.0,
+  "lat": 57.599069444444446,
+  "lon": -3.277561111111111,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glen Garioch distillery",
+  "capacity_raw": "1,000,000 L",
+  "lpa": 1000000.0,
+  "lat": 57.338519444444444,
+  "lon": -2.319358333333333,
+  "type": "Highland"
+ },
+ {
+  "name": "Glen Grant distillery",
+  "capacity_raw": "5,900,000 litres",
+  "lpa": 5900000.0,
+  "lat": 57.532000000000004,
+  "lon": -3.2107972222222223,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glen Keith distillery",
+  "capacity_raw": "3,500,000 Litres per annum",
+  "lpa": 3500000.0,
+  "lat": 57.54638888888889,
+  "lon": -2.957222222222222,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glenallachie distillery",
+  "capacity_raw": "4,000,000 litres of pure alcohol per year",
+  "lpa": 4000000.0,
+  "lat": 57.45518,
+  "lon": -3.22871,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glenburgie distillery",
+  "capacity_raw": "4,200,000 litres of pure alcohol per year",
+  "lpa": 4200000.0,
+  "lat": 57.62179,
+  "lon": -3.51675,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glencadam distillery",
+  "capacity_raw": "1,500,000 litres/per [[year|annum]]",
+  "lpa": 1500000.0,
+  "lat": 56.73650833333333,
+  "lon": -2.6528111111111112,
+  "type": "highland"
+ },
+ {
+  "name": "Glendronach distillery",
+  "capacity_raw": "1,300,000 litres per annum",
+  "lpa": 1300000.0,
+  "lat": 57.4847,
+  "lon": -2.6255,
+  "type": "Highland"
+ },
+ {
+  "name": "Glendullan distillery",
+  "capacity_raw": "3,700,000 L",
+  "lpa": 3700000.0,
+  "lat": 57.448055555555555,
+  "lon": -3.118611111111111,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glenfarclas distillery",
+  "capacity_raw": "4,000,000 litres",
+  "lpa": 4000000.0,
+  "lat": 57.427,
+  "lon": -3.316361111111111,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glenglassaugh distillery",
+  "capacity_raw": "1,000,000 litres/per annum",
+  "lpa": 1000000.0,
+  "lat": 57.67944444444444,
+  "lon": -2.736944444444444,
+  "type": "Highland"
+ },
+ {
+  "name": "Glengoyne distillery",
+  "capacity_raw": "1,100,000 [[litre]]s<ref name=\"MaltMadness\"/>",
+  "lpa": 1100000.0,
+  "lat": 56.01403,
+  "lon": -4.36378,
+  "type": "Highland"
+ },
+ {
+  "name": "Glengyle distillery",
+  "capacity_raw": "750,000 L",
+  "lpa": 750000.0,
+  "lat": 55.42720833333333,
+  "lon": -5.61095,
+  "type": "Campbeltown"
+ },
+ {
+  "name": "Glenkinchie distillery",
+  "capacity_raw": "{{cvt|2,700,000|L}}",
+  "lpa": 2700000.0,
+  "lat": 55.891444444444446,
+  "lon": -2.8915277777777777,
+  "type": "Lowland"
+ },
+ {
+  "name": "Glenlossie distillery",
+  "capacity_raw": "1,100,000 litres",
+  "lpa": 1100000.0,
+  "lat": 57.5989,
+  "lon": -3.3183,
+  "type": "Speyside"
+ },
+ {
+  "name": "The Glenlivet distillery",
+  "capacity_raw": "10.5 million-Lpa (litres of pure alcohol)",
+  "lpa": 10500000.0,
+  "lat": 57.34305555555556,
+  "lon": -3.3386944444444446,
+  "type": "Speyside"
+ },
+ {
+  "name": "Clydeside Distillery",
+  "capacity_raw": "500,000 L",
+  "lpa": 500000.0,
+  "lat": 55.862364,
+  "lon": -4.296986,
+  "type": "Lowland"
+ },
+ {
+  "name": "Glenfiddich",
+  "capacity_raw": "21 million litres",
+  "lpa": 21000000.0,
+  "lat": 57.45361111111111,
+  "lon": -3.1286111111111112,
+  "type": "Speyside"
+ },
+ {
+  "name": "Kythe distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Laggan Bay distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Lerwick distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "GlenWyvis distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": 57.614821944444444,
+  "lon": -4.456605833333334,
+  "type": "Highland"
+ },
+ {
+  "name": "Glen Moray distillery",
+  "capacity_raw": "3.3 million litres per annum",
+  "lpa": 3300000.0,
+  "lat": 57.644444444444446,
+  "lon": -3.341111111111111,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glen Scotia distillery",
+  "capacity_raw": "600,000 litres",
+  "lpa": 600000.0,
+  "lat": 55.42951388888889,
+  "lon": -5.604236111111111,
+  "type": "Campbeltown"
+ },
+ {
+  "name": "Glen Spey distillery",
+  "capacity_raw": "1,400,000&nbsp;litres of alcohol per annum",
+  "lpa": 1400000.0,
+  "lat": 57.52561111111111,
+  "lon": -3.210111111111111,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glenmorangie distillery",
+  "capacity_raw": "6.5 million litres per annum",
+  "lpa": 6500000.0,
+  "lat": 57.82588888888889,
+  "lon": -4.078,
+  "type": "highland"
+ },
+ {
+  "name": "Glentauchers distillery",
+  "capacity_raw": "{{convert|4500000|L|impgal}}",
+  "lpa": 4500000.0,
+  "lat": 57.534166666666664,
+  "lon": -3.0502777777777776,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glenturret distillery",
+  "capacity_raw": "340,000 litres/per annum",
+  "lpa": 340000.0,
+  "lat": 56.38944444444444,
+  "lon": -3.8538888888888887,
+  "type": "highland"
+ },
+ {
+  "name": "Highland Park distillery",
+  "capacity_raw": "2,500,000 litres",
+  "lpa": 2500000.0,
+  "lat": 58.968602777777775,
+  "lon": -2.95545,
+  "type": "Island"
+ },
+ {
+  "name": "Inchdairnie distillery",
+  "capacity_raw": "4 million litres per annum",
+  "lpa": 4000000.0,
+  "lat": 56.1812,
+  "lon": -3.2165,
+  "type": "Lowland"
+ },
+ {
+  "name": "Inchgower distillery",
+  "capacity_raw": "1,990,000 litres",
+  "lpa": 1990000.0,
+  "lat": 57.662391666666664,
+  "lon": -2.96425,
+  "type": "Speyside"
+ },
+ {
+  "name": "Jackton distillery",
+  "capacity_raw": "300,000 litres<ref>{{cite book|last=Ronde|first=Ingvar|date=2025|title=Malt Whisky Yearbook 2026|location=Shrewsbury|pub",
+  "lpa": 300000.0,
+  "lat": 55.7514,
+  "lon": -4.2515,
+  "type": "Lowland"
+ },
+ {
+  "name": "Jura distillery",
+  "capacity_raw": "2,500,000 L",
+  "lpa": 2500000.0,
+  "lat": 55.83288888888889,
+  "lon": -5.9510555555555555,
+  "type": "Island"
+ },
+ {
+  "name": "Kilchoman distillery",
+  "capacity_raw": "{{cvt|500,000|L|impgal}}",
+  "lpa": 500000.0,
+  "lat": 55.786944444444444,
+  "lon": -6.430833333333333,
+  "type": "Islay"
+ },
+ {
+  "name": "Kimbland distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": 59.2831,
+  "lon": -2.4617,
+  "type": "Island"
+ },
+ {
+  "name": "Kingsbarns distillery",
+  "capacity_raw": "200,000 L",
+  "lpa": 200000.0,
+  "lat": null,
+  "lon": null,
+  "type": "Lowland"
+ },
+ {
+  "name": "Kininvie distillery",
+  "capacity_raw": "| brand_1       = Monkey Shoulder",
+  "lpa": 1000000.0,
+  "lat": 57.46622222222222,
+  "lon": -3.130027777777778,
+  "type": "speyside"
+ },
+ {
+  "name": "Knockando distillery",
+  "capacity_raw": "1,800,000 litres/per annum",
+  "lpa": 1800000.0,
+  "lat": 57.457,
+  "lon": -3.3439444444444444,
+  "type": "Speyside"
+ },
+ {
+  "name": "Knockdhu distillery",
+  "capacity_raw": "1,700,000 litres per annum",
+  "lpa": 1700000.0,
+  "lat": 57.56333333333333,
+  "lon": -2.7591666666666668,
+  "type": "Speyside"
+ },
+ {
+  "name": "Lagavulin distillery",
+  "capacity_raw": "1,400,000 L",
+  "lpa": 1400000.0,
+  "lat": 55.6355,
+  "lon": -6.126194444444445,
+  "type": "Islay"
+ },
+ {
+  "name": "Lagg distillery",
+  "capacity_raw": "Approx. 500,000 LPA",
+  "lpa": 500000.0,
+  "lat": 55.4456,
+  "lon": -5.2482,
+  "type": "Island"
+ },
+ {
+  "name": "Laphroaig distillery",
+  "capacity_raw": "3,300,000 litres<ref>{{Cite web|url=https://whiskymag.com/story/laphroaig:-its-all-about-the-peat|title=Laphroaig|publis",
+  "lpa": 3300000.0,
+  "lat": 55.63,
+  "lon": -6.152222222222222,
+  "type": "Islay"
+ },
+ {
+  "name": "Leven distillery",
+  "capacity_raw": "{{cvt|250,000|L}}",
+  "lpa": 250000.0,
+  "lat": 56.1995,
+  "lon": -3.0250555555555554,
+  "type": "Lowland"
+ },
+ {
+  "name": "Lindores Abbey distillery",
+  "capacity_raw": "260,000 L",
+  "lpa": 260000.0,
+  "lat": 56.3518,
+  "lon": -3.2254,
+  "type": "Lowland"
+ },
+ {
+  "name": "Linkwood distillery",
+  "capacity_raw": "2,500,000 litres",
+  "lpa": 2500000.0,
+  "lat": 57.635448,
+  "lon": -3.286238,
+  "type": "Speyside"
+ },
+ {
+  "name": "Loch Lomond distillery",
+  "capacity_raw": "3,000,000 litres (malt) & 20,000,000 litres (grain)",
+  "lpa": 3000000.0,
+  "lat": null,
+  "lon": null,
+  "type": "Highland"
+ },
+ {
+  "name": "Lochlea distillery",
+  "capacity_raw": "200,000 liters",
+  "lpa": 200000.0,
+  "lat": null,
+  "lon": null,
+  "type": "Lowland"
+ },
+ {
+  "name": "Lochranza distillery",
+  "capacity_raw": "750,000 Litres/per annum",
+  "lpa": 750000.0,
+  "lat": 55.698055555555555,
+  "lon": -5.275277777777778,
+  "type": "Island"
+ },
+ {
+  "name": "Longmorn distillery",
+  "capacity_raw": "3,500,000 litres per annum",
+  "lpa": 3500000.0,
+  "lat": 57.608152777777775,
+  "lon": -3.2825083333333334,
+  "type": "Speyside"
+ },
+ {
+  "name": "Macduff distillery",
+  "capacity_raw": "2,400,000&nbsp;litres of alcohol per annum",
+  "lpa": 2400000.0,
+  "lat": 57.65788055555556,
+  "lon": -2.51275,
+  "type": "Highland"
+ },
+ {
+  "name": "Mannochmore distillery",
+  "capacity_raw": "3,200,000 L",
+  "lpa": 3200000.0,
+  "lat": 57.59877777777778,
+  "lon": -3.3199722222222223,
+  "type": "Speyside"
+ },
+ {
+  "name": "Miltonduff distillery",
+  "capacity_raw": "{{cvt|5,800,000|L}}<ref name=\"Maclean\"/>",
+  "lpa": 5800000.0,
+  "lat": 57.62371388888889,
+  "lon": -3.369283333333333,
+  "type": "Speyside"
+ },
+ {
+  "name": "Moffat distillery",
+  "capacity_raw": "12,000 litres<ref>{{cite book|last=Ronde|first=Ingvar|date=2025|title=Malt Whisky Yearbook 2026|location=Shrewsbury|publ",
+  "lpa": 12000.0,
+  "lat": 55.3232,
+  "lon": -3.4311,
+  "type": "Lowland"
+ },
+ {
+  "name": "The Glenrothes distillery",
+  "capacity_raw": "5,200,000 L",
+  "lpa": 5200000.0,
+  "lat": 57.52675,
+  "lon": -3.2165833333333333,
+  "type": "Speyside"
+ },
+ {
+  "name": "The Macallan distillery",
+  "capacity_raw": "15,000,000 L",
+  "lpa": 15000000.0,
+  "lat": 57.48437222222222,
+  "lon": -3.207577777777778,
+  "type": "Speyside"
+ },
+ {
+  "name": "Glen Ord distillery",
+  "capacity_raw": "12,000,000 litres<ref name=\"auto\"/>",
+  "lpa": 12000000.0,
+  "lat": 57.522222222222226,
+  "lon": -4.475555555555555,
+  "type": "Highland"
+ },
+ {
+  "name": "Holyrood distillery",
+  "capacity_raw": "53,000 L",
+  "lpa": 53000.0,
+  "lat": 55.9432,
+  "lon": -3.1776,
+  "type": "Lowland"
+ },
+ {
+  "name": "Isle of Harris distillery",
+  "capacity_raw": "230,000 L",
+  "lpa": 230000.0,
+  "lat": 57.8976,
+  "lon": -6.804,
+  "type": "Island"
+ },
+ {
+  "name": "North Point distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "North Uist distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Orkney distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Stannergill distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Toulvaddie distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "8 Doors distillery",
+  "capacity_raw": "150,000 litres<ref>{{cite book|last=Ronde|first=Ingvar|date=2025|title=Malt Whisky Yearbook 2026|location=Shrewsbury|pub",
+  "lpa": 150000.0,
+  "lat": 58.642703,
+  "lon": -3.0695149,
+  "type": "Highland"
+ },
+ {
+  "name": "Cameronbridge distillery",
+  "capacity_raw": "136 million litres",
+  "lpa": 136000000.0,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "Girvan distillery",
+  "capacity_raw": "115 million litres per annum",
+  "lpa": 115000000.0,
+  "lat": 55.2618,
+  "lon": -4.8335,
+  "type": ""
+ },
+ {
+  "name": "Invergordon distillery",
+  "capacity_raw": "36,000,000 L",
+  "lpa": 36000000.0,
+  "lat": 57.696666666666665,
+  "lon": -4.157777777777778,
+  "type": ""
+ },
+ {
+  "name": "Isle of Raasay distillery",
+  "capacity_raw": "{{cvt|940,000|L}}",
+  "lpa": 940000.0,
+  "lat": 57.35183,
+  "lon": -6.07382,
+  "type": "Island"
+ },
+ {
+  "name": "Isle of Tiree distillery",
+  "capacity_raw": "5000 litres<ref name=\"Ronde 2026\"/>",
+  "lpa": 5000.0,
+  "lat": 56.4539,
+  "lon": -6.9396,
+  "type": "Island"
+ },
+ {
+  "name": "Mortlach distillery",
+  "capacity_raw": "3,700,000 litres",
+  "lpa": 3700000.0,
+  "lat": 57.44277777777778,
+  "lon": -3.122777777777778,
+  "type": "Speyside"
+ },
+ {
+  "name": "Nc'nean distillery",
+  "capacity_raw": "100,000 litres",
+  "lpa": 100000.0,
+  "lat": 56.5987,
+  "lon": -5.9654,
+  "type": "Highland"
+ },
+ {
+  "name": "Oban distillery",
+  "capacity_raw": "670,000 litres per year",
+  "lpa": 670000.0,
+  "lat": 56.4147,
+  "lon": -5.4728,
+  "type": "Highland"
+ },
+ {
+  "name": "Old Pulteney distillery",
+  "capacity_raw": "1,000,000 litres",
+  "lpa": 1000000.0,
+  "lat": 58.434444444444445,
+  "lon": -3.084722222222222,
+  "type": "Highland"
+ },
+ {
+  "name": "Port Ellen distillery",
+  "capacity_raw": "2.7&nbsp;ML",
+  "lpa": 2700000.0,
+  "lat": 55.6334,
+  "lon": -6.1969,
+  "type": "Islay"
+ },
+ {
+  "name": "Port of Leith distillery",
+  "capacity_raw": "400,000 L",
+  "lpa": 400000.0,
+  "lat": 55.98277777777778,
+  "lon": -3.1755555555555555,
+  "type": "Lowland"
+ },
+ {
+  "name": "Rosebank distillery",
+  "capacity_raw": "559,169.301 litres per year",
+  "lpa": 559169.301,
+  "lat": 56.00241666666667,
+  "lon": -3.803611111111111,
+  "type": "lowland"
+ },
+ {
+  "name": "Roseisle distillery",
+  "capacity_raw": "10,000,000 L",
+  "lpa": 10000000.0,
+  "lat": 57.66833333333334,
+  "lon": -3.473333333333333,
+  "type": "Speyside"
+ },
+ {
+  "name": "Royal Brackla distillery",
+  "capacity_raw": "{{Convert|3,500,000|l|impgal}}",
+  "lpa": 3500000.0,
+  "lat": 57.53969166666667,
+  "lon": -3.905466666666667,
+  "type": "Highland"
+ },
+ {
+  "name": "Royal Lochnagar distillery",
+  "capacity_raw": "450,000 litres",
+  "lpa": 450000.0,
+  "lat": 57.03,
+  "lon": -3.2091666666666665,
+  "type": "Highland"
+ },
+ {
+  "name": "Saxa Vord distillery",
+  "capacity_raw": "30,000 litres<ref>{{cite news|url=https://www.shetnews.co.uk/2013/09/23/new-plans-for-a-shetland-whisky-distillery/|publ",
+  "lpa": 30000.0,
+  "lat": 60.7978,
+  "lon": -0.824,
+  "type": "Island"
+ },
+ {
+  "name": "Scapa distillery",
+  "capacity_raw": "1,000,000 litres",
+  "lpa": 1000000.0,
+  "lat": 58.96361111111111,
+  "lon": -2.985,
+  "type": "Island"
+ },
+ {
+  "name": "Speyburn distillery",
+  "capacity_raw": "4,100,000 litres",
+  "lpa": 4100000.0,
+  "lat": 57.53666666666667,
+  "lon": -3.2152777777777777,
+  "type": "Speyside"
+ },
+ {
+  "name": "Stirling distillery",
+  "capacity_raw": "20,000 litres<ref>{{cite web|website=Stirling Distillery|url=https://stirlingdistillery.com/collections/whisky|title=Sti",
+  "lpa": 20000.0,
+  "lat": 56.1234,
+  "lon": -3.9442,
+  "type": "| mapframe      = y"
+ },
+ {
+  "name": "Strathearn distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": 56.39631388888889,
+  "lon": -3.620713888888889,
+  "type": "Highland"
+ },
+ {
+  "name": "Strathisla distillery",
+  "capacity_raw": "2,400,000 litres per annum",
+  "lpa": 2400000.0,
+  "lat": 57.54649,
+  "lon": -2.95427,
+  "type": "Speyside"
+ },
+ {
+  "name": "Strathmill distillery",
+  "capacity_raw": "1,800,000 Litres per annum",
+  "lpa": 1800000.0,
+  "lat": 57.540416666666665,
+  "lon": -2.961222222222222,
+  "type": "Speyside"
+ },
+ {
+  "name": "Talisker distillery",
+  "capacity_raw": "3,500,000 L",
+  "lpa": 3500000.0,
+  "lat": 57.30277777777778,
+  "lon": -6.356111111111111,
+  "type": "Island"
+ },
+ {
+  "name": "Tamdhu distillery",
+  "capacity_raw": "4,500,000 litres",
+  "lpa": 4500000.0,
+  "lat": 57.45902777777778,
+  "lon": -3.353611111111111,
+  "type": "Speyside"
+ },
+ {
+  "name": "Tamnavulin distillery",
+  "capacity_raw": "4,000,000 litres/year",
+  "lpa": 4000000.0,
+  "lat": 57.3175,
+  "lon": -3.307777777777778,
+  "type": "Speyside"
+ },
+ {
+  "name": "Teaninich distillery",
+  "capacity_raw": "9,300,000 L",
+  "lpa": 9300000.0,
+  "lat": 57.691583,
+  "lon": -4.260639,
+  "type": "highland"
+ },
+ {
+  "name": "Tobermory distillery",
+  "capacity_raw": "1,000,000 L",
+  "lpa": 1000000.0,
+  "lat": 56.620555555555555,
+  "lon": -6.070555555555556,
+  "type": "Island"
+ },
+ {
+  "name": "Tomatin distillery",
+  "capacity_raw": "5,050,000 litres per year",
+  "lpa": 5050000.0,
+  "lat": 57.33888888888889,
+  "lon": -4.009166666666666,
+  "type": "Highland"
+ },
+ {
+  "name": "Tomintoul distillery",
+  "capacity_raw": "3,300,000 litres of pure alcohol per year",
+  "lpa": 3300000.0,
+  "lat": 57.312012,
+  "lon": -3.412366,
+  "type": "speyside"
+ },
+ {
+  "name": "Torabhaig distillery",
+  "capacity_raw": "0.5 million-Lpa (liters of pure alcohol)",
+  "lpa": 500000.0,
+  "lat": 57.11301388888889,
+  "lon": -5.8485555555555555,
+  "type": ""
+ },
+ {
+  "name": "Tormore distillery",
+  "capacity_raw": "3,700,000 litres",
+  "lpa": 3700000.0,
+  "lat": 57.3975,
+  "lon": -3.4088333333333334,
+  "type": "Speyside"
+ },
+ {
+  "name": "Tullibardine distillery",
+  "capacity_raw": "2,700,000 litres",
+  "lpa": 2700000.0,
+  "lat": 56.257777777777775,
+  "lon": -3.7855555555555553,
+  "type": "Highland"
+ },
+ {
+  "name": "Wolfburn distillery",
+  "capacity_raw": "125,000 litres",
+  "lpa": 125000.0,
+  "lat": 58.59527777777778,
+  "lon": -3.551388888888889,
+  "type": "Highland"
+ },
+ {
+  "name": "Springbank (distillery)",
+  "capacity_raw": "750,000 litres yearly<ref>{{Cite web |title=Springbank Whisky - Buy Springbank Whiskies Online - Master of Malt |url=htt",
+  "lpa": 750000.0,
+  "lat": 55.42541666666666,
+  "lon": -5.6088611111111115,
+  "type": "Campbeltown"
+ },
+ {
+  "name": "Reivers distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": null,
+  "lon": null,
+  "type": ""
+ },
+ {
+  "name": "North British distillery",
+  "capacity_raw": "",
+  "lpa": null,
+  "lat": 55.940127777777775,
+  "lon": -3.235602777777778,
+  "type": "[[Private company|Private]]"
+ },
+ {
+  "name": "Starlaw distillery",
+  "capacity_raw": "25,000,000 L",
+  "lpa": 25000000.0,
+  "lat": 55.88861111111111,
+  "lon": -3.577777777777778,
+  "type": ""
+ },
+ {
+  "name": "Strathclyde distillery",
+  "capacity_raw": "40,000,000 L",
+  "lpa": 40000000.0,
+  "lat": 55.8488,
+  "lon": -4.241,
+  "type": ""
+ }
+]

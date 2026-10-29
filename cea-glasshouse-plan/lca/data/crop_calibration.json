@@ -1,0 +1,26 @@
+{
+ "site": "Mbombela (Nelspruit), South Africa - 'Hass' reference orchard climate",
+ "lat": -25.47,
+ "lon": 30.97,
+ "target_t_ha": 20.0,
+ "maint_frac": 0.25,
+ "maint_g_m2_h_20C": 0.2569327990275194,
+ "partition": 0.14046071079516514,
+ "net_assim_t_CH2O_ha": 96.93813966139123,
+ "induction_index": 2.1431770833333337,
+ "mean_T": 19.895228310502283,
+ "leaf": {
+  "vcmax25": 98.26163813777828,
+  "alpha_j": 0.3389251844046364,
+  "light_sat_95pct_umol": 1053.0,
+  "light_sat_measured": "1110 (orchard 'Hass', Whiley 1994)",
+  "light_comp_umol": 10.0,
+  "light_comp_measured": "~10 (Whiley 1994)",
+  "co2_sat_95pct_ppm": 1274.0,
+  "co2_sat_measured": "1350-1470 (Schaffer & Whiley 2003)",
+  "T_opt_C": 24.5,
+  "T_opt_measured": "20-24 'Edranol', 28-31 'Fuerte' (Schaffer & Whiley 2003)",
+  "a_800_over_400": 1.2511979609241999
+ },
+ "check_yield_t_ha": 20.000000000000004
+}

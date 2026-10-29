@@ -1,0 +1,30 @@
+
+== cucumber Girvan + Ailsa Bay distilleries  1.2 ha  (with waste: 1.100)
+  base (no waste)                GBP/kg 1.194 (+0.000)  kgCO2/kg 0.47  heat  408  Y 61.6  elec 145  unmet 148  wind 451
+  heat-recovery dehum            GBP/kg 1.188 (-0.006)  kgCO2/kg 0.47  heat  394  Y 61.6  elec 142  unmet 188  wind 446
+  P1 controls: night-2K, RH90, HRD GBP/kg 1.110 (-0.084)  kgCO2/kg 0.43  heat  310  Y 64.2  elec 108  unmet 175  wind 299
+  P2 = P1 + HP50%+store          GBP/kg 1.038 (-0.155)  kgCO2/kg 0.43  heat  310  Y 64.2  elec 108  unmet 175  wind 299
+  P3 = P2 + utility wind         GBP/kg 0.954 (-0.239)  kgCO2/kg 0.39  heat  310  Y 64.2  elec 108  unmet 175  wind 449
+  P4 = P3 + double screen*       GBP/kg 0.957 (-0.236)  kgCO2/kg 0.39  heat  284  Y 64.0  elec 98  unmet 177  wind 382
+  P3 at 8% discount              GBP/kg 1.144 (-0.050)  kgCO2/kg 0.39  heat  310  Y 64.2  elec 108  unmet 175  wind 449
+  base at 8% discount            GBP/kg 1.431 (+0.237)  kgCO2/kg 0.47  heat  408  Y 61.6  elec 145  unmet 148  wind 451
+
+== cucumber Cameronbridge distillery  1.2 ha  (with waste: 1.099)
+  base (no waste)                GBP/kg 1.341 (+0.000)  kgCO2/kg 0.70  heat  413  Y 60.2  elec 151  unmet 119  wind 279
+  heat-recovery dehum            GBP/kg 1.332 (-0.009)  kgCO2/kg 0.69  heat  400  Y 60.2  elec 148  unmet 142  wind 273
+  P1 controls: night-2K, RH90, HRD GBP/kg 1.207 (-0.135)  kgCO2/kg 0.60  heat  321  Y 62.8  elec 116  unmet 172  wind 144
+  P2 = P1 + HP50%+store          GBP/kg 1.138 (-0.203)  kgCO2/kg 0.60  heat  321  Y 62.8  elec 116  unmet 172  wind 144
+  P3 = P2 + utility wind         GBP/kg 1.084 (-0.257)  kgCO2/kg 0.54  heat  321  Y 62.8  elec 116  unmet 172  wind 360
+  P4 = P3 + double screen*       GBP/kg 1.067 (-0.274)  kgCO2/kg 0.52  heat  291  Y 62.7  elec 104  unmet 168  wind 289
+  P3 at 8% discount              GBP/kg 1.268 (-0.073)  kgCO2/kg 0.54  heat  321  Y 62.8  elec 116  unmet 172  wind 360
+  base at 8% discount            GBP/kg 1.571 (+0.230)  kgCO2/kg 0.70  heat  413  Y 60.2  elec 151  unmet 119  wind 279
+
+== tomato Girvan + Ailsa Bay distilleries  1.5 ha  (with waste: 1.439)
+  base (no waste)                GBP/kg 1.506 (+0.000)  kgCO2/kg 0.55  heat  222  Y 42.7  elec 71  unmet 48  wind 218
+  heat-recovery dehum            GBP/kg 1.480 (-0.026)  kgCO2/kg 0.53  heat  190  Y 43.2  elec 67  unmet 47  wind 219
+  P1 controls: night-2K, RH90, HRD GBP/kg 1.414 (-0.091)  kgCO2/kg 0.49  heat  138  Y 43.9  elec 49  unmet 55  wind 143
+  P2 = P1 + HP50%+store          GBP/kg 1.333 (-0.173)  kgCO2/kg 0.49  heat  138  Y 43.9  elec 49  unmet 55  wind 143
+  P3 = P2 + utility wind         GBP/kg 1.285 (-0.221)  kgCO2/kg 0.46  heat  138  Y 43.9  elec 49  unmet 55  wind 214
+  P4 = P3 + double screen*       GBP/kg 1.279 (-0.227)  kgCO2/kg 0.45  heat  124  Y 43.8  elec 45  unmet 64  wind 217
+  P3 at 8% discount              GBP/kg 1.530 (+0.024)  kgCO2/kg 0.46  heat  138  Y 43.9  elec 49  unmet 55  wind 214
+  base at 8% discount            GBP/kg 1.802 (+0.296)  kgCO2/kg 0.55  heat  222  Y 42.7  elec 71  unmet 48  wind 218

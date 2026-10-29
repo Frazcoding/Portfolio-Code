@@ -1,0 +1,14 @@
+air: 31/31 annual sums match, first 48 h match
+ground: 31/31 annual sums match, first 48 h match
+water: 31/31 annual sums match, first 48 h match
+PASS
+thesis_air     ref   30.8s  fast   0.2s  worst monthly: phys 9.8e-15 (Q_floor m12)  hp 2.8e-10 (W_comp m12)  control 1.0e-09 (buf_soc m12)  OK
+thesis_ground  ref   23.7s  fast   0.2s  worst monthly: phys 1.9e-06 (Q_floor m12)  hp 9.5e-04 (W_comp m12)  control 7.6e-03 (f_cmd m12)  OK
+thesis_water   ref   23.4s  fast   0.2s  worst monthly: phys 7.8e-05 (VPD m3)  hp 2.3e-03 (W_comp m10)  control 1.9e-01 (starts m6)  OK
+perth_new      ref   26.8s  fast   0.2s  worst monthly: phys 0.0e+00 ()  hp 0.0e+00 ()  control 0.0e+00 ()  OK
+perth_humidity ref   27.9s  fast   0.2s  worst monthly: phys 0.0e+00 ()  hp 0.0e+00 ()  control 1.9e-16 (buf_soc m4)  OK
+perth_hum_hrd  ref   27.7s  fast   0.2s  worst monthly: phys 5.7e-16 (Q_pipe m10)  hp 5.6e-16 (Q_c m10)  control 1.5e-15 (buf_soc m10)  OK
+design_sawtooth ref   28.6s  fast   0.2s  worst monthly: phys 0.0e+00 ()  hp 2.5e-16 (W_total m10)  control 3.9e-16 (buf_soc m6)  OK
+waste_direct   ref   33.8s  fast   0.2s  worst monthly: phys 0.0e+00 ()  hp 0.0e+00 ()  control 1.6e-16 (buf_soc m3)  OK
+waste_effluent ref   23.6s  fast   0.2s  worst monthly: phys 6.6e-05 (VPD m12)  hp 1.9e-03 (Q_e m7)  control 6.6e-01 (unmet m11)  OK
+PASS

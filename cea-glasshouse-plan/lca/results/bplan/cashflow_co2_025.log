@@ -1,0 +1,24 @@
+[A] cucumber The Creamery, Commerce R standby  capex  5.74 M (520/m2)  price 1.17  LCOP 1.41/1.73  EBITDA    190 k  NPV3.5 -2.89 M  NPV8 -4.09 M  IRR -1.1 %  payback None
+[A] cucumber The Creamery, Commerce R lp       capex  5.47 M (496/m2)  price 1.17  LCOP 1.38/1.69  EBITDA    193 k  NPV3.5 -2.53 M  NPV8 -3.77 M  IRR -0.7 %  payback None
+[A] cucumber Cameronbridge distillery standby  capex  7.02 M (508/m2)  price 1.18  LCOP 1.44/1.76  EBITDA    216 k  NPV3.5 -3.85 M  NPV8 -5.13 M  IRR -1.6 %  payback None
+[A] cucumber Cameronbridge distillery lp       capex  6.81 M (493/m2)  price 1.18  LCOP 1.42/1.73  EBITDA    220 k  NPV3.5 -3.51 M  NPV8 -4.85 M  IRR -1.2 %  payback None
+[A] cucumber Girvan + Ailsa Bay disti standby  capex  7.57 M (506/m2)  price 1.17  LCOP 1.46/1.78  EBITDA    215 k  NPV3.5 -4.48 M  NPV8 -5.73 M  IRR -2.1 %  payback None
+[A] cucumber Girvan + Ailsa Bay disti lp       capex  7.27 M (486/m2)  price 1.17  LCOP 1.44/1.75  EBITDA    216 k  NPV3.5 -4.12 M  NPV8 -5.41 M  IRR -1.8 %  payback None
+[A] tomato   The Creamery, Commerce R standby  capex  8.11 M (480/m2)  price 1.23  LCOP 1.78/2.16  EBITDA     61 k  NPV3.5 -7.88 M  NPV8 -8.08 M  IRR -7.6 %  payback None
+[A] tomato   The Creamery, Commerce R lp       capex  6.99 M (414/m2)  price 1.23  LCOP 1.69/2.02  EBITDA     65 k  NPV3.5 -6.56 M  NPV8 -6.85 M  IRR -7.5 %  payback None
+[A] tomato   Sapphire Mill, Leslie, F standby  capex  9.95 M (493/m2)  price 1.23  LCOP 1.90/2.32  EBITDA     23 k  NPV3.5 -10.59 M  NPV8 -10.49 M  IRR -9.4 %  payback None
+[A] tomato   Sapphire Mill, Leslie, F lp       capex  8.72 M (432/m2)  price 1.23  LCOP 1.80/2.18  EBITDA     32 k  NPV3.5 -9.09 M  NPV8 -9.11 M  IRR -9.4 %  payback None
+[A] tomato   Girvan + Ailsa Bay disti standby  capex 12.25 M (458/m2)  price 1.23  LCOP 1.96/2.36  EBITDA    -35 k  NPV3.5 -14.27 M  NPV8 -13.57 M  IRR -11.5 %  payback None
+[A] tomato   Girvan + Ailsa Bay disti lp       capex 10.06 M (376/m2)  price 1.23  LCOP 1.83/2.17  EBITDA    -32 k  NPV3.5 -11.79 M  NPV8 -11.25 M  IRR -13.4 %  payback None
+[B] cucumber The Creamery, Commerce R standby  capex  4.49 M (449/m2)  price 1.17  LCOP 1.45/1.77  EBITDA    125 k  NPV3.5 -2.76 M  NPV8 -3.61 M  IRR -2.3 %  payback None
+[B] cucumber The Creamery, Commerce R lp       capex  4.07 M (407/m2)  price 1.17  LCOP 1.37/1.66  EBITDA    142 k  NPV3.5 -1.96 M  NPV8 -2.97 M  IRR -0.9 %  payback None
+[B] cucumber TAY PFI - HATTON WWTW    standby  capex  4.76 M (476/m2)  price 1.18  LCOP 1.43/1.76  EBITDA    142 k  NPV3.5 -2.73 M  NPV8 -3.79 M  IRR -1.8 %  payback None
+[B] cucumber TAY PFI - HATTON WWTW    lp       capex  4.59 M (459/m2)  price 1.18  LCOP 1.41/1.73  EBITDA    143 k  NPV3.5 -2.52 M  NPV8 -3.60 M  IRR -1.6 %  payback None
+[B] cucumber Girvan + Ailsa Bay disti standby  capex  4.65 M (465/m2)  price 1.17  LCOP 1.47/1.81  EBITDA    124 k  NPV3.5 -2.94 M  NPV8 -3.80 M  IRR -2.5 %  payback None
+[B] cucumber Girvan + Ailsa Bay disti lp       capex  4.27 M (427/m2)  price 1.17  LCOP 1.39/1.71  EBITDA    141 k  NPV3.5 -2.19 M  NPV8 -3.20 M  IRR -1.2 %  payback None
+[B] tomato   Girvan + Ailsa Bay disti standby  capex  5.21 M (452/m2)  price 1.23  LCOP 1.82/2.21  EBITDA     21 k  NPV3.5 -5.43 M  NPV8 -5.46 M  IRR -8.8 %  payback None
+[B] tomato   Girvan + Ailsa Bay disti lp       capex  4.64 M (403/m2)  price 1.23  LCOP 1.71/2.06  EBITDA     40 k  NPV3.5 -4.45 M  NPV8 -4.65 M  IRR -7.7 %  payback None
+[B] tomato   The Creamery, Commerce R standby  capex  4.97 M (418/m2)  price 1.23  LCOP 1.85/2.22  EBITDA      4 k  NPV3.5 -5.51 M  NPV8 -5.41 M  IRR -10.0 %  payback None
+[B] tomato   The Creamery, Commerce R lp       capex  4.28 M (360/m2)  price 1.23  LCOP 1.72/2.05  EBITDA     22 k  NPV3.5 -4.40 M  NPV8 -4.47 M  IRR -9.2 %  payback None
+[B] tomato   NIGG WWTW- ABERDEEN PFI  standby  capex  5.12 M (443/m2)  price 1.23  LCOP 1.84/2.23  EBITDA      5 k  NPV3.5 -5.63 M  NPV8 -5.58 M  IRR -9.9 %  payback None
+[B] tomato   NIGG WWTW- ABERDEEN PFI  lp       capex  4.50 M (390/m2)  price 1.23  LCOP 1.73/2.07  EBITDA     24 k  NPV3.5 -4.58 M  NPV8 -4.71 M  IRR -9.0 %  payback None

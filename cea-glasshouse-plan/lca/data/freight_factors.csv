@@ -1,0 +1,5 @@
+mode,kg_co2e_per_tkm,wtt_kg_co2e_per_tkm,desnz_category,source
+reefer_hgv,0.08908,0.02769,"Freighting goods > HGV refrigerated (all diesel) > Articulated (>33t) > Average laden; WTT row is All HGVs refrigerated average laden","DESNZ (2025) Greenhouse gas reporting: conversion factors 2025, flat file, https://assets.publishing.service.gov.uk/media/6846b6ea57f3515d9611f0dd/ghg-conversion-factors-2025-flat-format.xlsx"
+container_ship,0.01266,0.00287,"Freighting goods > Cargo ship > Container ship > 8000+ TEU (main reefer lanes from South America and South Africa use large vessels; DESNZ average all sizes = 0.01612 + 0.00365)","DESNZ (2025) conversion factors, flat file (as above)"
+air_long_haul,0.89939,0.13516,"Freighting goods > Freight flights > Long-haul, to/from UK > With RF (radiative forcing included, DESNZ recommended)","DESNZ (2025) conversion factors, flat file (as above)"
+air_short_haul,1.27835,0.20515,"Freighting goods > Freight flights > Short-haul, to/from UK > With RF","DESNZ (2025) conversion factors, flat file (as above)"

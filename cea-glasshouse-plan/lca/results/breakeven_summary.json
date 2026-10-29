@@ -1,0 +1,708 @@
+{
+ "targets": {
+  "kg_co2e_per_kg": 1.1458609810395048,
+  "gbp_per_kg": 2.0694441422018075
+ },
+ "per_kg_constants": {
+  "carbon": 0.164277,
+  "gbp": 0.25
+ },
+ "inputs": {
+  "elec_price": {
+   "value": 0.17300000000000001,
+   "unit": "GBP/kWh",
+   "confidence": "sourced",
+   "source": "DESNZ Quarterly Energy Prices Dec 2025: manufacturing industry average 16.5 p/kWh excl. CCL (Q3 2025) + Climate Change Levy main rate 0.801 p/kWh (Apr 2026)"
+  },
+  "co2_price": {
+   "value": 0.2,
+   "unit": "GBP/kg",
+   "confidence": "estimated",
+   "source": "Bulk liquid CO2 delivered, indicative; to source in step 7"
+  },
+  "structure_capex": {
+   "value": 200.0,
+   "unit": "GBP/m2",
+   "confidence": "estimated",
+   "source": "Venlo glasshouse incl. screens, heating pipework, irrigation, foundations, install. Dutch turnkey projects quoted ~EUR 240-310/m2 at hectare scale (dutchgreenhouses.com via web summary, unverified); range 120-350 tested"
+  },
+  "structure_life": {
+   "value": 30.0,
+   "unit": "yr",
+   "confidence": "estimated",
+   "source": "Study period, SCOPE \u00a72"
+  },
+  "hp_capex": {
+   "value": 1200.0,
+   "unit": "GBP/kW",
+   "confidence": "estimated",
+   "source": "Ground-source heat pump + borehole field per kW design heat loss; UK non-domestic GSHP indicative 1,000-2,000 GBP/kW; to source in step 5"
+  },
+  "hp_life": {
+   "value": 20.0,
+   "unit": "yr",
+   "confidence": "estimated",
+   "source": "CIBSE Guide M typical heat pump life"
+  },
+  "led_capex": {
+   "value": 1.0,
+   "unit": "GBP/W",
+   "confidence": "estimated",
+   "source": "Horticultural LED fixtures incl. install, indicative; to source in step 5"
+  },
+  "led_life": {
+   "value": 15.0,
+   "unit": "yr",
+   "confidence": "estimated",
+   "source": "Manufacturer L90 ratings ~50,000 h; ~2,500 h/yr used"
+  },
+  "om_frac": {
+   "value": 0.02,
+   "unit": "1/yr",
+   "confidence": "estimated",
+   "source": "Maintenance + insurance as fraction of capex"
+  },
+  "labour_h": {
+   "value": 0.15,
+   "unit": "h/m2/yr",
+   "confidence": "estimated",
+   "source": "High-density orchard pruning/harvest; glasshouse tomato is ~0.8-1 h/m2, open-field avocado ~0.1"
+  },
+  "labour_rate": {
+   "value": 15.0,
+   "unit": "GBP/h",
+   "confidence": "estimated",
+   "source": "UK National Living Wage 12.21 GBP/h (Apr 2025) + ~20 % on-costs"
+  },
+  "pack_gbp": {
+   "value": 0.25,
+   "unit": "GBP/kg",
+   "confidence": "estimated",
+   "source": "Packhouse, carton, cold store; imports carry this inside the CIF price"
+  },
+  "structure_co2": {
+   "value": 3.0,
+   "unit": "kg CO2e/m2/yr",
+   "confidence": "estimated",
+   "source": "Venlo ~12 kg/m2 galvanised steel x 2.8 + ~3 kg/m2 aluminium x 10 + ~10 kg/m2 glass x 1.44 + foundations ~10 = ~90 kg CO2e/m2 over 30 yr (ICE v3 factors, masses estimated). Norwegian Venlo tomato LCA attributes ~53 kg CO2e/t to structure. Range 2-5; replaced by BOM in step 5"
+  }
+ },
+ "supply": {
+  "grid_2025": {
+   "kg_co2e_per_kWh": 0.24539999999999998,
+   "source": "DESNZ (2025) conversion factors: UK electricity generation 0.177 + T&D 0.01853 + WTT gen 0.0459 + WTT T&D 0.00397"
+  },
+  "clean_grid": {
+   "kg_co2e_per_kWh": 0.05,
+   "source": "Illustrative decarbonised grid (~50 g/kWh), to be replaced by NESO FES pathway in step 7"
+  },
+  "onsite_wind": {
+   "kg_co2e_per_kWh": 0.011,
+   "source": "Onshore wind life-cycle median ~11 g/kWh, IPCC AR5 WGIII Annex III (2014) Table A.III.2"
+  }
+ },
+ "requirements": {
+  "min_yield_carbon_zero_energy|S0": 0.0,
+  "max_kWh_per_kg|S0|grid_2025|Y0.75": 3.999934723062367,
+  "max_kWh_per_kg|S0|clean_grid|Y0.75": 19.631679620790095,
+  "max_kWh_per_kg|S0|onsite_wind|Y0.75": 89.2349073672277,
+  "max_kWh_per_kg|S0|grid_2025|Y1.5": 3.999934723062367,
+  "max_kWh_per_kg|S0|clean_grid|Y1.5": 19.631679620790095,
+  "max_kWh_per_kg|S0|onsite_wind|Y1.5": 89.2349073672277,
+  "max_kWh_per_kg|S0|grid_2025|Y2": 3.9999347230623674,
+  "max_kWh_per_kg|S0|clean_grid|Y2": 19.631679620790095,
+  "max_kWh_per_kg|S0|onsite_wind|Y2": 89.23490736722772,
+  "min_yield_carbon_zero_energy|S1": 1.0187615316837102,
+  "max_kWh_per_kg|S1|grid_2025|Y0.75": 0.0,
+  "max_kWh_per_kg|S1|clean_grid|Y0.75": 0.0,
+  "max_kWh_per_kg|S1|onsite_wind|Y0.75": 0.0,
+  "max_kWh_per_kg|S1|grid_2025|Y1.5": 1.2832816396611173,
+  "max_kWh_per_kg|S1|clean_grid|Y1.5": 6.298346287456763,
+  "max_kWh_per_kg|S1|onsite_wind|Y1.5": 28.628846761167104,
+  "max_kWh_per_kg|S1|grid_2025|Y2": 1.9624449105114299,
+  "max_kWh_per_kg|S1|clean_grid|Y2": 9.631679620790097,
+  "max_kWh_per_kg|S1|onsite_wind|Y2": 43.78036191268226,
+  "min_yield_carbon_zero_energy|S2": 2.0375230633674204,
+  "max_kWh_per_kg|S2|grid_2025|Y0.75": 0.0,
+  "max_kWh_per_kg|S2|clean_grid|Y0.75": 0.0,
+  "max_kWh_per_kg|S2|onsite_wind|Y0.75": 0.0,
+  "max_kWh_per_kg|S2|grid_2025|Y1.5": 0.0,
+  "max_kWh_per_kg|S2|clean_grid|Y1.5": 0.0,
+  "max_kWh_per_kg|S2|onsite_wind|Y1.5": 0.0,
+  "max_kWh_per_kg|S2|grid_2025|Y2": 0.0,
+  "max_kWh_per_kg|S2|clean_grid|Y2": 0.0,
+  "max_kWh_per_kg|S2|onsite_wind|Y2": 0.0,
+  "min_yield_carbon_zero_energy|S3": 3.056284595051131,
+  "max_kWh_per_kg|S3|grid_2025|Y0.75": 0.0,
+  "max_kWh_per_kg|S3|clean_grid|Y0.75": 0.0,
+  "max_kWh_per_kg|S3|onsite_wind|Y0.75": 0.0,
+  "max_kWh_per_kg|S3|grid_2025|Y1.5": 0.0,
+  "max_kWh_per_kg|S3|clean_grid|Y1.5": 0.0,
+  "max_kWh_per_kg|S3|onsite_wind|Y1.5": 0.0,
+  "max_kWh_per_kg|S3|grid_2025|Y2": 0.0,
+  "max_kWh_per_kg|S3|clean_grid|Y2": 0.0,
+  "max_kWh_per_kg|S3|onsite_wind|Y2": 0.0,
+  "min_yield_cost_zero_energy|ref": 16.675911584862376,
+  "min_yield_cost_zero_energy|free_structure_hp_paid": 8.500740950888103,
+  "min_yield_cost_labour_only": 1.2366414268025583,
+  "max_capex_gbp_m2|Y1": 0.0,
+  "max_capex_gbp_m2|Y2": 18.67504930172554,
+  "max_capex_gbp_m2|Y3": 43.13937047061253
+ },
+ "best_conceivable": {
+  "Y0.75": {
+   "kg_co2e_per_kg": 0.3109436666666666,
+   "gbp_per_kg": 12.223333333333334
+  },
+  "Y1.5": {
+   "kg_co2e_per_kg": 0.2376103333333333,
+   "gbp_per_kg": 6.236666666666667
+  },
+  "Y2": {
+   "kg_co2e_per_kg": 0.219277,
+   "gbp_per_kg": 4.74
+  }
+ },
+ "cases": [
+  {
+   "case": "1ha thesis 18C",
+   "yield_kg_m2": 0.6154882215391472,
+   "elec_kWh_m2": 56.67018357174507,
+   "elec_kWh_per_kg": 92.07354680164363,
+   "co2_dosed_kg_m2": 0.0,
+   "capex_gbp_m2": 346.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 27.633304768276965,
+    "grid_2025|by_product": 27.633304768276965,
+    "clean_grid|emission": 9.642133723235803,
+    "clean_grid|by_product": 9.642133723235803,
+    "onsite_wind|emission": 6.051265397971702,
+    "onsite_wind|by_product": 6.051265397971702
+   },
+   "cost_gbp_per_kg": {
+    "capex": 34.3883077954311,
+    "om": 11.251703931692465,
+    "labour": 3.6556345373652164,
+    "electricity": 15.92872359668435,
+    "co2": 0.0,
+    "packing": 0.25
+   },
+   "cost_total": 65.47436986117313,
+   "integrated": {
+    "elec_kWh_m2": 19.14716643267628,
+    "kg_co2e_per_kg": 0.5064749875305266,
+    "gbp_per_kg": 9.28747561398168
+   }
+  },
+  {
+   "case": "1ha crop-led",
+   "yield_kg_m2": 0.6222550266867475,
+   "elec_kWh_m2": 36.930688189904146,
+   "elec_kWh_per_kg": 59.349762727582764,
+   "co2_dosed_kg_m2": 0.0,
+   "capex_gbp_m2": 346.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 19.549883165420443,
+    "grid_2025|by_product": 19.549883165420443,
+    "clean_grid|emission": 7.952939528450776,
+    "clean_grid|by_product": 7.952939528450776,
+    "onsite_wind|emission": 5.638298782075048,
+    "onsite_wind|by_product": 5.638298782075048
+   },
+   "cost_gbp_per_kg": {
+    "capex": 34.01434701049954,
+    "om": 11.129345598181436,
+    "labour": 3.615880794053728,
+    "electricity": 10.26750895187182,
+    "co2": 0.0,
+    "packing": 0.25
+   },
+   "cost_total": 59.27708235460653,
+   "integrated": {
+    "elec_kWh_m2": 14.51687397227856,
+    "kg_co2e_per_kg": 0.4209010638429624,
+    "gbp_per_kg": 7.901877434493046
+   }
+  },
+  {
+   "case": "1ha crop-led +CO2",
+   "yield_kg_m2": 0.8791210286875917,
+   "elec_kWh_m2": 36.930688189904146,
+   "elec_kWh_per_kg": 42.00865066899452,
+   "co2_dosed_kg_m2": 26.211189406690586,
+   "capex_gbp_m2": 346.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 43.70092217117844,
+    "grid_2025|by_product": 13.88569929359544,
+    "clean_grid|emission": 35.49243183045691,
+    "clean_grid|by_product": 5.6772089528739125,
+    "onsite_wind|emission": 33.85409445436613,
+    "onsite_wind|by_product": 4.0388715767831265
+   },
+   "cost_gbp_per_kg": {
+    "capex": 24.075864091600728,
+    "om": 7.877517447786392,
+    "labour": 2.55937456456814,
+    "electricity": 7.267496565736052,
+    "co2": 5.963044575516601,
+    "packing": 0.25
+   },
+   "cost_total": 47.99329724520791,
+   "integrated": {
+    "elec_kWh_m2": 14.51687397227856,
+    "kg_co2e_per_kg": 0.34591935467493373,
+    "gbp_per_kg": 11.629157990881424
+   }
+  },
+  {
+   "case": "1ha crop-led +CO2 +LED150",
+   "yield_kg_m2": 1.4151124163046298,
+   "elec_kWh_m2": 148.43595565774325,
+   "elec_kWh_per_kg": 104.8934020700371,
+   "co2_dosed_kg_m2": 35.88195051786964,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 53.38134524743761,
+    "grid_2025|by_product": 28.025090787053195,
+    "clean_grid|emission": 32.885174482952365,
+    "clean_grid|by_product": 7.52892002256795,
+    "onsite_wind|emission": 28.79433180222092,
+    "onsite_wind|by_product": 3.438077341836502
+   },
+   "cost_gbp_per_kg": {
+    "capex": 18.024611741913727,
+    "om": 5.600467603060276,
+    "labour": 1.5899796892995706,
+    "electricity": 18.14655855811642,
+    "co2": 5.0712508920768835,
+    "packing": 0.25
+   },
+   "cost_total": 48.68286848446688,
+   "integrated": {
+    "elec_kWh_m2": 139.79193666191821,
+    "kg_co2e_per_kg": 1.2509124400992542,
+    "gbp_per_kg": 27.775480071826575
+   }
+  },
+  {
+   "case": "1ha crop-led +CO2 +LED150 container",
+   "yield_kg_m2": 0.36978109831692885,
+   "elec_kWh_m2": 148.43595565774325,
+   "elec_kWh_per_kg": 401.4157465953628,
+   "co2_dosed_kg_m2": 30.167391980232296,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 188.36636687263,
+    "grid_2025|by_product": 106.78460913125224,
+    "clean_grid|emission": 109.92972998789615,
+    "clean_grid|by_product": 28.34797224651835,
+    "onsite_wind|emission": 94.274515870677,
+    "onsite_wind|by_product": 12.692758129299202
+   },
+   "cost_gbp_per_kg": {
+    "capex": 68.97824683616236,
+    "om": 21.43238602047172,
+    "labour": 6.084680937562658,
+    "electricity": 69.44492416099777,
+    "co2": 16.31635154827556,
+    "packing": 0.25
+   },
+   "cost_total": 182.50658950347005,
+   "integrated": {
+    "elec_kWh_m2": 139.79193666191821,
+    "kg_co2e_per_kg": 4.322713735355174,
+    "gbp_per_kg": 102.49626699133005
+   }
+  },
+  {
+   "case": "rooftop 2000m2 London +CO2 +LED150",
+   "yield_kg_m2": 1.3874156927874097,
+   "elec_kWh_m2": 153.95485163647365,
+   "elec_kWh_per_kg": 110.96519409202313,
+   "co2_dosed_kg_m2": 33.89757229742986,
+   "capex_gbp_m2": 411.3820821101212,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 53.98959646066378,
+    "grid_2025|by_product": 29.557429177527897,
+    "clean_grid|emission": 32.306997535082466,
+    "clean_grid|by_product": 7.874830251946583,
+    "onsite_wind|emission": 27.979354965493563,
+    "onsite_wind|by_product": 3.54718768235768
+   },
+   "cost_gbp_per_kg": {
+    "capex": 19.151100134350727,
+    "om": 5.9301921442682755,
+    "labour": 1.6217201605090694,
+    "electricity": 19.196978577920003,
+    "co2": 4.886433456627177,
+    "packing": 0.25
+   },
+   "cost_total": 51.036424473675254,
+   "integrated": {
+    "elec_kWh_m2": 142.31838170385714,
+    "kg_co2e_per_kg": 1.2926354342319433,
+    "gbp_per_kg": 28.3539404161688
+   }
+  },
+  {
+   "case": "vent 24C",
+   "yield_kg_m2": 1.4151124163046298,
+   "elec_kWh_m2": 148.43595565774325,
+   "elec_kWh_per_kg": 104.8934020700371,
+   "co2_dosed_kg_m2": 35.88195051786964,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 53.38134524743761,
+    "grid_2025|by_product": 28.025090787053195,
+    "clean_grid|emission": 32.885174482952365,
+    "clean_grid|by_product": 7.52892002256795,
+    "onsite_wind|emission": 28.79433180222092,
+    "onsite_wind|by_product": 3.438077341836502
+   },
+   "cost_gbp_per_kg": {
+    "capex": 18.024611741913727,
+    "om": 5.600467603060276,
+    "labour": 1.5899796892995706,
+    "electricity": 18.14655855811642,
+    "co2": 5.0712508920768835,
+    "packing": 0.25
+   },
+   "cost_total": 48.68286848446688,
+   "integrated": {
+    "elec_kWh_m2": 139.79193666191821,
+    "kg_co2e_per_kg": 1.2509124400992542,
+    "gbp_per_kg": 27.775480071826575
+   }
+  },
+  {
+   "case": "vent 24C + semi-closed",
+   "yield_kg_m2": 1.5873451891643497,
+   "elec_kWh_m2": 154.17019999539056,
+   "elec_kWh_per_kg": 97.12455806575552,
+   "co2_dosed_kg_m2": 36.14790074284442,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 48.66114355883568,
+    "grid_2025|by_product": 25.88859163402448,
+    "clean_grid|emission": 29.68300491278706,
+    "clean_grid|by_product": 6.910452987975856,
+    "onsite_wind|emission": 25.895147148222595,
+    "onsite_wind|by_product": 3.1225952234113903
+   },
+   "cost_gbp_per_kg": {
+    "capex": 16.068875282559237,
+    "om": 4.992796334598561,
+    "labour": 1.4174610635160596,
+    "electricity": 16.802548545375707,
+    "co2": 4.554510384962241,
+    "packing": 0.25
+   },
+   "cost_total": 44.086191611011806,
+   "integrated": {
+    "elec_kWh_m2": 145.42941489352117,
+    "kg_co2e_per_kg": 1.1720751618295007,
+    "gbp_per_kg": 25.43678524769842
+   }
+  },
+  {
+   "case": "vent 26C",
+   "yield_kg_m2": 1.3536931666190466,
+   "elec_kWh_m2": 148.232580652298,
+   "elec_kWh_per_kg": 109.50234832205021,
+   "co2_dosed_kg_m2": 35.15090834350206,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 55.21898620098784,
+    "grid_2025|by_product": 29.25231279944133,
+    "clean_grid|emission": 33.82222733885923,
+    "clean_grid|by_product": 7.855553937312722,
+    "onsite_wind|emission": 29.551635754299266,
+    "onsite_wind|by_product": 3.584962352752762
+   },
+   "cost_gbp_per_kg": {
+    "capex": 18.842417546331916,
+    "om": 5.854569881590267,
+    "labour": 1.662119640907658,
+    "electricity": 18.943906259714687,
+    "co2": 5.1933346803093015,
+    "packing": 0.25
+   },
+   "cost_total": 50.74634800885383,
+   "integrated": {
+    "elec_kWh_m2": 139.58856166391197,
+    "kg_co2e_per_kg": 1.2985622399395627,
+    "gbp_per_kg": 28.89035754992437
+   }
+  },
+  {
+   "case": "vent 26C + semi-closed",
+   "yield_kg_m2": 1.5837841673160615,
+   "elec_kWh_m2": 154.60227547989678,
+   "elec_kWh_per_kg": 97.6157475686169,
+   "co2_dosed_kg_m2": 34.68311471947189,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 47.91226860316852,
+    "grid_2025|by_product": 26.013378946854324,
+    "clean_grid|emission": 28.838151528260777,
+    "clean_grid|by_product": 6.939261871946587,
+    "onsite_wind|emission": 25.031137373084718,
+    "onsite_wind|by_product": 3.132247716770528
+   },
+   "cost_gbp_per_kg": {
+    "capex": 16.105004963067145,
+    "om": 5.004022268787365,
+    "labour": 1.4206481201368064,
+    "electricity": 16.887524329370724,
+    "co2": 4.379777931262839,
+    "packing": 0.25
+   },
+   "cost_total": 44.04697761262488,
+   "integrated": {
+    "elec_kWh_m2": 145.87356513501504,
+    "kg_co2e_per_kg": 1.1774259186461529,
+    "gbp_per_kg": 25.35695838558556
+   }
+  },
+  {
+   "case": "vent 28C",
+   "yield_kg_m2": 1.2804662271112022,
+   "elec_kWh_m2": 147.1060806477387,
+   "elec_kWh_per_kg": 114.88477988179166,
+   "co2_dosed_kg_m2": 34.5943010653629,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 57.71685565924018,
+    "grid_2025|by_product": 30.699898606488063,
+    "clean_grid|emission": 35.2683696703381,
+    "clean_grid|by_product": 8.251412617585975,
+    "onsite_wind|emission": 30.787863254948228,
+    "onsite_wind|by_product": 3.770906202196101
+   },
+   "cost_gbp_per_kg": {
+    "capex": 19.91997237802758,
+    "om": 6.18937936386053,
+    "labour": 1.7571724676222942,
+    "electricity": 19.87506691954996,
+    "co2": 5.403391410550426,
+    "packing": 0.25
+   },
+   "cost_total": 53.39498253961079,
+   "integrated": {
+    "elec_kWh_m2": 138.4620616655814,
+    "kg_co2e_per_kg": 1.3537520881150127,
+    "gbp_per_kg": 30.289097896628405
+   }
+  },
+  {
+   "case": "vent 28C + semi-closed",
+   "yield_kg_m2": 1.5585506703904732,
+   "elec_kWh_m2": 154.80650435547844,
+   "elec_kWh_per_kg": 99.32721938176948,
+   "co2_dosed_kg_m2": 34.4928364199744,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 48.59539574565987,
+    "grid_2025|by_product": 26.46404186973314,
+    "clean_grid|emission": 29.186857078462115,
+    "clean_grid|by_product": 7.0555032025353865,
+    "onsite_wind|emission": 25.313095522573104,
+    "onsite_wind|by_product": 3.181741646646377
+   },
+   "cost_gbp_per_kg": {
+    "capex": 16.36575079632281,
+    "om": 5.085039192352247,
+    "labour": 1.4436489250851843,
+    "electricity": 17.18360895304612,
+    "co2": 4.426270775185346,
+    "packing": 0.25
+   },
+   "cost_total": 44.75431864199171,
+   "integrated": {
+    "elec_kWh_m2": 146.08383645895614,
+    "kg_co2e_per_kg": 1.1953132258840937,
+    "gbp_per_kg": 25.76237198450151
+   }
+  },
+  {
+   "case": "beds LED0",
+   "yield_kg_m2": 0.8791210286875917,
+   "elec_kWh_m2": 36.930688189904146,
+   "elec_kWh_per_kg": 42.00865066899452,
+   "co2_dosed_kg_m2": 26.211189406690586,
+   "capex_gbp_m2": 346.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 43.70092217117844,
+    "grid_2025|by_product": 13.88569929359544,
+    "clean_grid|emission": 35.49243183045691,
+    "clean_grid|by_product": 5.6772089528739125,
+    "onsite_wind|emission": 33.85409445436613,
+    "onsite_wind|by_product": 4.0388715767831265
+   },
+   "cost_gbp_per_kg": {
+    "capex": 24.075864091600728,
+    "om": 7.877517447786392,
+    "labour": 2.55937456456814,
+    "electricity": 7.267496565736052,
+    "co2": 5.963044575516601,
+    "packing": 0.25
+   },
+   "cost_total": 47.99329724520791,
+   "integrated": {
+    "elec_kWh_m2": 14.51687397227856,
+    "kg_co2e_per_kg": 0.34591935467493373,
+    "gbp_per_kg": 11.629157990881424
+   }
+  },
+  {
+   "case": "beds LED0 + semi-closed",
+   "yield_kg_m2": 1.0483993439186665,
+   "elec_kWh_m2": 42.66423224662159,
+   "elec_kWh_per_kg": 40.69463844488196,
+   "co2_dosed_kg_m2": 26.552513441445903,
+   "capex_gbp_m2": 346.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 38.338963265228834,
+    "grid_2025|by_product": 13.01224630812073,
+    "clean_grid|emission": 30.3872309130989,
+    "clean_grid|by_product": 5.060513955990796,
+    "onsite_wind|emission": 28.800140013748504,
+    "onsite_wind|by_product": 3.4734230566403994
+   },
+   "cost_gbp_per_kg": {
+    "capex": 20.188488794392725,
+    "om": 6.605585249908054,
+    "labour": 2.1461287753100238,
+    "electricity": 7.0401724509645796,
+    "co2": 5.065343391421621,
+    "packing": 0.25
+   },
+   "cost_total": 41.295718661997,
+   "integrated": {
+    "elec_kWh_m2": 20.074175117130416,
+    "kg_co2e_per_kg": 0.37489896153526514,
+    "gbp_per_kg": 10.773981198149906
+   }
+  },
+  {
+   "case": "beds LED75",
+   "yield_kg_m2": 1.1635015262567778,
+   "elec_kWh_m2": 91.51716292624927,
+   "elec_kWh_per_kg": 78.65667630078552,
+   "co2_dosed_kg_m2": 32.52114577313763,
+   "capex_gbp_m2": 371.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 49.996147648052315,
+    "grid_2025|by_product": 22.045049141319108,
+    "clean_grid|emission": 34.62663309887883,
+    "clean_grid|by_product": 6.675534592145622,
+    "onsite_wind|emission": 31.559022723148193,
+    "onsite_wind|by_product": 3.607924216414987
+   },
+   "cost_gbp_per_kg": {
+    "capex": 20.05689259040245,
+    "om": 6.381849163611417,
+    "labour": 1.9338178328297597,
+    "electricity": 13.607605000035894,
+    "co2": 5.590219701346642,
+    "packing": 0.25
+   },
+   "cost_total": 47.820384288226165,
+   "integrated": {
+    "elec_kWh_m2": 77.64617524627945,
+    "kg_co2e_per_kg": 0.8983610630067016,
+    "gbp_per_kg": 21.614513621530712
+   }
+  },
+  {
+   "case": "beds LED75 + semi-closed",
+   "yield_kg_m2": 1.3339624150446223,
+   "elec_kWh_m2": 97.23445970098825,
+   "elec_kWh_per_kg": 72.89145376538639,
+   "co2_dosed_kg_m2": 32.767421162840456,
+   "capex_gbp_m2": 371.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 44.86475499020509,
+    "grid_2025|by_product": 20.30077867926506,
+    "clean_grid|emission": 30.62176492444859,
+    "clean_grid|by_product": 6.057788613508564,
+    "onsite_wind|emission": 27.778998227598525,
+    "onsite_wind|by_product": 3.215021916658495
+   },
+   "cost_gbp_per_kg": {
+    "capex": 17.493915029173362,
+    "om": 5.566342168609032,
+    "labour": 1.6867041939294334,
+    "electricity": 12.610221501411846,
+    "co2": 4.912795262188006,
+    "packing": 0.25
+   },
+   "cost_total": 42.519978155311684,
+   "integrated": {
+    "elec_kWh_m2": 83.22482461660572,
+    "kg_co2e_per_kg": 0.8505580079638109,
+    "gbp_per_kg": 19.644853508317375
+   }
+  },
+  {
+   "case": "beds LED150",
+   "yield_kg_m2": 1.4151124163046298,
+   "elec_kWh_m2": 148.43595565774325,
+   "elec_kWh_per_kg": 104.8934020700371,
+   "co2_dosed_kg_m2": 35.88195051786964,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 53.38134524743761,
+    "grid_2025|by_product": 28.025090787053195,
+    "clean_grid|emission": 32.885174482952365,
+    "clean_grid|by_product": 7.52892002256795,
+    "onsite_wind|emission": 28.79433180222092,
+    "onsite_wind|by_product": 3.438077341836502
+   },
+   "cost_gbp_per_kg": {
+    "capex": 18.024611741913727,
+    "om": 5.600467603060276,
+    "labour": 1.5899796892995706,
+    "electricity": 18.14655855811642,
+    "co2": 5.0712508920768835,
+    "packing": 0.25
+   },
+   "cost_total": 48.68286848446688,
+   "integrated": {
+    "elec_kWh_m2": 139.79193666191821,
+    "kg_co2e_per_kg": 1.2509124400992542,
+    "gbp_per_kg": 27.775480071826575
+   }
+  },
+  {
+   "case": "beds LED150 + semi-closed",
+   "yield_kg_m2": 1.5873451891643497,
+   "elec_kWh_m2": 154.17019999539056,
+   "elec_kWh_per_kg": 97.12455806575552,
+   "co2_dosed_kg_m2": 36.14790074284442,
+   "capex_gbp_m2": 396.26456211012123,
+   "carbon_kg_per_kg": {
+    "grid_2025|emission": 48.66114355883568,
+    "grid_2025|by_product": 25.88859163402448,
+    "clean_grid|emission": 29.68300491278706,
+    "clean_grid|by_product": 6.910452987975856,
+    "onsite_wind|emission": 25.895147148222595,
+    "onsite_wind|by_product": 3.1225952234113903
+   },
+   "cost_gbp_per_kg": {
+    "capex": 16.068875282559237,
+    "om": 4.992796334598561,
+    "labour": 1.4174610635160596,
+    "electricity": 16.802548545375707,
+    "co2": 4.554510384962241,
+    "packing": 0.25
+   },
+   "cost_total": 44.086191611011806,
+   "integrated": {
+    "elec_kWh_m2": 145.42941489352117,
+    "kg_co2e_per_kg": 1.1720751618295007,
+    "gbp_per_kg": 25.43678524769842
+   }
+  }
+ ]
+}

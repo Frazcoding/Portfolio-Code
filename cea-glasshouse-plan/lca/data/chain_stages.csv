@@ -1,0 +1,5 @@
+stage,value,unit,applies_to,source,confidence
+packhouse,0.0396,kg CO2e/kg,all origins,"Blaauw et al. (2024) Environ Manage, LCA of an avocado grown in South Africa - enjoyed in Europe, https://pmc.ncbi.nlm.nih.gov/articles/PMC11438827/ (39.6 kg CO2e/t)",scaled: South African packhouse used as proxy for all origins
+packaging,0.0641,kg CO2e/kg,all origins,"Blaauw et al. (2024), cardboard packaging 64.06 kg CO2e/t",scaled: same carton assumed for all origins and for UK fruit
+ripening,0.0217,kg CO2e/kg,"all imports (UK fruit also needs ripening; applied to both)","Blaauw et al. (2024), ripening at Rotterdam 21.71 kg CO2e/t",scaled: Dutch ripening energy used for UK
+transport_loss,0.03,fraction,all imports from packhouse to RDC,"Blaauw et al. (2024), 3 % estimated for transportation",estimated

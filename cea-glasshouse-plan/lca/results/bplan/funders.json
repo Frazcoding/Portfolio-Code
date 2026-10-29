@@ -1,0 +1,1959 @@
+{
+ "levers": {
+  "prices": {
+   "plan: parity -5 % all year": 1.4736063494172682,
+   "UK-season wholesale, winter parity -5 %": 1.2693883367863272,
+   "UK-season farm-gate +10 %, winter parity -5 %": 1.2228605241205108,
+   "UK-season farm-gate, winter parity -10 %": 1.1260834384598237
+  },
+  "winter_share": 0.2398809713492527,
+  "levers": [
+   {
+    "lever": "Base (plan lead)",
+    "min_price": 1.3400297253392637,
+    "delta": 0.0,
+    "gap_to_realistic": 0.11716920121875285
+   },
+   {
+    "lever": "Risk: CO2 bought as liquid, GBP 0.25/kg",
+    "min_price": 1.4525494687259197,
+    "delta": 0.11251974338665605,
+    "gap_to_realistic": 0.2296889446054089
+   },
+   {
+    "lever": "Risk: yield -15 %",
+    "min_price": 1.5519904657267034,
+    "delta": 0.21196074038743973,
+    "gap_to_realistic": 0.3291299416061926
+   },
+   {
+    "lever": "Capex -10 % (fixed-price turnkey, contingency released)",
+    "min_price": 1.2982093044556677,
+    "delta": -0.04182042088359594,
+    "gap_to_realistic": 0.0753487803351569
+   },
+   {
+    "lever": "Capex -20 %",
+    "min_price": 1.2564606997184455,
+    "delta": -0.08356902562081814,
+    "gap_to_realistic": 0.03360017559793471
+   },
+   {
+    "lever": "Power -15 % (PPA GBP 76/MWh or flexibility income)",
+    "min_price": 1.2899297750554979,
+    "delta": -0.05009995028376579,
+    "gap_to_realistic": 0.06706925093498706
+   },
+   {
+    "lever": "Yield +10 % (lit-cucumber best practice)",
+    "min_price": 1.2308378284797072,
+    "delta": -0.10919189685955644,
+    "gap_to_realistic": 0.007977304359196413
+   },
+   {
+    "lever": "Labour -15 % (harvest automation)",
+    "min_price": 1.3133174469694495,
+    "delta": -0.026712278369814157,
+    "gap_to_realistic": 0.09045692284893869
+   },
+   {
+    "lever": "CO2 from own CHP exhaust or distillery, GBP 0.03/kg",
+    "min_price": 1.3223808584734797,
+    "delta": -0.01764886686578393,
+    "gap_to_realistic": 0.09952033435296892
+   },
+   {
+    "lever": "Long-tenor infrastructure money (stack C)",
+    "min_price": 1.2682803492061794,
+    "delta": -0.0717493761330843,
+    "gap_to_realistic": 0.04541982508566855
+   },
+   {
+    "lever": "Capital grant GBP 1.5 M (SOSE heat-pump precedent: Arla, Lockerbie, 2026)",
+    "min_price": 1.3198909093625844,
+    "delta": -0.020138815976679325,
+    "gap_to_realistic": 0.09703038524207352
+   },
+   {
+    "lever": "Package 1: capex -10 %, power -10 %, stack C",
+    "min_price": 1.199781449045986,
+    "delta": -0.14024827629327774,
+    "gap_to_realistic": -0.02307907507452489
+   },
+   {
+    "lever": "Package 2: package 1 + yield +5 %, labour -10 %",
+    "min_price": 1.1318837027065456,
+    "delta": -0.2081460226327181,
+    "gap_to_realistic": -0.09097682141396524
+   },
+   {
+    "lever": "Package 1 + GBP 1.5 M grant",
+    "min_price": 1.1833601454272866,
+    "delta": -0.15666957991197705,
+    "gap_to_realistic": -0.0395003786932242
+   },
+   {
+    "lever": "Package 2 with liquid CO2 at GBP 0.25/kg",
+    "min_price": 1.2387111689895391,
+    "delta": -0.10131855634972453,
+    "gap_to_realistic": 0.01585064486902832
+   }
+  ],
+  "summer_price_needed": {
+   "Base (plan lead)": 1.268271556297862,
+   "Risk: CO2 bought as liquid, GBP 0.25/kg": 1.4163006664049784,
+   "Risk: yield -15 %": 1.547123594463097,
+   "Capex -10 % (fixed-price turnkey, contingency released)": 1.2132533034883914,
+   "Capex -20 %": 1.1583295308111987,
+   "Power -15 % (PPA GBP 76/MWh or flexibility income)": 1.202360891789573,
+   "Yield +10 % (lit-cucumber best practice)": 1.1246205059441061,
+   "Labour -15 % (harvest automation)": 1.233129325459055,
+   "CO2 from own CHP exhaust or distillery, GBP 0.03/kg": 1.2450529994658988,
+   "Long-tenor infrastructure money (stack C)": 1.1738792658424533,
+   "Capital grant GBP 1.5 M (SOSE heat-pump precedent: Arla, Lockerbie, 2026)": 1.2417772636705258,
+   "Package 1: capex -10 %, power -10 %, stack C": 1.083763247721209,
+   "Package 2: package 1 + yield +5 %, labour -10 %": 0.9944380976062822,
+   "Package 1 + GBP 1.5 M grant": 1.0621596527581305,
+   "Package 2 with liquid CO2 at GBP 0.25/kg": 1.134978542268769
+  },
+  "farmgate": 1.0128415422743204,
+  "parity_monthly": [
+   1.620208664078133,
+   1.6960827210649148,
+   1.6671878071597588,
+   1.483988403833077,
+   1.5152777449847443,
+   1.419660589291173,
+   1.5258105591712894,
+   1.6073624420010277,
+   1.5322167543260656,
+   1.4866512250327282,
+   1.613940404158572,
+   1.6611412379967845
+  ],
+  "wholesale_monthly": [
+   1.2325,
+   1.3414285714285714,
+   1.2,
+   0.9466666666666667,
+   0.9900000000000001,
+   0.9338461538461539,
+   1.3158333333333332,
+   1.4392307692307693,
+   1.31,
+   1.008888888888889,
+   1.032,
+   1.185
+  ]
+ },
+ "designs": [
+  {
+   "design": "4.4 ha cucumber",
+   "ha": 4.4,
+   "capex": 16687888.102062248,
+   "t_yr": 3934.987256406505,
+   "target": 1.4742446534271552,
+   "realistic": 1.2227145804068857,
+   "stacks": [
+    {
+     "stack": "A. Bank club, senior sized on the lender case",
+     "funders": "UK agri/specialist banks: Shawbrook (+ Tosca Debt Capital), Lloyds/Bank of Scotland, NatWest, HSBC, Barclays, Santander, Virgin Money, Rabobank London",
+     "hurdle": 0.12,
+     "min_price": 1.407406097277999,
+     "capex": 16687888.102062248,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 9748610.862009238,
+       "rate": 0.065,
+       "tenor": 15
+      }
+     ],
+     "debt": 9748610.862009238,
+     "equity": 8531896.17263036,
+     "uses": 18280507.034639597,
+     "at_target": {
+      "price": 1.4742446534271552,
+      "debt": 9748610.862009238,
+      "gearing": 0.5841728325589941,
+      "equity": 8215066.31961506,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 531299.553519392,
+      "wc0": 598260.3631125205,
+      "fees0": 146229.16293013858,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 9748610.862009238,
+        "rate": 0.065,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 1062599.107038784,
+      "dscr_yr1": null,
+      "min_dscr": 1.5511025376643774,
+      "min_dscr_yr2on": 1.5511025376643774,
+      "equity_irr": 0.151827622291686,
+      "equity_irr_real": 0.12924276695263348,
+      "project_irr_real_pretax": 0.11736754846736275,
+      "project_payback_real": 7.9411048672825535,
+      "equity_npv_hurdle": 2360079.242641775,
+      "equity_payback": 6.433336806421379,
+      "pref_irr": null,
+      "tax_total": 16495295.58324774,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2227145804068857,
+      "debt": 3429746.3119347286,
+      "equity": 14200498.213525198,
+      "equity_irr": 0.05485145531488256,
+      "min_dscr": 2.289969564341729
+     }
+    },
+    {
+     "stack": "B. Vendor finance: ECA supplier credit + plant asset finance",
+     "funders": "Atradius DSB cover via ING / Rabobank / ABN AMRO for the Dutch glasshouse; DLL, BNP Paribas Leasing, Lombard, Siemens Financial Services for plant",
+     "hurdle": 0.12,
+     "min_price": 1.4693747120909393,
+     "capex": 16687888.102062248,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 6611637.4318394875,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "plant asset finance",
+       "amount": 5286519.059973146,
+       "rate": 0.07,
+       "tenor": 10
+      }
+     ],
+     "debt": 11898156.491812633,
+     "equity": 6793682.549174868,
+     "uses": 18691839.040987503,
+     "at_target": {
+      "price": 1.4742446534271552,
+      "debt": 11898156.491812633,
+      "gearing": 0.7129815599819541,
+      "equity": 6406992.463190957,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 833902.5505923019,
+      "wc0": 598260.3631125205,
+      "fees0": 185097.93923652123,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 6611637.4318394875,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "plant asset finance",
+        "amount": 5286519.059973146,
+        "rate": 0.07,
+        "tenor": 10,
+        "grace": 1,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 754192.4689879944,
+      "service_yr2": 1667805.1011846038,
+      "dscr_yr1": 1.2707326175117668,
+      "min_dscr": 1.2707326175117668,
+      "min_dscr_yr2on": 1.2894361070771556,
+      "equity_irr": 0.151233143506749,
+      "equity_irr_real": 0.12865994461445984,
+      "project_irr_real_pretax": 0.11736754846736275,
+      "project_payback_real": 7.9411048672825535,
+      "equity_npv_hurdle": 2299601.619712904,
+      "equity_payback": 8.062143844233047,
+      "pref_irr": null,
+      "tax_total": 16545875.978414148,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2227145804068857,
+      "debt": 11898156.491812633,
+      "equity": 6793682.549174868,
+      "equity_irr": 0.0532863716593589,
+      "min_dscr": 0.19985161449015268
+     }
+    },
+    {
+     "stack": "C. Long-tenor infrastructure (PropCo owns glass + plant)",
+     "funders": "Secured-income infrastructure funds (Greencoat precedent: GBP 120 M Low Carbon Farming, GBP 85 M Fenland cucumber house); pension money via those funds",
+     "hurdle": 0.1,
+     "min_price": 1.3308985559269786,
+     "capex": 16687888.102062248,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 12349903.284807662,
+       "rate": 0.06,
+       "tenor": 20
+      }
+     ],
+     "debt": 12349903.284807662,
+     "equity": 6023290.381702844,
+     "uses": 18373193.666510504,
+     "at_target": {
+      "price": 1.4742446534271552,
+      "debt": 12349903.284807662,
+      "gearing": 0.7400518992742702,
+      "equity": 5652793.283158614,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 531299.553519392,
+      "wc0": 598260.3631125205,
+      "fees0": 185248.5492721149,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 12349903.284807662,
+        "rate": 0.06,
+        "tenor": 20,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 1062599.107038784,
+      "dscr_yr1": null,
+      "min_dscr": 1.5840900397605149,
+      "min_dscr_yr2on": 1.5840900397605149,
+      "equity_irr": 0.2103118315273539,
+      "equity_irr_real": 0.18658022698760202,
+      "project_irr_real_pretax": 0.11736754846736275,
+      "project_payback_real": 7.9411048672825535,
+      "equity_npv_hurdle": 4246113.538992908,
+      "equity_payback": 4.535601163533338,
+      "pref_irr": null,
+      "tax_total": 15608004.175921176,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       15,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2227145804068857,
+      "debt": 4431336.806296914,
+      "equity": 13235404.925629472,
+      "equity_irr": 0.05590732454436631,
+      "min_dscr": 2.2878501283905233
+     }
+    },
+    {
+     "stack": "D. Asset-light: heat ESCo + LED lease + ECA on the glass",
+     "funders": "Heat-plant ESCo (infrastructure fund or the heat-pump supplier), LED operating lease, Atradius DSB supplier credit",
+     "hurdle": 0.12,
+     "min_price": 1.6038951617665589,
+     "capex": 16687888.102062248,
+     "esco_capex": 4740910.065503828,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 6611637.4318394875,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "LED operating lease",
+       "amount": 1133000.0011330002,
+       "rate": 0.08,
+       "tenor": 6
+      }
+     ],
+     "debt": 7744637.432972488,
+     "equity": 5844630.408259708,
+     "uses": 13589267.841232197,
+     "at_target": {
+      "price": 1.4742446534271552,
+      "debt": 7744637.432972488,
+      "gearing": 0.4640873300208326,
+      "equity": 5592929.691688103,
+      "pref": -0.0,
+      "esco_capex": 4740910.065503828,
+      "grant": 0.0,
+      "dsra0": 550740.6420961955,
+      "wc0": 696285.6973578561,
+      "fees0": 143562.74864811977,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 6611637.4318394875,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "LED operating lease",
+        "amount": 1133000.0011330002,
+        "rate": 0.08,
+        "tenor": 6,
+        "grace": 0,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 629221.4676324276,
+      "service_yr2": 1101481.284192391,
+      "dscr_yr1": 0.5883857811555745,
+      "min_dscr": 0.5883857811555745,
+      "min_dscr_yr2on": 1.4184318281072046,
+      "equity_irr": 0.15349577721678853,
+      "equity_irr_real": 0.1308782129576358,
+      "project_irr_real_pretax": 0.11736754846736275,
+      "project_payback_real": 7.9411048672825535,
+      "equity_npv_hurdle": 2311914.209021475,
+      "equity_payback": 7.329393623817387,
+      "pref_irr": null,
+      "tax_total": 16200973.840032192,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       1,
+       10,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2227145804068857,
+      "debt": 7744637.432972488,
+      "equity": 5844630.408259708,
+      "equity_irr": 0.05056003584557833,
+      "min_dscr": -0.6951851540513219
+     }
+    }
+   ]
+  },
+  {
+   "design": "6 ha cucumber",
+   "ha": 6.0,
+   "capex": 21759469.481809717,
+   "t_yr": 5354.464721717521,
+   "target": 1.474240762727309,
+   "realistic": 1.222787357154521,
+   "stacks": [
+    {
+     "stack": "A. Bank club, senior sized on the lender case",
+     "funders": "UK agri/specialist banks: Shawbrook (+ Tosca Debt Capital), Lloyds/Bank of Scotland, NatWest, HSBC, Barclays, Santander, Virgin Money, Rabobank London",
+     "hurdle": 0.12,
+     "min_price": 1.3746059564873576,
+     "capex": 21759469.481809717,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 13743995.11735179,
+       "rate": 0.065,
+       "tenor": 15
+      }
+     ],
+     "debt": 13743995.11735179,
+     "equity": 10226193.173839025,
+     "uses": 23970188.291190818,
+     "at_target": {
+      "price": 1.474240762727309,
+      "debt": 13743995.11735179,
+      "gearing": 0.631632822153195,
+      "equity": 9779513.332525091,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 755739.5445778056,
+      "wc0": 802139.4967290831,
+      "fees0": 206159.92676027687,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 13743995.11735179,
+        "rate": 0.065,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 1511479.0891556111,
+      "dscr_yr1": null,
+      "min_dscr": 1.5401696137934608,
+      "min_dscr_yr2on": 1.5401696137934608,
+      "equity_irr": 0.1734644029624487,
+      "equity_irr_real": 0.15045529702200855,
+      "project_irr_real_pretax": 0.12653547131983778,
+      "project_payback_real": 7.4588356171230155,
+      "equity_npv_hurdle": 4784060.020534257,
+      "equity_payback": 5.62328247626275,
+      "pref_irr": null,
+      "tax_total": 23305445.463300757,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.222787357154521,
+      "debt": 5290289.341261636,
+      "equity": 17802078.344929162,
+      "equity_irr": 0.06292751443812017,
+      "min_dscr": 2.1357100390912898
+     }
+    },
+    {
+     "stack": "B. Vendor finance: ECA supplier credit + plant asset finance",
+     "funders": "Atradius DSB cover via ING / Rabobank / ABN AMRO for the Dutch glasshouse; DLL, BNP Paribas Leasing, Lombard, Siemens Financial Services for plant",
+     "hurdle": 0.12,
+     "min_price": 1.4404834043234587,
+     "capex": 21759469.481809717,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 8962278.58129392,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "plant asset finance",
+       "amount": 6699168.590225292,
+       "rate": 0.07,
+       "tenor": 10
+      }
+     ],
+     "debt": 15661447.171519212,
+     "equity": 8749947.53819997,
+     "uses": 24411394.70971918,
+     "at_target": {
+      "price": 1.474240762727309,
+      "debt": 15661447.171519212,
+      "gearing": 0.7197531715840649,
+      "equity": 8240950.505125595,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1094551.4405778768,
+      "wc0": 802139.4967290831,
+      "fees0": 246237.2575281313,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 8962278.58129392,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "plant asset finance",
+        "amount": 6699168.590225292,
+        "rate": 0.07,
+        "tenor": 10,
+        "grace": 1,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 989650.1868889472,
+      "service_yr2": 2189102.8811557535,
+      "dscr_yr1": 1.3990356208571562,
+      "min_dscr": 1.3742430708036582,
+      "min_dscr_yr2on": 1.3742430708036582,
+      "equity_irr": 0.16780951273475908,
+      "equity_irr_real": 0.1449112869948619,
+      "project_irr_real_pretax": 0.12653547131983778,
+      "project_payback_real": 7.4588356171230155,
+      "equity_npv_hurdle": 4486571.535872901,
+      "equity_payback": 6.816170840454595,
+      "pref_irr": null,
+      "tax_total": 23490405.960261796,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.222787357154521,
+      "debt": 15661447.171519212,
+      "equity": 8749947.53819997,
+      "equity_irr": 0.06337296343491838,
+      "min_dscr": 0.2888846804338138
+     }
+    },
+    {
+     "stack": "C. Long-tenor infrastructure (PropCo owns glass + plant)",
+     "funders": "Secured-income infrastructure funds (Greencoat precedent: GBP 120 M Low Carbon Farming, GBP 85 M Fenland cucumber house); pension money via those funds",
+     "hurdle": 0.1,
+     "min_price": 1.301708307582885,
+     "capex": 21759469.481809717,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 16319602.111357287,
+       "rate": 0.06,
+       "tenor": 20
+      }
+     ],
+     "debt": 16319602.111357287,
+     "equity": 7686500.286107702,
+     "uses": 24006102.397464987,
+     "at_target": {
+      "price": 1.474240762727309,
+      "debt": 16319602.111357287,
+      "gearing": 0.75,
+      "equity": 7196912.222766983,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 710111.3239151104,
+      "wc0": 802139.4967290831,
+      "fees0": 244794.03167035928,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 16319602.111357287,
+        "rate": 0.06,
+        "tenor": 20,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 1420222.6478302209,
+      "dscr_yr1": null,
+      "min_dscr": 1.6649081317937588,
+      "min_dscr_yr2on": 1.6649081317937588,
+      "equity_irr": 0.23736718529060152,
+      "equity_irr_real": 0.21310508361823666,
+      "project_irr_real_pretax": 0.12653547131983778,
+      "project_payback_real": 7.4588356171230155,
+      "equity_npv_hurdle": 7014066.900633411,
+      "equity_payback": 4.049567270371364,
+      "pref_irr": null,
+      "tax_total": 22265568.10156874,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       15,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.222787357154521,
+      "debt": 6835215.127228656,
+      "equity": 16313448.495977506,
+      "equity_irr": 0.06515077317581686,
+      "min_dscr": 2.134542816749532
+     }
+    },
+    {
+     "stack": "D. Asset-light: heat ESCo + LED lease + ECA on the glass",
+     "funders": "Heat-plant ESCo (infrastructure fund or the heat-pump supplier), LED operating lease, Atradius DSB supplier credit",
+     "hurdle": 0.12,
+     "min_price": 1.5694178277626634,
+     "capex": 21759469.481809717,
+     "esco_capex": 5898520.654260879,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 8962278.58129392,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "LED operating lease",
+       "amount": 1545000.0015450004,
+       "rate": 0.08,
+       "tenor": 6
+      }
+     ],
+     "debt": 10507278.58283892,
+     "equity": 7561491.720684446,
+     "uses": 18068770.303523365,
+     "at_target": {
+      "price": 1.474240762727309,
+      "debt": 10507278.58283892,
+      "gearing": 0.48288303129920973,
+      "equity": 7220005.166742181,
+      "pref": -0.0,
+      "esco_capex": 5898520.654260879,
+      "grant": 0.0,
+      "dsra0": 747539.2067189564,
+      "wc0": 924100.1436719799,
+      "fees0": 194695.5716413284,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 8962278.58129392,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "LED operating lease",
+        "amount": 1545000.0015450004,
+        "rate": 0.08,
+        "tenor": 6,
+        "grace": 0,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 854915.657631204,
+      "service_yr2": 1495078.4134379127,
+      "dscr_yr1": 0.7635747177644996,
+      "min_dscr": 0.7635747177644996,
+      "min_dscr_yr2on": 1.5227265430260855,
+      "equity_irr": 0.17082487603667873,
+      "equity_irr_real": 0.14786752552615567,
+      "project_irr_real_pretax": 0.12653547131983778,
+      "project_payback_real": 7.4588356171230155,
+      "equity_npv_hurdle": 4479707.423749385,
+      "equity_payback": 6.5275422555744065,
+      "pref_irr": null,
+      "tax_total": 23064953.65256015,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       10,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.222787357154521,
+      "debt": 10507278.58283892,
+      "equity": 7561491.720684446,
+      "equity_irr": 0.06103932501897302,
+      "min_dscr": -0.5215357792277601
+     }
+    }
+   ]
+  },
+  {
+   "design": "8 ha cucumber (lead)",
+   "ha": 8.0,
+   "capex": 28656012.44470416,
+   "t_yr": 7131.68717289706,
+   "target": 1.474243267904009,
+   "realistic": 1.2228605241205108,
+   "stacks": [
+    {
+     "stack": "A. Bank club, senior sized on the lender case",
+     "funders": "UK agri/specialist banks: Shawbrook (+ Tosca Debt Capital), Lloyds/Bank of Scotland, NatWest, HSBC, Barclays, Santander, Virgin Money, Rabobank London",
+     "hurdle": 0.12,
+     "min_price": 1.3400297253392637,
+     "capex": 28656012.44470416,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 19649527.260097895,
+       "rate": 0.065,
+       "tenor": 15
+      }
+     ],
+     "debt": 19649527.260097895,
+     "equity": 12064895.386566488,
+     "uses": 31714422.64666438,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 19649527.260097895,
+      "gearing": 0.6857034731546982,
+      "equity": 11426285.750613306,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1090604.496106179,
+      "wc0": 1034453.1609993931,
+      "fees0": 294742.9089014684,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 19649527.260097895,
+        "rate": 0.065,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 2181208.992212358,
+      "dscr_yr1": null,
+      "min_dscr": 1.5199975134721528,
+      "min_dscr_yr2on": 1.5199975134721528,
+      "equity_irr": 0.2014062303562124,
+      "equity_irr_real": 0.17784924544726688,
+      "project_irr_real_pretax": 0.13525000245422836,
+      "project_payback_real": 7.042437016989075,
+      "equity_npv_hurdle": 8578720.945565157,
+      "equity_payback": 4.8242156909575895,
+      "pref_irr": null,
+      "tax_total": 32906177.722723603,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 8640142.805361995,
+      "equity": 21917162.16081575,
+      "equity_irr": 0.07345108624423291,
+      "min_dscr": 1.9193117852055617
+     }
+    },
+    {
+     "stack": "B. Vendor finance: ECA supplier credit + plant asset finance",
+     "funders": "Atradius DSB cover via ING / Rabobank / ABN AMRO for the Dutch glasshouse; DLL, BNP Paribas Leasing, Lombard, Siemens Financial Services for plant",
+     "hurdle": 0.12,
+     "min_price": 1.4016258753836155,
+     "capex": 28656012.44470416,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 12454555.743294671,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "plant asset finance",
+       "amount": 8263757.852571557,
+       "rate": 0.07,
+       "tenor": 10
+      }
+     ],
+     "debt": 20718313.59586623,
+     "equity": 11418023.813132755,
+     "uses": 32136337.408998985,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 20718313.59586623,
+      "gearing": 0.7230005792273141,
+      "equity": 10744678.621267103,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1440797.9180381708,
+      "wc0": 1034453.1609993931,
+      "fees0": 331728.693391609,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 12454555.743294671,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "plant asset finance",
+        "amount": 8263757.852571557,
+        "rate": 0.07,
+        "tenor": 10,
+        "grace": 1,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1302072.7383654295,
+      "service_yr2": 2881595.8360763416,
+      "dscr_yr1": 1.5745536653091072,
+      "min_dscr": 1.437020981071743,
+      "min_dscr_yr2on": 1.437020981071743,
+      "equity_irr": 0.18517134938321,
+      "equity_irr_real": 0.16193269547373523,
+      "project_irr_real_pretax": 0.13525000245422836,
+      "project_payback_real": 7.042437016989075,
+      "equity_npv_hurdle": 7837878.568490181,
+      "equity_payback": 5.994390926833558,
+      "pref_irr": null,
+      "tax_total": 33341513.84324375,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 20718313.59586623,
+      "equity": 11418023.813132755,
+      "equity_irr": 0.07630082650454562,
+      "min_dscr": 0.45102887457545787
+     }
+    },
+    {
+     "stack": "C. Long-tenor infrastructure (PropCo owns glass + plant)",
+     "funders": "Secured-income infrastructure funds (Greencoat precedent: GBP 120 M Low Carbon Farming, GBP 85 M Fenland cucumber house); pension money via those funds",
+     "hurdle": 0.1,
+     "min_price": 1.2682803492061794,
+     "capex": 28656012.44470416,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 21492009.33352812,
+       "rate": 0.06,
+       "tenor": 20
+      }
+     ],
+     "debt": 21492009.33352812,
+     "equity": 10112760.83678915,
+     "uses": 31604770.17031727,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 21492009.33352812,
+      "gearing": 0.75,
+      "equity": 9468000.556783305,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 947164.1446049507,
+      "wc0": 1034453.1609993931,
+      "fees0": 322380.1400029218,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 21492009.33352812,
+        "rate": 0.06,
+        "tenor": 20,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 1894328.2892099014,
+      "dscr_yr1": null,
+      "min_dscr": 1.7547357843316858,
+      "min_dscr_yr2on": 1.7547357843316858,
+      "equity_irr": 0.26118942357251307,
+      "equity_irr_real": 0.23646021918873816,
+      "project_irr_real_pretax": 0.13525000245422836,
+      "project_payback_real": 7.042437016989075,
+      "equity_npv_hurdle": 11048308.942371443,
+      "equity_payback": 3.6947848352101165,
+      "pref_irr": null,
+      "tax_total": 31764841.244627938,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       15,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 11163327.938229948,
+      "equity": 19485920.001913447,
+      "equity_irr": 0.07810191266866895,
+      "min_dscr": 1.9189559546669963
+     }
+    },
+    {
+     "stack": "D. Asset-light: heat ESCo + LED lease + ECA on the glass",
+     "funders": "Heat-plant ESCo (infrastructure fund or the heat-pump supplier), LED operating lease, Atradius DSB supplier credit",
+     "hurdle": 0.12,
+     "min_price": 1.524914875626564,
+     "capex": 28656012.44470416,
+     "esco_capex": 7121953.167463952,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 12454555.743294671,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "LED operating lease",
+       "amount": 2060000.0020600003,
+       "rate": 0.08,
+       "tenor": 6
+      }
+     ],
+     "debt": 14514555.745354671,
+     "equity": 9972043.049511274,
+     "uses": 24486598.794865943,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 14514555.745354671,
+      "gearing": 0.5065099609850661,
+      "equity": 9500319.987787247,
+      "pref": -0.0,
+      "esco_capex": 7121953.167463952,
+      "grant": 0.0,
+      "dsra0": 1029415.2546419189,
+      "wc0": 1181710.0863732954,
+      "fees0": 269691.1148864934,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 12454555.743294671,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "LED operating lease",
+        "amount": 2060000.0020600003,
+        "rate": 0.08,
+        "tenor": 6,
+        "grace": 0,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1169219.38476279,
+      "service_yr2": 2058830.5092838379,
+      "dscr_yr1": 0.9977955083986448,
+      "min_dscr": 0.9977955083986448,
+      "min_dscr_yr2on": 1.6191395931534494,
+      "equity_irr": 0.18883806554896954,
+      "equity_irr_real": 0.1655275152440876,
+      "project_irr_real_pretax": 0.13525000245422836,
+      "project_payback_real": 7.042437016989075,
+      "equity_npv_hurdle": 7807577.025729666,
+      "equity_payback": 5.822652965869248,
+      "pref_irr": null,
+      "tax_total": 32833086.682907656,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       10,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 14514555.745354671,
+      "equity": 9972043.049511274,
+      "equity_irr": 0.07446085692924809,
+      "min_dscr": -0.25339055638662444
+     }
+    }
+   ]
+  },
+  {
+   "design": "10 ha cucumber",
+   "ha": 10.0,
+   "capex": 35802939.01526345,
+   "t_yr": 8893.998764497685,
+   "target": 1.4742566901441876,
+   "realistic": 1.2229218250426797,
+   "stacks": [
+    {
+     "stack": "A. Bank club, senior sized on the lender case",
+     "funders": "UK agri/specialist banks: Shawbrook (+ Tosca Debt Capital), Lloyds/Bank of Scotland, NatWest, HSBC, Barclays, Santander, Virgin Money, Rabobank London",
+     "hurdle": 0.12,
+     "min_price": 1.3301068833097816,
+     "capex": 35802939.01526345,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 25062057.310684416,
+       "rate": 0.065,
+       "tenor": 15
+      }
+     ],
+     "debt": 25062057.310684416,
+     "equity": 14601654.465808831,
+     "uses": 39663711.77649325,
+     "at_target": {
+      "price": 1.4742566901441876,
+      "debt": 25062057.310684416,
+      "gearing": 0.7,
+      "equity": 13787137.603211587,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1395680.1801949183,
+      "wc0": 1274644.8587773673,
+      "fees0": 375930.85966026626,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 25062057.310684416,
+        "rate": 0.065,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 2791360.3603898366,
+      "dscr_yr1": null,
+      "min_dscr": 1.5067951514467883,
+      "min_dscr_yr2on": 1.5067951514467883,
+      "equity_irr": 0.21028459854634007,
+      "equity_irr_real": 0.18655352798660796,
+      "project_irr_real_pretax": 0.1376051186127255,
+      "project_payback_real": 6.938482191592656,
+      "equity_npv_hurdle": 11485531.731038608,
+      "equity_payback": 4.614418722818431,
+      "pref_irr": null,
+      "tax_total": 41863804.709453136,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2229218250426797,
+      "debt": 11460463.278866647,
+      "equity": 26766914.167246323,
+      "equity_irr": 0.07686152953225622,
+      "min_dscr": 1.861791044870351
+     }
+    },
+    {
+     "stack": "B. Vendor finance: ECA supplier credit + plant asset finance",
+     "funders": "Atradius DSB cover via ING / Rabobank / ABN AMRO for the Dutch glasshouse; DLL, BNP Paribas Leasing, Lombard, Siemens Financial Services for plant",
+     "hurdle": 0.12,
+     "min_price": 1.3906865734606981,
+     "capex": 35802939.01526345,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 15488432.702644253,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "plant asset finance",
+       "amount": 10442164.423979271,
+       "rate": 0.07,
+       "tenor": 10
+      }
+     ],
+     "debt": 25930597.126623526,
+     "equity": 14208384.212166568,
+     "uses": 40138981.33879009,
+     "at_target": {
+      "price": 1.4742566901441876,
+      "debt": 25930597.126623526,
+      "gearing": 0.7242588971695546,
+      "equity": 13365639.805551304,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1804462.7598413315,
+      "wc0": 1274644.8587773673,
+      "fees0": 414190.2982926778,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 15488432.702644253,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "plant asset finance",
+        "amount": 10442164.423979271,
+        "rate": 0.07,
+        "tenor": 10,
+        "grace": 1,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1630829.44970218,
+      "service_yr2": 3608925.519682663,
+      "dscr_yr1": 1.6219020081123166,
+      "min_dscr": 1.4533602057523813,
+      "min_dscr_yr2on": 1.4533602057523813,
+      "equity_irr": 0.18989924421893034,
+      "equity_irr_real": 0.16656788648914755,
+      "project_irr_real_pretax": 0.1376051186127255,
+      "project_payback_real": 6.938482191592656,
+      "equity_npv_hurdle": 10424267.305354035,
+      "equity_payback": 5.808286530153343,
+      "pref_irr": null,
+      "tax_total": 42471278.07052052,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2229218250426797,
+      "debt": 25930597.126623526,
+      "equity": 14208384.212166568,
+      "equity_irr": 0.08028499365380715,
+      "min_dscr": 0.5034137837559816
+     }
+    },
+    {
+     "stack": "C. Long-tenor infrastructure (PropCo owns glass + plant)",
+     "funders": "Secured-income infrastructure funds (Greencoat precedent: GBP 120 M Low Carbon Farming, GBP 85 M Fenland cucumber house); pension money via those funds",
+     "hurdle": 0.1,
+     "min_price": 1.2582030594348907,
+     "capex": 35802939.01526345,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 26852204.26144759,
+       "rate": 0.06,
+       "tenor": 20
+      }
+     ],
+     "debt": 26852204.26144759,
+     "equity": 12621972.919943465,
+     "uses": 39474177.18139105,
+     "at_target": {
+      "price": 1.4742566901441876,
+      "debt": 26852204.26144759,
+      "gearing": 0.75,
+      "equity": 11816406.792100037,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1188244.1155850934,
+      "wc0": 1274644.8587773673,
+      "fees0": 402783.06392171385,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 26852204.26144759,
+        "rate": 0.06,
+        "tenor": 20,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 2376488.231170187,
+      "dscr_yr1": null,
+      "min_dscr": 1.7720733220536278,
+      "min_dscr_yr2on": 1.7720733220536278,
+      "equity_irr": 0.26783071854545615,
+      "equity_irr_real": 0.24297129269162365,
+      "project_irr_real_pretax": 0.1376051186127255,
+      "project_payback_real": 6.938482191592656,
+      "equity_npv_hurdle": 14415582.058945432,
+      "equity_payback": 3.6063737343809956,
+      "pref_irr": null,
+      "tax_total": 40513215.33534293,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       15,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2229218250426797,
+      "debt": 14807267.980181297,
+      "equity": 23542064.519293666,
+      "equity_irr": 0.08253282195463274,
+      "min_dscr": 1.8612302251594708
+     }
+    },
+    {
+     "stack": "D. Asset-light: heat ESCo + LED lease + ECA on the glass",
+     "funders": "Heat-plant ESCo (infrastructure fund or the heat-pump supplier), LED operating lease, Atradius DSB supplier credit",
+     "hurdle": 0.12,
+     "min_price": 1.515041426755488,
+     "capex": 35802939.01526345,
+     "esco_capex": 9027404.912957523,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 15488432.702644253,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "LED operating lease",
+       "amount": 2575000.002575,
+       "rate": 0.08,
+       "tenor": 6
+      }
+     ],
+     "debt": 18063432.705219254,
+     "equity": 12377584.774853438,
+     "uses": 30441017.48007269,
+     "at_target": {
+      "price": 1.4742566901441876,
+      "debt": 18063432.705219254,
+      "gearing": 0.504523740286195,
+      "equity": 11790523.211933812,
+      "pref": -0.0,
+      "esco_capex": 9027404.912957523,
+      "grant": 0.0,
+      "dsra0": 1281603.340868895,
+      "wc0": 1461299.8198996056,
+      "fees0": 335518.6540786351,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 15488432.702644253,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "LED operating lease",
+        "amount": 2575000.002575,
+        "rate": 0.08,
+        "tenor": 6,
+        "grace": 0,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1456890.0601203432,
+      "service_yr2": 2563206.68173779,
+      "dscr_yr1": 1.0468297055312885,
+      "min_dscr": 1.0468297055312885,
+      "min_dscr_yr2on": 1.649987283982075,
+      "equity_irr": 0.19405172291666972,
+      "equity_irr_real": 0.1706389440359506,
+      "project_irr_real_pretax": 0.1376051186127255,
+      "project_payback_real": 6.938482191592656,
+      "equity_npv_hurdle": 10389231.18107214,
+      "equity_payback": 5.6467049896273664,
+      "pref_irr": null,
+      "tax_total": 41825844.071433425,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       10,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2229218250426797,
+      "debt": 18063432.705219254,
+      "equity": 12377584.774853438,
+      "equity_irr": 0.07854295100226694,
+      "min_dscr": -0.20519581468863632
+     }
+    }
+   ]
+  },
+  {
+   "design": "8 ha cucumber, zero grid (biomethane CHP + HVO)",
+   "ha": 8.0,
+   "capex": 32766105.651698846,
+   "t_yr": 7131.68717289706,
+   "target": 1.474243267904009,
+   "realistic": 1.2228605241205108,
+   "stacks": [
+    {
+     "stack": "A. Bank club, senior sized on the lender case",
+     "funders": "UK agri/specialist banks: Shawbrook (+ Tosca Debt Capital), Lloyds/Bank of Scotland, NatWest, HSBC, Barclays, Santander, Virgin Money, Rabobank London",
+     "hurdle": 0.12,
+     "min_price": 1.3188543017022312,
+     "capex": 32766105.651698846,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 22936273.956189193,
+       "rate": 0.065,
+       "tenor": 15
+      }
+     ],
+     "debt": 22936273.956189193,
+     "equity": 13138100.345722308,
+     "uses": 36074374.3019115,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 22936273.956189193,
+      "gearing": 0.7000000000000001,
+      "equity": 12392671.44214616,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1275619.0388084068,
+      "wc0": 943176.5984852618,
+      "fees0": 344044.1093428379,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 22936273.956189193,
+        "rate": 0.065,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 2551238.0776168136,
+      "dscr_yr1": null,
+      "min_dscr": 1.4370322652471772,
+      "min_dscr_yr2on": 1.4370322652471772,
+      "equity_irr": 0.20837064015475593,
+      "equity_irr_real": 0.18467709819093714,
+      "project_irr_real_pretax": 0.13371144978646632,
+      "project_payback_real": 7.109627961257209,
+      "equity_npv_hurdle": 9952859.311419854,
+      "equity_payback": 4.704174007878489,
+      "pref_irr": null,
+      "tax_total": 36497711.26015264,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 12239975.156400923,
+      "equity": 22697306.731730137,
+      "equity_irr": 0.08367095195400653,
+      "min_dscr": 1.623653766241772
+     }
+    },
+    {
+     "stack": "B. Vendor finance: ECA supplier credit + plant asset finance",
+     "funders": "Atradius DSB cover via ING / Rabobank / ABN AMRO for the Dutch glasshouse; DLL, BNP Paribas Leasing, Lombard, Siemens Financial Services for plant",
+     "hurdle": 0.12,
+     "min_price": 1.4456254495307803,
+     "capex": 32766105.651698846,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 12454555.743294671,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "plant asset finance",
+       "amount": 12455862.53630653,
+       "rate": 0.07,
+       "tenor": 10
+      }
+     ],
+     "debt": 24910418.2796012,
+     "equity": 11744615.898115687,
+     "uses": 36655034.17771689,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 24910418.2796012,
+      "gearing": 0.7602495867039254,
+      "equity": 10935027.304028649,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1762513.5932167838,
+      "wc0": 943176.5984852618,
+      "fees0": 373649.7402289588,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 12454555.743294671,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "plant asset finance",
+        "amount": 12455862.53630653,
+        "rate": 0.07,
+        "tenor": 10,
+        "grace": 1,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1595520.0662268777,
+      "service_yr2": 3525027.1864335677,
+      "dscr_yr1": 1.5770920625591414,
+      "min_dscr": 1.3078301593235069,
+      "min_dscr_yr2on": 1.3078301593235069,
+      "equity_irr": 0.19108543688052604,
+      "equity_irr_real": 0.1677308204711041,
+      "project_irr_real_pretax": 0.13371144978646632,
+      "project_payback_real": 7.109627961257209,
+      "equity_npv_hurdle": 9052363.008680053,
+      "equity_payback": 6.0941562618025555,
+      "pref_irr": null,
+      "tax_total": 36936210.78394884,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 24910418.2796012,
+      "equity": 11744615.898115687,
+      "equity_irr": 0.08741403389898739,
+      "min_dscr": 0.6602054424168238
+     }
+    },
+    {
+     "stack": "C. Long-tenor infrastructure (PropCo owns glass + plant)",
+     "funders": "Secured-income infrastructure funds (Greencoat precedent: GBP 120 M Low Carbon Farming, GBP 85 M Fenland cucumber house); pension money via those funds",
+     "hurdle": 0.1,
+     "min_price": 1.238317767623812,
+     "capex": 32766105.651698846,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 24574579.238774136,
+       "rate": 0.06,
+       "tenor": 20
+      }
+     ],
+     "debt": 24574579.238774136,
+     "equity": 11328869.10371091,
+     "uses": 35903448.34248505,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 24574579.238774136,
+      "gearing": 0.75,
+      "equity": 10591631.726547686,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1088310.0265561028,
+      "wc0": 943176.5984852618,
+      "fees0": 368618.688581612,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 24574579.238774136,
+        "rate": 0.06,
+        "tenor": 20,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 2176620.0531122056,
+      "dscr_yr1": null,
+      "min_dscr": 1.6934335306128596,
+      "min_dscr_yr2on": 1.6934335306128596,
+      "equity_irr": 0.2670373102380027,
+      "equity_irr_real": 0.24219344140980636,
+      "project_irr_real_pretax": 0.13371144978646632,
+      "project_payback_real": 7.109627961257209,
+      "equity_npv_hurdle": 12617014.696900556,
+      "equity_payback": 3.634215915740895,
+      "pref_irr": null,
+      "tax_total": 35272372.72092151,
+      "first_tax_year": 8,
+      "negative_equity_years": [
+       15,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 15814421.092889125,
+      "equity": 19253110.924492903,
+      "equity_irr": 0.09258621656308119,
+      "min_dscr": 1.6226786374196855
+     }
+    },
+    {
+     "stack": "D. Asset-light: heat ESCo + LED lease + ECA on the glass",
+     "funders": "Heat-plant ESCo (infrastructure fund or the heat-pump supplier), LED operating lease, Atradius DSB supplier credit",
+     "hurdle": 0.12,
+     "min_price": 1.449727444909513,
+     "capex": 32766105.651698846,
+     "esco_capex": 7352074.789391657,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 12454555.743294671,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "LED operating lease",
+       "amount": 2060000.0020600003,
+       "rate": 0.08,
+       "tenor": 6
+      }
+     ],
+     "debt": 14514555.745354671,
+     "equity": 13765496.177279128,
+     "uses": 28280051.922633797,
+     "at_target": {
+      "price": 1.474243267904009,
+      "debt": 14514555.745354671,
+      "gearing": 0.44297469768434705,
+      "equity": 13293773.1155551,
+      "pref": -0.0,
+      "esco_capex": 7352074.789391657,
+      "grant": 0.0,
+      "dsra0": 1029415.2546419189,
+      "wc0": 1095191.6290741689,
+      "fees0": 269691.1148864934,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 12454555.743294671,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "LED operating lease",
+        "amount": 2060000.0020600003,
+        "rate": 0.08,
+        "tenor": 6,
+        "grace": 0,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1169219.38476279,
+      "service_yr2": 2058830.5092838379,
+      "dscr_yr1": 1.3720195452389448,
+      "min_dscr": 1.3720195452389448,
+      "min_dscr_yr2on": 1.836190957358007,
+      "equity_irr": 0.17784340297315893,
+      "equity_irr_real": 0.1547484342874108,
+      "project_irr_real_pretax": 0.13371144978646632,
+      "project_payback_real": 7.109627961257209,
+      "equity_npv_hurdle": 8266615.140896593,
+      "equity_payback": 6.024540767720735,
+      "pref_irr": null,
+      "tax_total": 36859237.595263906,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       10,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.2228605241205108,
+      "debt": 14514555.745354671,
+      "equity": 13765496.177279128,
+      "equity_irr": 0.08484912114571375,
+      "min_dscr": 0.12083348045367556
+     }
+    }
+   ]
+  },
+  {
+   "design": "8 ha: 6 ha cucumber + 2 ha cherry tomato",
+   "ha": 8.0,
+   "capex": 27977221.33558949,
+   "t_yr": 6067.234212408621,
+   "target": 1.722670498249342,
+   "realistic": 1.4295444296973698,
+   "stacks": [
+    {
+     "stack": "A. Bank club, senior sized on the lender case",
+     "funders": "UK agri/specialist banks: Shawbrook (+ Tosca Debt Capital), Lloyds/Bank of Scotland, NatWest, HSBC, Barclays, Santander, Virgin Money, Rabobank London",
+     "hurdle": 0.12,
+     "min_price": 1.5719544547609985,
+     "capex": 27977221.33558949,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 19056273.587232117,
+       "rate": 0.065,
+       "tenor": 15
+      }
+     ],
+     "debt": 19056273.587232117,
+     "equity": 11925534.331496947,
+     "uses": 30981807.91872906,
+     "at_target": {
+      "price": 1.722670498249342,
+      "debt": 19056273.587232117,
+      "gearing": 0.6811353192888694,
+      "equity": 11306205.439911902,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1055416.4360570551,
+      "wc0": 1043997.1516889904,
+      "fees0": 285844.1038084817,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 19056273.587232117,
+        "rate": 0.065,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 2110832.8721141103,
+      "dscr_yr1": null,
+      "min_dscr": 1.5064918169456805,
+      "min_dscr_yr2on": 1.5064918169456805,
+      "equity_irr": 0.19864167432237922,
+      "equity_irr_real": 0.17513889639448932,
+      "project_irr_real_pretax": 0.1347010080276655,
+      "project_payback_real": 7.065556113297755,
+      "equity_npv_hurdle": 8208681.928329032,
+      "equity_payback": 4.891833893781961,
+      "pref_irr": null,
+      "tax_total": 32025000.109323513,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.4295444296973698,
+      "debt": 8069921.518010492,
+      "equity": 21760927.75493137,
+      "equity_irr": 0.07132960444243952,
+      "min_dscr": 1.9734032929786565
+     }
+    },
+    {
+     "stack": "B. Vendor finance: ECA supplier credit + plant asset finance",
+     "funders": "Atradius DSB cover via ING / Rabobank / ABN AMRO for the Dutch glasshouse; DLL, BNP Paribas Leasing, Lombard, Siemens Financial Services for plant",
+     "hurdle": 0.12,
+     "min_price": 1.647910623345524,
+     "capex": 27977221.33558949,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 12454555.743294671,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "plant asset finance",
+       "amount": 7749405.028047036,
+       "rate": 0.07,
+       "tenor": 10
+      }
+     ],
+     "debt": 20203960.771341708,
+     "equity": 11201796.424468916,
+     "uses": 31405757.195810623,
+     "at_target": {
+      "price": 1.722670498249342,
+      "debt": 20203960.771341708,
+      "gearing": 0.7221575198263341,
+      "equity": 10545167.699400311,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 1401324.818317173,
+      "wc0": 1043997.1516889904,
+      "fees0": 326585.1651463638,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 12454555.743294671,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "plant asset finance",
+        "amount": 7749405.028047036,
+        "rate": 0.07,
+        "tenor": 10,
+        "grace": 1,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1266068.040648713,
+      "service_yr2": 2802649.636634346,
+      "dscr_yr1": 1.5423418316978117,
+      "min_dscr": 1.4449916719136515,
+      "min_dscr_yr2on": 1.4449916719136515,
+      "equity_irr": 0.18387471270720546,
+      "equity_irr_real": 0.16066148304628003,
+      "project_irr_real_pretax": 0.1347010080276655,
+      "project_payback_real": 7.065556113297755,
+      "equity_npv_hurdle": 7536605.333010409,
+      "equity_payback": 6.031691323117185,
+      "pref_irr": null,
+      "tax_total": 32435309.95917628,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.4295444296973698,
+      "debt": 20203960.771341708,
+      "equity": 11201796.424468916,
+      "equity_irr": 0.07387092728812539,
+      "min_dscr": 0.3960945567275188
+     }
+    },
+    {
+     "stack": "C. Long-tenor infrastructure (PropCo owns glass + plant)",
+     "funders": "Secured-income infrastructure funds (Greencoat precedent: GBP 120 M Low Carbon Farming, GBP 85 M Fenland cucumber house); pension money via those funds",
+     "hurdle": 0.1,
+     "min_price": 1.489468349609524,
+     "capex": 27977221.33558949,
+     "esco_capex": 0.0,
+     "tranches": [
+      {
+       "name": "senior debt sized on the lender case",
+       "amount": 20982916.001692116,
+       "rate": 0.06,
+       "tenor": 20
+      }
+     ],
+     "debt": 20982916.001692116,
+     "equity": 9905089.162145745,
+     "uses": 30888005.16383786,
+     "at_target": {
+      "price": 1.722670498249342,
+      "debt": 20982916.001692116,
+      "gearing": 0.7499999999999999,
+      "equity": 9275601.682094982,
+      "pref": -0.0,
+      "esco_capex": 0.0,
+      "grant": 0.0,
+      "dsra0": 922555.4564832348,
+      "wc0": 1043997.1516889904,
+      "fees0": 314743.74002538173,
+      "tranches": [
+       {
+        "name": "senior debt sized on the lender case",
+        "amount": 20982916.001692116,
+        "rate": 0.06,
+        "tenor": 20,
+        "grace": 1,
+        "profile": "given"
+       }
+      ],
+      "service_yr1": 0.0,
+      "service_yr2": 1845110.9129664695,
+      "dscr_yr1": null,
+      "min_dscr": 1.756489073056875,
+      "min_dscr_yr2on": 1.756489073056875,
+      "equity_irr": 0.25866678132101006,
+      "equity_irr_real": 0.233987040510794,
+      "project_irr_real_pretax": 0.1347010080276655,
+      "project_payback_real": 7.065556113297755,
+      "equity_npv_hurdle": 10658177.046162881,
+      "equity_payback": 3.73104116929397,
+      "pref_irr": null,
+      "tax_total": 30892382.880641207,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       15,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.4295444296973698,
+      "debt": 10426584.64920537,
+      "equity": 19490139.66084524,
+      "equity_irr": 0.07536243676369081,
+      "min_dscr": 1.9737879396191629
+     }
+    },
+    {
+     "stack": "D. Asset-light: heat ESCo + LED lease + ECA on the glass",
+     "funders": "Heat-plant ESCo (infrastructure fund or the heat-pump supplier), LED operating lease, Atradius DSB supplier credit",
+     "hurdle": 0.12,
+     "min_price": 1.7875995570793748,
+     "capex": 27977221.33558949,
+     "esco_capex": 6550450.029103373,
+     "tranches": [
+      {
+       "name": "glasshouse supplier credit (ECA)",
+       "amount": 12454555.743294671,
+       "rate": 0.0581,
+       "tenor": 15
+      },
+      {
+       "name": "LED operating lease",
+       "amount": 2060000.0020600003,
+       "rate": 0.08,
+       "tenor": 6
+      }
+     ],
+     "debt": 14514555.745354671,
+     "equity": 9862482.395984085,
+     "uses": 24377038.14133876,
+     "at_target": {
+      "price": 1.722670498249342,
+      "debt": 14514555.745354671,
+      "gearing": 0.5187990462401953,
+      "equity": 9390759.334260058,
+      "pref": -0.0,
+      "esco_capex": 6550450.029103373,
+      "grant": 0.0,
+      "dsra0": 1029415.2546419189,
+      "wc0": 1179437.4036001996,
+      "fees0": 269691.1148864934,
+      "tranches": [
+       {
+        "name": "glasshouse supplier credit (ECA)",
+        "amount": 12454555.743294671,
+        "rate": 0.0581,
+        "tenor": 15,
+        "grace": 1,
+        "profile": "equal"
+       },
+       {
+        "name": "LED operating lease",
+        "amount": 2060000.0020600003,
+        "rate": 0.08,
+        "tenor": 6,
+        "grace": 0,
+        "profile": "annuity"
+       }
+      ],
+      "service_yr1": 1169219.38476279,
+      "service_yr2": 2058830.5092838379,
+      "dscr_yr1": 0.9750678138408009,
+      "min_dscr": 0.9750678138408009,
+      "min_dscr_yr2on": 1.6019895144216387,
+      "equity_irr": 0.18691434001528828,
+      "equity_irr_real": 0.1636415098189099,
+      "project_irr_real_pretax": 0.1347010080276655,
+      "project_payback_real": 7.065556113297755,
+      "equity_npv_hurdle": 7493080.975568692,
+      "equity_payback": 5.892889304551444,
+      "pref_irr": null,
+      "tax_total": 31972159.30744205,
+      "first_tax_year": 7,
+      "negative_equity_years": [
+       10,
+       25
+      ]
+     },
+     "at_realistic": {
+      "price": 1.4295444296973698,
+      "debt": 14514555.745354671,
+      "equity": 9862482.395984085,
+      "equity_irr": 0.0720488545551391,
+      "min_dscr": -0.2661252936571461
+     }
+    }
+   ]
+  }
+ ],
+ "price_cases": [
+  "plan: parity -5 % all year",
+  "UK-season wholesale, winter parity -5 %",
+  "UK-season farm-gate +10 %, winter parity -5 %",
+  "UK-season farm-gate, winter parity -10 %"
+ ],
+ "realistic": "UK-season farm-gate +10 %, winter parity -5 %"
+}

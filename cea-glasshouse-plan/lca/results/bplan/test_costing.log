@@ -1,0 +1,11 @@
+OK   snow s_k formula 0.429
+OK   multi-span drift raises gutter snow above undrifted 0.8 s_k 
+OK   primary steel per m2 grows with span 1.07 -> 1.84 kg/m2
+OK   heavier glazing needs more steel 
+OK   steel in a plausible Venlo range (5-15 kg/m2) 9.2
+OK   every rate has a cost tier and life 
+OK   every non-placeholder cost has a source 
+OK   reference design reproduces the SAC anchor (GBP 200/m2) 200.00
+OK   double glazing costs more than single 
+OK   embodied carbon positive and below 10 kg/m2/yr 2.15
+PASS

@@ -1,0 +1,44 @@
+== test_reproduce
+air: 31/31 annual sums match, first 48 h match
+ground: 31/31 annual sums match, first 48 h match
+water: 31/31 annual sums match, first 48 h match
+PASS
+== test_fast
+thesis_air     ref   42.9s  fast   0.2s  worst monthly: phys 9.8e-15 (Q_floor m12)  hp 2.8e-10 (W_comp m12)  control 1.0e-09 (buf_soc m12)  OK
+thesis_ground  ref   34.2s  fast   0.3s  worst monthly: phys 1.9e-06 (Q_floor m12)  hp 9.5e-04 (W_comp m12)  control 7.6e-03 (f_cmd m12)  OK
+thesis_water   ref   35.9s  fast   0.2s  worst monthly: phys 7.8e-05 (VPD m3)  hp 2.3e-03 (W_comp m10)  control 1.9e-01 (starts m6)  OK
+perth_new      ref   43.2s  fast   0.3s  worst monthly: phys 0.0e+00 ()  hp 0.0e+00 ()  control 0.0e+00 ()  OK
+perth_humidity ref   39.8s  fast   0.2s  worst monthly: phys 0.0e+00 ()  hp 0.0e+00 ()  control 1.9e-16 (buf_soc m4)  OK
+perth_hum_hrd  ref   34.3s  fast   0.2s  worst monthly: phys 5.7e-16 (Q_pipe m10)  hp 5.6e-16 (Q_c m10)  control 1.5e-15 (buf_soc m10)  OK
+design_sawtooth ref   31.6s  fast   0.2s  worst monthly: phys 0.0e+00 ()  hp 2.5e-16 (W_total m10)  control 3.9e-16 (buf_soc m6)  OK
+waste_direct   ref   35.9s  fast   0.2s  worst monthly: phys 0.0e+00 ()  hp 0.0e+00 ()  control 1.6e-16 (buf_soc m3)  OK
+waste_effluent ref   23.8s  fast   0.2s  worst monthly: phys 6.6e-05 (VPD m12)  hp 1.9e-03 (Q_e m7)  control 6.6e-01 (unmet m11)  OK
+PASS
+== test_r6_options
+fast 1.7 s, reference 43 s
+Q_pipe     max monthly relative difference 0.00e+00 ok
+Q_cover    max monthly relative difference 0.00e+00 ok
+Q_vent     max monthly relative difference 0.00e+00 ok
+Q_floor    max monthly relative difference 0.00e+00 ok
+Q_sol      max monthly relative difference 0.00e+00 ok
+LE         max monthly relative difference 0.00e+00 ok
+trans_kg   max monthly relative difference 0.00e+00 ok
+cond_kg    max monthly relative difference 0.00e+00 ok
+T_air_in   max monthly relative difference 0.00e+00 ok
+T_floor    max monthly relative difference 0.00e+00 ok
+RH_in      max monthly relative difference 0.00e+00 ok
+VPD        max monthly relative difference 0.00e+00 ok
+Q_below    max monthly relative difference 0.00e+00 ok
+PASS
+== test_costing
+OK   snow s_k formula 0.429
+OK   multi-span drift raises gutter snow above undrifted 0.8 s_k 
+OK   primary steel per m2 grows with span 1.07 -> 1.84 kg/m2
+OK   heavier glazing needs more steel 
+OK   steel in a plausible Venlo range (5-15 kg/m2) 9.2
+OK   every rate has a cost tier and life 
+OK   every non-placeholder cost has a source 
+OK   reference design reproduces the SAC anchor (GBP 200/m2) 200.00
+OK   double glazing costs more than single 
+OK   embodied carbon positive and below 10 kg/m2/yr 2.15
+PASS

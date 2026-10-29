@@ -1,0 +1,66 @@
+[
+ {
+  "label": "Annual COP · air",
+  "value": 4.140575151076154,
+  "unit": "–",
+  "group": "Thesis 2018",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Electricity · air",
+  "value": 148.8995667668739,
+  "unit": "MWh",
+  "group": "Thesis 2018",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Annual COP · ground",
+  "value": 4.207284376065689,
+  "unit": "–",
+  "group": "Thesis 2018",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Electricity · ground",
+  "value": 146.53866747591982,
+  "unit": "MWh",
+  "group": "Thesis 2018",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Annual COP · water",
+  "value": 4.413907535751809,
+  "unit": "–",
+  "group": "Thesis 2018",
+  "dec": 2,
+  "note": ""
+ },
+ {
+  "label": "Electricity · water",
+  "value": 139.67892194549813,
+  "unit": "MWh",
+  "group": "Thesis 2018",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Heat demand",
+  "value": 616.5298461609228,
+  "unit": "MWh",
+  "group": "Thesis 2018",
+  "dec": 1,
+  "note": ""
+ },
+ {
+  "label": "Peak heat demand",
+  "value": 237.07219047619049,
+  "unit": "kW",
+  "group": "Thesis 2018",
+  "dec": 1,
+  "note": ""
+ }
+]

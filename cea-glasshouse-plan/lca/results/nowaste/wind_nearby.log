@@ -1,0 +1,192 @@
+Traceback (most recent call last):
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 540, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connection.py", line 638, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\http\client.py", line 1478, in getresponse
+    response.begin()
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\http\client.py", line 343, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\http\client.py", line 304, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\util\retry.py", line 510, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 542, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 373, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=90)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\siting_wind_nearby.py", line 52, in <module>
+    el = query(s["lat"], s["lon"])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\siting_wind_nearby.py", line 30, in query
+    r = requests.post(URLS[k % 2], data={"data": q}, timeout=90, headers={"User-Agent": "cea-glasshouse-study/1.0 (research)", "Accept": "application/json"})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=90)
+Caledonian Paper Mill, Shewalt turbines   5  >=500kW   0  nearest 1.4 km  nearest big nan km  known 0.0 MW
+Cameronbridge distillery       turbines  11  >=500kW   7  nearest 1.9 km  nearest big 1.9 km  known 17.8 MW
+Girvan + Ailsa Bay distillerie turbines  18  >=500kW  16  nearest 1.5 km  nearest big 3.1 km  known 38.8 MW
+Station Rd, Cowie              turbines   5  >=500kW   4  nearest 3.4 km  nearest big 3.4 km  known 5.2 MW
+EDINBURGH, SEAFIELD WWTW       turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Norbord Ltd, Morayhill, Invern turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Traceback (most recent call last):
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 540, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connection.py", line 638, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\http\client.py", line 1478, in getresponse
+    response.begin()
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\http\client.py", line 343, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\http\client.py", line 304, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\util\retry.py", line 510, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 542, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\urllib3\connectionpool.py", line 373, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=90)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\siting_wind_nearby.py", line 52, in <module>
+    el = query(s["lat"], s["lon"])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\kDrive\Code\BEng-CEA-Heatpump\lca\siting_wind_nearby.py", line 30, in query
+    r = requests.post(URLS[k % 2], data={"data": q}, timeout=90, headers={"User-Agent": "cea-glasshouse-study/1.0 (research)", "Accept": "application/json"})
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\api.py", line 134, in post
+    return request("post", url, data=data, json=json, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\api.py", line 71, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\frase\.venvs\portfolio\Lib\site-packages\requests\adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='overpass.kumi.systems', port=443): Read timed out. (read timeout=90)
+DALMUIR PFI - DALMUIR WWTW     turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+SHIELDHALL S.T.W.              turbines   1  >=500kW   0  nearest 4.3 km  nearest big nan km  known 0.0 MW
+North British distillery       turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Strathclyde distillery         turbines   1  >=500kW   0  nearest 3.6 km  nearest big nan km  known 0.0 MW
+MEADOWHEAD W.W.T. SERVICE      turbines   5  >=500kW   0  nearest 0.6 km  nearest big nan km  known 0.0 MW
+Invergordon distillery         turbines   2  >=500kW   0  nearest 3.5 km  nearest big nan km  known 0.0 MW
+NIGG WWTW- ABERDEEN PFI        turbines   1  >=500kW   0  nearest 1.9 km  nearest big nan km  known 0.0 MW
+Energen Biogas Ltd, Cumbernaul turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+DALDOWIE S.T.W.                turbines   5  >=500kW   0  nearest 3.2 km  nearest big nan km  known 0.0 MW
+TAY PFI - HATTON WWTW          turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+DALMARNOCK S.T.W.              turbines   2  >=500kW   1  nearest 2.2 km  nearest big 4.2 km  known 3.0 MW
+Starlaw distillery             turbines   2  >=500kW   0  nearest 2.3 km  nearest big nan km  known 0.0 MW
+Loch Lomond distillery         turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Glenfiddich                    turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+LEVEN VALLEY, LEVENMOUTH WWTW  turbines   8  >=500kW   4  nearest 1.0 km  nearest big 1.0 km  known 11.8 MW
+LAIGHPARK   S.T.W.             turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+The Macallan distillery        turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Sapphire Mill, Leslie, Fife    turbines  14  >=500kW   0  nearest 2.0 km  nearest big nan km  known 0.0 MW
+Egger, Barony Rd, Ayr          turbines   1  >=500kW   0  nearest 4.8 km  nearest big nan km  known 0.0 MW
+Glen Ord distillery            turbines   2  >=500kW   0  nearest 4.6 km  nearest big nan km  known 0.0 MW
+Earnside Energy Ltd, Glenfarg  turbines   7  >=500kW   0  nearest 0.3 km  nearest big nan km  known 0.0 MW
+Dundas Chemical Co, Mosspark,  turbines   1  >=500kW   0  nearest 2.4 km  nearest big nan km  known 0.0 MW
+The Creamery, Commerce Rd, Str turbines  11  >=500kW   0  nearest 3.0 km  nearest big nan km  known 0.0 MW
+EAST CALDER WWTW               turbines   1  >=500kW   0  nearest 2.8 km  nearest big nan km  known 0.0 MW
+PERTH CITY WWTP                turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+DALDERSE WWTW                  turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+The Glenlivet distillery       turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+INVERCLYDE W.W.T. SERVICE      turbines   3  >=500kW   0  nearest 4.3 km  nearest big nan km  known 0.0 MW
+ALLANFEARN WWTP, INVERNESS     turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Caledonian Proteins, Biggar Rd turbines   1  >=500kW   0  nearest 4.1 km  nearest big nan km  known 0.0 MW
+Dalmunach distillery           turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Roseisle distillery            turbines   1  >=500kW   0  nearest 0.5 km  nearest big nan km  known 0.0 MW
+DUNFERMLINE STW                turbines   1  >=500kW   1  nearest 4.2 km  nearest big 4.2 km  known 1.5 MW
+ERSKINE S.T.W.                 turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+STEVENSTON W.W.T.SERVICE       turbines   1  >=500kW   0  nearest 3.2 km  nearest big nan km  known 0.0 MW
+Baxters Food Group Ltd, Fochab turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Teaninich distillery           turbines   2  >=500kW   0  nearest 2.7 km  nearest big nan km  known 0.0 MW
+STIRLING WWTW                  turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW
+Wellpark Brewery, Dennistoun,  turbines   1  >=500kW   0  nearest 3.7 km  nearest big nan km  known 0.0 MW
+HAMILTON S.T.W.                turbines   0  >=500kW   0  nearest nan km  nearest big nan km  known 0.0 MW

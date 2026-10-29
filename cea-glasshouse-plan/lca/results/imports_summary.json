@@ -1,0 +1,473 @@
+{
+ "summary": {
+  "volume_year": 2025,
+  "uk_imports_t": 146131.0,
+  "share_covered": 0.9385804517864108,
+  "weighted_kg_co2e_per_kg": 1.1458609810395048,
+  "weighted_low": 0.7944476805605977,
+  "weighted_high": 1.4655868755227774,
+  "best_origin": "Israel",
+  "best_kg_co2e_per_kg": 0.8601646045843668,
+  "cif_gbp_per_kg_all_origins": 2.068,
+  "cif_gbp_per_kg_all_origins_2023_25": 2.0694441422018075,
+  "cheapest_origin_cif": "Colombia"
+ },
+ "origins": [
+  {
+   "origin": "Peru",
+   "iso3": "PER",
+   "mode": "sea",
+   "kg_co2e_per_kg": 1.358298552383635,
+   "low": 0.8840717482599239,
+   "high": 1.4923191709403363,
+   "stages": {
+    "farm": 0.96,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.046708000000000006,
+    "sea": 0.1639062958121261,
+    "road_uk": 0.022186300000000003,
+    "transport_loss": 0.04009795657150905,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 400.0,
+    "sea": 10554.17229955738,
+    "road_uk": 190.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "measured",
+   "tonnes": 58954.7,
+   "share": 0.40343732678213384,
+   "gbp_per_kg_cif": 1.86,
+   "gbp_per_kg_cif_2023_25": 1.851030360692635
+  },
+  {
+   "origin": "Peru",
+   "iso3": "PER",
+   "mode": "air",
+   "kg_co2e_per_kg": 12.83610806348578,
+   "low": 12.361881259362068,
+   "high": 12.97012868204248,
+   "stages": {
+    "farm": 0.96,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "air": 11.340586421581206,
+    "road_uk": 0.014012400000000001,
+    "transport_loss": 0.38443224190457337,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "air": 10961.854353662176,
+    "road_uk": 120.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "measured",
+   "tonnes": 0.0,
+   "share": 0.0,
+   "gbp_per_kg_cif": 1.86,
+   "gbp_per_kg_cif_2023_25": 1.851030360692635
+  },
+  {
+   "origin": "South Africa",
+   "iso3": "ZAF",
+   "mode": "sea",
+   "kg_co2e_per_kg": 1.148403440358881,
+   "low": 1.112320966132077,
+   "high": 1.2391250898434172,
+   "stages": {
+    "farm": 0.576,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.21135370000000003,
+    "sea": 0.1796623371481145,
+    "road_uk": 0.022186300000000003,
+    "transport_loss": 0.03380110321076643,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 1810.0,
+    "sea": 11568.727440316452,
+    "road_uk": 190.0
+   },
+   "sequestration_credit": 0.522,
+   "farm_confidence": "measured",
+   "tonnes": 12373.1,
+   "share": 0.08467128809082262,
+   "gbp_per_kg_cif": 2.138,
+   "gbp_per_kg_cif_2023_25": 2.093803840300311
+  },
+  {
+   "origin": "South Africa",
+   "iso3": "ZAF",
+   "mode": "air",
+   "kg_co2e_per_kg": 11.20203395587044,
+   "low": 11.165951481643637,
+   "high": 11.292755605354976,
+   "stages": {
+    "farm": 0.576,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "air": 10.139534537194328,
+    "road_uk": 0.014012400000000001,
+    "transport_loss": 0.3354100186761132,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "air": 9800.91299327662,
+    "road_uk": 120.0
+   },
+   "sequestration_credit": 0.522,
+   "farm_confidence": "measured",
+   "tonnes": 0.0,
+   "share": 0.0,
+   "gbp_per_kg_cif": 2.138,
+   "gbp_per_kg_cif_2023_25": 2.093803840300311
+  },
+  {
+   "origin": "Mexico",
+   "iso3": "MEX",
+   "mode": "sea",
+   "kg_co2e_per_kg": 0.944198388323082,
+   "low": 0.8184251924467932,
+   "high": 4.257600450178752,
+   "stages": {
+    "farm": 0.536,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.0875775,
+    "sea": 0.1453596366733895,
+    "road_uk": 0.022186300000000003,
+    "transport_loss": 0.027674951649692463,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 750.0,
+    "sea": 9359.925091654188,
+    "road_uk": 190.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "measured",
+   "tonnes": 126.8,
+   "share": 0.0008677145848587911,
+   "gbp_per_kg_cif": 2.848,
+   "gbp_per_kg_cif_2023_25": 1.9768995529767015
+  },
+  {
+   "origin": "Mexico",
+   "iso3": "MEX",
+   "mode": "air",
+   "kg_co2e_per_kg": 10.964154187802658,
+   "low": 10.838380991926368,
+   "high": 14.277556249658327,
+   "stages": {
+    "farm": 0.536,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "air": 9.948791162168577,
+    "road_uk": 0.014012400000000001,
+    "transport_loss": 0.32827362563407975,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "air": 9616.539715014815,
+    "road_uk": 120.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "measured",
+   "tonnes": 0.0,
+   "share": 0.0,
+   "gbp_per_kg_cif": 2.848,
+   "gbp_per_kg_cif_2023_25": 1.9768995529767015
+  },
+  {
+   "origin": "Colombia",
+   "iso3": "COL",
+   "mode": "sea",
+   "kg_co2e_per_kg": 0.9758546186764682,
+   "low": 0.6665762681610042,
+   "high": 1.4913185362022414,
+   "stages": {
+    "farm": 0.59,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.07590050000000001,
+    "sea": 0.13374318011617414,
+    "road_uk": 0.022186300000000003,
+    "transport_loss": 0.028624638560294048,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 650.0,
+    "sea": 8611.924025510249,
+    "road_uk": 190.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 13137.8,
+   "share": 0.08990426398231723,
+   "gbp_per_kg_cif": 1.822,
+   "gbp_per_kg_cif_2023_25": 1.9065671825667716
+  },
+  {
+   "origin": "Colombia",
+   "iso3": "COL",
+   "mode": "air",
+   "kg_co2e_per_kg": 10.524617661687978,
+   "low": 10.215339311172514,
+   "high": 11.040081579213751,
+   "stages": {
+    "farm": 0.59,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "air": 9.468440731837338,
+    "road_uk": 0.014012400000000001,
+    "transport_loss": 0.31508752985063937,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "air": 9152.231145751619,
+    "road_uk": 120.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 0.0,
+   "share": 0.0,
+   "gbp_per_kg_cif": 1.822,
+   "gbp_per_kg_cif_2023_25": 1.9065671825667716
+  },
+  {
+   "origin": "Chile",
+   "iso3": "CHL",
+   "mode": "sea",
+   "kg_co2e_per_kg": 0.9857376068316003,
+   "low": 0.6867685346666518,
+   "high": 1.511510802707889,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.015180100000000002,
+    "sea": 0.21405007862665226,
+    "road_uk": 0.022186300000000003,
+    "transport_loss": 0.02892112820494801,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 130.0,
+    "sea": 13783.00570680311,
+    "road_uk": 190.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 18589.4,
+   "share": 0.1272105165912777,
+   "gbp_per_kg_cif": 2.252,
+   "gbp_per_kg_cif_2023_25": 2.2411324027255883
+  },
+  {
+   "origin": "Chile",
+   "iso3": "CHL",
+   "mode": "air",
+   "kg_co2e_per_kg": 14.17670110036083,
+   "low": 13.877732028195883,
+   "high": 14.70247429623712,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "air": 13.020961667350006,
+    "road_uk": 0.014012400000000001,
+    "transport_loss": 0.42465003301082493,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "air": 12586.111514523229,
+    "road_uk": 120.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 0.0,
+   "share": 0.0,
+   "gbp_per_kg_cif": 2.252,
+   "gbp_per_kg_cif_2023_25": 2.2411324027255883
+  },
+  {
+   "origin": "Israel",
+   "iso3": "ISR",
+   "mode": "sea",
+   "kg_co2e_per_kg": 0.8601646045843668,
+   "low": 0.5611955324194184,
+   "high": 1.3859378004606557,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "sea": 0.09574736644683589,
+    "road_uk": 0.022186300000000003,
+    "transport_loss": 0.025153938137531005,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "sea": 6165.316577388016,
+    "road_uk": 190.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 20230.3,
+   "share": 0.13843948238224607,
+   "gbp_per_kg_cif": 2.287,
+   "gbp_per_kg_cif_2023_25": 2.3868184910724506
+  },
+  {
+   "origin": "Israel",
+   "iso3": "ISR",
+   "mode": "air",
+   "kg_co2e_per_kg": 4.886221970645505,
+   "low": 4.587252898480557,
+   "high": 5.411995166521794,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "air": 4.00919691152614,
+    "road_uk": 0.014012400000000001,
+    "transport_loss": 0.14593565911936515,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "air": 3875.3051196424913,
+    "road_uk": 120.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 0.0,
+   "share": 0.0,
+   "gbp_per_kg_cif": 2.287,
+   "gbp_per_kg_cif_2023_25": 2.3868184910724506
+  },
+  {
+   "origin": "Kenya",
+   "iso3": "KEN",
+   "mode": "sea",
+   "kg_co2e_per_kg": 1.0035748012577217,
+   "low": 0.7046057290927733,
+   "high": 1.5293479971340105,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.06422350000000002,
+    "sea": 0.18230875721999013,
+    "road_uk": 0.022186300000000003,
+    "transport_loss": 0.029456244037731654,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 550.0,
+    "sea": 11739.134399226668,
+    "road_uk": 190.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 1618.5,
+   "share": 0.011075678671876603,
+   "gbp_per_kg_cif": 2.131,
+   "gbp_per_kg_cif_2023_25": 2.002244596573224
+  },
+  {
+   "origin": "Kenya",
+   "iso3": "KEN",
+   "mode": "air",
+   "kg_co2e_per_kg": 8.632740848427034,
+   "low": 8.333771776262086,
+   "high": 9.158514044303322,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road_origin": 0.011677000000000002,
+    "air": 7.643320222974223,
+    "road_uk": 0.014012400000000001,
+    "transport_loss": 0.258331225452811,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road_origin": 100.0,
+    "air": 7388.062658135636,
+    "road_uk": 120.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 0.0,
+   "share": 0.0,
+   "gbp_per_kg_cif": 2.131,
+   "gbp_per_kg_cif_2023_25": 2.002244596573224
+  },
+  {
+   "origin": "Morocco",
+   "iso3": "MAR",
+   "mode": "road",
+   "kg_co2e_per_kg": 1.0575943298969073,
+   "low": 0.7586252577319588,
+   "high": 1.583367525773196,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road": 0.32111750000000006,
+    "transport_loss": 0.031076829896907212,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road": 2750.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 7146.8,
+   "share": 0.048906802800227196,
+   "gbp_per_kg_cif": 2.371,
+   "gbp_per_kg_cif_2023_25": 2.444238369277759
+  },
+  {
+   "origin": "Spain",
+   "iso3": "ESP",
+   "mode": "road",
+   "kg_co2e_per_kg": 1.0094417525773196,
+   "low": 0.7104726804123711,
+   "high": 1.5352149484536084,
+   "stages": {
+    "farm": 0.58,
+    "packhouse": 0.0396,
+    "packaging": 0.0641,
+    "road": 0.27440950000000003,
+    "transport_loss": 0.029632252577319586,
+    "ripening": 0.0217
+   },
+   "km": {
+    "road": 2350.0
+   },
+   "sequestration_credit": null,
+   "farm_confidence": "weak",
+   "tonnes": 4978.3,
+   "share": 0.034067377900650786,
+   "gbp_per_kg_cif": 2.881,
+   "gbp_per_kg_cif_2023_25": 2.8787992163632823
+  }
+ ]
+}

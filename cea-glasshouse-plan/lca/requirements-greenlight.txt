@@ -1,0 +1,5 @@
+# Separate GreenLight environment (Python 3.12; GreenLight pins numpy 1.26). Versions as used on 2026-10-03.
+greenlight==2.0.5
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.14.1
